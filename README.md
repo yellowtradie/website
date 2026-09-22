@@ -155,8 +155,9 @@ automatic on all three.
 ## Images
 
 The hero photograph is Pete's own, converted from
-`Business/Website/Assets/man3.png` on 2026-09-22 16:10, and its provenance is not
-recorded anywhere, so no licence is claimed for it. The five app screens are full
+`Business/Website/Assets/YellowTradie.png` on 2026-09-22 18:01, and its provenance
+is not recorded anywhere, so no licence is claimed for it. It replaced
+`man3.png`, the same morning's hero, which is still in the vault. The five app screens are full
 phone captures from the test phone, running sample data, and they came off the
 page on 2026-09-22; the files are kept so the section can come back. `assets/CREDITS.md` lists
 every image and what is known about it. Keep that file current, because a
@@ -166,10 +167,14 @@ be replaced by measurement.
 **Two numbers on the hero photograph come from measurement, not taste**, and both
 live in the `.hero-media img` block of `styles.css`: the `?v=` version on the URL,
 which is what stops a swap being answered out of the browser's cache, and
-`object-position: 30% center`, which decides what the cover crop shows. The box is
+`object-position: 30% center`, which decides what the cover crop shows. The crop
+was re-checked when the photograph changed at 18:01 and did not move, because the
+new frame is the same size and shape and reads slightly darker under the headline
+than the one it replaced. The box is
 55% of the screen wide and full height, so only 60% of a wide photograph survives
 the crop at 1440 and 50% at 1024. `CREDITS.md` carries the reasoning and the one
-line to change if the framing is wrong.
+line to change if the framing is wrong, and `scripts/hero-image-profile.mjs`
+measures it.
 
 ## The clip in the early access band
 
