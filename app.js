@@ -252,12 +252,33 @@ const FORM_ENDPOINT = "https://formspree.io/f/xrpbqypw";
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const DELAY = 4500;
 
+  const panels = Array.prototype.slice.call(carousel.querySelectorAll("[data-reveal-panel]"));
+
   let current = 0;
   let stopped = false;
   let timer = null;
+  let nudged = false;
 
   function offsetFor(index) {
     return slides[index].offsetLeft - slides[0].offsetLeft;
+  }
+
+  /* The row is only ever as tall as the screen you are looking at. The slides
+     keep their own height (align-items: flex-start, in the stylesheet), so a
+     slide can be measured even while the row around it is a different size. */
+  function fit(animate) {
+    const height = slides[current].offsetHeight;
+    track.style.transition = animate && !reduced ? "height .2s ease" : "none";
+    track.style.height = height + "px";
+  }
+
+  /* While a thumb is on it, the row takes the height of the tallest screen so
+     nothing is clipped mid swipe. It settles back on the one you land on. */
+  function relax() {
+    let tallest = 0;
+    slides.forEach(function (slide) { tallest = Math.max(tallest, slide.offsetHeight); });
+    track.style.transition = "none";
+    track.style.height = tallest + "px";
   }
 
   function paint() {
@@ -265,10 +286,12 @@ const FORM_ENDPOINT = "https://formspree.io/f/xrpbqypw";
       dot.classList.toggle("is-current", i === current);
       dot.setAttribute("aria-selected", i === current ? "true" : "false");
     });
+    panels.forEach(function (panel, i) { panel.hidden = i !== current; });
   }
 
   function goTo(index, smooth) {
     current = (index + slides.length) % slides.length;
+    fit(smooth);
     track.scrollTo({ left: offsetFor(current), behavior: smooth ? "smooth" : "auto" });
     paint();
   }
@@ -284,20 +307,34 @@ const FORM_ENDPOINT = "https://formspree.io/f/xrpbqypw";
     if (timer) { window.clearInterval(timer); timer = null; }
   }
 
+  /* One small sideways move the first time the row comes into view. Motion is
+     the only thing that teaches a swipe without adding a word to the page. It
+     happens once, never if the device asked for less motion, and never if the
+     person has already touched it. */
+  function nudge() {
+    if (nudged || reduced || stopped) return;
+    nudged = true;
+    track.scrollTo({ left: offsetFor(current) + 46, behavior: "smooth" });
+    window.setTimeout(function () {
+      if (!stopped) track.scrollTo({ left: offsetFor(current), behavior: "smooth" });
+    }, 480);
+  }
+
   if ("IntersectionObserver" in window) {
     new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (entry.isIntersecting) start();
-        else stop();
+        if (entry.isIntersecting) { nudge(); start(); }
+        else { relax(); stop(); }
       });
     }, { threshold: 0.35 }).observe(carousel);
   } else {
     start();
   }
 
-  /* One touch and it is the person's carousel, not ours. */
+  /* One touch and it is the person's carousel, not ours, and the row opens up
+     to the tallest screen for the length of the drag. */
   ["pointerdown", "touchstart", "wheel", "keydown"].forEach(function (type) {
-    carousel.addEventListener(type, function () { stopped = true; stop(); }, { passive: true });
+    carousel.addEventListener(type, function () { stopped = true; stop(); relax(); }, { passive: true });
   });
 
   dots.forEach(function (dot) {
@@ -319,10 +356,24 @@ const FORM_ENDPOINT = "https://formspree.io/f/xrpbqypw";
         if (distance < best) { best = distance; nearest = i; }
       });
       if (nearest !== current) { current = nearest; paint(); }
+      fit(true);
     }, 120);
   }, { passive: true });
 
-  window.addEventListener("resize", function () { goTo(current, false); });
+  window.addEventListener("resize", function () { fit(false); });
+  window.addEventListener("load", function () { fit(false); });
+
+  /* Images and fonts arrive after the first paint and change the height of a
+     slide. The row follows. */
+  Array.prototype.forEach.call(track.querySelectorAll("img"), function (img) {
+    img.addEventListener("load", function () { fit(false); });
+  });
+  if ("ResizeObserver" in window) {
+    const observer = new ResizeObserver(function () { fit(false); });
+    slides.forEach(function (slide) { observer.observe(slide); });
+  }
+
+  fit(false);
 })();
 
 /* The missed call calculator.

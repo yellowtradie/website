@@ -504,7 +504,13 @@ p:last-child { margin-bottom: 0; }
   margin: 0;
   padding: 0;
   display: flex;
+  align-items: flex-start;
   overflow-x: auto;
+  /* The height is set by app.js to whatever screen you are on, so the dots sit
+     right under the picture instead of under the tallest of the five. Without
+     the hidden axis the taller slides would scroll up and down inside the
+     track. See the note on .slide-media below. */
+  overflow-y: hidden;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
@@ -531,6 +537,21 @@ p:last-child { margin-bottom: 0; }
   height: auto;
   border: 1px solid var(--border);
   background: #fff;
+}
+
+/* The five crops are all different shapes, from the chase list at 1.64 wide to
+   the customer's phone page at 0.69 tall. In a row they stretched every slide to
+   the tallest one, so four of the five carried 129 to 190px of empty space
+   between the picture and its own words. Pete reported that on a phone,
+   2026-09-22. The box below is a plain wrapper; the height of the row is now set
+   to the screen you are looking at, which is done in app.js. */
+.slide-media { display: block; }
+
+/* On a phone the next screen deliberately shows a strip of itself at the edge.
+   At full width the edge of a slide lines up with the edge of the phone, which
+   gives away nothing about there being four more. */
+@media (max-width: 899px) {
+  .slide { flex: 0 0 88%; min-width: 88%; padding: 14px 4px 0; gap: 12px; }
 }
 
 .slide .slide-copy h3 { margin-bottom: 10px; }
@@ -625,6 +646,11 @@ p:last-child { margin-bottom: 0; }
 }
 
 .reveal-body { padding: 0 0 20px; color: var(--muted); max-width: 60em; }
+
+/* The panel only for the screen you are looking at. */
+.reveal-panel[hidden] { display: none; }
+.reveal-panel p { margin: 0; }
+.reveal-panel strong { color: var(--black); }
 
 /* --------------------------------------------------------------------------
    The six job stops. A numbered job sheet: one line a stop, the detail
@@ -1202,4 +1228,17 @@ body.modal-open .sticky-cta { display: none; }
   .btn--sm { height: 44px; }
   input, select { height: 48px; }
   .modal-close { width: 44px; height: 44px; }
+}
+
+/* --------------------------------------------------------------------------
+   The spacing in "See it in 30 seconds" on a phone. These have to sit at the
+   end of the file: the base rules for the dots and the reveal are declared
+   further down than the carousel, so a media query next to the carousel loses
+   to them. Learned the hard way on 2026-09-22, by measuring rather than by eye.
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 899px) {
+  .carousel-dots { margin-top: 12px; }
+  .reveal { margin-top: 16px; }
+  .carousel .reveal summary { padding: 12px 0; }
 }
