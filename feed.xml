@@ -5,9 +5,17 @@
     <link>https://yellowtradie.com/changelog.html</link>
     <description>What has changed on the YellowTradie site and in the early access programme. YellowTradie is a phone app for UK sole traders and self employed tradespeople.</description>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 22 Sep 2026 13:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2026 13:18:00 +0100</lastBuildDate>
     <ttl>1440</ttl>
     <atom:link href="https://yellowtradie.com/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Clearer words on the calls, the tax and the price</title>
+      <link>https://yellowtradie.com/changelog.html#clearer-copy</link>
+      <guid isPermaLink="true">https://yellowtradie.com/changelog.html#clearer-copy</guid>
+      <pubDate>Tue, 22 Sep 2026 13:18:00 +0100</pubDate>
+      <description>A tradesman with 40 years on the tools read the page and said where it lost him. The missed call wording was wrong, so it now describes what actually happens. The caller leaves a message, it is written out and sent to you, and if they leave nothing they get a short text back to say you will ring them. Xero, QuickBooks and FreeAgent now read as a one tap connect. The price carries an anchor: less than a single missed call-out, with a founder's rate locked in. The headline dropped "after tea" because it is regional, and the page now names sparky, chippy, plumber and joiner.</description>
+    </item>
 
     <item>
       <title>The page shows the whole job now</title>

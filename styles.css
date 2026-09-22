@@ -585,6 +585,59 @@ p:last-child { margin-bottom: 0; }
 .signup h2 { margin-bottom: 16px; }
 .signup p { color: var(--black); }
 
+/* The three reasons on the yellow band. Black squares, same zero-radius edge
+   rule as the list in the modal. */
+.signup-reasons {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+}
+
+.signup-reasons li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 12px;
+  font-size: 16px;
+  line-height: 21px;
+  color: var(--black);
+}
+
+.signup-reasons li:last-child { margin-bottom: 0; }
+
+.signup-reasons li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 9px;
+  height: 9px;
+  background: var(--black);
+}
+
+.signup-reasons strong { font-weight: 700; }
+
+/* Pete's short vertical clip. The slot stays hidden until the file actually
+   loads, so a missing clip leaves no empty box in the band. */
+.signup-video {
+  max-width: 300px;
+  margin: 0 0 20px;
+  background: var(--black);
+  border: var(--bar) solid var(--black);
+}
+
+/* The hidden attribute has to beat the block above, or a missing clip still
+   takes up space in the band. */
+.signup-video[hidden] { display: none; }
+
+.signup-video video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  background: var(--black);
+}
+
 form { margin: 0; }
 
 .field { margin-bottom: 16px; }

@@ -17,6 +17,7 @@ No build step, no framework, no dependencies. Drop the folder on any host.
 | `feed.xml` | RSS 2.0 for the changelog. Both pages point at it with `<link rel="alternate">` |
 | `.well-known/llms.txt` | The same fact sheet at the conventional path |
 | `assets/logo-mark.svg` | The logo mark: yellow square, black uppercase T |
+| `assets/tiktok.mp4` | The slot is built and waiting. Pete's short vertical clip goes here. Not there yet |
 | `assets/` | Hero and section images. `assets/CREDITS.md` lists every one |
 
 **Two things not to undo.** In-page links are root-relative (`/#how`, not `#how`)
@@ -47,8 +48,8 @@ Then open http://127.0.0.1:4173
 
 ## Collecting the signups
 
-The page posts a small JSON body: `{email, source, signed_up_at}`. Any endpoint
-that accepts a JSON POST works. Two free options:
+The page posts a small JSON body: `{fullName, businessName, email, phone, source,
+signed_up_at}`. Any endpoint that accepts a JSON POST works. Two free options:
 
 **Formspree.** Sign up at formspree.io, make a form, and paste its endpoint
 (like `https://formspree.io/f/abcdwxyz`) into `FORM_ENDPOINT`. Free tier is 50
@@ -102,6 +103,21 @@ The hero photograph is from rawpixel under CC0 1.0, which allows commercial use
 and needs no credit. The app screens are tight crops of screenshots from the test
 phone, with sample data. `assets/CREDITS.md` lists every image and its licence.
 Keep that file, and the footer credit line, because it is good manners.
+
+## The clip in the early access band
+
+The band carries a slot for a short vertical clip, above the button. The slot is
+hidden until the file actually loads, so the page is unchanged while the clip is
+missing. To put it live, drop the file at `assets/tiktok.mp4`:
+
+- 9:16 vertical, mp4, under 20 seconds
+- Muted and looping, so no sound and no music are needed
+- Burn the captions into the picture, because most people watch with the sound off
+- Your own footage only. Do not use a music track you do not own
+
+It is wired up in `app.js` by `[data-video-slot]`. If the file is replaced later,
+bump the `?v=` on its `src` in `index.html`, because the browser will otherwise
+keep serving the old copy.
 
 ## What this page is not
 
