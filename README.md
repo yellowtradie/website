@@ -8,13 +8,23 @@ No build step, no framework, no dependencies. Drop the folder on any host.
 | File | What it is |
 |---|---|
 | `index.html` | The page. All the copy lives here in plain text |
+| `changelog.html` | What's new: eight dated entries on the site and early access. The second page the AEO audit needs for internal links |
 | `styles.css` | All styling. The exact colours, fonts, sizes and weights sit in the `:root` block at the top |
 | `app.js` | The early access form. One setting to change: `FORM_ENDPOINT` |
 | `robots.txt` | Allows the AI crawlers and points at the sitemap |
-| `sitemap.xml` | One URL, this page |
-| `.well-known/llms.txt` | A short fact sheet for answer engines |
+| `sitemap.xml` | Both pages |
+| `llms.txt` | The fact sheet for answer engines, at the root where they read it. Keep it in step with `.well-known/llms.txt` |
+| `feed.xml` | RSS 2.0 for the changelog. Both pages point at it with `<link rel="alternate">` |
+| `.well-known/llms.txt` | The same fact sheet at the conventional path |
 | `assets/logo-mark.svg` | The logo mark: yellow square, black uppercase T |
 | `assets/` | Hero and section images. `assets/CREDITS.md` lists every one |
+
+**Two things not to undo.** In-page links are root-relative (`/#how`, not `#how`)
+because the AEO audit counts an `<a>` whose href does not start with `#`, so bare
+fragments never count. And `feed.xml` and `llms.txt` are deliberately not linked
+as `<a>` tags anywhere: the crawler follows those and audits the XML as HTML
+pages, which fails them and drags the site score down. A feed is discovered by
+the `rel="alternate"` link tag; llms.txt by its path.
 
 ## Preview it on this machine
 
