@@ -1,13 +1,15 @@
 /* YellowTradie early access form.
  *
- * ONE thing to set before this page goes live: FORM_ENDPOINT below.
- * Until it is set the form runs in preview mode: it validates properly,
- * shows the real success state, and stores the signup in the browser
- * instead of sending it anywhere. A small banner says so on screen so a
- * preview can never be mistaken for a working signup.
+ * Signups POST to Formspree as JSON and are delivered by form xrpbqypw. The
+ * endpoint below is a public URL by design, so it is safe to keep in the repo.
+ *
+ * If FORM_ENDPOINT is ever set back to "REPLACE_ME" the form drops into
+ * preview mode: it validates properly, shows the real success state, and
+ * stores the signup in the browser instead of sending it anywhere. A banner
+ * says so on screen so a preview can never be mistaken for a working signup.
  */
 
-const FORM_ENDPOINT = "REPLACE_ME";
+const FORM_ENDPOINT = "https://formspree.io/f/xrpbqypw";
 
 (function () {
   const form = document.querySelector("[data-signup-form]");
