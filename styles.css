@@ -506,11 +506,6 @@ p:last-child { margin-bottom: 0; }
   display: flex;
   align-items: flex-start;
   overflow-x: auto;
-  /* The height is set by app.js to whatever screen you are on, so the dots sit
-     right under the picture instead of under the tallest of the five. Without
-     the hidden axis the taller slides would scroll up and down inside the
-     track. See the note on .slide-media below. */
-  overflow-y: hidden;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
@@ -539,13 +534,11 @@ p:last-child { margin-bottom: 0; }
   background: #fff;
 }
 
-/* The five crops are all different shapes, from the chase list at 1.64 wide to
-   the customer's phone page at 0.69 tall. In a row they stretched every slide to
-   the tallest one, so four of the five carried 129 to 190px of empty space
-   between the picture and its own words. Pete reported that on a phone,
-   2026-09-22. The box below is a plain wrapper; the height of the row is now set
-   to the screen you are looking at, which is done in app.js. */
-.slide-media { display: block; }
+/* All five screens are one size now: 1080 by 900, matted onto a common canvas
+   with each crop's own edge colour. They used to be five different shapes, from
+   the chase list at 1.64 wide to the customer's phone page at 0.69 tall, which
+   made the row change height as you swiped and shoved the rest of the page up
+   and down. Pete: "the numbers are jumping around all over the place". */
 
 /* On a phone the next screen deliberately shows a strip of itself at the edge.
    At full width the edge of a slide lines up with the edge of the phone, which
@@ -646,11 +639,6 @@ p:last-child { margin-bottom: 0; }
 }
 
 .reveal-body { padding: 0 0 20px; color: var(--muted); max-width: 60em; }
-
-/* The panel only for the screen you are looking at. */
-.reveal-panel[hidden] { display: none; }
-.reveal-panel p { margin: 0; }
-.reveal-panel strong { color: var(--black); }
 
 /* --------------------------------------------------------------------------
    The six job stops. A numbered job sheet: one line a stop, the detail
@@ -1239,6 +1227,19 @@ body.modal-open .sticky-cta { display: none; }
 
 @media (max-width: 899px) {
   .carousel-dots { margin-top: 12px; }
-  .reveal { margin-top: 16px; }
-  .carousel .reveal summary { padding: 12px 0; }
+}
+
+/* --------------------------------------------------------------------------
+   The header on a phone. The button goes, because the same button is pinned to
+   the bottom of the screen and sits on the closing block, so the top one was
+   the third of three. What is left is the mark on its own. Pete's call,
+   2026-09-22.
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 859px) {
+  .header-inner { justify-content: center; gap: 0; }
+  .header-inner > .btn { display: none; }
+  /* The nav list is already hidden here, but its wrapper is a plain block, so
+     it stayed in the flex line and its gap pushed the mark off centre. */
+  .header-inner > nav { display: none; }
 }
