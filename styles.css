@@ -43,7 +43,11 @@
      yellow rule on white or light grey is invisible. --border (#d7d5d5) is too
      pale once the rule is 4px thick, so this is neutral-8. It applies to the
      rules sitting on light backgrounds only: the hero and the final block keep
-     their yellow bars because those sit on black. */
+     their yellow bars because those sit on black.
+     Two users left after 2026-09-22 12:05: the rule above each zoomed app
+     screen, and the bar across the top of the signup modal. The seven stage
+     headings in "One phone does the lot" lost theirs at Pete's asking, so do
+     not read this token as "every light section has one". */
   --rule: #646062;
 
   /* Type: Archivo Expanded for display and buttons, Inter for everything else */
@@ -474,7 +478,11 @@ p:last-child { margin-bottom: 0; }
 
 .group-title {
   color: var(--black);
-  border-bottom: 4px solid var(--rule);
+  /* The 4px grey rule under each stage heading is gone. Pete's call
+     2026-09-22 12:05: the seven rules read as dividers chopping the section
+     into strips, and the headings hold their own against the cards without
+     them. The heading text and the spacing are untouched, so the only change
+     is the line. This is the one place --rule was doing section furniture. */
   padding-bottom: 8px;
   margin-bottom: 20px;
 }
