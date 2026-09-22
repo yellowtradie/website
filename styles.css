@@ -377,9 +377,9 @@ p:last-child { margin-bottom: 0; }
 
 .hero-copy {
   max-width: 620px;
-  /* DeWalt frames its hero content block with thick yellow bars */
-  border-top: var(--bar) solid var(--y);
-  border-bottom: var(--bar) solid var(--y);
+  /* No rule above or below, Pete's call 2026-09-22 16:11. It carried two thick
+     yellow bars top and bottom until then, copied from DeWalt's framing. The
+     padding is unchanged, so the only difference is the two lines. */
   padding: 24px 0;
 }
 @media (min-width: 1280px) { .hero-copy { max-width: 760px; padding: 32px 0; } }

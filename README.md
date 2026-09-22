@@ -54,7 +54,7 @@ early access" control opens.
 ### The rules the page is checked against
 
 `scripts/verify-site-modal.mjs` drives the real page in headless Chrome over the
-devtools protocol and runs **101 assertions**: the nine screens in order, the
+devtools protocol and runs **103 assertions**: the nine screens in order, the
 accordions opening, the carousel paging, the calculator's arithmetic, the sticky
 bar appearing and going away, the tick and cross marks, the four form fields,
 the intercepted Formspree post, no horizontal overflow at 1440 and 390, and the
@@ -69,6 +69,13 @@ The copy rules it enforces, all of them Pete's calls: no em dash and no arrow
 anywhere, nothing that says the app answers the call, no invented job values
 outside the calculator, no HMRC approval badge, the four form fields, and the
 schema's FAQ answers matching the visible ones word for word.
+
+The design rules it enforces, all of them read back as computed style rather than
+inspected by eye: **the hero text carries no rule above or below it** (Pete asked
+for the two yellow bars to come off it on 2026-09-22 16:11) while **the closing
+call to action keeps its two yellow bars**, the stage headings under "One phone
+does the lot" carry no rule at all, and the rules that remain on a light
+background are grey rather than yellow.
 
 ## Preview it on this machine
 
