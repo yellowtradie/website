@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>What's new in YellowTradie</title>
+    <link>https://yellowtradie.com/changelog.html</link>
+    <description>What has changed on the YellowTradie site and in the early access programme. YellowTradie is a phone app for UK sole traders and self employed tradespeople.</description>
+    <language>en-gb</language>
+    <lastBuildDate>Tue, 22 Sep 2026 13:00:00 +0100</lastBuildDate>
+    <ttl>1440</ttl>
+    <atom:link href="https://yellowtradie.com/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>The page shows the whole job now</title>
+      <link>https://yellowtradie.com/changelog.html#whole-job</link>
+      <guid isPermaLink="true">https://yellowtradie.com/changelog.html#whole-job</guid>
+      <pubDate>Tue, 22 Sep 2026 13:00:00 +0100</pubDate>
+      <description>The page used to explain quoting and leave it there. It now walks a whole week of work, from the call you miss while you are up a ladder through to the figures for your quarterly tax. There are 21 things on it, grouped into seven stages: win the work, quote it, plan the week, run the job, get paid, tax and the accountant, and everything else.</description>
+    </item>
+
+    <item>
+      <title>Real screens, not drawings</title>
+      <link>https://yellowtradie.com/changelog.html#real-screens</link>
+      <guid isPermaLink="true">https://yellowtradie.com/changelog.html#real-screens</guid>
+      <pubDate>Tue, 22 Sep 2026 12:45:00 +0100</pubDate>
+      <description>Five screens from the app replace the phone mockups that were here before. They are tight crops of the parts you would use every day: the chase list, a spoken job turned into priced line items, the quarterly tax card, an overdue invoice, and the page your customer opens to say yes. The app is running on sample data.</description>
+    </item>
+
+    <item>
+      <title>A comparison you can read in one go</title>
+      <link>https://yellowtradie.com/changelog.html#comparison-table</link>
+      <guid isPermaLink="true">https://yellowtradie.com/changelog.html#comparison-table</guid>
+      <pubDate>Tue, 22 Sep 2026 12:30:00 +0100</pubDate>
+      <description>A table puts the same week side by side, paper and WhatsApp on one side and the app on the other. It covers the call you miss, writing the quote, knowing whether it was read, chasing the money and the quarterly tax.</description>
+    </item>
+
+    <item>
+      <title>The early access form asks for four things</title>
+      <link>https://yellowtradie.com/changelog.html#signup-four-things</link>
+      <guid isPermaLink="true">https://yellowtradie.com/changelog.html#signup-four-things</guid>
+      <pubDate>Tue, 22 Sep 2026 12:15:00 +0100</pubDate>
+      <description>Your name, your business name, your email and a phone number. The phone number is there so we can ring you about your trade rather than send a generic email to a list. Nothing to pay, and no card asked for.</description>
+    </item>
+
+    <item>
+      <title>A brighter yellow</title>
+      <link>https://yellowtradie.com/changelog.html#new-yellow</link>
+      <guid isPermaLink="true">https://yellowtradie.com/changelog.html#new-yellow</guid>
+      <pubDate>Tue, 22 Sep 2026 08:05:00 +0100</pubDate>
+      <description>The brand yellow on the site changed to a brighter, greener tone. The black stayed exactly the same, because it is the same black the app uses.</description>
+    </item>
+
+    <item>
+      <title>YellowTradie.com is live</title>
+      <link>https://yellowtradie.com/changelog.html#site-live</link>
+      <guid isPermaLink="true">https://yellowtradie.com/changelog.html#site-live</guid>
+      <pubDate>Mon, 21 Sep 2026 18:00:00 +0100</pubDate>
+      <description>The site went up and the early access list opened. If you are on it, you will get an email when a place opens. We are letting people in a few at a time so we can answer every message.</description>
+    </item>
+
+    <item>
+      <title>What you get for joining early</title>
+      <link>https://yellowtradie.com/changelog.html#joining-early</link>
+      <guid isPermaLink="true">https://yellowtradie.com/changelog.html#joining-early</guid>
+      <pubDate>Mon, 21 Sep 2026 17:00:00 +0100</pubDate>
+      <description>Nothing to pay until it launches. A say in what gets built, because you tell us what gets in the way on a working day. And a low rate locked in when it goes paid, since pricing is not set yet.</description>
+    </item>
+
+    <item>
+      <title>Where your data sits</title>
+      <link>https://yellowtradie.com/changelog.html#where-data-sits</link>
+      <guid isPermaLink="true">https://yellowtradie.com/changelog.html#where-data-sits</guid>
+      <pubDate>Mon, 21 Sep 2026 16:00:00 +0100</pubDate>
+      <description>Your jobs, your customers and your prices live in the app on your own phone. The screens on the site use sample data only, and there is nothing of a real customer on the page.</description>
+    </item>
+
+  </channel>
+</rss>
