@@ -55,14 +55,23 @@ data.
 brand yellow from 2026-09-22) with the uppercase T in the page's black
 (#161616). No third party rights.
 
-## The five app screens, resized 2026-09-22
+## The five app screens, re-shot 2026-09-22 17:30
 
-`app-voice.png`, `app-chase.png`, `app-invoice.png`, `app-tax.png` and
-`app-customer.png` are all **1080 by 900**. They were five different shapes, taken
-as tight crops, which made the carousel change height with every swipe. Each one
-was scaled to fit a common canvas and matted onto it with **its own measured edge
-colour**, sampled per side, so the padding cannot be seen: voice, invoice and tax
-are 100% seamless, chase 100% on the top and 99% on the bottom, and the customer's
-phone page 100% on the left. No content was cropped and the app was not
-re-screenshotted. If they are ever replaced, either match 1080 by 900 or expect
-the carousel to move again.
+`app-quote.png`, `app-chase.png`, `app-invoice.png`, `app-tax.png` and
+`app-customer.png` are **full phone screens, 1080 by 2400**, all the same size.
+They were tight crops of parts of the app before, and Pete asked for the whole
+screen: "the screenshot of the app need to be full screenshots, not fucking
+close-ups".
+
+**Four are off the handset**, taken with `adb exec-out screencap -p` from the
+Pixel 8 running the app in Expo Go: the quote document, the invoices list, the
+overdue invoice, and the reports screen. The fifth is the customer's quote page,
+rendered from `trade-light-portal/preview/server.mjs` at `localhost:8787` in
+headless Chrome at a 360 by 800 phone viewport, three times scale, so it comes
+out at the same 1080 by 2400 as the rest.
+
+Every screen is running the app's fictional demo set, which is what the footer
+disclaimer refers to. One size also means the carousel cannot change height as
+you swipe, which is the bug Pete caught: "the numbers are jumping around all over
+the place". If they are ever replaced, **match 1080 by 2400** or the row will
+move again.

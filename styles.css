@@ -524,21 +524,32 @@ p:last-child { margin-bottom: 0; }
 }
 
 @media (min-width: 900px) {
-  .slide { grid-template-columns: 1.15fr 1fr; align-items: center; gap: 40px; padding-right: 8px; }
+  .slide { grid-template-columns: auto 1fr; align-items: center; gap: 48px; padding-right: 8px; }
+  .slide img { height: 720px; margin: 0; }
 }
 
+/* A full phone screen is tall, so it is sized by its height and centred rather
+   than stretched across the column. The height and the ratio are both fixed, so
+   the box is the right size before the lazy ones have loaded: without that, the
+   fourth and fifth screens collapsed to nothing until they arrived and the row
+   changed height under the reader. */
 .slide img {
-  width: 100%;
-  height: auto;
+  display: block;
+  height: 620px;
+  width: auto;
+  max-width: 100%;
+  aspect-ratio: 1080 / 2400;
+  object-fit: contain;
+  margin: 0 auto;
   border: 1px solid var(--border);
   background: #fff;
 }
 
-/* All five screens are one size now: 1080 by 900, matted onto a common canvas
-   with each crop's own edge colour. They used to be five different shapes, from
-   the chase list at 1.64 wide to the customer's phone page at 0.69 tall, which
-   made the row change height as you swiped and shoved the rest of the page up
-   and down. Pete: "the numbers are jumping around all over the place". */
+/* All five screens are one size: a full phone screen, 1080 by 2400, taken off
+   the handset. They were tight crops of parts of the app before, and Pete asked
+   for the whole screen: "the screenshot of the app need to be full screenshots,
+   not fucking close-ups". One size also means the row cannot change height as
+   you swipe, which is what made the numbers jump about. */
 
 /* On a phone the next screen deliberately shows a strip of itself at the edge.
    At full width the edge of a slide lines up with the edge of the phone, which
