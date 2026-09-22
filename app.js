@@ -165,7 +165,7 @@ const FORM_ENDPOINT = "https://formspree.io/f/xrpbqypw";
       phone: form.querySelector("#phone").value.trim(),
       source: "yellowtradie.com",
       signed_up_at: new Date().toISOString(),
-      _subject: "YellowTradie beta request",
+      _subject: "YellowTradie early access request",
     };
 
     submitButton.disabled = true;

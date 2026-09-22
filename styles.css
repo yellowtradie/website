@@ -684,6 +684,46 @@ input[aria-invalid="true"] { border-color: var(--error); border-width: 2px; }
 .modal-panel .form-note { color: var(--muted); }
 .modal-panel .signup-success { margin-top: 4px; }
 
+/* The "what you get" reasons. A yellow square rather than a disc, to keep the
+   page's zero-radius edge rule. */
+.modal-panel .what-you-get-title {
+  font-family: var(--display);
+  font-stretch: 125%;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--black);
+  margin: 0 0 10px;
+}
+
+.modal-panel .what-you-get {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+}
+
+.modal-panel .what-you-get li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  line-height: 21px;
+  color: var(--muted);
+}
+
+.modal-panel .what-you-get li:last-child { margin-bottom: 0; }
+
+.modal-panel .what-you-get li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 9px;
+  height: 9px;
+  background: var(--y);
+}
+
 .form-error {
   font-size: 13px;
   line-height: 19px;
