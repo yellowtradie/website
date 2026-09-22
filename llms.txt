@@ -15,6 +15,8 @@ Last updated: 22 September 2026
 - The screens: https://yellowtradie.com/#screens
 - Why it is different: https://yellowtradie.com/#why
 - Questions: https://yellowtradie.com/#faq
+- What a missed call costs: https://yellowtradie.com/#calculator
+- Straight with you: https://yellowtradie.com/#trust
 - Early access signup: https://yellowtradie.com/#early-access
 
 ## Feed
@@ -29,6 +31,7 @@ Last updated: 22 September 2026
 - Price: free during early access. Pricing is not fixed yet, but it will cost less than a single missed call-out, and early users get a founder's rate locked in.
 - Accounting: connect Xero, QuickBooks or FreeAgent in one tap, or export the quarter as a spreadsheet for an accountant.
 - Data: jobs, customers and prices are held in the app on the trader's own phone.
+- Missed call cost: the page carries a calculator where the reader sets their own numbers, how many calls a week they miss and what a job is worth, and it works out the year. The page holds no estimate of its own.
 - Not for: teams that need to allocate jobs across staff.
 
 ## Contact

@@ -491,38 +491,181 @@ p:last-child { margin-bottom: 0; }
 .card h4.display--xs { margin-bottom: 10px; }
 
 /* --------------------------------------------------------------------------
-   Zoomed app screens: a tight crop of one part of the app, with the words
-   beside it. Alternating sides from 900px up.
+   See it in 30 seconds: the real app screens in a carousel. On a phone it is
+   swiped; from 900px the shot and its words sit side by side. It advances on
+   its own until somebody touches it (app.js), which is the "looping demo"
+   without shipping a video file nobody has recorded yet.
    -------------------------------------------------------------------------- */
 
-.shots { display: grid; gap: 40px; margin-top: 36px; }
+.carousel { position: relative; margin-top: 32px; }
 
-.shot {
+.carousel-track {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.carousel-track::-webkit-scrollbar { display: none; }
+
+.slide {
+  flex: 0 0 100%;
+  min-width: 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
   border-top: 4px solid var(--rule);
-  padding-top: 20px;
+  padding: 20px 4px 0;
   display: grid;
   gap: 20px;
 }
 
 @media (min-width: 900px) {
-  .shot { grid-template-columns: 1.15fr 1fr; align-items: center; gap: 40px; }
-  .shot:nth-child(even) img { order: 2; }
-  .shot:nth-child(even) figcaption { order: 1; }
+  .slide { grid-template-columns: 1.15fr 1fr; align-items: center; gap: 40px; padding-right: 8px; }
 }
 
-.shot img {
+.slide img {
   width: 100%;
   height: auto;
   border: 1px solid var(--border);
   background: #fff;
 }
 
-/* The customer page is a full phone page, so it is shown at a narrower width
-   than the cropped app screens rather than towering down the section */
-.shot--phone img { max-width: 420px; }
+.slide .slide-copy h3 { margin-bottom: 10px; }
+.slide .slide-copy p { font-size: 16px; line-height: 21px; color: var(--muted); }
 
-.shot figcaption h3 { margin-bottom: 10px; }
-.shot figcaption p { font-size: 16px; line-height: 21px; }
+/* Numbered page dots. A 44px square each, because a phone in sunlight and a
+   thumb in a glove do not do small targets. */
+.carousel-dots { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+
+.dot {
+  min-width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--display);
+  font-stretch: 125%;
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 1;
+  color: var(--black);
+  background: #fff;
+  border: 1px solid var(--black);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color .15s ease;
+}
+.dot.is-current { background: var(--y); }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Accordions: the reveal under the carousel and the six job stops. Every
+   answer stays in the page in full, so a search engine reads the same words
+   a person does, one tap away.
+   -------------------------------------------------------------------------- */
+
+.reveal { border-top: 1px solid var(--black); margin-top: 28px; }
+.reveal:last-child { border-bottom: 1px solid var(--black); }
+
+.reveal summary,
+.step-summary,
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 48px;
+}
+.reveal summary::-webkit-details-marker,
+.step-summary::-webkit-details-marker,
+.faq-item summary::-webkit-details-marker { display: none; }
+
+.reveal summary::after,
+.step-summary::after,
+.faq-item summary::after {
+  content: "+";
+  flex: none;
+  font-family: var(--display);
+  font-stretch: 125%;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--black);
+}
+
+.reveal[open] summary::after,
+.step[open] .step-summary::after,
+.faq-item[open] summary::after { content: "\2212"; }
+
+.reveal summary { padding: 16px 0; }
+
+.reveal-title {
+  font-family: var(--display);
+  font-stretch: 125%;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.reveal-body { padding: 0 0 20px; color: var(--muted); max-width: 60em; }
+
+/* --------------------------------------------------------------------------
+   The six job stops. A numbered job sheet: one line a stop, the detail
+   behind a tap.
+   -------------------------------------------------------------------------- */
+
+.steps { margin-top: 32px; border-top: 1px solid var(--black); }
+.step { border-bottom: 1px solid var(--black); }
+
+.step-summary { align-items: flex-start; padding: 20px 0; }
+
+.step-num {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--y);
+  color: var(--black);
+  font-family: var(--display);
+  font-stretch: 125%;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.step-head { flex: 1 1 auto; }
+
+/* The stage heading keeps its class so the checks that prove the grey rules
+   never came back still mean something. It carries no rule of its own. */
+.step-summary .group-title { margin: 0; padding: 0; color: var(--black); }
+
+.step-line { display: block; margin-top: 4px; font-size: 16px; line-height: 21px; color: var(--muted); }
+
+.step-summary::after { margin-top: 8px; }
+
+.step-body { padding: 4px 0 24px; display: grid; gap: 16px; }
+
+.odd-jobs { margin-top: 40px; }
+.odd-jobs h3 { margin-bottom: 20px; }
 
 /* --------------------------------------------------------------------------
    Comparison table: paper and WhatsApp against the app. Scrolls sideways
@@ -820,13 +963,16 @@ body.modal-open { overflow: hidden; }
 }
 
 /* --------------------------------------------------------------------------
-   FAQ
+   FAQ: an accordion. The questions sit one line each until they are opened,
+   and every answer is still in the page in full for the search engines.
    -------------------------------------------------------------------------- */
 
-.faq-item { border-top: 1px solid var(--black); padding: 20px 0; }
-.faq-item:last-child { border-bottom: 1px solid var(--black); }
-.faq-item dt { margin-bottom: 12px; }
-.faq-item dd { margin: 0; color: var(--muted); max-width: 60em; }
+.faqs { margin-top: 32px; border-top: 1px solid var(--black); }
+.faq-item { border-bottom: 1px solid var(--black); }
+.faq-item summary { padding: 20px 0; align-items: flex-start; }
+.faq-item summary h3 { margin: 0; }
+.faq-item summary::after { margin-top: 2px; }
+.faq-item p { margin: 0; padding: 0 0 20px; color: var(--muted); max-width: 60em; }
 
 /* --------------------------------------------------------------------------
    Final call to action
@@ -883,3 +1029,182 @@ body.modal-open { overflow: hidden; }
   color: var(--tertiary-dark);
 }
 .footer-base p { margin: 0 0 8px; }
+
+/* --------------------------------------------------------------------------
+   The pain strip. Three cards, one line each, and on a phone they swipe
+   sideways rather than stacking into a wall of text.
+   -------------------------------------------------------------------------- */
+
+.section-lede { margin-top: 16px; max-width: 46em; }
+
+.pains { list-style: none; margin: 32px 0 0; padding: 0; }
+
+@media (max-width: 767px) {
+  .pains {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+  .pains::-webkit-scrollbar { display: none; }
+  .pain { flex: 0 0 82%; scroll-snap-align: start; }
+}
+
+@media (min-width: 768px) {
+  .pains { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+}
+
+.pain { border-top: 6px solid var(--black); padding-top: 16px; }
+.pain h3 { margin-bottom: 10px; }
+.pain p { color: var(--muted); }
+
+/* --------------------------------------------------------------------------
+   Trust badges. Four, one line each.
+   -------------------------------------------------------------------------- */
+
+.badges { list-style: none; margin: 32px 0 0; padding: 0; display: grid; gap: 20px; }
+@media (min-width: 640px) { .badges { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1100px) { .badges { grid-template-columns: repeat(4, 1fr); } }
+
+.badge {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--black);
+  padding: 20px;
+}
+.badge h3 { margin-bottom: 10px; }
+.badge p { color: var(--muted); font-size: 16px; line-height: 21px; }
+
+/* --------------------------------------------------------------------------
+   The tick and the cross in the comparison table. Drawn as background images
+   so there is no icon font and no extra request.
+   -------------------------------------------------------------------------- */
+
+.mark {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  vertical-align: -2px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 16px;
+}
+.mark--yes {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2 8.5l4 4 8-9' fill='none' stroke='%23fff400' stroke-width='3'/%3E%3C/svg%3E");
+}
+.mark--no {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 3l10 10M13 3L3 13' fill='none' stroke='%23b7b4b5' stroke-width='3'/%3E%3C/svg%3E");
+}
+
+/* --------------------------------------------------------------------------
+   The missed call calculator. Two sliders and the sum in black and white.
+   The figures are the person's own; the page never guesses for them.
+   -------------------------------------------------------------------------- */
+
+.calc-grid { display: grid; gap: 32px; }
+@media (min-width: 900px) {
+  .calc-grid { grid-template-columns: 1fr 1fr; align-items: center; gap: 56px; }
+}
+
+.calc {
+  background: #fff;
+  border: 1px solid var(--black);
+  border-top: var(--bar) solid var(--black);
+  padding: 24px;
+}
+
+.calc-field { margin-bottom: 24px; }
+
+.calc-row { display: flex; align-items: center; gap: 16px; }
+
+.calc-row input[type="range"] {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: auto;
+  height: 48px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  accent-color: var(--black);
+  cursor: pointer;
+}
+
+.calc-value {
+  flex: none;
+  min-width: 88px;
+  text-align: right;
+  font-family: var(--display);
+  font-stretch: 125%;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 1;
+  color: var(--black);
+}
+
+.calc-result { font-size: 18px; line-height: 24px; margin: 0 0 8px; }
+.calc-result strong {
+  font-family: var(--display);
+  font-stretch: 125%;
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 1;
+}
+.calc-note { font-size: 13px; line-height: 19px; color: var(--tertiary); margin-bottom: 20px; }
+.calc .btn { width: 100%; }
+
+/* --------------------------------------------------------------------------
+   The button under his thumb. Phones only, and only once the hero is behind
+   you. It is never shown on a desktop, where the header button is in reach.
+   -------------------------------------------------------------------------- */
+
+.sticky-cta {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 90;
+  display: none;
+  align-items: center;
+  gap: 12px;
+  padding: 10px var(--gutter);
+  background: var(--black);
+  border-top: 1px solid var(--hairline-dark);
+  transform: translateY(110%);
+  transition: transform .2s ease;
+}
+
+.sticky-cta[hidden] { display: none; }
+
+@media (max-width: 859px) {
+  .sticky-cta { display: flex; }
+  .sticky-cta.is-visible { transform: translateY(0); }
+}
+
+.sticky-cta .btn { flex: 1 1 auto; }
+
+.sticky-note {
+  flex: none;
+  max-width: 9em;
+  font-size: 12px;
+  line-height: 15px;
+  color: var(--tertiary-dark);
+}
+
+/* Nothing should sit under the modal, the sticky bar included. */
+body.modal-open .sticky-cta { display: none; }
+
+/* --------------------------------------------------------------------------
+   Phone targets. A 48px minimum on anything a thumb has to hit, because this
+   page gets read one-handed in the rain with the brightness flat out.
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 859px) {
+  .btn--lg { height: 52px; font-size: 15px; }
+  .btn--sm { height: 44px; }
+  input, select { height: 48px; }
+  .modal-close { width: 44px; height: 44px; }
+}

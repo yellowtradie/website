@@ -231,3 +231,186 @@ const FORM_ENDPOINT = "https://formspree.io/f/xrpbqypw";
 
   clip.load();
 })();
+
+/* The "See it in 30 seconds" carousel.
+ *
+ * Five real app screens. On a phone they are swiped; on a desktop they can be
+ * paged with the numbered dots. It advances on its own every few seconds,
+ * which is the looping demo, and stops for good the moment somebody touches
+ * it. Nothing moves at all if the person has asked their device for less
+ * motion, and nothing moves while the carousel is off screen.
+ */
+(function () {
+  const carousel = document.querySelector("[data-carousel]");
+  if (!carousel) return;
+
+  const track = carousel.querySelector(".carousel-track");
+  const slides = Array.prototype.slice.call(carousel.querySelectorAll("[data-slide]"));
+  const dots = Array.prototype.slice.call(carousel.querySelectorAll("[data-slide-to]"));
+  if (!track || slides.length < 2 || !dots.length) return;
+
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const DELAY = 4500;
+
+  let current = 0;
+  let stopped = false;
+  let timer = null;
+
+  function offsetFor(index) {
+    return slides[index].offsetLeft - slides[0].offsetLeft;
+  }
+
+  function paint() {
+    dots.forEach(function (dot, i) {
+      dot.classList.toggle("is-current", i === current);
+      dot.setAttribute("aria-selected", i === current ? "true" : "false");
+    });
+  }
+
+  function goTo(index, smooth) {
+    current = (index + slides.length) % slides.length;
+    track.scrollTo({ left: offsetFor(current), behavior: smooth ? "smooth" : "auto" });
+    paint();
+  }
+
+  function start() {
+    if (timer || stopped || reduced) return;
+    timer = window.setInterval(function () {
+      if (!document.hidden) goTo(current + 1, true);
+    }, DELAY);
+  }
+
+  function stop() {
+    if (timer) { window.clearInterval(timer); timer = null; }
+  }
+
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) start();
+        else stop();
+      });
+    }, { threshold: 0.35 }).observe(carousel);
+  } else {
+    start();
+  }
+
+  /* One touch and it is the person's carousel, not ours. */
+  ["pointerdown", "touchstart", "wheel", "keydown"].forEach(function (type) {
+    carousel.addEventListener(type, function () { stopped = true; stop(); }, { passive: true });
+  });
+
+  dots.forEach(function (dot) {
+    dot.addEventListener("click", function () {
+      goTo(Number(dot.getAttribute("data-slide-to")), true);
+    });
+  });
+
+  /* Keep the dots honest when the track is swiped by hand. */
+  let settle = null;
+  track.addEventListener("scroll", function () {
+    if (settle) return;
+    settle = window.setTimeout(function () {
+      settle = null;
+      let nearest = 0;
+      let best = Infinity;
+      slides.forEach(function (slide, i) {
+        const distance = Math.abs(offsetFor(i) - track.scrollLeft);
+        if (distance < best) { best = distance; nearest = i; }
+      });
+      if (nearest !== current) { current = nearest; paint(); }
+    }, 120);
+  }, { passive: true });
+
+  window.addEventListener("resize", function () { goTo(current, false); });
+})();
+
+/* The missed call calculator.
+ *
+ * Two sliders and one sum. Every figure is the person's own: nothing here is
+ * an estimate from us, and the page says so underneath. The output is written
+ * from two numbers, so there is nothing to parse and nothing to trust.
+ */
+(function () {
+  const calc = document.querySelector("[data-calc]");
+  if (!calc) return;
+
+  const calls = calc.querySelector("[data-calc-calls]");
+  const worth = calc.querySelector("[data-calc-worth]");
+  const callsOut = calc.querySelector("[data-calc-calls-out]");
+  const worthOut = calc.querySelector("[data-calc-worth-out]");
+  const result = calc.querySelector("[data-calc-result]");
+  if (!calls || !worth || !result) return;
+
+  const pounds = new Intl.NumberFormat("en-GB", {
+    style: "currency", currency: "GBP", maximumFractionDigits: 0,
+  });
+
+  function update() {
+    const missed = Number(calls.value);
+    const value = Number(worth.value);
+
+    callsOut.textContent = String(missed);
+    worthOut.textContent = pounds.format(value);
+
+    if (missed === 0) {
+      result.innerHTML =
+        "You do not miss calls. When one slips through on a busy day, the message is still taken.";
+      return;
+    }
+
+    result.innerHTML = "That is about <strong>" + pounds.format(missed * value * 52) +
+      "</strong> a year in jobs that went to whoever picked up first.";
+  }
+
+  calls.addEventListener("input", update);
+  worth.addEventListener("input", update);
+  update();
+})();
+
+/* The button under his thumb.
+ *
+ * Phones only (the stylesheet owns that rule). It appears once the hero is
+ * behind you and goes away again when you scroll back up. It never appears
+ * while the preview banner is on screen, because two bars stacked at the
+ * bottom of a phone is worse than none.
+ */
+(function () {
+  const bar = document.querySelector("[data-sticky-cta]");
+  const hero = document.querySelector(".hero");
+  if (!bar || !hero) return;
+
+  const previewBanner = document.querySelector("[data-preview-banner]");
+  if (previewBanner && !previewBanner.hidden) return;
+
+  /* Read the hero's own bottom edge rather than an observer's ratio. An
+     element that has just left the top of the screen reports an intersection
+     of exactly zero, which is the one case an observer gets vague about. */
+  let shown = false;
+  let queued = false;
+
+  function update() {
+    queued = false;
+    const past = hero.getBoundingClientRect().bottom <= 80;
+    if (past === shown) return;
+    shown = past;
+
+    if (past) {
+      bar.hidden = false;
+      window.requestAnimationFrame(function () { bar.classList.add("is-visible"); });
+    } else {
+      bar.classList.remove("is-visible");
+      bar.hidden = true;
+    }
+  }
+
+  function onScroll() {
+    if (queued) return;
+    queued = true;
+    window.requestAnimationFrame(update);
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  update();
+})();

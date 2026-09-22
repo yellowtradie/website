@@ -17,12 +17,12 @@
 <meta property="og:url" content="https://yellowtradie.com/">
 <meta property="og:image" content="https://yellowtradie.com/assets/hero.jpg?v=2">
 <meta name="twitter:card" content="summary_large_image">
-<meta property="article:modified_time" content="2026-09-22T13:18:00+01:00">
+<meta property="article:modified_time" content="2026-09-22T15:00:00+01:00">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
 
@@ -52,8 +52,12 @@
 
 <main>
 
-  <!-- Hero: structure copied from powerednow.com, colours and type from DeWalt -->
-  <section class="hero">
+  <!-- =====================================================================
+       Screen 1: Hero. Headline, one line under it, one button, one promise.
+       The photograph is Pete's own, feathered into the black on its left,
+       top and bottom edges.
+       ===================================================================== -->
+  <section class="hero" id="hero">
     <div class="hero-media" aria-hidden="true">
       <img src="assets/hero.jpg?v=2" width="1344" height="768" alt="" fetchpriority="high">
     </div>
@@ -61,38 +65,132 @@
     <div class="wrap hero-inner">
       <div class="hero-copy">
         <h1 class="display">Run your whole trade business from your phone</h1>
-        <p class="lede">YellowTradie is a phone app for one person running their own trade. It takes the message when you miss a call, writes the quote from what you say, books the job in, invoices it, chases the money and keeps the figures for your quarterly tax.</p>
+        <p class="lede hero-lede">The whole job on one phone. Missed calls, quotes, invoices and the figures for your quarterly tax.</p>
         <div class="hero-actions">
           <a class="btn btn--lg btn--solid" href="/#early-access" data-open-signup>Get early access</a>
         </div>
+        <p class="hero-note">Free while we build. No card, no commitment.</p>
       </div>
     </div>
   </section>
 
-  <!-- The problem -->
-  <section class="section">
+  <!-- =====================================================================
+       Screen 2: The pain strip. Three cards, swipeable on a phone, one line
+       each. No invented figures: the numbers on this page come from the
+       person using the calculator further down, not from us.
+       ===================================================================== -->
+  <section class="section" id="pains">
     <div class="wrap">
       <p class="eyebrow tertiary">The problem</p>
       <h2 class="display">The paperwork starts when the job ends</h2>
-      <div class="grid grid--2" style="margin-top: 24px;">
-        <p class="lede muted">You finish the job, drive home, eat, then sit down and write a quote from memory. Half the detail is gone. The price is a guess. The customer waits two days for a number and rings someone else.</p>
-        <p class="lede muted">You miss a call while you are up a ladder and never ring back. A quote sits unanswered for a week. An invoice goes unpaid because chasing it is the worst hour of your week.</p>
-      </div>
+
+      <ul class="pains">
+        <li class="pain">
+          <h3 class="display display--xs">Missed the call?</h3>
+          <p>You are up a ladder or under a sink when the phone rings. That job goes to whoever picked up first.</p>
+        </li>
+        <li class="pain">
+          <h3 class="display display--xs">Guessing at 8pm?</h3>
+          <p>Writing the quote from memory after dinner. Half the detail is gone and the price is a guess.</p>
+        </li>
+        <li class="pain">
+          <h3 class="display display--xs">Chasing your own money?</h3>
+          <p>Ringing customers on a Friday afternoon to ask for what you are owed. The worst hour of the week.</p>
+        </li>
+      </ul>
     </div>
   </section>
 
-  <!-- What it does: the whole job, one phone -->
-  <section class="section section--grey" id="how">
+  <!-- =====================================================================
+       Screen 3: See it in 30 seconds. Five real app screens in a swipeable
+       carousel that advances on its own until you touch it. Then one tap
+       for the plain-English walkthrough.
+       ===================================================================== -->
+  <section class="section section--grey" id="screens">
+    <div class="wrap">
+      <p class="eyebrow tertiary">The screens</p>
+      <h2 class="display">See it in 30 seconds</h2>
+      <p class="lede muted section-lede">Five shots of the real app, running on sample data. Swipe through, or let it play.</p>
+
+      <div class="carousel" data-carousel>
+        <ul class="carousel-track">
+          <li class="slide shot" data-slide>
+            <img src="assets/app-voice.png" width="964" height="860" loading="eager" decoding="async" alt="The quote review screen in YellowTradie, showing materials spoken on site turned into line items with quantities, unit prices and totals.">
+            <div class="slide-copy">
+              <h3 class="display display--xs">The quote writes itself</h3>
+              <p>Say what the job needs. Every material comes out with a quantity, a unit price and a total, at your rates.</p>
+            </div>
+          </li>
+          <li class="slide shot" data-slide>
+            <img src="assets/app-chase.png" width="975" height="595" loading="lazy" decoding="async" alt="The chase list in YellowTradie, showing an invoice that is 17 days late with the customer name, the invoice number, the amount owed and a Chase button.">
+            <div class="slide-copy">
+              <h3 class="display display--xs">Who owes you money</h3>
+              <p>The late invoices and the quiet quotes sit at the top, with the reason each one is there down to the day.</p>
+            </div>
+          </li>
+          <li class="slide shot" data-slide>
+            <img src="assets/app-invoice.png" width="964" height="735" loading="lazy" decoding="async" alt="An invoice in YellowTradie marked Overdue, showing the issue date, the due date, the VAT breakdown, the amount paid and the balance left.">
+            <div class="slide-copy">
+              <h3 class="display display--xs">An invoice that looks the part</h3>
+              <p>Your business details, the VAT broken out, the payment history and the balance at the bottom.</p>
+            </div>
+          </li>
+          <li class="slide shot" data-slide>
+            <img src="assets/app-tax.png" width="964" height="875" loading="lazy" decoding="async" alt="The quarterly tax report in YellowTradie, showing money in, money out, taxable profit, the tax to set aside and the days left in the HMRC quarter.">
+            <div class="slide-copy">
+              <h3 class="display display--xs">Your quarter, already worked out</h3>
+              <p>Money in, money out, taxable profit and the tax to set aside, for the quarter you are in.</p>
+            </div>
+          </li>
+          <li class="slide shot" data-slide>
+            <img src="assets/app-customer.png" width="1170" height="1700" loading="lazy" decoding="async" alt="The quote page the customer opens on their own phone, showing the work included and the buttons to approve the quote, ask for a change or say no.">
+            <div class="slide-copy">
+              <h3 class="display display--xs">Your customer says yes on their phone</h3>
+              <p>They open a link, read the quote and approve it, ask for a change or say no. The answer lands back in the app with their words and the date.</p>
+            </div>
+          </li>
+        </ul>
+
+        <div class="carousel-dots" data-carousel-dots role="tablist" aria-label="App screens">
+          <button type="button" class="dot is-current" data-slide-to="0" role="tab" aria-selected="true"><span class="sr-only">Quote review</span>1</button>
+          <button type="button" class="dot" data-slide-to="1" role="tab" aria-selected="false"><span class="sr-only">Chase list</span>2</button>
+          <button type="button" class="dot" data-slide-to="2" role="tab" aria-selected="false"><span class="sr-only">Invoice</span>3</button>
+          <button type="button" class="dot" data-slide-to="3" role="tab" aria-selected="false"><span class="sr-only">Quarterly report</span>4</button>
+          <button type="button" class="dot" data-slide-to="4" role="tab" aria-selected="false"><span class="sr-only">Customer quote page</span>5</button>
+        </div>
+      </div>
+
+      <details class="reveal reveal--wide">
+        <summary><span class="reveal-title">What you just saw</span></summary>
+        <div class="reveal-body">
+          <p>A message is taken when you cannot pick up, and it reaches you by email or text. You talk the job through standing in the room. A tidy quote with your logo goes out before you have driven off. The invoice is built from the job you already did. The quarterly figures add themselves up. That is the whole week.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       Screen 4: The job lifecycle. Six numbered stops, one line each, and
+       every stop opens to the detail. The words stay on the page for
+       search engines; the scroll does not.
+       ===================================================================== -->
+  <section class="section" id="how">
     <div class="wrap">
       <p class="eyebrow tertiary">What it does</p>
-      <h2 class="display">One phone does the lot</h2>
-      <p class="lede muted" style="margin-top: 16px; max-width: 46em;">YellowTradie is not a quoting app with a few extras bolted on. It follows the way a one man business actually runs, from the missed call to the money in the bank and the quarter closed off.</p>
+      <h2 class="display">From the first ring to the tax done</h2>
+      <p class="lede muted section-lede">Six stops, the way a one man job actually runs. Tap any one to see how it works.</p>
 
-      <div class="feature-groups">
+      <div class="steps">
 
-        <div class="feature-group">
-          <h3 class="display display--xs group-title">Win the work</h3>
-          <div class="grid grid--3">
+        <details class="step">
+          <summary class="step-summary">
+            <span class="step-num" aria-hidden="true">1</span>
+            <span class="step-head">
+              <h3 class="display display--xs group-title">Catch it</h3>
+              <span class="step-line">The missed call is taken as a message, before you climb down.</span>
+            </span>
+          </summary>
+          <div class="step-body">
             <div class="card">
               <h4 class="display display--xs">Catch the missed call</h4>
               <p>Up a ladder when the phone rings, the caller can leave a message. It comes to you written out and sorted, by email or text, so the job does not walk off to whoever picked up first. If they do not leave one, they get a short text back: 'Up a ladder right now, give me 10 mins and I will ring you back.' That is written the way you would say it, so it does not read like an office.</p>
@@ -101,16 +199,18 @@
               <h4 class="display display--xs">Every enquiry in one list</h4>
               <p>Missed calls, messages and new leads land in one inbox. Urgent ones are marked, so you know who to ring first when your hands are free.</p>
             </div>
-            <div class="card">
-              <h4 class="display display--xs">Know when the quote is read</h4>
-              <p>Send a quote and see when it was opened, approved, changed or turned down. No more wondering whether it landed.</p>
-            </div>
           </div>
-        </div>
+        </details>
 
-        <div class="feature-group">
-          <h3 class="display display--xs group-title">Quote it</h3>
-          <div class="grid grid--3">
+        <details class="step">
+          <summary class="step-summary">
+            <span class="step-num" aria-hidden="true">2</span>
+            <span class="step-head">
+              <h3 class="display display--xs group-title">Quote it</h3>
+              <span class="step-line">Say it out loud. A priced PDF goes out in a minute.</span>
+            </span>
+          </summary>
+          <div class="step-body">
             <div class="card">
               <h4 class="display display--xs">Talk the job through</h4>
               <p>Stand in the room and say what needs doing. YellowTradie writes it down and turns it into line items with prices.</p>
@@ -124,11 +224,17 @@
               <p>Send a tidy PDF by text, WhatsApp or email, with your logo, your terms and your payment details on it. Re-price a job and the old version stays on the job.</p>
             </div>
           </div>
-        </div>
+        </details>
 
-        <div class="feature-group">
-          <h3 class="display display--xs group-title">Plan the week</h3>
-          <div class="grid grid--3">
+        <details class="step">
+          <summary class="step-summary">
+            <span class="step-num" aria-hidden="true">3</span>
+            <span class="step-head">
+              <h3 class="display display--xs group-title">Book it</h3>
+              <span class="step-line">In the diary while you are still standing with them.</span>
+            </span>
+          </summary>
+          <div class="step-body">
             <div class="card">
               <h4 class="display display--xs">Your diary on your phone</h4>
               <p>Book the job in while you are still standing with the customer. The calendar shows busy days, jobs that run over more than one day and what is coming next.</p>
@@ -142,11 +248,17 @@
               <p>Tap to ring the customer, send them a message or open the address in your maps app. No copying numbers out of a text thread.</p>
             </div>
           </div>
-        </div>
+        </details>
 
-        <div class="feature-group">
-          <h3 class="display display--xs group-title">Run the job</h3>
-          <div class="grid grid--3">
+        <details class="step">
+          <summary class="step-summary">
+            <span class="step-num" aria-hidden="true">4</span>
+            <span class="step-head">
+              <h3 class="display display--xs group-title">Run it</h3>
+              <span class="step-line">Photos, notes, costs and hours. All on the job.</span>
+            </span>
+          </summary>
+          <div class="step-body">
             <div class="card">
               <h4 class="display display--xs">Photos and notes on the job</h4>
               <p>Snap the before and after. Dictate a note on site instead of writing it on the back of your hand. It all stays with the job.</p>
@@ -160,11 +272,17 @@
               <p>For the jobs you never quoted, log your start and finish times. The hours are priced at your rate and pulled into the invoice.</p>
             </div>
           </div>
-        </div>
+        </details>
 
-        <div class="feature-group">
-          <h3 class="display display--xs group-title">Get paid</h3>
-          <div class="grid grid--3">
+        <details class="step">
+          <summary class="step-summary">
+            <span class="step-num" aria-hidden="true">5</span>
+            <span class="step-head">
+              <h3 class="display display--xs group-title">Get paid</h3>
+              <span class="step-line">Invoice in a tap, with the chasing already written.</span>
+            </span>
+          </summary>
+          <div class="step-body">
             <div class="card">
               <h4 class="display display--xs">Invoice it in a minute</h4>
               <p>The job is already in the app. Turn it into an invoice and send it as a PDF with your bank details, your terms and the amount owed.</p>
@@ -178,13 +296,19 @@
               <p>The app puts the late invoices and the quiet quotes at the top and writes the reminder for you. Check it, tap send, done.</p>
             </div>
           </div>
-        </div>
+        </details>
 
-        <div class="feature-group">
-          <h3 class="display display--xs group-title">Tax and the accountant</h3>
-          <div class="grid grid--3">
+        <details class="step">
+          <summary class="step-summary">
+            <span class="step-num" aria-hidden="true">6</span>
+            <span class="step-head">
+              <h3 class="display display--xs group-title">Tax sorted</h3>
+              <span class="step-line">The quarterly figures, ready when you need them.</span>
+            </span>
+          </summary>
+          <div class="step-body">
             <div class="card">
-              <h4 class="display display--xs">The quarterly tax return, covered</h4>
+              <h4 class="display display--xs">The quarterly figures, covered</h4>
               <p>Making Tax Digital means reporting your income every quarter. YellowTradie keeps money in, money out, your taxable profit and the tax to set aside, with the days left in the quarter.</p>
             </div>
             <div class="card">
@@ -196,89 +320,35 @@
               <p>Set your VAT rate once and it goes on every quote and invoice. The report shows what you owe HMRC and what you can claim back.</p>
             </div>
           </div>
-        </div>
+        </details>
 
-        <div class="feature-group">
-          <h3 class="display display--xs group-title">Everything else</h3>
-          <div class="grid grid--3">
-            <div class="card">
-              <h4 class="display display--xs">Set up in four steps</h4>
-              <p>Your trade, your business name, your rates, your bank details. Five minutes and it is ready to quote.</p>
-            </div>
-            <div class="card">
-              <h4 class="display display--xs">Your data stays on your phone</h4>
-              <p>Your jobs, customers and prices live in the app on your device. The screens on this page use sample data only.</p>
-            </div>
-            <div class="card">
-              <h4 class="display display--xs">Simple on purpose</h4>
-              <p>Every screen does one job. If you can send a text and take a photo, you can run this. That is the whole test we build against.</p>
-            </div>
+      </div>
+
+      <div class="odd-jobs">
+        <h3 class="display display--xs">Everything else</h3>
+        <div class="grid grid--2">
+          <div class="card">
+            <h4 class="display display--xs">Set up in four steps</h4>
+            <p>Your trade, your business name, your rates, your bank details. Five minutes and it is ready to quote.</p>
+          </div>
+          <div class="card">
+            <h4 class="display display--xs">Simple on purpose</h4>
+            <p>Every screen does one job. If you can send a text and take a photo, you can run this. That is the whole test we build against.</p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- Zoomed screens -->
-  <section class="section" id="screens">
-    <div class="wrap">
-      <p class="eyebrow tertiary">The screens</p>
-      <h2 class="display">Have a proper look</h2>
-      <p class="lede muted" style="margin-top: 16px; max-width: 44em;">Zoomed in on the parts you will use every day. This is the app running with sample data.</p>
-
-      <div class="shots">
-
-        <figure class="shot">
-          <img src="assets/app-chase.png" width="975" height="595" alt="The chase list in YellowTradie, showing an invoice that is 17 days late with the customer name, the invoice number, the amount owed and a Chase button.">
-          <figcaption>
-            <h3 class="display display--xs">Who owes you money</h3>
-            <p class="muted">The late invoices and the quiet quotes sit at the top. The app tells you why each one is there, down to the day, and writes the reminder for you.</p>
-          </figcaption>
-        </figure>
-
-        <figure class="shot">
-          <img src="assets/app-voice.png" width="964" height="860" alt="The quote review screen in YellowTradie, showing materials spoken on site turned into line items with quantities, unit prices and totals.">
-          <figcaption>
-            <h3 class="display display--xs">The quote writes itself</h3>
-            <p class="muted">Say what the job needs. Every material comes out with a quantity, a unit price and a total, at your rates. Check it and send it.</p>
-          </figcaption>
-        </figure>
-
-        <figure class="shot">
-          <img src="assets/app-tax.png" width="964" height="875" alt="The quarterly tax report in YellowTradie, showing money in, money out, taxable profit, the tax to set aside and the days left in the HMRC quarter.">
-          <figcaption>
-            <h3 class="display display--xs">Your quarter, already worked out</h3>
-            <p class="muted">Money in, money out, taxable profit and the tax pot, for the HMRC quarter you are in. It counts money that has landed, not invoices you have sent.</p>
-          </figcaption>
-        </figure>
-
-        <figure class="shot">
-          <img src="assets/app-invoice.png" width="964" height="735" alt="An invoice in YellowTradie marked Overdue, showing the issue date, the due date, the VAT breakdown, the amount paid and the balance left.">
-          <figcaption>
-            <h3 class="display display--xs">An invoice that looks the part</h3>
-            <p class="muted">Your business details, the VAT broken out, the payment history and the balance at the bottom. Sent as a PDF your customer can pay from.</p>
-          </figcaption>
-        </figure>
-
-        <figure class="shot shot--phone">
-          <img src="assets/app-customer.png" width="1170" height="1700" alt="The quote page the customer opens on their own phone, showing the work included and the buttons to approve the quote, ask for a change or say no.">
-          <figcaption>
-            <h3 class="display display--xs">Your customer says yes on their phone</h3>
-            <p class="muted">They open a link, read the quote and approve it, ask for a change or say no. The answer lands back in the app, with their words and the date.</p>
-          </figcaption>
-        </figure>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Why it is different -->
+  <!-- =====================================================================
+       Screen 5: The old way against YellowTradie. Five rows, a cross and a
+       tick, read in two seconds.
+       ===================================================================== -->
   <section class="section section--dark" id="why">
     <div class="wrap">
       <p class="eyebrow eyebrow--yellow">Why it is different</p>
       <h2 class="display" style="color: #fff;">Built for one person, not an office</h2>
-      <p class="lede muted" style="margin-top: 16px; max-width: 46em;">No dispatcher. No office login. No shared calendar. YellowTradie is for the person doing the work and running the business, usually at the same time and usually in the rain. Sparky, chippy, plumber or joiner, if you work on your own it is built for you.</p>
+      <p class="lede muted section-lede">No dispatcher. No office login. No shared calendar. YellowTradie is for the person doing the work and running the business, usually at the same time and usually in the rain. Sparky, chippy, plumber or joiner, if you work on your own it is built for you.</p>
 
       <div class="table-scroll" style="margin-top: 32px;">
         <table class="compare">
@@ -286,55 +356,133 @@
           <thead>
             <tr>
               <th scope="col">The job</th>
-              <th scope="col">Paper and WhatsApp</th>
+              <th scope="col">The old way</th>
               <th scope="col">YellowTradie</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th scope="row">The phone rings on site</th>
-              <td>You ring back later, if you remember.</td>
-              <td>The caller leaves a message and it reaches you written out, by email or text. No message, and they get a short text back saying you will ring them shortly.</td>
+              <th scope="row">Missed calls</th>
+              <td><span class="mark mark--no" aria-hidden="true"></span>Gone to a rival</td>
+              <td><span class="mark mark--yes" aria-hidden="true"></span>A message taken and sent to you</td>
             </tr>
             <tr>
-              <th scope="row">Writing the quote</th>
-              <td>At the kitchen table, from memory, that night.</td>
-              <td>On site, from what you say, before you drive off.</td>
+              <th scope="row">Quotes</th>
+              <td><span class="mark mark--no" aria-hidden="true"></span>Midnight, from memory</td>
+              <td><span class="mark mark--yes" aria-hidden="true"></span>Spoken on site, sent in a minute</td>
             </tr>
             <tr>
               <th scope="row">Knowing if it was read</th>
-              <td>You ring and ask.</td>
-              <td>You see when it was opened, approved or changed.</td>
+              <td><span class="mark mark--no" aria-hidden="true"></span>You ring and ask</td>
+              <td><span class="mark mark--yes" aria-hidden="true"></span>You see when it was opened or changed</td>
             </tr>
             <tr>
-              <th scope="row">Chasing the money</th>
-              <td>You remember eventually, and it feels awkward.</td>
-              <td>The late ones are at the top and the message is already written.</td>
+              <th scope="row">Chasing money</th>
+              <td><span class="mark mark--no" aria-hidden="true"></span>Awkward, ignored</td>
+              <td><span class="mark mark--yes" aria-hidden="true"></span>The reminder is already written</td>
             </tr>
             <tr>
-              <th scope="row">The quarterly tax</th>
-              <td>A shoebox of receipts and a rush at the deadline.</td>
-              <td>Money in, money out and the tax to set aside, all quarter.</td>
+              <th scope="row">Receipts</th>
+              <td><span class="mark mark--no" aria-hidden="true"></span>Shoebox</td>
+              <td><span class="mark mark--yes" aria-hidden="true"></span>Snapped on the job</td>
+            </tr>
+            <tr>
+              <th scope="row">Quarterly tax</th>
+              <td><span class="mark mark--no" aria-hidden="true"></span>Panic in week 13</td>
+              <td><span class="mark mark--yes" aria-hidden="true"></span>The figures are ready every day</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <p class="lede muted" style="margin-top: 24px; max-width: 46em;">If you run a team and need to hand jobs out to your lads, this is not for you yet. Tell us if that is what you need, it is useful to know.</p>
+      <p class="lede muted section-lede" style="margin-top: 24px;">If you run a team and need to hand jobs out to your lads, this is not for you yet. Tell us if that is what you need, it is useful to know.</p>
     </div>
   </section>
 
-  <!-- Signup: DeWalt's yellow newsletter band, between two thick black bars -->
+  <!-- =====================================================================
+       Screen 6: Trust badges. Four, one line each. No HMRC badge, because
+       the app does not file anything with HMRC and never claims to.
+       ===================================================================== -->
+  <section class="section" id="trust">
+    <div class="wrap">
+      <p class="eyebrow tertiary">Straight with you</p>
+      <h2 class="display">Built for how it works over here</h2>
+
+      <ul class="badges">
+        <li class="badge">
+          <h3 class="display display--xs">Ready for the quarterly reports</h3>
+          <p>Money in, money out, your taxable profit and the tax to set aside, for the quarter you are in.</p>
+        </li>
+        <li class="badge">
+          <h3 class="display display--xs">Plays nice with your accountant</h3>
+          <p>Connect Xero, QuickBooks or FreeAgent in one tap, or send the quarter across as a spreadsheet.</p>
+        </li>
+        <li class="badge">
+          <h3 class="display display--xs">VAT-aware</h3>
+          <p>Registered or not, the numbers come out right on every quote and invoice.</p>
+        </li>
+        <li class="badge">
+          <h3 class="display display--xs">Your data, yours</h3>
+          <p>Your jobs, customers and prices live in the app on your phone.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       Screen 7: The missed call calculator. Two sliders, their own numbers,
+       and the sum in black and white. Nothing here is our estimate; the
+       figures are the ones the person sets themselves.
+       ===================================================================== -->
+  <section class="section section--grey" id="calculator">
+    <div class="wrap calc-grid">
+      <div>
+        <p class="eyebrow tertiary">Quick sum</p>
+        <h2 class="display">What a missed call costs you</h2>
+        <p class="lede muted section-lede">Two sliders. Your numbers, not ours. Whatever comes out, that is the year you are having right now.</p>
+      </div>
+
+      <div class="calc" data-calc>
+        <div class="calc-field">
+          <label for="calc-calls">Calls you miss in a week</label>
+          <div class="calc-row">
+            <input type="range" id="calc-calls" min="0" max="10" step="1" value="1" data-calc-calls>
+            <output class="calc-value" for="calc-calls" data-calc-calls-out>1</output>
+          </div>
+        </div>
+
+        <div class="calc-field">
+          <label for="calc-worth">What a job is worth to you</label>
+          <div class="calc-row">
+            <input type="range" id="calc-worth" min="50" max="1000" step="10" value="150" data-calc-worth>
+            <output class="calc-value" for="calc-worth" data-calc-worth-out>&pound;150</output>
+          </div>
+        </div>
+
+        <p class="calc-result" role="status" aria-live="polite" data-calc-result>
+          That is about <strong>&pound;7,800</strong> a year in jobs that went to whoever picked up first.
+        </p>
+        <p class="calc-note">Your two numbers, worked out over 52 weeks.</p>
+
+        <a class="btn btn--lg btn--solid" href="/#early-access" data-open-signup>Get early access</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       Screen 8: Early access. Three reasons and one button. The form itself
+       stays in the modal, with the four fields Pete locked.
+       ===================================================================== -->
   <section class="signup" id="early-access">
     <div class="wrap signup-grid">
       <div>
         <p class="eyebrow">Early access</p>
         <h2 class="display">Stop doing the paperwork on your own time</h2>
-        <p class="lede">Join the early access list. It is completely free to use while we build it.</p>
+        <p class="lede">Join the early access list. It is free to use the whole time we are building it.</p>
         <ul class="signup-reasons">
-          <li><strong>Get your evenings back.</strong> Finish the job, send the invoice, clock off.</li>
-          <li><strong>Lock in a founder's rate.</strong> When we launch, your price is locked in for life. It will cost less than one missed job.</li>
-          <li><strong>No tech-bro rubbish.</strong> Tell us what you actually need on the tools, and we will build it.</li>
+          <li><strong>Free while we build it.</strong> Nothing to pay until it launches, and no card needed.</li>
+          <li><strong>A founder's rate locked in.</strong> When it goes paid, your price never rises. It will cost less than one missed call-out.</li>
+          <li><strong>You steer it.</strong> Tell us what gets in the way on a working day, and we build around it.</li>
         </ul>
       </div>
 
@@ -357,62 +505,66 @@
     </div>
   </section>
 
-  <!-- FAQ -->
+  <!-- =====================================================================
+       Screen 9: The questions, as an accordion. Every answer is still on
+       the page in full, so the search engines and the AI assistants read
+       the same words a person does, one tap away.
+       ===================================================================== -->
   <section class="section" id="faq">
     <div class="wrap">
       <p class="eyebrow tertiary">Questions</p>
       <h2 class="display">Straight answers</h2>
 
-      <dl style="margin: 32px 0 0;">
-        <div class="faq-item">
-          <dt class="display display--xs">What does YellowTradie do?</dt>
-          <dd>It runs a one man trade business from a phone. It catches missed calls, turns what you say into a priced quote, books the job into your diary, keeps the photos and costs, invoices the job, chases what is late and works out the figures for your quarterly tax.</dd>
-        </div>
-        <div class="faq-item">
-          <dt class="display display--xs">Do I need to be good with phones?</dt>
-          <dd>If you can send a text and take a photo, you can use this. Every screen does one job. That is the whole test we build against.</dd>
-        </div>
-        <div class="faq-item">
-          <dt class="display display--xs">Does it work on iPhone?</dt>
-          <dd>Yes. YellowTradie is built for Android and iPhone.</dd>
-        </div>
-        <div class="faq-item">
-          <dt class="display display--xs">How does quoting by voice work?</dt>
-          <dd>Press record and talk through the job the way you would explain it to a mate. The app writes it down, sorts it into materials and labour, prices it at your rates and shows you the quote to check before you send it.</dd>
-        </div>
-        <div class="faq-item">
-          <dt class="display display--xs">What happens when I miss a call on site?</dt>
-          <dd>The caller can leave a voice message. It is written out and sorted so the urgent ones come first, and it reaches you by email or text. If they do not leave a message, they get a short text saying you will ring them back shortly. The text is plain and short, the way you would say it, so it does not read like an office.</dd>
-        </div>
-        <div class="faq-item">
-          <dt class="display display--xs">Can I take a deposit and part payments?</dt>
-          <dd>Yes. Ask for a deposit up front and the balance when the work is done. Every payment is logged against the invoice, so the balance is always correct.</dd>
-        </div>
-        <div class="faq-item">
-          <dt class="display display--xs">What message does it send when an invoice is late?</dt>
-          <dd>A short, polite reminder with the invoice number, the job, the amount outstanding and your bank details. You can write your own wording in the settings, and nothing is sent until you tap send.</dd>
-        </div>
-        <div class="faq-item">
-          <dt class="display display--xs">Does it work with QuickBooks, Xero or FreeAgent?</dt>
-          <dd>Yes. Connect Xero, QuickBooks or FreeAgent from the app in one tap and your income, your expenses and the quarter go straight across. If your accountant works from a spreadsheet instead, send the quarter as one of those.</dd>
-        </div>
-        <div class="faq-item">
-          <dt class="display display--xs">Where does my customer's information live?</dt>
-          <dd>On your phone. Your jobs, prices and customers stay in the app on your device.</dd>
-        </div>
-        <div class="faq-item">
-          <dt class="display display--xs">What does it cost?</dt>
-          <dd>Nothing during early access. Pricing is not fixed yet, but it will cost less than a single missed call-out, and early users get a founder's rate locked in when it goes paid. We will tell you before anything costs money.</dd>
-        </div>
-        <div class="faq-item">
-          <dt class="display display--xs">When do I get in?</dt>
-          <dd>We are letting people in a few at a time so we can answer every message and use what you tell us. Leave your email and we will come to you.</dd>
-        </div>
-        <div class="faq-item">
-          <dt class="display display--xs">Is it built for teams or for one person?</dt>
-          <dd>One person. One phone. There is no user list to manage and no office login. If you need to allocate jobs across a team, this is not for you yet.</dd>
-        </div>
-      </dl>
+      <div class="faqs">
+        <details class="faq-item">
+          <summary><h3 class="display display--xs">What does YellowTradie do?</h3></summary>
+          <p>It runs a one man trade business from a phone. It catches missed calls, turns what you say into a priced quote, books the job into your diary, keeps the photos and costs, invoices the job, chases what is late and works out the figures for your quarterly tax.</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3 class="display display--xs">Do I need to be good with phones?</h3></summary>
+          <p>If you can send a text and take a photo, you can use this. Every screen does one job. That is the whole test we build against.</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3 class="display display--xs">Does it work on iPhone?</h3></summary>
+          <p>Yes. YellowTradie is built for Android and iPhone.</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3 class="display display--xs">How does quoting by voice work?</h3></summary>
+          <p>Press record and talk through the job the way you would explain it to a mate. The app writes it down, sorts it into materials and labour, prices it at your rates and shows you the quote to check before you send it.</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3 class="display display--xs">What happens when I miss a call on site?</h3></summary>
+          <p>The caller can leave a voice message. It is written out and sorted so the urgent ones come first, and it reaches you by email or text. If they do not leave a message, they get a short text saying you will ring them back shortly. The text is plain and short, the way you would say it, so it does not read like an office.</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3 class="display display--xs">Can I take a deposit and part payments?</h3></summary>
+          <p>Yes. Ask for a deposit up front and the balance when the work is done. Every payment is logged against the invoice, so the balance is always correct.</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3 class="display display--xs">What message does it send when an invoice is late?</h3></summary>
+          <p>A short, polite reminder with the invoice number, the job, the amount outstanding and your bank details. You can write your own wording in the settings, and nothing is sent until you tap send.</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3 class="display display--xs">Does it work with QuickBooks, Xero or FreeAgent?</h3></summary>
+          <p>Yes. Connect Xero, QuickBooks or FreeAgent from the app in one tap and your income, your expenses and the quarter go straight across. If your accountant works from a spreadsheet instead, send the quarter as one of those.</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3 class="display display--xs">Where does my customer's information live?</h3></summary>
+          <p>On your phone. Your jobs, prices and customers stay in the app on your device.</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3 class="display display--xs">What does it cost?</h3></summary>
+          <p>Nothing during early access. Pricing is not fixed yet, but it will cost less than a single missed call-out, and early users get a founder's rate locked in when it goes paid. We will tell you before anything costs money.</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3 class="display display--xs">When do I get in?</h3></summary>
+          <p>We are letting people in a few at a time so we can answer every message and use what you tell us. Leave your email and we will come to you.</p>
+        </details>
+        <details class="faq-item">
+          <summary><h3 class="display display--xs">Is it built for teams or for one person?</h3></summary>
+          <p>One person. One phone. There is no user list to manage and no office login. If you need to allocate jobs across a team, this is not for you yet.</p>
+        </details>
+      </div>
     </div>
   </section>
 
@@ -469,6 +621,14 @@
     </div>
   </div>
 </footer>
+
+<!-- The button under his thumb. Phones only, and only once the hero is behind
+     you. On a desktop it is never shown, because the header button is always
+     in reach there. -->
+<div class="sticky-cta" data-sticky-cta hidden>
+  <a class="btn btn--lg btn--solid" href="/#early-access" data-open-signup>Get early access</a>
+  <span class="sticky-note">Free while we build</span>
+</div>
 
 <!-- Signup modal. Every "Get early access" control on the page opens this. -->
 <div class="modal" data-signup-modal hidden>
