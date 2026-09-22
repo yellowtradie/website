@@ -7,10 +7,10 @@ No build step, no framework, no dependencies. Drop the folder on any host.
 
 | File | What it is |
 |---|---|
-| `index.html` | The page. All the copy lives here in plain text, on nine screens, with the detail folded into `<details>` elements |
-| `changelog.html` | What's new: ten dated entries on the site and early access. The second page the AEO audit needs for internal links |
+| `index.html` | The page. All the copy lives here in plain text, on eight screens, with the detail folded into `<details>` elements |
+| `changelog.html` | What's new: fourteen dated entries on the site and early access. The second page the AEO audit needs for internal links |
 | `styles.css` | All styling. The exact colours, fonts, sizes and weights sit in the `:root` block at the top |
-| `app.js` | The signup modal, the screen carousel, the missed call calculator and the sticky phone bar. One setting to change: `FORM_ENDPOINT` |
+| `app.js` | The signup modal, the missed call calculator and the sticky phone bar. One setting to change: `FORM_ENDPOINT` |
 | `robots.txt` | Allows the AI crawlers and points at the sitemap |
 | `sitemap.xml` | Both pages |
 | `llms.txt` | The fact sheet for answer engines, at the root where they read it. Keep it in step with `.well-known/llms.txt` |
@@ -30,22 +30,26 @@ the `rel="alternate"` link tag; llms.txt by its path.
 
 ## The page, top to bottom (rebuilt 2026-09-22)
 
-Nine screens, one idea each, and everything long folded behind a tap. The words
-are all still on the page, which is what the search engines and the AI
-assistants read; only the scroll was cut. Measured: **40%** of the words are on
-screen before anything is opened.
+Eight screens, one idea each, and everything long folded behind a tap. The words
+stayed on the page, which is what the search engines and the AI assistants read;
+only the scroll was cut. Measured: **31%** of the words are on screen before
+anything is opened.
+
+Three sections came off the page later on 2026-09-22, on Pete's call: the app
+screens carousel (`screens`), the "Everything else" pair at the end of the job
+stops, and the four trust badges (`trust`). The words are kept, and the carousel
+and badge CSS and the five app pictures are still in the folder, so any of it can
+come back.
 
 | Screen | Section id | What it is |
 |---|---|---|
 | 1 | `hero` | Headline, one line under it, one button, and the promise: free while we build, no card |
 | 2 | `pains` | Three cards. The missed call, the guess at 8pm, the Friday chasing. They swipe on a phone |
-| 3 | `screens` | Five real app screens in a carousel that plays itself until it is touched, then one tap for the walkthrough |
-| 4 | `how` | The job, as six numbered stops, one line each, every stop opening to its detail |
-| 5 | `why` | The old way against the app, six rows of cross and tick |
-| 6 | `trust` | Four badges: the quarterly figures, the accountant, VAT, and your data |
-| 7 | `calculator` | Two sliders and the year a missed call adds up to. The numbers are the reader's own |
-| 8 | `early-access` | Three reasons and one button. The form is in the modal, with its four fields |
-| 9 | `faq` | Twelve questions as an accordion, every answer still on the page in full |
+| 3 | `how` | The job, as six numbered stops, one line each, every stop opening to its detail |
+| 4 | `why` | The old way against the app, six rows of cross and tick |
+| 5 | `calculator` | Two sliders and the year a missed call adds up to. The numbers are the reader's own |
+| 6 | `early-access` | Three reasons and one button. The form is in the modal, with its four fields |
+| 7 | `faq` | Twelve questions as an accordion, every answer still on the page in full |
 
 Two more things that are not screens: the **sticky bar**, which is phones only
 and appears once the hero is behind you, and the **modal**, which every "Get
@@ -54,11 +58,12 @@ early access" control opens.
 ### The rules the page is checked against
 
 `scripts/verify-site-modal.mjs` drives the real page in headless Chrome over the
-devtools protocol and runs **103 assertions**: the nine screens in order, the
-accordions opening, the carousel paging, the calculator's arithmetic, the sticky
-bar appearing and going away, the tick and cross marks, the four form fields,
-the intercepted Formspree post, no horizontal overflow at 1440 and 390, and the
-copy rules. Run it against the preview or the live domain:
+devtools protocol and runs **94 assertions**: the eight screens in order, the
+accordions opening, the calculator's arithmetic, the sticky bar appearing and
+going away, the tick and cross marks, the four form fields, the intercepted
+Formspree post, no horizontal overflow at 1440 and 390, and the copy rules. Four
+of them guard the three sections that came off, so a paste cannot quietly put a
+dead section back. Run it against the preview or the live domain:
 
 ```bash
 node scripts/verify-site-modal.mjs                                  # local preview
@@ -67,15 +72,15 @@ node scripts/verify-site-modal.mjs https://www.yellowtradie.com/    # live
 
 The copy rules it enforces, all of them Pete's calls: no em dash and no arrow
 anywhere, nothing that says the app answers the call, no invented job values
-outside the calculator, no HMRC approval badge, the four form fields, and the
+outside the calculator, nothing claiming HMRC approval or filing, the four form fields, and the
 schema's FAQ answers matching the visible ones word for word.
 
 The design rules it enforces, all of them read back as computed style rather than
 inspected by eye: **the hero text carries no rule above or below it** (Pete asked
 for the two yellow bars to come off it on 2026-09-22 16:11) while **the closing
-call to action keeps its two yellow bars**, the stage headings under "One phone
-does the lot" carry no rule at all, and the rules that remain on a light
-background are grey rather than yellow.
+call to action keeps its two yellow bars**, the stage headings under "From the
+first ring to the tax done" carry no rule at all, and the last grey rule on a
+light background, the bar on the signup pop-up, is still grey rather than yellow.
 
 ## Preview it on this machine
 
@@ -151,8 +156,9 @@ automatic on all three.
 
 The hero photograph is Pete's own, converted from
 `Business/Website/Assets/man3.png` on 2026-09-22 16:10, and its provenance is not
-recorded anywhere, so no licence is claimed for it. The app screens are crops of
-screenshots from the test phone, running sample data. `assets/CREDITS.md` lists
+recorded anywhere, so no licence is claimed for it. The five app screens are full
+phone captures from the test phone, running sample data, and they came off the
+page on 2026-09-22; the files are kept so the section can come back. `assets/CREDITS.md` lists
 every image and what is known about it. Keep that file current, because a
 photograph with no recorded provenance is the one thing on this page that cannot
 be replaced by measurement.

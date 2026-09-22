@@ -6,17 +6,15 @@ Last updated: 22 September 2026
 
 ## Main page
 
-- [YellowTradie early access](https://yellowtradie.com/): what the app does, the screens, how it compares with a paper diary and WhatsApp, and the questions tradespeople ask before signing up.
+- [YellowTradie early access](https://yellowtradie.com/): what the app does, how it compares with a paper diary and WhatsApp, and the questions tradespeople ask before signing up.
 - [What's new](https://yellowtradie.com/changelog.html): what has changed on the site and in the early access programme, newest first.
 
 ## On the main page
 
 - What it does: https://yellowtradie.com/#how
-- The screens: https://yellowtradie.com/#screens
 - Why it is different: https://yellowtradie.com/#why
 - Questions: https://yellowtradie.com/#faq
 - What a missed call costs: https://yellowtradie.com/#calculator
-- Straight with you: https://yellowtradie.com/#trust
 - Early access signup: https://yellowtradie.com/#early-access
 
 ## Feed
