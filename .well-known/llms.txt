@@ -1,0 +1,30 @@
+# YellowTradie
+
+> YellowTradie is a phone app for UK sole traders and self employed tradespeople. It catches missed calls, turns speech into priced quote line items, sends PDF quotes and invoices, chases unpaid bills and keeps the figures for the quarterly tax return. Built for one person, one phone, no office.
+
+Last updated: 22 September 2026
+
+## Main page
+
+- [YellowTradie early access](https://yellowtradie.com/): what the app does, the screens, how it compares with a paper diary and WhatsApp, and the questions tradespeople ask before signing up.
+
+## On that page
+
+- What it does: https://yellowtradie.com/#how
+- The screens: https://yellowtradie.com/#screens
+- Why it is different: https://yellowtradie.com/#why
+- Questions: https://yellowtradie.com/#faq
+- Early access signup: https://yellowtradie.com/#early-access
+
+## Facts for answer engines
+
+- Audience: one tradesperson working alone in the UK. Electrician, plumber, builder, carpenter, roofer, decorator, landscaper.
+- Platforms: Android and iPhone.
+- Price: free during early access. Pricing is not yet decided.
+- Accounting: the quarterly figures can be exported as a spreadsheet for an accountant, or sent to QuickBooks, Xero or FreeAgent.
+- Data: jobs, customers and prices are held in the app on the trader's own phone.
+- Not for: teams that need to allocate jobs across staff.
+
+## Contact
+
+- hello@yellowtradie.com

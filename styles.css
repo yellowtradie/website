@@ -1,0 +1,702 @@
+/* ==========================================================================
+   YellowTradie landing page
+   --------------------------------------------------------------------------
+   DESIGN TOKENS: every colour, font, size and weight below is lifted from
+   dewalt.co.uk's own stylesheets (the `sbd-brand-dewalt` token block in
+   /_next/static/immutable/chunks/1ycp-1k_gqhd7.css and the @font-face sheet
+   1tbc5u3rf61sq.css), read 2026-09-21. Change values here, not further down.
+   ========================================================================== */
+
+:root {
+  /* Brand yellow. Pete's call 2026-09-22: #FFF400, a brighter, greener yellow
+     than the DeWalt brand-5 (#febd17) this page started on. The hover is a
+     lighter tint of the same hue. */
+  --y: #fff400;
+  --y-hover: #fffa5c;
+
+  /* Neutrals, DeWalt's --color-neutral ramp */
+  /* The black. PoweredNow's brand dark (#161616, their Elementor global
+     --e-global-color-5fcc261), chosen by Pete on 2026-09-21 so the page and
+     PoweredNow's hero share one black. It is also the exact black the app
+     already uses, so the site and the product share one black. The app's own
+     yellow is #FFBD0D; since 2026-09-22 the page runs on Pete's #FFF400
+     instead, so the two yellows no longer match.
+     DeWalt's own near-black is #231e20, kept below as --ink for anything that
+     needs their warmer tone. */
+  --black: #161616;
+  --ink: #231e20;          /* DeWalt neutral-11, kept for reference */
+  --black-pure: #000;      /* neutral-12 */
+  --cream: #fcf5de;        /* text on dark */
+  --grey-2: #f7f5f5;       /* neutral-2 light surface */
+  --grey-3: #f0eeee;       /* neutral-3 light surface / outline hover */
+  --border: #d7d5d5;       /* neutral-5 border primary on light */
+  --muted: #413d3f;        /* neutral-9 secondary text on light */
+  --tertiary: #646062;     /* neutral-8 tertiary text on light */
+  --tertiary-dark: #b7b4b5;/* neutral-6 tertiary text on dark */
+  --hairline-dark: #413d3f;/* border secondary on dark: the header hairline */
+
+  /* Semantic, DeWalt's ramps */
+  --error: #dc2626;
+  --success: #16a34a;
+
+  /* Type: Archivo Expanded for display and buttons, Inter for everything else */
+  --display: "Archivo", "Arial Black", "Helvetica Neue", Arial, sans-serif;
+  --body: "Inter", "Helvetica Neue", Arial, sans-serif;
+
+  /* Zero corner radius. This is the whole identity's edge rule */
+  --radius: 0;
+
+  /* Layout: DeWalt's 4px base scale and 1272px desktop content width */
+  --gutter: 16px;
+  --content: 1272px;
+  --section-pad: 56px;
+
+  /* The signature thick bar: 8px, 12px from 1280px up */
+  --bar: 8px;
+  --nav-underline: 4px;
+}
+
+@media (min-width: 768px) {
+  :root { --gutter: 32px; }
+}
+@media (min-width: 1280px) {
+  :root { --gutter: 40px; --bar: 12px; }
+}
+
+/* --------------------------------------------------------------------------
+   Base
+   -------------------------------------------------------------------------- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--black);
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; }
+
+.wrap {
+  max-width: var(--content);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.section { padding: var(--section-pad) 0; }
+
+/* Keep an anchor jump clear of the sticky header */
+section[id] { scroll-margin-top: 90px; }
+.section--grey { background: var(--grey-2); }
+.section--dark { background: var(--black); color: var(--cream); }
+
+/* --------------------------------------------------------------------------
+   Type scale, DeWalt's prose-brand and prose-body classes
+   -------------------------------------------------------------------------- */
+
+.display {
+  font-family: var(--display);
+  font-stretch: 125%;          /* reproduces Archivo Expanded */
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+/* H1: 28/32, 52/56 at 640, 68/70 at 1280. Matches .prose-brand-md to .prose-display-md */
+h1.display { font-size: 28px; line-height: 32px; }
+@media (min-width: 640px) { h1.display { font-size: 52px; line-height: 56px; } }
+@media (min-width: 1280px) { h1.display { font-size: 68px; line-height: 70px; } }
+
+/* Section H2: 18/20, 28/32, 42/44. Matches .prose-brand-2xs to .prose-brand-xl */
+h2.display { font-size: 18px; line-height: 20px; letter-spacing: -0.1px; }
+@media (min-width: 640px) { h2.display { font-size: 28px; line-height: 32px; letter-spacing: -0.35px; } }
+@media (min-width: 1280px) { h2.display { font-size: 42px; line-height: 44px; } }
+
+/* Card H3: 20/24, 24/28, 36/40. Matches .prose-brand-xs to .prose-brand-lg */
+h3.display { font-size: 20px; line-height: 24px; letter-spacing: -0.25px; }
+@media (min-width: 640px) { h3.display { font-size: 24px; line-height: 28px; letter-spacing: -0.35px; } }
+@media (min-width: 1280px) { h3.display { font-size: 36px; line-height: 40px; } }
+
+/* Small display, .prose-brand-3xs and .prose-brand-2xs */
+.display--xs { font-size: 16px; line-height: 18px; letter-spacing: -0.1px; }
+@media (min-width: 1280px) { .display--xs { font-size: 18px; line-height: 20px; } }
+
+p { margin: 0 0 16px; }
+p:last-child { margin-bottom: 0; }
+
+.lede { font-size: 18px; line-height: 22px; }
+@media (min-width: 1280px) { .lede { font-size: 20px; line-height: 28px; } }
+
+.muted { color: var(--muted); }
+.tertiary { color: var(--tertiary); }
+.section--dark .muted { color: var(--cream); }
+.section--dark .tertiary { color: var(--tertiary-dark); }
+
+/* Eyebrow, .prose-eyebrow-bold-md plus an explicit uppercase class, as DeWalt does */
+.eyebrow {
+  font-family: var(--body);
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  margin: 0 0 16px;
+}
+.eyebrow--yellow { color: var(--y); }
+
+/* --------------------------------------------------------------------------
+   Buttons: radius 0, Archivo 800 uppercase, yellow fill, near-black label
+   -------------------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--display);
+  font-stretch: 125%;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color .15s ease, color .15s ease, border-color .15s ease;
+}
+
+.btn--sm { font-size: 12px; line-height: 14px; height: 32px; padding: 0 8px; }
+.btn--lg { font-size: 14px; line-height: 18px; height: 40px; padding: 0 12px; }
+
+.btn--solid { background: var(--y); color: var(--black); }
+.btn--solid:hover { background: var(--y-hover); }
+
+/* Outline button, the .onDark variant from DeWalt's token layer */
+.btn--outline { background: rgba(0, 0, 0, .2); border-color: var(--cream); color: var(--cream); }
+.btn--outline:hover { background: rgba(255, 255, 255, .2); }
+
+/* Inverted button, for sitting on the yellow band where a yellow button would vanish */
+.btn--invert { background: var(--black); color: var(--cream); }
+.btn--invert:hover { background: var(--black-pure); }
+
+.btn[disabled] { background: var(--border); color: rgba(0, 0, 0, .2); cursor: default; }
+
+:focus-visible { outline: 2px solid var(--black); outline-offset: 2px; }
+.section--dark :focus-visible, .hero :focus-visible { outline-color: var(--y); }
+
+/* --------------------------------------------------------------------------
+   Header: 74px, 82px at 1280, near-black, 1px hairline, 4px yellow nav hover
+   -------------------------------------------------------------------------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--black);
+  border-bottom: 1px solid var(--hairline-dark);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  height: 74px;
+}
+@media (min-width: 1280px) { .header-inner { height: 82px; } }
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #fff;
+  flex: none;
+}
+
+.logo svg { display: block; }
+
+.logo-word {
+  font-family: var(--display);
+  font-stretch: 125%;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: -0.4px;
+  color: #fff;
+}
+@media (min-width: 640px) { .logo-word { font-size: 24px; } }
+
+.nav {
+  display: none;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+@media (min-width: 1024px) { .nav { display: flex; } }
+
+.nav a {
+  display: inline-block;
+  padding: 16px 0 12px;
+  border-bottom: var(--nav-underline) solid transparent;
+  font-family: var(--body);
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  transition: border-color .15s ease;
+}
+.nav a:hover { border-bottom-color: var(--y); }
+
+/* --------------------------------------------------------------------------
+   Hero. Structure from powerednow.com (full bleed photo, brand-black panel
+   painted over the left, copy on the black), skin from DeWalt.
+   -------------------------------------------------------------------------- */
+
+.hero {
+  position: relative;
+  background: var(--black);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  min-height: 600px;
+  padding: 40px 0;
+  overflow: hidden;
+}
+
+@media (min-width: 860px) {
+  .hero { min-height: 100vh; min-height: 100svh; padding: 0; }
+}
+
+/* The photograph now extends across the hero, blending into the black background.
+   The van with open door appears to the right of the hero copy. Pete's calls,
+   2026-09-22: increase the size, lose the rectangle, let the image breathe. */
+.hero-media { display: none; }
+
+@media (min-width: 1024px) {
+  .hero-media {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55%;
+    height: 100%;
+    z-index: 0;
+    /* The image fills the container, no top/bottom fade — it runs full height */
+  }
+  .hero-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* The van's open back is on the left of the source image. Shift left so it
+       sits just to the right of the hero copy, with the tradesperson further right. */
+    object-position: 35% center;
+    /* Softer grade so the picture blends, not sits on top */
+    filter: brightness(.85) saturate(.9);
+    /* Left edge fades into the black over a wider distance so the transition
+       is gradual. Right, top, bottom edges also feather out so there is no
+       hard rectangle — the van just emerges from and disappears into the black. */
+    -webkit-mask-image:
+      linear-gradient(90deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, .4) 8%,
+        rgba(0, 0, 0, .7) 15%,
+        rgba(0, 0, 0, 1) 25%,
+        rgba(0, 0, 0, 1) 85%,
+        rgba(0, 0, 0, .7) 92%,
+        rgba(0, 0, 0, .3) 96%,
+        rgba(0, 0, 0, 0) 100%),
+      linear-gradient(180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, .5) 5%,
+        rgba(0, 0, 0, 1) 12%,
+        rgba(0, 0, 0, 1) 88%,
+        rgba(0, 0, 0, .5) 95%,
+        rgba(0, 0, 0, 0) 100%);
+    mask-image:
+      linear-gradient(90deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, .4) 8%,
+        rgba(0, 0, 0, .7) 15%,
+        rgba(0, 0, 0, 1) 25%,
+        rgba(0, 0, 0, 1) 85%,
+        rgba(0, 0, 0, .7) 92%,
+        rgba(0, 0, 0, .3) 96%,
+        rgba(0, 0, 0, 0) 100%),
+      linear-gradient(180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, .5) 5%,
+        rgba(0, 0, 0, 1) 12%,
+        rgba(0, 0, 0, 1) 88%,
+        rgba(0, 0, 0, .5) 95%,
+        rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+}
+
+.hero-inner { position: relative; z-index: 1; width: 100%; }
+
+.hero-copy {
+  max-width: 620px;
+  /* DeWalt frames its hero content block with thick yellow bars */
+  border-top: var(--bar) solid var(--y);
+  border-bottom: var(--bar) solid var(--y);
+  padding: 24px 0;
+}
+@media (min-width: 1280px) { .hero-copy { max-width: 760px; padding: 32px 0; } }
+
+.hero h1 { color: #fff; margin: 0 0 20px; }
+.hero h1 em { font-style: normal; color: var(--y); }
+.hero p { color: var(--cream); max-width: 34em; }
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.hero-note {
+  margin-top: 16px;
+  font-size: 12px;
+  line-height: 17px;
+  color: var(--tertiary-dark);
+}
+
+/* --------------------------------------------------------------------------
+   Card grids, zero radius, 1px borders, no shadows
+   -------------------------------------------------------------------------- */
+
+.grid { display: grid; gap: 24px; }
+@media (min-width: 768px) { .grid--3 { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 900px) { .grid--2 { grid-template-columns: repeat(2, 1fr); } }
+
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  border-top: 4px solid var(--black);
+}
+.card p { color: var(--muted); }
+.card .display { margin-bottom: 12px; }
+
+.card--dark {
+  background: var(--black);
+  border: 1px solid var(--hairline-dark);
+  color: var(--cream);
+}
+.card--dark p { color: var(--cream); }
+
+/* Numbered marker, the numbered-badge idea from powerednow.com in DeWalt colours */
+.num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--y);
+  color: var(--black);
+  font-family: var(--display);
+  font-stretch: 125%;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+/* --------------------------------------------------------------------------
+   The three-line honesty block
+   -------------------------------------------------------------------------- */
+
+.checklist { list-style: none; margin: 0; padding: 0; }
+.checklist li {
+  border-top: 1px solid var(--hairline-dark);
+  padding: 20px 0;
+}
+.checklist li:last-child { border-bottom: 1px solid var(--hairline-dark); }
+.checklist .display--xs { color: var(--y); margin-bottom: 8px; }
+.section--light .checklist li { border-color: var(--border); }
+.section--light .checklist .display--xs { color: var(--black); }
+
+/* --------------------------------------------------------------------------
+   Phone panels, showing the real app
+   -------------------------------------------------------------------------- */
+
+.phones { display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; }
+.phone {
+  width: 243px;
+  max-width: 100%;
+  border: 1px solid var(--hairline-dark);
+  background: var(--black);
+  padding: 8px;
+}
+.phone img { width: 100%; height: auto; }
+.phone figcaption {
+  font-size: 13px;
+  line-height: 19px;
+  color: var(--tertiary-dark);
+  padding: 12px 4px 4px;
+}
+
+/* --------------------------------------------------------------------------
+   Feature groups: one heading per stage of the job, three cards under each
+   -------------------------------------------------------------------------- */
+
+.feature-groups { display: grid; gap: 40px; margin-top: 36px; }
+
+.group-title {
+  color: var(--black);
+  border-bottom: 4px solid var(--y);
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+/* Card headings are h4, so the heading order stays h1, h2, h3, h4 */
+.card h4.display--xs { margin-bottom: 10px; }
+
+/* --------------------------------------------------------------------------
+   Zoomed app screens: a tight crop of one part of the app, with the words
+   beside it. Alternating sides from 900px up.
+   -------------------------------------------------------------------------- */
+
+.shots { display: grid; gap: 40px; margin-top: 36px; }
+
+.shot {
+  border-top: 4px solid var(--y);
+  padding-top: 20px;
+  display: grid;
+  gap: 20px;
+}
+
+@media (min-width: 900px) {
+  .shot { grid-template-columns: 1.15fr 1fr; align-items: center; gap: 40px; }
+  .shot:nth-child(even) img { order: 2; }
+  .shot:nth-child(even) figcaption { order: 1; }
+}
+
+.shot img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  background: #fff;
+}
+
+/* The customer page is a full phone page, so it is shown at a narrower width
+   than the cropped app screens rather than towering down the section */
+.shot--phone img { max-width: 420px; }
+
+.shot figcaption h3 { margin-bottom: 10px; }
+.shot figcaption p { font-size: 16px; line-height: 21px; }
+
+/* --------------------------------------------------------------------------
+   Comparison table: paper and WhatsApp against the app. Scrolls sideways
+   on a phone rather than squashing.
+   -------------------------------------------------------------------------- */
+
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+.compare {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.compare th,
+.compare td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--hairline-dark);
+  vertical-align: top;
+  font-size: 15px;
+  line-height: 21px;
+}
+
+.compare thead th {
+  font-family: var(--display);
+  font-stretch: 125%;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--y);
+  border-bottom: 2px solid var(--y);
+  padding-bottom: 12px;
+}
+
+.compare tbody th { font-weight: 600; color: var(--cream); width: 24%; }
+.compare td { color: var(--tertiary-dark); }
+.compare tbody tr:last-child th,
+.compare tbody tr:last-child td { border-bottom: none; }
+.compare caption { font-size: 13px; line-height: 19px; }
+
+/* --------------------------------------------------------------------------
+   Signup band. DeWalt's footer newsletter treatment: a yellow panel
+   sandwiched between two thick near-black bars.
+   -------------------------------------------------------------------------- */
+
+.signup {
+  background: var(--y);
+  color: var(--black);
+  border-top: var(--bar) solid var(--black);
+  border-bottom: var(--bar) solid var(--black);
+  padding: 40px 0;
+}
+@media (min-width: 1280px) { .signup { padding: 56px 0; } }
+
+.signup-grid { display: grid; gap: 32px; }
+@media (min-width: 900px) { .signup-grid { grid-template-columns: 1fr 1fr; align-items: start; } }
+
+.signup h2 { margin-bottom: 16px; }
+.signup p { color: var(--black); }
+
+form { margin: 0; }
+
+.field { margin-bottom: 16px; }
+
+label {
+  display: block;
+  font-family: var(--display);
+  font-stretch: 125%;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0;
+  margin-bottom: 8px;
+}
+
+input, select {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 21px;
+  color: var(--black);
+  background: #fff;
+  border: 1px solid var(--black);
+  border-radius: var(--radius);
+}
+
+input[aria-invalid="true"] { border-color: var(--error); border-width: 2px; }
+
+.field-error {
+  display: block;
+  font-size: 13px;
+  line-height: 19px;
+  color: var(--error);
+  margin-top: 8px;
+}
+
+.form-note { font-size: 13px; line-height: 19px; margin-top: 12px; }
+
+.signup-success {
+  background: var(--black);
+  color: var(--cream);
+  padding: 20px;
+  border-radius: var(--radius);
+}
+.signup-success .display { color: var(--y); margin-bottom: 12px; }
+.signup-success p { color: var(--cream); }
+
+/* Only ever shown while the signup form has no endpoint configured */
+.preview-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  background: var(--error);
+  color: #fff;
+  font-family: var(--body);
+  font-size: 13px;
+  line-height: 19px;
+  padding: 8px var(--gutter);
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   FAQ
+   -------------------------------------------------------------------------- */
+
+.faq-item { border-top: 1px solid var(--black); padding: 20px 0; }
+.faq-item:last-child { border-bottom: 1px solid var(--black); }
+.faq-item dt { margin-bottom: 12px; }
+.faq-item dd { margin: 0; color: var(--muted); max-width: 60em; }
+
+/* --------------------------------------------------------------------------
+   Final call to action
+   -------------------------------------------------------------------------- */
+
+.final { background: var(--black); color: var(--cream); padding: 56px 0; }
+.final-inner {
+  border-top: var(--bar) solid var(--y);
+  border-bottom: var(--bar) solid var(--y);
+  padding: 32px 0;
+}
+.final h2 { color: #fff; margin-bottom: 16px; }
+.final p { color: var(--cream); max-width: 44em; }
+.final .btn { margin-top: 24px; }
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+
+.site-footer { background: var(--black); color: var(--cream); padding: 40px 0; }
+.footer-grid { display: grid; gap: 32px; }
+@media (min-width: 768px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr; } }
+
+.footer-col h3 {
+  color: var(--y);
+  font-family: var(--display);
+  font-stretch: 125%;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: -0.1px;
+  margin: 0 0 12px;
+}
+
+.footer-col ul { list-style: none; margin: 0; padding: 0; }
+.footer-col li { margin-bottom: 8px; }
+.footer-col a {
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 600;
+  color: var(--cream);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.footer-col a:hover { border-bottom-color: var(--cream); }
+
+.footer-base {
+  border-top: 1px solid var(--hairline-dark);
+  margin-top: 32px;
+  padding-top: 20px;
+  font-size: 13px;
+  line-height: 19px;
+  color: var(--tertiary-dark);
+}
+.footer-base p { margin: 0 0 8px; }
