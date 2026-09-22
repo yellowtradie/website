@@ -189,6 +189,8 @@ const FORM_ENDPOINT = "https://formspree.io/f/xrpbqypw";
 
       form.hidden = true;
       status.hidden = false;
+      submitButton.disabled = false;
+      submitButton.textContent = label;
       status.focus();
     } catch (error) {
       submitButton.disabled = false;
