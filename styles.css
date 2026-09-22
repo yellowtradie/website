@@ -620,6 +620,80 @@ input[aria-invalid="true"] { border-color: var(--error); border-width: 2px; }
 .signup-success .display { color: var(--y); margin-bottom: 12px; }
 .signup-success p { color: var(--cream); }
 
+/* --------------------------------------------------------------------------
+   Signup modal: the page carries one button, the form lives in here.
+   -------------------------------------------------------------------------- */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--gutter);
+}
+
+/* The hidden attribute has to beat the flex display above, or a closed modal
+   still takes the whole screen and eats every click. */
+.modal[hidden] { display: none; }
+
+.modal-scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, .8);
+}
+
+.modal-panel {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 460px;
+  max-height: 100%;
+  overflow-y: auto;
+  background: #fff;
+  color: var(--black);
+  border: 1px solid var(--black);
+  border-top: var(--bar) solid var(--y);
+  border-radius: var(--radius);
+  padding: 28px 24px 24px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--body);
+  font-size: 24px;
+  line-height: 1;
+  color: var(--black);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.modal-close:hover { background: var(--grey-3); }
+
+.modal-panel .eyebrow { color: var(--tertiary); margin-bottom: 8px; }
+.modal-panel h2 { margin-bottom: 12px; }
+.modal-panel > p { color: var(--muted); margin-bottom: 20px; }
+.modal-panel .form-note { color: var(--muted); }
+.modal-panel .signup-success { margin-top: 4px; }
+
+.form-error {
+  font-size: 13px;
+  line-height: 19px;
+  color: var(--error);
+  margin-bottom: 12px;
+}
+
+/* The page behind the modal must not scroll while it is open */
+body.modal-open { overflow: hidden; }
+
 /* Only ever shown while the signup form has no endpoint configured */
 .preview-banner {
   position: fixed;

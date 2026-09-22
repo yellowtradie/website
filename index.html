@@ -44,7 +44,7 @@
       </ul>
     </nav>
 
-    <a class="btn btn--sm btn--solid" href="#early-access">Get early access</a>
+    <a class="btn btn--sm btn--solid" href="#early-access" data-open-signup>Get early access</a>
   </div>
 </header>
 
@@ -58,14 +58,11 @@
 
     <div class="wrap hero-inner">
       <div class="hero-copy">
-        <p class="eyebrow eyebrow--yellow">Early access · Android and iPhone</p>
         <h1 class="display">Run your whole trade business from your phone</h1>
         <p class="lede">YellowTradie is a phone app for one person running their own trade. It catches the calls you miss, writes the quote from what you say, books the job in, invoices it, chases the money and keeps the figures for your quarterly tax.</p>
         <div class="hero-actions">
-          <a class="btn btn--lg btn--solid" href="#early-access">Get early access</a>
-          <a class="btn btn--lg btn--outline" href="#how">See what it does</a>
+          <a class="btn btn--lg btn--solid" href="#early-access" data-open-signup>Get early access</a>
         </div>
-        <p class="hero-note">Free while we build. No card. One email when your invite is ready.</p>
       </div>
     </div>
   </section>
@@ -335,29 +332,13 @@
       </div>
 
       <div>
-        <form data-signup-form novalidate>
-          <div class="field">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-error">
-            <span class="field-error" id="email-error" data-signup-error hidden></span>
-          </div>
+        <button class="btn btn--lg btn--invert" type="button" data-open-signup>Register your interest</button>
 
-          <!-- Honeypot. Real people never see this -->
-          <div style="position: absolute; left: -9999px;" aria-hidden="true">
-            <label for="company">Company</label>
-            <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
-          </div>
+        <p class="form-note">Takes a minute. We ask for your name, your business name, your email and your phone.</p>
 
-          <button class="btn btn--lg btn--invert" type="submit">Get early access</button>
-
-          <p class="form-note">One email when your invite is ready. Nothing else. You can ask us to delete it any time.</p>
-        </form>
-
-        <div class="signup-success" data-signup-status hidden tabindex="-1" role="status" aria-live="polite">
-          <h3 class="display display--xs">You are on the list.</h3>
-          <p>We will email you when there is something worth opening. Reply to that email with the job that eats your time and it goes on the build list.</p>
-          <p>Know another tradesperson who would use it? Send them this page.</p>
-        </div>
+        <noscript>
+          <p class="form-note">The form needs JavaScript. Email <a href="mailto:hello@yellowtradie.com">hello@yellowtradie.com</a> and we will add you to the list.</p>
+        </noscript>
       </div>
     </div>
   </section>
@@ -427,7 +408,7 @@
       <div class="final-inner">
         <h2 class="display">Stop doing the paperwork at the kitchen table</h2>
         <p class="lede">Get on the early access list and we will email you when your invite is ready.</p>
-        <a class="btn btn--lg btn--solid" href="#early-access">Get early access</a>
+        <a class="btn btn--lg btn--solid" href="#early-access" data-open-signup>Get early access</a>
         <p class="hero-note">Free while we build. No card. One email.</p>
       </div>
     </div>
@@ -456,7 +437,7 @@
           <li><a href="#screens">The screens</a></li>
           <li><a href="#why">Why it is different</a></li>
           <li><a href="#faq">Questions</a></li>
-          <li><a href="#early-access">Get early access</a></li>
+          <li><a href="#early-access" data-open-signup>Get early access</a></li>
         </ul>
       </div>
 
@@ -476,6 +457,64 @@
     </div>
   </div>
 </footer>
+
+<!-- Signup modal. Every "Get early access" control on the page opens this. -->
+<div class="modal" data-signup-modal hidden>
+  <div class="modal-scrim" data-close-signup></div>
+
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="signup-title" aria-describedby="signup-lede">
+    <button class="modal-close" type="button" data-close-signup aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+
+    <p class="eyebrow">Beta</p>
+    <h2 class="display display--xs" id="signup-title">Beta places are opening</h2>
+    <p id="signup-lede">We are letting a small number of trades businesses in while we test YellowTradie on real jobs and fix what comes back. Register your interest below and we will be in touch when the next places open.</p>
+
+    <form data-signup-form novalidate>
+      <div class="field">
+        <label for="full-name">Full name</label>
+        <input type="text" id="full-name" name="fullName" autocomplete="name" required aria-describedby="full-name-error">
+        <span class="field-error" id="full-name-error" hidden></span>
+      </div>
+
+      <div class="field">
+        <label for="business-name">Business name</label>
+        <input type="text" id="business-name" name="businessName" autocomplete="organization" required aria-describedby="business-name-error">
+        <span class="field-error" id="business-name-error" hidden></span>
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-error">
+        <span class="field-error" id="email-error" hidden></span>
+      </div>
+
+      <div class="field">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel" required aria-describedby="phone-error">
+        <span class="field-error" id="phone-error" hidden></span>
+      </div>
+
+      <!-- Honeypot. Real people never see this -->
+      <div style="position: absolute; left: -9999px;" aria-hidden="true">
+        <label for="_gotcha">Leave this box empty</label>
+        <input type="text" id="_gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+      </div>
+
+      <p class="form-error" data-signup-form-error hidden role="alert"></p>
+
+      <button class="btn btn--lg btn--invert" type="submit">Register your interest</button>
+
+      <p class="form-note">We use these details to contact you about the beta and nothing else. You can ask us to delete them at any time.</p>
+    </form>
+
+    <div class="signup-success" data-signup-status hidden tabindex="-1" role="status" aria-live="polite">
+      <h3 class="display display--xs">You are on the list.</h3>
+      <p>We will be in touch when the next beta places open. Reply to that email with the job that eats your time and it goes on the build list.</p>
+    </div>
+  </div>
+</div>
 
 <div class="preview-banner" data-preview-banner hidden>
   Preview mode: the signup form is not sending anywhere yet. Set FORM_ENDPOINT in app.js.
