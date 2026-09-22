@@ -54,3 +54,15 @@ data.
 `logo-mark.svg` is drawn for this project. A yellow square (#fff400, Pete's
 brand yellow from 2026-09-22) with the uppercase T in the page's black
 (#161616). No third party rights.
+
+## The five app screens, resized 2026-09-22
+
+`app-voice.png`, `app-chase.png`, `app-invoice.png`, `app-tax.png` and
+`app-customer.png` are all **1080 by 900**. They were five different shapes, taken
+as tight crops, which made the carousel change height with every swipe. Each one
+was scaled to fit a common canvas and matted onto it with **its own measured edge
+colour**, sampled per side, so the padding cannot be seen: voice, invoice and tax
+are 100% seamless, chase 100% on the top and 99% on the bottom, and the customer's
+phone page 100% on the left. No content was cropped and the app was not
+re-screenshotted. If they are ever replaced, either match 1080 by 900 or expect
+the carousel to move again.
