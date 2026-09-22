@@ -2,33 +2,47 @@
 
 ## Hero photograph
 
-`hero.jpg` is the photograph Pete chose on 2026-09-22. It came from
-`Business/Website/Assets/standing-next-van.png` (1344 by 768) and was converted to
-JPEG at quality 85.
+`hero.jpg` is the photograph on the front page. It was replaced on 2026-09-22
+16:10: it came from `Business/Website/Assets/man3.png` (1216 by 832) and was
+converted to JPEG at quality 85, which is 211 KB against the 219 KB of the file
+it replaced. It replaced `Business/Website/Assets/standing-next-van.png`, which
+is still in the vault and still in git history.
 
 - Provenance: not recorded. Ask Pete before reusing it anywhere else.
 - Licence: not stated, so the page makes no licence claim and the footer carries
-  no credit line (Pete's call, 2026-09-22). The line it replaced credited a
-  rawpixel CC0 photograph, which this file replaced. That old file is still in
-  git history if it is ever wanted back.
+  no credit line (Pete's call, 2026-09-22). The line that was there before
+  credited a rawpixel CC0 photograph, which neither of these files uses.
 
 Nobody has looked at this file with human eyes in this session (this model has no
-image input), so it was checked by measurement instead. The frame is high key
-(mean luminance 116 of 255) with its detail concentrated between 50 and 75
-percent across, and the left third is bright and nearly empty. That is the right
-shape for this hero: the left 42 percent is painted solid black and the
-photograph only shows on the right, so the subject needs to sit right of centre.
-If the subject ever looks too dark, `object-position` on `.hero-media img` in
-`styles.css` is the one line to move it.
+image input), so it was checked by measurement instead. What the measurements
+say: the frame is a wide one, 1.46 to 1, with the bright end on the right (the
+right quarter averages 176 to 201 of 255 and carries almost no detail) and the
+busy, warm part in the left half. 27% of the frame is near black.
+
+**The crop is the one thing to re-check by eye.** The hero box is 55% of the
+screen wide and full height, so `object-fit: cover` shows only 60% of this frame
+at 1440 and 50% at 1024. `object-position` on `.hero-media img` in `styles.css`
+is the single number that moves it, and it is set to `30% center`. That was chosen
+by measurement, not by eye: it keeps the busy left half of the frame inside the
+mask's clear zone and keeps the headline on the dark part of the picture. The
+strip the longest headline line reaches into reads a median luminance of 45 at
+30%, against 27 on the photograph it replaced and 78 at 20%. Lower numbers put
+this frame's bright left side behind the words. Higher numbers fade the subject.
 
 Swap instructions, in one line: put your file at
 `yellowtradie-site/assets/hero.jpg`, keep the name, then bump the `?v=` number on
-both references in `index.html` (the `<img src>` and the `og:image` meta) and
-reload. The bump is not optional: the preview server sends no cache headers, so a
-same-name swap is answered from the browser's own stored copy and the new
-photograph never appears. That is exactly what happened on 2026-09-22, when the
-first swap looked like it had failed while the server was already handing out the
-new file. The current number is `?v=2`.
+every reference in `index.html` and `changelog.html` (the `<img src>` and two
+`og:image` metas) and reload. The bump is not optional: the preview server sends
+no cache headers, so a same-name swap is answered from the browser's own stored
+copy and the new photograph never appears. That is exactly what happened on
+2026-09-22, when the first swap looked like it had failed while the server was
+already handing out the new file. The current number is `?v=3`.
+
+`scripts/verify-site-modal.mjs` now guards all three of these: that the file is
+versioned and actually loaded, that it is masked so it has no hard edge, and that
+the copy column ends before the photograph reaches full strength. Removing the
+mask makes two of the three fail, which is how they were proved to be real checks
+rather than decoration.
 
 ## App screens
 

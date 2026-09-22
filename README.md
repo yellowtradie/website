@@ -54,7 +54,7 @@ early access" control opens.
 ### The rules the page is checked against
 
 `scripts/verify-site-modal.mjs` drives the real page in headless Chrome over the
-devtools protocol and runs **90 assertions**: the nine screens in order, the
+devtools protocol and runs **101 assertions**: the nine screens in order, the
 accordions opening, the carousel paging, the calculator's arithmetic, the sticky
 bar appearing and going away, the tick and cross marks, the four form fields,
 the intercepted Formspree post, no horizontal overflow at 1440 and 390, and the
@@ -143,12 +143,20 @@ automatic on all three.
 ## Images
 
 The hero photograph is Pete's own, converted from
-`Business/Website/Assets/standing-next-van.png`, and its provenance is not
+`Business/Website/Assets/man3.png` on 2026-09-22 16:10, and its provenance is not
 recorded anywhere, so no licence is claimed for it. The app screens are crops of
 screenshots from the test phone, running sample data. `assets/CREDITS.md` lists
 every image and what is known about it. Keep that file current, because a
 photograph with no recorded provenance is the one thing on this page that cannot
 be replaced by measurement.
+
+**Two numbers on the hero photograph come from measurement, not taste**, and both
+live in the `.hero-media img` block of `styles.css`: the `?v=` version on the URL,
+which is what stops a swap being answered out of the browser's cache, and
+`object-position: 30% center`, which decides what the cover crop shows. The box is
+55% of the screen wide and full height, so only 60% of a wide photograph survives
+the crop at 1440 and 50% at 1024. `CREDITS.md` carries the reasoning and the one
+line to change if the framing is wrong.
 
 ## The clip in the early access band
 

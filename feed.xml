@@ -5,9 +5,17 @@
     <link>https://yellowtradie.com/changelog.html</link>
     <description>What has changed on the YellowTradie site and in the early access programme. YellowTradie is a phone app for UK sole traders and self employed tradespeople.</description>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 22 Sep 2026 17:30:00 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2026 16:10:00 +0100</lastBuildDate>
     <ttl>1440</ttl>
     <atom:link href="https://yellowtradie.com/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>A new photograph at the top of the page</title>
+      <link>https://yellowtradie.com/changelog.html#new-hero-photo</link>
+      <guid isPermaLink="true">https://yellowtradie.com/changelog.html#new-hero-photo</guid>
+      <pubDate>Tue, 22 Sep 2026 16:10:00 +0100</pubDate>
+      <description>The picture on the front page has been replaced. It sits to the right of the headline and fades into the black at its own edges, so there is no hard rectangle, and it is left out on a phone so the words get the whole width. The frame is wide and the space is tall, so a little under half the picture falls outside the box, and the crop was set by measurement so the headline sits on the dark part of the frame.</description>
+    </item>
 
     <item>
       <title>Full screens, not close-ups</title>
