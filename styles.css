@@ -1169,7 +1169,7 @@ body.modal-open { overflow: hidden; }
   z-index: 90;
   display: none;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
   padding: 10px var(--gutter);
   background: var(--black);
   border-top: 1px solid var(--hairline-dark);
@@ -1184,15 +1184,10 @@ body.modal-open { overflow: hidden; }
   .sticky-cta.is-visible { transform: translateY(0); }
 }
 
-.sticky-cta .btn { flex: 1 1 auto; }
-
-.sticky-note {
-  flex: none;
-  max-width: 9em;
-  font-size: 12px;
-  line-height: 15px;
-  color: var(--tertiary-dark);
-}
+/* One centred button rather than a full width bar. Pete's call 2026-09-22:
+   with the promise line beside it the bar read as two things at thumb size,
+   so the line is gone and the button sits in the middle. */
+.sticky-cta .btn { flex: 0 1 auto; min-width: 70%; }
 
 /* Nothing should sit under the modal, the sticky bar included. */
 body.modal-open .sticky-cta { display: none; }
