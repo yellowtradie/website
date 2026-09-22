@@ -55,9 +55,29 @@ and leaks Google's styling, but it costs nothing and needs no code.
 
 ## Publishing
 
-Any static host works because there is no build step.
+This folder is its own git repo wired to `github.com/yellowtradie/website`, and
+**Vercel deploys every push to `main`**. Nothing else is needed, and anything
+pushed here is public for good.
 
-- **Netlify:** drag the `yellowtradie-site` folder onto app.netlify.com/drop.
+**Push with the helper, not with a plain `git push`** (learned the hard way,
+2026-09-22):
+
+```
+scripts/push-to-github.sh yellowtradie-site
+```
+
+A plain `git push` is refused here. Git has its own saved GitHub login on this
+machine and it is a different account (`tishkaai`) with no write access to this
+repo, so it answers "Permission denied to tishkaai". The helper pushes as the
+`yellowtradie` account from `.release/ghconfig`. The full explanation is in
+`AGENTS.md`, Repositories. Vercel has the change live within about a minute;
+check the public page rather than the local preview, because `127.0.0.1:4173`
+always shows your edits whether they are deployed or not.
+
+If the folder ever moves to another host, any static host works because there is
+no build step.
+
+- **Netlify:** drag the folder onto app.netlify.com/drop.
 - **Cloudflare Pages:** connect the repo, leave the build command empty, set the
   output directory to `yellowtradie-site`.
 - **GitHub Pages:** push the folder and turn Pages on for the branch.
