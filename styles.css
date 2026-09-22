@@ -684,8 +684,9 @@ input[aria-invalid="true"] { border-color: var(--error); border-width: 2px; }
 .modal-panel .form-note { color: var(--muted); }
 .modal-panel .signup-success { margin-top: 4px; }
 
-/* The "what you get" reasons. A yellow square rather than a disc, to keep the
-   page's zero-radius edge rule. */
+/* The "what you get" reasons. A black square rather than a disc, to keep the
+   page's zero-radius edge rule. Pete's call 2026-09-22: black markers, not
+   yellow ones, so the list reads as body text rather than decoration. */
 .modal-panel .what-you-get-title {
   font-family: var(--display);
   font-stretch: 125%;
@@ -721,7 +722,7 @@ input[aria-invalid="true"] { border-color: var(--error); border-width: 2px; }
   top: 7px;
   width: 9px;
   height: 9px;
-  background: var(--y);
+  background: var(--black);
 }
 
 .form-error {
