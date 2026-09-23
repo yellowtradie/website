@@ -2,11 +2,13 @@
 
 ## Hero photograph
 
-`hero.jpg` is the photograph on the front page. It was replaced on 2026-09-22
-18:01: it came from `Business/Website/Assets/YellowTradie.png` (1216 by 832) and
-was converted to JPEG at quality 85, which is 204 KB against the 211 KB of the
-file it replaced. `man3.png`, the same morning's hero, is still in the vault and
-still in git history, as is `standing-next-van.png` before it.
+`hero.webp` is the photograph on the front page. It was replaced on 2026-09-23
+08:03: it came from `Business/website/assets/YellowTradie-Plumber.webp` (1216 by
+832, webp, 107 KB) and is served as the same file, no re-encode, so the page
+loads 100 KB faster than the JPEG it replaced. The previous `hero.jpg` (JPEG
+quality 85, 199 KB) came from `Business/Website/Assets/YellowTradie.png` on
+2026-09-22 18:01. Both earlier frames are still in git history, as is
+`man3.png` and `standing-next-van.png` before them.
 
 - Provenance: not recorded. Ask Pete before reusing it anywhere else.
 - Licence: not stated, so the page makes no licence claim and the footer carries
@@ -15,11 +17,13 @@ still in git history, as is `standing-next-van.png` before it.
 
 Nobody has looked at this file with human eyes (this model has no image input), so
 it was checked by measurement instead, and the swap was made like for like. What
-the measurements say: the frame is a wide one, 1.462 to 1, exactly the size and
+The measurements say: the frame is a wide one, 1.462 to 1, exactly the size and
 shape of the file it replaced, and its tonality is near identical. Overall mean
-luminance 112, the same as `man3.png`; 23.8% of the frame near black against
-22.6%; 31.8% bright against 30.6%. The bright end is the right quarter, which
-carries almost no detail, and the busy part is left of centre.
+luminance 110 against 112 for `hero.jpg`; 21% of the frame near black against
+23.8%; 28.4% bright against 31.8%. The bright end is the right quarter, which
+carries almost no detail, and the busy part is left of centre. The frame is a
+genuinely different picture (25% of pixels differ by more than 32 luminance),
+so the crop was checked rather than assumed.
 
 **The crop did not need to move, and that is a measurement, not an assumption.**
 The hero box is 55% of the screen wide and full height, so `object-fit: cover`
@@ -39,14 +43,14 @@ reports the luminance under the headline for every candidate crop. It also print
 the pixel difference between two files, which is how this swap was shown to be
 like for like before a single page file was touched.
 
-Swap instructions, in one line: put your file at
-`yellowtradie-site/assets/hero.jpg`, keep the name, then bump the `?v=` number on
+Swap instructions, in one line: put your webp at
+`yellowtradie-site/assets/hero.webp`, keep the name, then bump the `?v=` number on
 every reference in `index.html` and `changelog.html` (the `<img src>` and two
 `og:image` metas) and reload. The bump is not optional: the preview server sends
 no cache headers, so a same-name swap is answered from the browser's own stored
 copy and the new photograph never appears. That is exactly what happened on
 2026-09-22, when the first swap looked like it had failed while the server was
-already handing out the new file. The current number is `?v=4`.
+already handing out the new file. The current number is `?v=5`.
 
 `scripts/verify-site-modal.mjs` now guards all three of these: that the file is
 versioned and actually loaded, that it is masked so it has no hard edge, and that

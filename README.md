@@ -154,10 +154,11 @@ automatic on all three.
 
 ## Images
 
-The hero photograph is Pete's own, converted from
-`Business/Website/Assets/YellowTradie.png` on 2026-09-22 18:01, and its provenance
+The hero photograph is Pete's own, served as `assets/hero.webp` from
+`Business/website/assets/YellowTradie-Plumber.webp` on 2026-09-23, and its provenance
 is not recorded anywhere, so no licence is claimed for it. It replaced
-`man3.png`, the same morning's hero, which is still in the vault. The five app screens are full
+`hero.jpg` (YellowTradie.png, 2026-09-22 18:01), which replaced `man3.png`,
+still in the vault. The five app screens are full
 phone captures from the test phone, running sample data, and they came off the
 page on 2026-09-22; the files are kept so the section can come back. `assets/CREDITS.md` lists
 every image and what is known about it. Keep that file current, because a
