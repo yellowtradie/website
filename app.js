@@ -31,9 +31,11 @@ const FORM_ENDPOINT = "https://formspree.io/f/xrpbqypw";
   const ID = "G-DZZT654SCD";
   const KEY = "yt_ga_off";
 
-  let off = false;
-  try { off = window.localStorage.getItem(KEY) === "1"; } catch (e) { off = false; }
-  if (off) window["ga-disable-" + ID] = true;
+  /* The inline script in the head has already set the flag if the visitor had
+     switched counting off. It is read here rather than set here so the page
+     knows which way the button should read. */
+  let off = window["ga-disable-" + ID] === true || false;
+  try { if (window.localStorage.getItem(KEY) === "1") off = true; } catch (e) {}
 
   const box = document.querySelector("[data-optout]");
   if (!box) return;
