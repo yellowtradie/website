@@ -10,6 +10,7 @@ No build step, no framework, no dependencies. Drop the folder on any host.
 | `index.html` | The page. All the copy lives here in plain text, on eight screens, with the detail folded into `<details>` elements |
 | `changelog.html` | What's new: dated entries on the site and early access. The second page the AEO audit needs for internal links |
 | `privacy.html` | Privacy and cookies. The only page with prose rather than cards. Carries the switch that turns the Google tag off, and the cookie names and lifetimes it promises are checked against the live tag |
+| `terms.html` | Terms of use. Reading the site, the calculator, joining the early access list, the limit of liability and which law applies. The suite checks the page and that every footer link on all four pages resolves |
 | `styles.css` | All styling. The exact colours, fonts, sizes and weights sit in the `:root` block at the top |
 | `app.js` | The signup modal, the missed call calculator and the sticky phone bar. One setting to change: `FORM_ENDPOINT` |
 | `robots.txt` | Allows the AI crawlers and points at the sitemap |
