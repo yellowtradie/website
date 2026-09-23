@@ -9,7 +9,7 @@ No build step, no framework, no dependencies. Drop the folder on any host.
 |---|---|
 | `index.html` | The page. All the copy lives here in plain text, on eight screens, with the detail folded into `<details>` elements |
 | `changelog.html` | What's new: dated entries on the site and early access. The second page the AEO audit needs for internal links |
-| `privacy.html` | Privacy and cookies. The only page with prose rather than cards. Carries the switch that turns the Google tag off. Footer link text is just "Privacy": Pete's call, 2026-09-23, the long version read as jargon |
+| `privacy.html` | Privacy and cookies. The only page with prose rather than cards. Carries the switch that turns the Google tag off. Footer link text is just "Privacy": the owner's call, 2026-09-23, the long version read as jargon |
 | `terms.html` | Terms of use. Reading the site, the calculator, joining the early access list, the limit of liability and which law applies. The suite checks the page and that every footer link on all four pages resolves |
 | `styles.css` | All styling. The exact colours, fonts, sizes and weights sit in the `:root` block at the top |
 | `app.js` | The signup modal, the missed call calculator and the sticky phone bar. One setting to change: `FORM_ENDPOINT` |
@@ -28,6 +28,16 @@ fragments never count. And `feed.xml` and `llms.txt` are deliberately not linked
 as `<a>` tags anywhere: the crawler follows those and audits the XML as HTML
 pages, which fails them and drags the site score down. A feed is discovered by
 the `rel="alternate"` link tag; llms.txt by its path.
+
+**No name on the site, and no small print in the footer.** The owner's call,
+2026-09-23: his name never appears on any page. The privacy and terms pages both
+say "the trading name of a sole trader based in Wales", which carries the legal
+meaning without naming anybody, and the suite fails if the name comes back. The
+two footer paragraphs ("YellowTradie is in early access..." and "Screens on this
+site show the app running with sample data") came off the same day: a visitor
+reading the bottom of the page wants the two links and nothing else. The
+sample-data point is not lost, because it sits in the privacy page and in the
+FAQ, which is where somebody looking for it would go.
 
 **The Google tag.** Both pages carry Google's gtag.js in the `<head>`, property
 `G-DZZT654SCD`, added 2026-09-23 (Pete's own Measurement ID). It is the only

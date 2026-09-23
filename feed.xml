@@ -5,9 +5,17 @@
     <link>https://yellowtradie.com/changelog.html</link>
     <description>What has changed on the YellowTradie site and in the early access programme. YellowTradie is a phone app for UK sole traders and self employed tradespeople.</description>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 23 Sep 2026 15:10:00 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 15:35:00 +0100</lastBuildDate>
     <ttl>1440</ttl>
     <atom:link href="https://yellowtradie.com/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>The footer small print is gone, and the pages name nobody</title>
+      <link>https://yellowtradie.com/changelog.html#footer-trimmed</link>
+      <guid isPermaLink="true">https://yellowtradie.com/changelog.html#footer-trimmed</guid>
+      <pubDate>Wed, 23 Sep 2026 15:35:00 +0100</pubDate>
+      <description>The two grey lines at the bottom of every page have come off. What is left there is the privacy link and the terms link, which is what the bottom of a page is for. The privacy page still says the screens show sample data, and so do the questions, so that is not lost. The privacy page and the terms page also stopped naming the person behind the business and now name the trading name only.</description>
+    </item>
 
     <item>
       <title>Terms of use</title>
