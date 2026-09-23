@@ -5,9 +5,17 @@
     <link>https://yellowtradie.com/changelog.html</link>
     <description>What has changed on the YellowTradie site and in the early access programme. YellowTradie is a phone app for UK sole traders and self employed tradespeople.</description>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 23 Sep 2026 14:15:00 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 14:40:00 +0100</lastBuildDate>
     <ttl>1440</ttl>
     <atom:link href="https://yellowtradie.com/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>A privacy page, and a switch to turn the counting off</title>
+      <link>https://yellowtradie.com/changelog.html#privacy-page</link>
+      <guid isPermaLink="true">https://yellowtradie.com/changelog.html#privacy-page</guid>
+      <pubDate>Wed, 23 Sep 2026 14:40:00 +0100</pubDate>
+      <description>There is a new page, Privacy and cookies, linked at the bottom of every page. It says in plain words what the early access form collects and why, who else sees it, how long it is kept, and how to have it removed. It names the two cookies the visit counting sets and how long they last, and it carries a switch that turns the counting off in that browser for good.</description>
+    </item>
 
     <item>
       <title>The site counts its own visits now</title>

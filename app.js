@@ -12,6 +12,59 @@
 
 const FORM_ENDPOINT = "https://formspree.io/f/xrpbqypw";
 
+/* The visit-counting switch on the privacy page.
+ *
+ * Why this exists rather than a consent banner. Since 5 February 2026 UK rules
+ * no longer need consent for first party analytics cookies whose only job is
+ * measuring how a site is used, but they do require two things: the visitor is
+ * told clearly what the cookies are for, and the visitor has a simple, free way
+ * to object. The privacy page does the telling. This is the objecting.
+ *
+ * It is deliberately the first thing in this file: `ga-disable-<id>` has to be
+ * true BEFORE gtag.js loads in the head, otherwise the first page view is sent
+ * before the switch is read. That is the whole point of the exercise, so this
+ * block must stay above everything else.
+ *
+ * Only reads. It does not set the flag for anyone who has not asked.
+ */
+(function () {
+  const ID = "G-DZZT654SCD";
+  const KEY = "yt_ga_off";
+
+  let off = false;
+  try { off = window.localStorage.getItem(KEY) === "1"; } catch (e) { off = false; }
+  if (off) window["ga-disable-" + ID] = true;
+
+  const box = document.querySelector("[data-optout]");
+  if (!box) return;
+
+  const state = box.querySelector("[data-optout-state]");
+  const button = box.querySelector("[data-optout-toggle]");
+  if (!state || !button) return;
+
+  function paint() {
+    if (off) {
+      state.textContent = "Visit counting is off in this browser. Nothing about your visit is being sent.";
+      button.textContent = "Turn visit counting back on";
+    } else {
+      state.textContent = "Visit counting is on in this browser.";
+      button.textContent = "Turn visit counting off";
+    }
+  }
+
+  button.addEventListener("click", function () {
+    off = !off;
+    try {
+      if (off) window.localStorage.setItem(KEY, "1");
+      else window.localStorage.removeItem(KEY);
+    } catch (e) { /* a browser that refuses storage keeps the session setting */ }
+    window["ga-disable-" + ID] = off;
+    paint();
+  });
+
+  paint();
+})();
+
 (function () {
   const modal = document.querySelector("[data-signup-modal]");
   if (!modal) return;

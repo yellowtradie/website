@@ -8,7 +8,8 @@ No build step, no framework, no dependencies. Drop the folder on any host.
 | File | What it is |
 |---|---|
 | `index.html` | The page. All the copy lives here in plain text, on eight screens, with the detail folded into `<details>` elements |
-| `changelog.html` | What's new: fourteen dated entries on the site and early access. The second page the AEO audit needs for internal links |
+| `changelog.html` | What's new: dated entries on the site and early access. The second page the AEO audit needs for internal links |
+| `privacy.html` | Privacy and cookies. The only page with prose rather than cards. Carries the switch that turns the Google tag off, and the cookie names and lifetimes it promises are checked against the live tag |
 | `styles.css` | All styling. The exact colours, fonts, sizes and weights sit in the `:root` block at the top |
 | `app.js` | The signup modal, the missed call calculator and the sticky phone bar. One setting to change: `FORM_ENDPOINT` |
 | `robots.txt` | Allows the AI crawlers and points at the sitemap |
@@ -33,8 +34,18 @@ third-party script on the site. The suite checks the served page rather than the
 file: the ID in the script `src`, the ID in the inline config, a check that no
 other property ID appears anywhere in a `<script>`, and the changelog's copy.
 Only the two pages carry it, because `feed.xml` and `llms.txt` are not pages.
-The tag has no cookie or consent banner in front of it, which is the one thing
-on this site that is not yet settled.
+
+**Why there is no consent banner.** Since 5 February 2026 the Data (Use and
+Access) Act 2025 removed the consent requirement for first-party analytics
+cookies whose sole purpose is measuring how a site is used, provided the visitor
+is told clearly what they do and is given a simple, free means of objecting
+(PECR Schedule A1 paragraph 5; the ICO finalised its storage and access guidance
+on 29 April 2026). The privacy page does the telling; the switch on
+`privacy.html` does the objecting, and it sets `ga-disable-G-DZZT654SCD` from the
+top of `app.js` before gtag loads. If the tag is ever changed to serve adverts,
+share data onward, or profile visitors, the exception stops applying and a
+consent banner becomes necessary. `scripts/verify-site-modal.mjs` holds the
+switch, the cookie names and the tag's placement.
 
 
 ## The page, top to bottom (rebuilt 2026-09-22)

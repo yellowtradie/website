@@ -1262,3 +1262,46 @@ body.modal-open .sticky-cta { display: none; }
      it stayed in the flex line and its gap pushed the mark off centre. */
   .header-inner > nav { display: none; }
 }
+
+/* --------------------------------------------------------------------------
+   The privacy page. Long prose, so it gets a narrower measure than the landing
+   page and open headings rather than cards: a wall of boxes is harder to scan
+   than a wall of text. Added 2026-09-23 with privacy.html.
+   -------------------------------------------------------------------------- */
+
+.legal { max-width: 42em; }
+
+.legal h2 {
+  margin: 40px 0 12px;
+  color: var(--black);
+}
+.legal > h2:first-child { margin-top: 0; }
+
+.legal p { color: var(--muted); }
+.legal ul { margin: 0 0 16px; padding-left: 20px; }
+.legal li { color: var(--muted); margin-bottom: 8px; }
+.legal strong { color: var(--black); }
+.legal a {
+  color: var(--black);
+  font-weight: 600;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+}
+.legal a:hover { border-bottom-color: var(--black); }
+.legal code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 14px;
+  background: var(--grey-3);
+  padding: 1px 4px;
+}
+.legal p:last-child, .legal ul:last-child { margin-bottom: 0; }
+
+/* The object switch, on the privacy page only. */
+.optout {
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--black);
+  padding: 20px;
+  margin: 24px 0 8px;
+  max-width: 42em;
+}
+.optout-state { font-weight: 600; color: var(--black); margin-bottom: 12px; }
