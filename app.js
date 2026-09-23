@@ -25,9 +25,6 @@ const FORM_ENDPOINT = "https://formspree.io/f/xrpbqypw";
   const previewBanner = document.querySelector("[data-preview-banner]");
 
   const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-  /* Digits, spaces, dashes, brackets and an optional leading +. Nine digits
-     after the first character, which is the shortest number worth accepting. */
-  const PHONE = /^[+(\d][\d\s()-]{8,}$/;
 
   const RULES = [
     { id: "full-name", blank: "Add your name so we know who to ask for." },
@@ -37,12 +34,6 @@ const FORM_ENDPOINT = "https://formspree.io/f/xrpbqypw";
       blank: "Add your email so we can send your invite.",
       bad: "That email does not look right. Check it and try again.",
       test: function (value) { return EMAIL.test(value); },
-    },
-    {
-      id: "phone",
-      blank: "Add a phone number so we can reach you.",
-      bad: "That phone number does not look right. Check it and try again.",
-      test: function (value) { return PHONE.test(value); },
     },
   ].map(function (rule) {
     rule.input = form.querySelector("#" + rule.id);
@@ -162,7 +153,6 @@ const FORM_ENDPOINT = "https://formspree.io/f/xrpbqypw";
       fullName: form.querySelector("#full-name").value.trim(),
       businessName: form.querySelector("#business-name").value.trim(),
       email: form.querySelector("#email").value.trim(),
-      phone: form.querySelector("#phone").value.trim(),
       source: "yellowtradie.com",
       signed_up_at: new Date().toISOString(),
       _subject: "YellowTradie early access request",

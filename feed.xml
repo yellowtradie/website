@@ -5,9 +5,17 @@
     <link>https://yellowtradie.com/changelog.html</link>
     <description>What has changed on the YellowTradie site and in the early access programme. YellowTradie is a phone app for UK sole traders and self employed tradespeople.</description>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 23 Sep 2026 08:03:00 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 13:41:00 +0100</lastBuildDate>
     <ttl>1440</ttl>
     <atom:link href="https://yellowtradie.com/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>The early access form no longer asks for a phone number</title>
+      <link>https://yellowtradie.com/changelog.html#signup-no-phone</link>
+      <guid isPermaLink="true">https://yellowtradie.com/changelog.html#signup-no-phone</guid>
+      <pubDate>Wed, 23 Sep 2026 13:41:00 +0100</pubDate>
+      <description>The pop-up asked for four things: your name, your business name, your email and a phone number. The phone number has been taken off, so it now asks for three. Nothing else on the form has changed, and the number already given by anyone who signed up earlier has been left alone.</description>
+    </item>
 
     <item>
       <title>A new picture at the top of the page, and new words under the headline</title>

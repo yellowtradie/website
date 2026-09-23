@@ -103,7 +103,7 @@ Then open http://127.0.0.1:4173
 
 ## Collecting the signups
 
-The page posts a small JSON body: `{fullName, businessName, email, phone, source,
+The page posts a small JSON body: `{fullName, businessName, email, source,
 signed_up_at}`. Any endpoint that accepts a JSON POST works. Two free options:
 
 **Formspree.** Sign up at formspree.io, make a form, and paste its endpoint
