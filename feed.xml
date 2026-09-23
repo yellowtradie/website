@@ -5,9 +5,17 @@
     <link>https://yellowtradie.com/changelog.html</link>
     <description>What has changed on the YellowTradie site and in the early access programme. YellowTradie is a phone app for UK sole traders and self employed tradespeople.</description>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 23 Sep 2026 13:41:00 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 14:15:00 +0100</lastBuildDate>
     <ttl>1440</ttl>
     <atom:link href="https://yellowtradie.com/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>The site counts its own visits now</title>
+      <link>https://yellowtradie.com/changelog.html#visit-counting</link>
+      <guid isPermaLink="true">https://yellowtradie.com/changelog.html#visit-counting</guid>
+      <pubDate>Wed, 23 Sep 2026 14:15:00 +0100</pubDate>
+      <description>Google's visit counting has been added to both pages, so we can see how many people look at the site and which parts they read. It records the visit and the page, and nothing is typed into any form by it. It does not change anything you see.</description>
+    </item>
 
     <item>
       <title>The early access form no longer asks for a phone number</title>

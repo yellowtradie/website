@@ -27,6 +27,15 @@ as `<a>` tags anywhere: the crawler follows those and audits the XML as HTML
 pages, which fails them and drags the site score down. A feed is discovered by
 the `rel="alternate"` link tag; llms.txt by its path.
 
+**The Google tag.** Both pages carry Google's gtag.js in the `<head>`, property
+`G-DZZT654SCD`, added 2026-09-23 (Pete's own Measurement ID). It is the only
+third-party script on the site. The suite checks the served page rather than the
+file: the ID in the script `src`, the ID in the inline config, a check that no
+other property ID appears anywhere in a `<script>`, and the changelog's copy.
+Only the two pages carry it, because `feed.xml` and `llms.txt` are not pages.
+The tag has no cookie or consent banner in front of it, which is the one thing
+on this site that is not yet settled.
+
 
 ## The page, top to bottom (rebuilt 2026-09-22)
 
