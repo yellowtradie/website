@@ -89,12 +89,14 @@ early access" control opens.
 ### The rules the page is checked against
 
 `scripts/verify-site-modal.mjs` drives the real page in headless Chrome over the
-devtools protocol and runs **94 assertions**: the eight screens in order, the
+devtools protocol and runs **116 assertions**: the eight screens in order, the
 accordions opening, the calculator's arithmetic, the sticky bar appearing and
 going away, the tick and cross marks, the four form fields, the intercepted
 Formspree post, no horizontal overflow at 1440 and 390, and the copy rules. Four
 of them guard the three sections that came off, so a paste cannot quietly put a
-dead section back. Run it against the preview or the live domain:
+dead section back. Four more hold the late-job copy to what is true, so it cannot
+grow into "the app reschedules it for you", which it never does. Run it against
+the preview or the live domain:
 
 ```bash
 node scripts/verify-site-modal.mjs                                  # local preview
@@ -102,9 +104,11 @@ node scripts/verify-site-modal.mjs https://www.yellowtradie.com/    # live
 ```
 
 The copy rules it enforces, all of them Pete's calls: no em dash and no arrow
-anywhere, nothing that says the app answers the call, no invented job values
-outside the calculator, nothing claiming HMRC approval or filing, the four form fields, and the
-schema's FAQ answers matching the visible ones word for word.
+anywhere, nothing that says the app answers the call, **nothing that says the app
+moves the diary or texts a customer by itself**, nothing that sells the knock-on
+as the whole calendar, no invented job values outside the calculator, nothing
+claiming HMRC approval or filing, the four form fields, and the schema's FAQ
+answers matching the visible ones word for word.
 
 The design rules it enforces, all of them read back as computed style rather than
 inspected by eye: **the hero text carries no rule above or below it** (Pete asked

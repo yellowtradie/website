@@ -5,9 +5,17 @@
     <link>https://yellowtradie.com/changelog.html</link>
     <description>What has changed on the YellowTradie site and in the early access programme. YellowTradie is a phone app for UK sole traders and self employed tradespeople.</description>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 23 Sep 2026 15:35:00 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2026 16:20:00 +0100</lastBuildDate>
     <ttl>1440</ttl>
     <atom:link href="https://yellowtradie.com/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>The page now covers a job running over</title>
+      <link>https://yellowtradie.com/changelog.html#late-job</link>
+      <guid isPermaLink="true">https://yellowtradie.com/changelog.html#late-job</guid>
+      <pubDate>Fri, 25 Sep 2026 16:20:00 +0100</pubDate>
+      <description>One job runs long and every job behind it is suddenly wrong. That is the third stop, Book it, and it is the one stage of the job the page did not cover until now. Tell the app how far behind you are, and it works out the rest: which jobs today are affected, their new times, and the message for each customer who needs telling, ready to send. Nothing moves and nothing is sent until you tap. Jobs further out are left alone, because you make the time back long before then.</description>
+    </item>
 
     <item>
       <title>The footer small print is gone, and the pages name nobody</title>
