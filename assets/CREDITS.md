@@ -79,9 +79,9 @@ data.
 
 ## Logo
 
-`logo-mark.svg` is drawn for this project. A yellow square (#fff400, Pete's
-brand yellow from 2026-09-22) with the uppercase T in the page's black
-(#161616). No third party rights.
+`logo-mark.svg` is drawn for this project. A yellow square (#e9d228, Pete's
+brand yellow from 2026-09-25) with the uppercase T in the page's black
+(#1a181a). No third party rights.
 
 ## The five app screens, re-shot 2026-09-22 17:30
 

@@ -5,9 +5,17 @@
     <link>https://yellowtradie.com/changelog.html</link>
     <description>What has changed on the YellowTradie site and in the early access programme. YellowTradie is a phone app for UK sole traders and self employed tradespeople.</description>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 25 Sep 2026 16:20:00 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2026 17:40:00 +0100</lastBuildDate>
     <ttl>1440</ttl>
     <atom:link href="https://yellowtradie.com/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>The colours have changed, and the paper has a grain</title>
+      <link>https://yellowtradie.com/changelog.html#new-colours</link>
+      <guid isPermaLink="true">https://yellowtradie.com/changelog.html#new-colours</guid>
+      <pubDate>Fri, 25 Sep 2026 17:40:00 +0100</pubDate>
+      <description>The yellow is a deeper one now, the black is a shade lighter, and the page sits on a warm off white instead of a plain grey. The sections that were pale grey are the same off white, so the page reads as one sheet rather than as bands. That off white carries a fine grain, like paper rather than a screen, and the same grain sits over the yellow band.</description>
+    </item>
 
     <item>
       <title>The page now covers a job running over</title>

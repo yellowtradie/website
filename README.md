@@ -12,6 +12,7 @@ No build step, no framework, no dependencies. Drop the folder on any host.
 | `privacy.html` | Privacy and cookies. The only page with prose rather than cards. Carries the switch that turns the Google tag off. Footer link text is just "Privacy": the owner's call, 2026-09-23, the long version read as jargon |
 | `terms.html` | Terms of use. Reading the site, the calculator, joining the early access list, the limit of liability and which law applies. The suite checks the page and that every footer link on all four pages resolves |
 | `styles.css` | All styling. The exact colours, fonts, sizes and weights sit in the `:root` block at the top |
+| `assets/noise-page.png`, `assets/noise-yellow.png` | The grain on the page background and on the yellow band. Two 128px tiling PNGs, dyed to `#FBFAED` and `#E9D228`, each shifted to an exact zero mean so the surfaces keep their colour. Do not swap these for a CSS `feTurbulence` filter: that one is not mean-neutral and darkens the paper (see the token comment in `styles.css`) |
 | `app.js` | The signup modal, the missed call calculator and the sticky phone bar. One setting to change: `FORM_ENDPOINT` |
 | `robots.txt` | Allows the AI crawlers and points at the sitemap |
 | `sitemap.xml` | Both pages |
@@ -89,10 +90,11 @@ early access" control opens.
 ### The rules the page is checked against
 
 `scripts/verify-site-modal.mjs` drives the real page in headless Chrome over the
-devtools protocol and runs **116 assertions**: the eight screens in order, the
+devtools protocol and runs **124 assertions**: the eight screens in order, the
 accordions opening, the calculator's arithmetic, the sticky bar appearing and
 going away, the tick and cross marks, the four form fields, the intercepted
-Formspree post, no horizontal overflow at 1440 and 390, and the copy rules. Four
+Formspree post, no horizontal overflow at 1440 and 390, the palette, and the copy
+rules. Four
 of them guard the three sections that came off, so a paste cannot quietly put a
 dead section back. Four more hold the late-job copy to what is true, so it cannot
 grow into "the app reschedules it for you", which it never does. Run it against
@@ -109,6 +111,12 @@ moves the diary or texts a customer by itself**, nothing that sells the knock-on
 as the whole calendar, no invented job values outside the calculator, nothing
 claiming HMRC approval or filing, the four form fields, and the schema's FAQ
 answers matching the visible ones word for word.
+
+**The palette, locked 2026-09-25:** brand yellow `#E9D228`, black `#1A181A`,
+page background `#FBFAED` carrying grain, and the banded sections on the same page
+colour. Six checks read these back off the rendered page rather than out of the
+stylesheet, and two of them count stray copies of the retired `#FFF400` and
+`#161616` in the markup, so neither can creep back into a corner of a page.
 
 The design rules it enforces, all of them read back as computed style rather than
 inspected by eye: **the hero text carries no rule above or below it** (Pete asked

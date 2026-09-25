@@ -8,25 +8,37 @@
    ========================================================================== */
 
 :root {
-  /* Brand yellow. Pete's call 2026-09-22: #FFF400, a brighter, greener yellow
-     than the DeWalt brand-5 (#febd17) this page started on. The hover is a
-     lighter tint of the same hue. */
-  --y: #fff400;
-  --y-hover: #fffa5c;
+  /* Brand yellow. Pete's call 2026-09-25: #E9D228, a warmer, softer yellow than
+     the #FFF400 this page carried from 2026-09-22. It is used for every yellow
+     on the site: buttons, the signup band, the numbered markers, the rules on
+     the dark blocks. The hover is a lighter tint of the same hue. */
+  --y: #e9d228;
+  --y-hover: #eddb52;
 
   /* Neutrals, DeWalt's --color-neutral ramp */
-  /* The black. PoweredNow's brand dark (#161616, their Elementor global
-     --e-global-color-5fcc261), chosen by Pete on 2026-09-21 so the page and
-     PoweredNow's hero share one black. It is also the exact black the app
-     already uses, so the site and the product share one black. The app's own
-     yellow is #FFBD0D; since 2026-09-22 the page runs on Pete's #FFF400
-     instead, so the two yellows no longer match.
-     DeWalt's own near-black is #231e20, kept below as --ink for anything that
-     needs their warmer tone. */
-  --black: #161616;
+  /* The black. #1A181A since Pete's call on 2026-09-25: a touch lighter than
+     the #161616 it replaced, and very slightly warm (blue and green sit two
+     points under red, so it is not a flat grey). It is used everywhere the page
+     was near-black: the header, the hero, the dark section, the final block,
+     the footer, borders and type. */
+  --black: #1a181a;
   --ink: #231e20;          /* DeWalt neutral-11, kept for reference */
   --black-pure: #000;      /* neutral-12 */
   --cream: #fcf5de;        /* text on dark */
+  /* The page background, and the fill behind the sections that used to be grey.
+     Pete's call 2026-09-25: #FBFAED, a warm off-white, with a fine noise laid
+     over it (body + .section--grey below, using --noise-page). */
+  --page: #fbfaed;
+  /* The grain. Two small tiling PNGs in assets/, one dyed to the page colour and
+     one to the brand yellow, both made with a random spread and then shifted so
+     their average is exactly the flat colour. That matters: a noise layer that
+     is not mean-neutral darkens the surface it sits on, and the first attempt at
+     this (a CSS feTurbulence filter) pulled the paper from #FBFAED down to about
+     #F0EFE5 and read as dirty rather than as paper. Sizes: the page tile is
+     128px, sd 2.7 in the red channel, which is grain you can see in the screen
+     and cannot see from across the room. */
+  --noise-page: url("assets/noise-page.png");
+  --noise-yellow: url("assets/noise-yellow.png");
   --grey-2: #f7f5f5;       /* neutral-2 light surface */
   --grey-3: #f0eeee;       /* neutral-3 light surface / outline hover */
   --border: #d7d5d5;       /* neutral-5 border primary on light */
@@ -90,7 +102,16 @@ body {
   font-weight: 400;
   letter-spacing: 0;
   color: var(--black);
-  background: #fff;
+  /* The page background, with the grain over it. Pete's call 2026-09-25: the
+     background is #FBFAED, not white, and it carries noise so it reads as paper
+     rather than as a flat screen. The grain is the tiling PNG in --noise-page,
+     repeated, and it scrolls with the page on purpose: pinned to the viewport
+     the texture stays still while the words move, which reads as a dirty screen
+     rather than as paper. */
+  background-color: var(--page);
+  background-image: var(--noise-page);
+  background-repeat: repeat;
+  background-size: 128px 128px;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -108,7 +129,16 @@ a { color: inherit; }
 
 /* Keep an anchor jump clear of the sticky header */
 section[id] { scroll-margin-top: 90px; }
-.section--grey { background: var(--grey-2); }
+/* The grey section fill became the page colour on 2026-09-25, so the band still
+   reads as its own strip without going back to a cold grey. It carries the same
+   grain as the page, at the same size and aligned to the same place (both are
+   painted against the page box), so there is no seam where the band starts. */
+.section--grey {
+  background-color: var(--page);
+  background-image: var(--noise-page);
+  background-repeat: repeat;
+  background-size: 128px 128px;
+}
 .section--dark { background: var(--black); color: var(--cream); }
 
 /* --------------------------------------------------------------------------
@@ -747,7 +777,13 @@ p:last-child { margin-bottom: 0; }
    -------------------------------------------------------------------------- */
 
 .signup {
-  background: var(--y);
+  /* The yellow band carries the same treatment as the page: the flat brand yellow
+     with a grain tile dyed to that same yellow over it, so the band is one
+     surface with the rest of the page rather than a flat slab. */
+  background-color: var(--y);
+  background-image: var(--noise-yellow);
+  background-repeat: repeat;
+  background-size: 128px 128px;
   color: var(--black);
   border-top: var(--bar) solid var(--black);
   border-bottom: var(--bar) solid var(--black);
@@ -1127,7 +1163,7 @@ body.modal-open { overflow: hidden; }
   background-size: 16px 16px;
 }
 .mark--yes {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2 8.5l4 4 8-9' fill='none' stroke='%23fff400' stroke-width='3'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2 8.5l4 4 8-9' fill='none' stroke='%23e9d228' stroke-width='3'/%3E%3C/svg%3E");
 }
 .mark--no {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 3l10 10M13 3L3 13' fill='none' stroke='%23b7b4b5' stroke-width='3'/%3E%3C/svg%3E");
