@@ -42,8 +42,12 @@ feather and the top and bottom keep theirs. No grain: the page grain is
 mean-neutral under the paper sections and reads as dirt over black.
 
 Crop measurements, taken by rendering the real page rather than by eye: desktop
-`object-position: 54% center` at a 620px height, phone `50% 28%`. The phone crop
-came from a 4 to 3 window of the source taken from 110 to 810 of 1248.
+`object-position: 54% center` at the full height of the band (936px at 1280 and
+wider, 1004px at 1024; it was a fixed 620px until Pete asked for the section's own
+height on 2026-09-27), phone `50% 28%`. The phone crop came from a 4 to 3 window
+of the source taken from 110 to 810 of 1248. At the taller desktop size the window
+shows about 58% of the frame's width, against 87% at 620px and the hero's own 54%,
+so it is a tighter frame in the same family as the hero's.
 
 Re-shot and re-measured with `scripts/capture-section.mjs <url> "#why" <width>
 <out.png>`, which clips one section at a real viewport width. The plain

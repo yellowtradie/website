@@ -524,8 +524,19 @@ p:last-child { margin-bottom: 0; }
 }
 
 @media (min-width: 1024px) {
+  /* The photograph runs the full height of the band, the way the hero's
+     photograph runs the full height of the hero. Pete's call 2026-09-27: at
+     620px it read a little too small on a desktop. The figure is stretched over
+     both grid rows and then pulled out by one section pad top and bottom, so it
+     reaches the section's own top and bottom edges rather than stopping at the
+     grid; `.section--photo` already hides the overflow, so the masked ends land
+     exactly on the band's edge and nothing bleeds into the next section. */
+  .why-photo {
+    align-self: stretch;
+    margin-block: calc(-1 * var(--section-pad));
+  }
   .why-photo img {
-    height: 620px;
+    height: 100%;
     object-position: 54% center;
     /* A portrait frame in a column this wide crops its sides, so the fade that
        matters is the one running into the copy: the left edge, long and soft,
