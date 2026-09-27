@@ -42,12 +42,23 @@ feather and the top and bottom keep theirs. No grain: the page grain is
 mean-neutral under the paper sections and reads as dirt over black.
 
 Crop measurements, taken by rendering the real page rather than by eye: desktop
-`object-position: 54% center` at the full height of the band (936px at 1280 and
-wider, 1004px at 1024; it was a fixed 620px until Pete asked for the section's own
-height on 2026-09-27), phone `50% 28%`. The phone crop came from a 4 to 3 window
-of the source taken from 110 to 810 of 1248. At the taller desktop size the window
-shows about 58% of the frame's width, against 87% at 620px and the hero's own 54%,
-so it is a tighter frame in the same family as the hero's.
+`object-position: 54% center` at the full height of the band (957px at 1280 and
+1440, 990px at 1920, 1004px at 1024; it was a fixed 620px until Pete asked for the
+section's own height on 2026-09-27), phone `50% 28%`. The phone crop came from a
+4 to 3 window of the source taken from 110 to 810 of 1248.
+
+The desktop width took two passes on 2026-09-27, and the second is the one to
+read. Filling the band at the old 360px column showed only 57.7% of the frame's
+width and Pete's note was "you can only see the man and not anything to the left
+and right to him". From 1280 up the copy column is now a fixed 700px, the picture
+takes the rest and runs out to the right-hand edge of the window, capped at 660px.
+Measured under `object-fit: cover`, the window now shows 79% of the frame's width
+at 1280, 91.5% at 1440 (source 5%..96%) and the whole frame at 1920. For
+comparison, the hero's own photograph shows 54% of its frame. The two numbers that
+do the work are `margin-right` (the exact distance from the page's content edge to
+the viewport edge, so the picture lands on the screen edge rather than past it) and
+the 660px cap (a wider frame would grow the band itself, because the picture's own
+aspect sets the row height once it is the tallest thing in the column).
 
 Re-shot and re-measured with `scripts/capture-section.mjs <url> "#why" <width>
 <out.png>`, which clips one section at a real viewport width. The plain

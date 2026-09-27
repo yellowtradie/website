@@ -580,6 +580,36 @@ p:last-child { margin-bottom: 0; }
   }
 }
 
+/* A wide desktop had room going spare, and the picture was using very little of
+   it. Pete, 2026-09-27 17:40: "the image is now too narrow, u can only see the man
+   and not anything to the left and right to him". So from 1280 up the words and
+   the table take a fixed 700px (the table's own comfortable width, and it never
+   scrolls: `.compare` has a 640px floor), the photograph takes the rest of the
+   column, and then runs out to the right-hand edge of the screen the way the
+   hero's photograph does. Two numbers keep that from being a guess:
+   - the bleed is exactly the distance from the page's content edge to the
+     viewport edge, so the picture lands on the screen edge rather than some
+     amount past it;
+   - the picture is capped at 660px, because a wider frame grows the band itself
+     (the image's own aspect sets the row height once it is the tallest thing in
+     the column) and a 1900px screen would otherwise have stretched the band to
+     about 1300px for no reason.
+   Measured against the source frame, the window the picture shows goes from
+   23%..81% across, 57.7% of the frame, to 5%..96%, 91.5%, at 1440, and the whole
+   frame at 1920. The band grows 21px at 1440 and 54px at 1920. Below 1280 nothing
+   here applies: at 1024 the page is too narrow to give the picture the room
+   without starving the table. */
+@media (min-width: 1280px) {
+  .why-grid {
+    grid-template-columns: minmax(0, 700px) minmax(0, 1fr);
+    column-gap: 32px;
+  }
+  .why-photo {
+    margin-right: calc(-1 * (max(0px, (100vw - var(--content)) / 2) + var(--gutter)));
+  }
+  .why-photo img { max-width: 660px; }
+}
+
 /* On a phone the photograph is a wide banner: under the words, above the table,
    cropped on the face and the phone in his hands. Same feather top and bottom,
    so there is no box. */

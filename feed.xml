@@ -5,16 +5,16 @@
     <link>https://yellowtradie.com/changelog.html</link>
     <description>What has changed on the YellowTradie site and in the early access programme. YellowTradie is a phone app for UK sole traders and self employed tradespeople.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 27 Sep 2026 17:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 27 Sep 2026 17:45:00 +0100</lastBuildDate>
     <ttl>1440</ttl>
     <atom:link href="https://yellowtradie.com/feed.xml" rel="self" type="application/rss+xml"/>
 
     <item>
-      <title>The photograph in the dark section is taller on a desktop</title>
+      <title>The photograph in the dark section fills the band, and shows the room</title>
       <link>https://yellowtradie.com/changelog.html#why-photo-height</link>
       <guid isPermaLink="true">https://yellowtradie.com/changelog.html#why-photo-height</guid>
-      <pubDate>Sun, 27 Sep 2026 17:00:00 +0100</pubDate>
-      <description>On a desktop the picture in the "Built for one person, not an office" band stood at a fixed height in its own column, and it read a little small beside the words. It now runs the full height of that band, from the top edge to the bottom one, the way the picture in the top block runs the full height of its block. Its edges still fade into the black. Nothing else moved: the words, the table and the height of the band itself are exactly as they were, and on a phone it is the same wide banner as before.</description>
+      <pubDate>Sun, 27 Sep 2026 17:45:00 +0100</pubDate>
+      <description>On a desktop the picture in the "Built for one person, not an office" band stood at a fixed height in its own column, and it read a little small beside the words. It now fills that band from the top edge to the bottom one, and on a wide screen it runs out to the right-hand edge of the window and shows most of the photograph rather than a strip of the middle of it. Its edges still fade into the black. The band itself is the same height it was, because the words and the table still decide that, and on a phone it is the same wide banner as before.</description>
     </item>
 
     <item>
