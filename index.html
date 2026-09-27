@@ -18,12 +18,12 @@
 <meta property="og:url" content="https://yellowtradie.com/">
 <meta property="og:image" content="https://yellowtradie.com/assets/hero.webp?v=5">
 <meta name="twitter:card" content="summary_large_image">
-<meta property="article:modified_time" content="2026-09-25T16:20:00+01:00">
+<meta property="article:modified_time" content="2026-09-27T14:40:00+01:00">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=15">
+<link rel="stylesheet" href="styles.css?v=16">
 
 <!-- The visitor's choice about being counted, read before the tag can load.
      This has to be inline and above the tag, and it is not optional. gtag.js is
@@ -291,12 +291,29 @@
        Screen 4: The old way against YellowTradie. Six rows, a cross and a
        tick, read in two seconds.
        ===================================================================== -->
-  <section class="section section--dark" id="why">
-    <div class="wrap">
+  <section class="section section--dark section--photo" id="why">
+    <div class="wrap why-grid">
+      <div class="why-top">
       <p class="eyebrow eyebrow--yellow">Why it is different</p>
       <h2 class="display" style="color: #fff;">Built for one person, not an office</h2>
       <p class="lede muted section-lede">No dispatcher. No office login. No shared calendar. YellowTradie is for the person doing the work and running the business, usually at the same time and usually in the rain. Sparky, chippy, plumber or joiner, if you work on your own it is built for you.</p>
+      </div>
 
+      <!-- The photograph of a sparky at the board. Portrait on a desktop, where it
+           sits in its own column beside the words and blends into the black the
+           same way the hero photograph does: the same mask, the same idea. On a
+           phone it becomes a wide banner between the words and the table. Pete's
+           call, 2026-09-27. -->
+      <figure class="why-photo">
+        <picture>
+          <source media="(max-width: 1023px)" srcset="assets/sparky-wide.webp?v=1">
+          <img src="assets/sparky.webp?v=1" width="832" height="1248"
+               alt="A tradesperson reading his phone in front of an open consumer unit"
+               loading="lazy" decoding="async">
+        </picture>
+      </figure>
+
+      <div class="why-bottom">
       <div class="table-scroll" style="margin-top: 32px;">
         <table class="compare">
           <caption class="tertiary" style="text-align: left; padding: 0 0 12px;">How the same week goes, with paper and WhatsApp, and with YellowTradie.</caption>
@@ -348,6 +365,7 @@
       </div>
 
       <p class="lede muted section-lede" style="margin-top: 24px;">If you run a team and need to hand jobs out to your lads, this is not for you yet. Tell us if that is what you need, it is useful to know.</p>
+      </div>
     </div>
   </section>
 

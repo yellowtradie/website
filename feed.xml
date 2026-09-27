@@ -5,9 +5,17 @@
     <link>https://yellowtradie.com/changelog.html</link>
     <description>What has changed on the YellowTradie site and in the early access programme. YellowTradie is a phone app for UK sole traders and self employed tradespeople.</description>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 25 Sep 2026 17:40:00 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 27 Sep 2026 14:40:00 +0100</lastBuildDate>
     <ttl>1440</ttl>
     <atom:link href="https://yellowtradie.com/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>A tradesperson now stands in the dark section</title>
+      <link>https://yellowtradie.com/changelog.html#why-photo</link>
+      <guid isPermaLink="true">https://yellowtradie.com/changelog.html#why-photo</guid>
+      <pubDate>Sun, 27 Sep 2026 14:40:00 +0100</pubDate>
+      <description>The band that says "Built for one person, not an office" used to be words and a table on their own. There is a photograph of a sparky at an open consumer unit in it now, reading his phone with a tool belt on. Its edges fade into the black the same way the photograph at the top of the page does, so it reads as part of the section rather than as a picture dropped on top. On a phone it is a wide banner under the words and above the table.</description>
+    </item>
 
     <item>
       <title>The colours have changed, and the paper has a grain</title>

@@ -90,7 +90,7 @@ early access" control opens.
 ### The rules the page is checked against
 
 `scripts/verify-site-modal.mjs` drives the real page in headless Chrome over the
-devtools protocol and runs **124 assertions**: the eight screens in order, the
+devtools protocol and runs **130 assertions**: the eight screens in order, the
 accordions opening, the calculator's arithmetic, the sticky bar appearing and
 going away, the tick and cross marks, the four form fields, the intercepted
 Formspree post, no horizontal overflow at 1440 and 390, the palette, and the copy

@@ -433,6 +433,151 @@ p:last-child { margin-bottom: 0; }
 }
 
 /* --------------------------------------------------------------------------
+   The photograph in the dark "why" section. Pete dropped an electrician's
+   picture in the vault on 2026-09-27 and asked for it blended into this band
+   the same way the hero's photograph is blended into the hero: same mask, same
+   idea, no rectangle. It is portrait (832 by 1248), so it sits in a column
+   beside the table on a desktop rather than filling the band, and it becomes a
+   wide banner on a phone.
+
+   Two files: `sparky.webp` is the upright frame for a desktop, `sparky-wide.webp`
+   is the 4:3 crop for a phone, chosen by a <source> at 1023px. Both are one
+   grade, taken from the hero's own rule: darker and less saturated so the
+   workshop falls away and the cable colours stop fighting the brand yellow.
+   -------------------------------------------------------------------------- */
+
+.section--photo {
+  position: relative;
+  overflow: hidden;          /* the mask feathers the edges; this keeps the
+                                blurred top and bottom from reaching the next
+                                section */
+}
+
+/* Desktop: two columns. The words and the table read down the left, and the
+   photograph stands in its own right-hand column beside them. */
+@media (min-width: 1024px) {
+  .why-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+    grid-template-rows: auto 1fr;
+    column-gap: 56px;
+    align-items: start;
+  }
+  .why-top { grid-column: 1; grid-row: 1; }
+  .why-photo { grid-column: 2; grid-row: 1 / span 2; }
+  .why-bottom { grid-column: 1; grid-row: 2; }
+}
+
+.why-photo { margin: 0; }
+
+/* Phone: one column, so the photograph is a wide banner between the words and
+   the table, cropped on his face and the phone in his hands. Same feather top
+   and bottom, so there is no box. */
+
+.why-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: 50% 30%;  /* the face, the phone and the board, in the wide crop */
+  /* The hero's own grade. This frame is a touch brighter than the hero file
+     (mean 111 against 110) and far more colourful, because of the wiring in the
+     board, so it takes a little more of both. */
+  filter: brightness(.92) contrast(1.05) saturate(.76);
+  /* The hero's mask, turned on its side: this frame is upright, so the long fade
+     runs down its left edge into the black and the feather runs along the top
+     and bottom, which is the way it would sit if it were the hero. */
+  -webkit-mask-image:
+    linear-gradient(90deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, .35) 8%,
+      rgba(0, 0, 0, .72) 15%,
+      rgba(0, 0, 0, 1) 28%,
+      rgba(0, 0, 0, 1) 100%),
+    linear-gradient(180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, .45) 6%,
+      rgba(0, 0, 0, 1) 16%,
+      rgba(0, 0, 0, 1) 84%,
+      rgba(0, 0, 0, .45) 94%,
+      rgba(0, 0, 0, 0) 100%);
+  mask-image:
+    linear-gradient(90deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, .35) 8%,
+      rgba(0, 0, 0, .72) 15%,
+      rgba(0, 0, 0, 1) 28%,
+      rgba(0, 0, 0, 1) 100%),
+    linear-gradient(180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, .45) 6%,
+      rgba(0, 0, 0, 1) 16%,
+      rgba(0, 0, 0, 1) 84%,
+      rgba(0, 0, 0, .45) 94%,
+      rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+@media (min-width: 1024px) {
+  .why-photo img {
+    height: 620px;
+    object-position: 54% center;
+    /* A portrait frame in a column this wide crops its sides, so the fade that
+       matters is the one running into the copy: the left edge, long and soft,
+       exactly as the hero's is. The right edge keeps a short feather so it does
+       not end in a line against the black. */
+    -webkit-mask-image:
+      linear-gradient(90deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, .45) 5%,
+        rgba(0, 0, 0, .85) 11%,
+        rgba(0, 0, 0, 1) 18%,
+        rgba(0, 0, 0, 1) 90%,
+        rgba(0, 0, 0, .55) 96%,
+        rgba(0, 0, 0, 0) 100%),
+      linear-gradient(180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, .5) 5%,
+        rgba(0, 0, 0, 1) 14%,
+        rgba(0, 0, 0, 1) 86%,
+        rgba(0, 0, 0, .5) 95%,
+        rgba(0, 0, 0, 0) 100%);
+    mask-image:
+      linear-gradient(90deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, .45) 5%,
+        rgba(0, 0, 0, .85) 11%,
+        rgba(0, 0, 0, 1) 18%,
+        rgba(0, 0, 0, 1) 90%,
+        rgba(0, 0, 0, .55) 96%,
+        rgba(0, 0, 0, 0) 100%),
+      linear-gradient(180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, .5) 5%,
+        rgba(0, 0, 0, 1) 14%,
+        rgba(0, 0, 0, 1) 86%,
+        rgba(0, 0, 0, .5) 95%,
+        rgba(0, 0, 0, 0) 100%),
+      linear-gradient(180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 1) 100%);
+  }
+}
+
+/* On a phone the photograph is a wide banner: under the words, above the table,
+   cropped on the face and the phone in his hands. Same feather top and bottom,
+   so there is no box. */
+@media (max-width: 1023px) {
+  .why-photo { margin: 28px 0 4px; }
+  .why-photo img { object-position: 50% 28%; }
+}
+
+/* --------------------------------------------------------------------------
    Card grids, zero radius, 1px borders, no shadows
    -------------------------------------------------------------------------- */
 
@@ -1341,3 +1486,52 @@ body.modal-open .sticky-cta { display: none; }
   max-width: 42em;
 }
 .optout-state { font-weight: 600; color: var(--black); margin-bottom: 12px; }
+
+/* --------------------------------------------------------------------------
+   The "why" photograph on a phone. At the END of the file on purpose: a base
+   rule further down would otherwise override a media query written higher up,
+   which is the trap the handoff warns about (two spacing overrides were lost
+   this way next to the carousel).
+   -------------------------------------------------------------------------- */
+@media (max-width: 1023px) {
+  .why-photo { margin: 30px 0 6px; }
+  .why-bottom .table-scroll { margin-top: 10px !important; }
+  /* The banner spans the whole column with no words beside it, so the long fade
+     on the left is wrong here: it dims the consumer unit for no reason. The fade
+     that matters on a phone is the one top and bottom, and the sides take a short
+     feather instead. */
+  .why-photo img {
+    object-position: 50% 28%;
+    -webkit-mask-image:
+      linear-gradient(90deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, .8) 6%,
+        rgba(0, 0, 0, 1) 11%,
+        rgba(0, 0, 0, 1) 89%,
+        rgba(0, 0, 0, .8) 94%,
+        rgba(0, 0, 0, 0) 100%),
+      linear-gradient(180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, .45) 6%,
+        rgba(0, 0, 0, 1) 16%,
+        rgba(0, 0, 0, 1) 84%,
+        rgba(0, 0, 0, .45) 94%,
+        rgba(0, 0, 0, 0) 100%);
+    mask-image:
+      linear-gradient(90deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, .8) 6%,
+        rgba(0, 0, 0, 1) 11%,
+        rgba(0, 0, 0, 1) 89%,
+        rgba(0, 0, 0, .8) 94%,
+        rgba(0, 0, 0, 0) 100%),
+      linear-gradient(180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, .45) 6%,
+        rgba(0, 0, 0, 1) 16%,
+        rgba(0, 0, 0, 1) 84%,
+        rgba(0, 0, 0, .45) 94%,
+        rgba(0, 0, 0, 0) 100%);
+  }
+}
+

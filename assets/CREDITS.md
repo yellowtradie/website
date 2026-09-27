@@ -14,6 +14,41 @@ quality 85, 199 KB) came from `Business/Website/Assets/YellowTradie.png` on
 - Licence: not stated, so the page makes no licence claim and the footer carries
   no credit line (Pete's call, 2026-09-22). The line that was there before
   credited a rawpixel CC0 photograph, which none of these files uses.
+- **Changed 2026-09-27: provenance is a record here, not a permission.** AI
+  generated images are allowed on this site and may stand as the photograph of a
+  tradesperson, on Pete's call. Write where a file came from, then carry on.
+
+## The photograph in the "why" section (added 2026-09-27)
+
+`sparky.webp` is the upright frame in the dark "Built for one person, not an
+office" band, and `sparky-wide.webp` is the 4 to 3 crop a phone is served for the
+same spot. Both come from one file in the vault,
+`Business/Website/Assets/Candid_85mm_film_photo_Kodak_Portra_30yo_white_British_elect (1).jpg`
+(832 by 1248), so the name reads like a generator's output and the provenance is
+unrecorded. Per the note above, that is allowed and needs no answer from Pete.
+
+Why the band and not the hero: the hero box is 55% of the screen wide and full
+height and every hero frame on this page is landscape, so a 1 to 1.5 portrait in
+that slot would fill the box at about 2.2 times and then lose two thirds of its
+width, leaving a head and shoulders. The dark band is the one section with a hole
+in it and the one painted `--black`, which is this frame's own colour once the
+workshop is knocked back, so the two merge and the background disappears.
+
+The treatment is the hero's own idea turned on its side: `brightness(.92)
+contrast(1.05) saturate(.76)`, a long fade down the left edge into the copy and a
+feather along the top and bottom, so there is no rectangle. On a phone the long
+left fade is wrong (nothing sits beside a banner) so the sides take a short
+feather and the top and bottom keep theirs. No grain: the page grain is
+mean-neutral under the paper sections and reads as dirt over black.
+
+Crop measurements, taken by rendering the real page rather than by eye: desktop
+`object-position: 54% center` at a 620px height, phone `50% 28%`. The phone crop
+came from a 4 to 3 window of the source taken from 110 to 810 of 1248.
+
+Re-shot and re-measured with `scripts/capture-section.mjs <url> "#why" <width>
+<out.png>`, which clips one section at a real viewport width. The plain
+`chrome --headless --screenshot --window-size` route does NOT give you the width
+you ask for, and it also misses lazy images because they never enter the viewport.
 
 Nobody has looked at this file with human eyes (this model has no image input), so
 it was checked by measurement instead, and the swap was made like for like. What
