@@ -8,12 +8,21 @@
    ========================================================================== */
 
 :root {
-  /* Brand yellow. Pete's call 2026-09-25: #E9D228, a warmer, softer yellow than
-     the #FFF400 this page carried from 2026-09-22. It is used for every yellow
-     on the site: buttons, the signup band, the numbered markers, the rules on
-     the dark blocks. The hover is a lighter tint of the same hue. */
-  --y: #e9d228;
-  --y-hover: #eddb52;
+  /* Brand yellow. Pete's call 2026-09-27: #FFEF4D, read off the new logo mark
+     (Business/Brand/Assets/YellowTradie-WM.svg) so the page and the mark are one
+     colour. It was #E9D228 from 2026-09-25 to this change, and #FFF400 before
+     that. It is used for every yellow on the site: buttons, the signup band, the
+     numbered markers, the rules on the dark blocks. The hover is a lighter tint
+     of the same hue. #FFEF4D is lighter than the yellow it replaced, so black on
+     it gains contrast rather than losing it: #1A181A on #FFEF4D measures 13.63
+     to 1, where the same black on #E9D228 measured 11.53 to 1.
+     THE ONE THING THAT DID NOT MOVE: the black. The mark's own shapes are drawn
+     in #161616, the site's black is #1A181A (Pete's call 2026-09-25), and four
+     levels between them is not a difference anyone can see, so the mark is drawn
+     on the page in the site's black. Using the mark's own #161616 would put the
+     retired black back into the markup, which the check suite refuses. */
+  --y: #ffef4d;
+  --y-hover: #fff37a;
 
   /* Neutrals, DeWalt's --color-neutral ramp */
   /* The black. #1A181A since Pete's call on 2026-09-25: a touch lighter than
@@ -38,7 +47,22 @@
      128px, sd 2.7 in the red channel, which is grain you can see in the screen
      and cannot see from across the room. */
   --noise-page: url("assets/noise-page.png");
-  --noise-yellow: url("assets/noise-yellow.png");
+  /* ?v=2 on the yellow tile only: it was redyed on 2026-09-27 for the mark's
+     #FFEF4D, and the file's name did not change, so a browser holding the old
+     #E9D228 tile would never ask for the new one. The page tile is unchanged, so
+     it keeps its bare URL.
+     THE YELLOW TILE IS NOW THE APP'S OWN FILE, byte for byte. It is
+     `trade-light-rn/assets/grain/noise-yellow.png`, already dyed to #FFEF4D for
+     the yellow panel at the top of the app's Home screen, copied across on
+     2026-09-27. One tile in two places, so the site's yellow band and the app's
+     panel carry the same texture rather than two random draws of the same recipe.
+     Its measured mean is (253.42, 239.00, 77.00), and the red is 1.6 levels short
+     of 255 for a reason worth knowing: red is already at the top of its channel,
+     so the positive half of the spread clips. A symmetric spread cannot average
+     exactly 255 there, and clipping is the closest it gets. The size of the
+     shortfall is under two levels on a textured surface, which is not a colour
+     anyone can see, and it is written down here rather than left as a surprise. */
+  --noise-yellow: url("assets/noise-yellow.png?v=2");
   --grey-2: #f7f5f5;       /* neutral-2 light surface */
   --grey-3: #f0eeee;       /* neutral-3 light surface / outline hover */
   --border: #d7d5d5;       /* neutral-5 border primary on light */
@@ -267,6 +291,15 @@ p:last-child { margin-bottom: 0; }
 }
 
 .logo svg { display: block; }
+
+/* The logo mark, drawn inline in the header and the footer, in both the header
+   and the footer of all four pages. The colours come from the tokens rather than
+   from hexes in the markup, so the mark cannot drift from the page's own yellow
+   and black: it IS the page's yellow and black. The geometry is the new mark from
+   Business/Brand/Assets/YellowTradie-WM.svg (Pete, 2026-09-27), carried at its own
+   1000 by 1000 viewBox so the file and the page draw the same shape. */
+.logo-mark__tile { fill: var(--y); }
+.logo-mark__ink { fill: var(--black); }
 
 .logo-word {
   font-family: var(--display);
@@ -1349,7 +1382,10 @@ body.modal-open { overflow: hidden; }
   background-size: 16px 16px;
 }
 .mark--yes {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2 8.5l4 4 8-9' fill='none' stroke='%23e9d228' stroke-width='3'/%3E%3C/svg%3E");
+  /* The stroke is the brand yellow as a literal, because a data URI cannot read
+     a custom property. It moves with --y by hand: #E9D228 until 2026-09-27, the
+     mark's #FFEF4D after it. */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2 8.5l4 4 8-9' fill='none' stroke='%23ffef4d' stroke-width='3'/%3E%3C/svg%3E");
 }
 .mark--no {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 3l10 10M13 3L3 13' fill='none' stroke='%23b7b4b5' stroke-width='3'/%3E%3C/svg%3E");

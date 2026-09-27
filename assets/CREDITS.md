@@ -129,9 +129,18 @@ data.
 
 ## Logo
 
-`logo-mark.svg` is drawn for this project. A yellow square (#e9d228, Pete's
-brand yellow from 2026-09-25) with the uppercase T in the page's black
-(#1a181a). No third party rights.
+`logo-mark.svg` is Pete's new mark, drawn for this project and handed over as
+`Business/Brand/Assets/YellowTradie-WM.svg` on 2026-09-27. It is the brand
+yellow tile (#FFEF4D) with two black bars and a triangle of the tile colour
+notched into the top bar. It replaced the yellow square with the uppercase T
+that had been the mark since the site was built.
+
+Its own black is #161616 and the page's black is #1a181a. The site draws the mark
+in the page's black: four levels of grey between them is not a difference anyone
+can see, and the retired #161616 is kept out of the markup on purpose. The
+favicon is this file; the header and the footer draw the same shape inline, filled
+from the page's own `--y` and `--black`, so the mark cannot drift from the page's
+colours. No third party rights.
 
 ## The five app screens, re-shot 2026-09-22 17:30
 
