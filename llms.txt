@@ -2,11 +2,11 @@
 
 > YellowTradie is a phone app for UK sole traders and self employed tradespeople. It takes a message when a call is missed, turns speech into priced quote line items, sends PDF quotes and invoices, chases unpaid bills and keeps the figures for the quarterly tax return. Built for one person, one phone, no office.
 
-Last updated: 25 September 2026
+Last updated: 3 October 2026
 
 ## Main page
 
-- [YellowTradie early access](https://yellowtradie.com/): what the app does, how it compares with a paper diary and WhatsApp, and the questions tradespeople ask before signing up.
+- [YellowTradie early access](https://yellowtradie.com/): what the app does, the old way set beside the YellowTradie way, the five stops from a missed call to the tax return, and the questions tradespeople ask before signing up.
 - [What's new](https://yellowtradie.com/changelog.html): what has changed on the site and in the early access programme, newest first.
 
 ## On the main page

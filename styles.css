@@ -1319,35 +1319,45 @@ body.modal-open { overflow: hidden; }
 .footer-base p { margin: 0 0 8px; }
 
 /* --------------------------------------------------------------------------
-   The pain strip. Three cards, one line each, and on a phone they swipe
-   sideways rather than stacking into a wall of text.
+   The old way against the YellowTradie way. Pete's copy, 2026-10-03: two
+   columns, one line a row, a cross and a tick. It replaced the three-card
+   pain strip, so the .pains and .pain rules that drew that strip came out
+   with it rather than being left as dead CSS.
    -------------------------------------------------------------------------- */
 
 .section-lede { margin-top: 16px; max-width: 46em; }
 
-.pains { list-style: none; margin: 32px 0 0; padding: 0; }
-
-@media (max-width: 767px) {
-  .pains {
-    display: flex;
-    gap: 16px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    padding-bottom: 4px;
-  }
-  .pains::-webkit-scrollbar { display: none; }
-  .pain { flex: 0 0 82%; scroll-snap-align: start; }
+/* .compare was built for the dark band (yellow headers, cream rows), so the
+   light version overrides the colours and nothing else: the same 640px floor
+   and the same sideways scroll on a phone. */
+.compare--light thead th {
+  color: var(--black);
+  border-bottom-color: var(--black);
+}
+.compare--light th,
+.compare--light td { border-bottom-color: var(--border); }
+.compare--light td { color: var(--muted); }
+/* The drawn cross and tick were coloured for the dark band, and the tick is
+   the brand yellow, which is invisible on paper. On the light band the tick
+   is the page's black and the cross is the grey rule colour. */
+.compare--light .mark--no {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 3l10 10M13 3L3 13' fill='none' stroke='%23646062' stroke-width='3'/%3E%3C/svg%3E");
+}
+.compare--light .mark--yes {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2 8.5l4 4 8-9' fill='none' stroke='%231a181a' stroke-width='3'/%3E%3C/svg%3E");
 }
 
-@media (min-width: 768px) {
-  .pains { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-}
+/* --------------------------------------------------------------------------
+   The four feature cards in the dark band. Pete's copy, 2026-10-03, where
+   the seven-row comparison table used to sit. Two columns from 640 up, one
+   on a phone, so nothing is squeezed into a column narrower than a thumb.
+   -------------------------------------------------------------------------- */
 
-.pain { border-top: 6px solid var(--black); padding-top: 16px; }
-.pain h3 { margin-bottom: 10px; }
-.pain p { color: var(--muted); }
+.benefits { list-style: none; margin: 32px 0 0; padding: 0; display: grid; gap: 24px; }
+@media (min-width: 640px) { .benefits { grid-template-columns: repeat(2, 1fr); } }
+.benefit { border-top: 6px solid var(--y); padding-top: 16px; }
+.benefit h3 { margin-bottom: 10px; color: var(--cream); }
+.benefit p { color: var(--tertiary-dark); }
 
 /* --------------------------------------------------------------------------
    Trust badges. Four, one line each.

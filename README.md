@@ -60,12 +60,11 @@ consent banner becomes necessary. `scripts/verify-site-modal.mjs` holds the
 switch, the cookie names and the tag's placement.
 
 
-## The page, top to bottom (rebuilt 2026-09-22)
+## The page, top to bottom (rebuilt 2026-09-22, rewritten 2026-10-03)
 
-Eight screens, one idea each, and everything long folded behind a tap. The words
+Eight sections, one idea each, and everything long folded behind a tap. The words
 stayed on the page, which is what the search engines and the AI assistants read;
-only the scroll was cut. Measured: **31%** of the words are on screen before
-anything is opened.
+only the scroll was cut.
 
 Three sections came off the page later on 2026-09-22, on Pete's call: the app
 screens carousel (`screens`), the "Everything else" pair at the end of the job
@@ -73,15 +72,26 @@ stops, and the four trust badges (`trust`). The words are kept, and the carousel
 and badge CSS and the five app pictures are still in the folder, so any of it can
 come back.
 
+**2026-10-03: Pete rewrote the copy, and this table describes the page as it now
+stands.** The three pain cards became his two-column table in `pains`; the six
+job stops became his five (Lead, Quote, Job, Invoice, Tax) with the old detail
+kept behind each tap, the Run it cards moved under Job and Tax; and the dark
+band's seven-row table became his four feature cards. The calculator, the
+thirteen questions, the early access band, the modal, the sticky bar and the
+footer are unchanged, and every button still says "Get early access". The whole
+of the old copy is kept in
+`Business/Website/content/yellowtradie-homepage-2026-10-03-1118.md` and `.html`.
+
 | Screen | Section id | What it is |
 |---|---|---|
-| 1 | `hero` | Headline, one line under it, one button, and the promise: free while we build, no card |
-| 2 | `pains` | Three cards. The missed call, the guess at 8pm, the Friday chasing. They swipe on a phone |
-| 3 | `how` | The job, as six numbered stops, one line each, every stop opening to its detail |
-| 4 | `why` | The old way against the app, six rows of cross and tick |
+| 1 | `hero` | "Do the Job. We'll Do the Paperwork.", one line under it, one button, and the promise: free while we build, no card |
+| 2 | `pains` | The old way against the YellowTradie way, five rows of cross and tick, scrolling sideways on a phone |
+| 3 | `how` | The job as five numbered stops (Lead, Quote, Job, Invoice, Tax), one line each, every stop opening to its detail |
+| 4 | `why` | The dark band: four feature cards beside the photograph |
 | 5 | `calculator` | Two sliders and the year a missed call adds up to. The numbers are the reader's own |
-| 6 | `early-access` | Three reasons and one button. The form is in the modal, with its four fields |
-| 7 | `faq` | Twelve questions as an accordion, every answer still on the page in full |
+| 6 | `early-access` | Three reasons and one button. The form is in the modal, with its three fields |
+| 7 | `faq` | Thirteen questions as an accordion, every answer still on the page in full |
+| 8 | `final` | The closing call: the 10pm laptop line, and one button |
 
 Two more things that are not screens: the **sticky bar**, which is phones only
 and appears once the hero is behind you, and the **modal**, which every "Get
@@ -90,15 +100,19 @@ early access" control opens.
 ### The rules the page is checked against
 
 `scripts/verify-site-modal.mjs` drives the real page in headless Chrome over the
-devtools protocol and runs **136 assertions**: the eight screens in order, the
+devtools protocol and runs **136 assertions**: the eight sections in order, the
 accordions opening, the calculator's arithmetic, the sticky bar appearing and
-going away, the tick and cross marks, the four form fields, the intercepted
+going away, the tick and cross marks, the three form fields, the intercepted
 Formspree post, no horizontal overflow at 1440 and 390, the palette, the logo
 mark, and the copy rules. Four
 of them guard the three sections that came off, so a paste cannot quietly put a
 dead section back. Four more hold the late-job copy to what is true, so it cannot
-grow into "the app reschedules it for you", which it never does. Run it against
-the preview or the live domain:
+grow into "the app reschedules it for you", which it never does. **Six were
+retargeted on 2026-10-03** when the page was rewritten (the hero line, the
+comparison table, the five stops, the feature cards, the late-job assertion and
+the phone scroll), each with the reason written beside it, and each was proved to
+bite by planting the fault into a throwaway copy and watching that check go red
+(`output/site-fault-proof.txt`). Run it against the preview or the live domain:
 
 ```bash
 node scripts/verify-site-modal.mjs                                  # local preview
