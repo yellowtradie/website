@@ -6,16 +6,15 @@ Last updated: 3 October 2026
 
 ## Main page
 
-- [YellowTradie early access](https://yellowtradie.com/): what the app does, the old way set beside the YellowTradie way, the five stops from a missed call to the tax return, and the questions tradespeople ask before signing up.
+- [YellowTradie](https://yellowtradie.com/): what the app does, the old way set beside the YellowTradie way, the five stops from a missed call to the tax return, and what a missed call costs.
 - [What's new](https://yellowtradie.com/changelog.html): what has changed on the site and in the early access programme, newest first.
 
 ## On the main page
 
 - What it does: https://yellowtradie.com/#how
 - Why it is different: https://yellowtradie.com/#why
-- Questions: https://yellowtradie.com/#faq
 - What a missed call costs: https://yellowtradie.com/#calculator
-- Early access signup: https://yellowtradie.com/#early-access
+- Sign up: https://yellowtradie.com/#early-access
 
 ## Feed
 

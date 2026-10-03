@@ -236,7 +236,9 @@ p:last-child { margin-bottom: 0; }
   letter-spacing: 0;
   text-decoration: none;
   border: 1px solid transparent;
-  border-radius: var(--radius);
+  /* Rounded pills. Pete's call, 2026-10-03: the page's zero-radius edge rule is
+     deliberately broken here and nowhere else. */
+  border-radius: 999px;
   cursor: pointer;
   transition: background-color .15s ease, color .15s ease, border-color .15s ease;
 }
@@ -458,13 +460,6 @@ p:last-child { margin-bottom: 0; }
   margin-top: 28px;
 }
 
-.hero-note {
-  margin-top: 16px;
-  font-size: 12px;
-  line-height: 17px;
-  color: var(--tertiary-dark);
-}
-
 /* --------------------------------------------------------------------------
    The photograph in the dark "why" section. Pete dropped an electrician's
    picture in the vault on 2026-09-27 and asked for it blended into this band
@@ -486,19 +481,20 @@ p:last-child { margin-bottom: 0; }
                                 section */
 }
 
-/* Desktop: two columns. The words and the table read down the left, and the
-   photograph stands in its own right-hand column beside them. */
+/* Desktop: two columns. The cards read down the left, and the photograph stands
+   in its own right-hand column beside them. */
 @media (min-width: 1024px) {
   .why-grid {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto;
     column-gap: 56px;
     align-items: start;
   }
-  .why-top { grid-column: 1; grid-row: 1; }
-  .why-photo { grid-column: 2; grid-row: 1 / span 2; }
-  .why-bottom { grid-column: 1; grid-row: 2; }
+  /* The heading that used to sit above the cards came off the page on
+     2026-10-03, so the cards and the photograph now share the one row. */
+  .why-photo { grid-column: 2; grid-row: 1; }
+  .why-bottom { grid-column: 1; grid-row: 1; }
 }
 
 .why-photo { margin: 0; }
@@ -863,9 +859,7 @@ p:last-child { margin-bottom: 0; }
 .reveal { border-top: 1px solid var(--black); margin-top: 28px; }
 .reveal:last-child { border-bottom: 1px solid var(--black); }
 
-.reveal summary,
-.step-summary,
-.faq-item summary {
+.reveal summary {
   list-style: none;
   cursor: pointer;
   display: flex;
@@ -874,13 +868,9 @@ p:last-child { margin-bottom: 0; }
   gap: 16px;
   min-height: 48px;
 }
-.reveal summary::-webkit-details-marker,
-.step-summary::-webkit-details-marker,
-.faq-item summary::-webkit-details-marker { display: none; }
+.reveal summary::-webkit-details-marker { display: none; }
 
-.reveal summary::after,
-.step-summary::after,
-.faq-item summary::after {
+.reveal summary::after {
   content: "+";
   flex: none;
   font-family: var(--display);
@@ -891,9 +881,7 @@ p:last-child { margin-bottom: 0; }
   color: var(--black);
 }
 
-.reveal[open] summary::after,
-.step[open] .step-summary::after,
-.faq-item[open] summary::after { content: "\2212"; }
+.reveal[open] summary::after { content: "\2212"; }
 
 .reveal summary { padding: 16px 0; }
 
@@ -916,7 +904,10 @@ p:last-child { margin-bottom: 0; }
 .steps { margin-top: 32px; border-top: 1px solid var(--black); }
 .step { border-bottom: 1px solid var(--black); }
 
-.step-summary { align-items: flex-start; padding: 20px 0; }
+/* One stop is his line and nothing else. The old build hid a paragraph of
+   detail behind each one; that copy came off the page on 2026-10-03, so the row
+   is a plain row and the "+" that used to promise more is gone with it. */
+.step-row { display: flex; align-items: flex-start; gap: 16px; padding: 20px 0; }
 
 .step-num {
   flex: none;
@@ -938,13 +929,9 @@ p:last-child { margin-bottom: 0; }
 
 /* The stage heading keeps its class so the checks that prove the grey rules
    never came back still mean something. It carries no rule of its own. */
-.step-summary .group-title { margin: 0; padding: 0; color: var(--black); }
+.step-row .group-title { margin: 0; padding: 0; color: var(--black); }
 
 .step-line { display: block; margin-top: 4px; font-size: 16px; line-height: 21px; color: var(--muted); }
-
-.step-summary::after { margin-top: 8px; }
-
-.step-body { padding: 4px 0 24px; display: grid; gap: 16px; }
 
 .odd-jobs { margin-top: 40px; }
 .odd-jobs h3 { margin-bottom: 20px; }
@@ -1010,42 +997,11 @@ p:last-child { margin-bottom: 0; }
 }
 @media (min-width: 1280px) { .signup { padding: 56px 0; } }
 
-.signup-grid { display: grid; gap: 32px; }
-@media (min-width: 900px) { .signup-grid { grid-template-columns: 1fr 1fr; align-items: start; } }
+/* The band is one centred button now: its heading, its line and its three
+   reasons came off the page on 2026-10-03. */
+.signup-strip { display: grid; gap: 24px; justify-items: center; }
 
-.signup h2 { margin-bottom: 16px; }
 .signup p { color: var(--black); }
-
-/* The three reasons on the yellow band. Black squares, same zero-radius edge
-   rule as the list in the modal. */
-.signup-reasons {
-  list-style: none;
-  margin: 20px 0 0;
-  padding: 0;
-}
-
-.signup-reasons li {
-  position: relative;
-  padding-left: 22px;
-  margin-bottom: 12px;
-  font-size: 16px;
-  line-height: 21px;
-  color: var(--black);
-}
-
-.signup-reasons li:last-child { margin-bottom: 0; }
-
-.signup-reasons li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 6px;
-  width: 9px;
-  height: 9px;
-  background: var(--black);
-}
-
-.signup-reasons strong { font-weight: 700; }
 
 /* Pete's short vertical clip. The slot stays hidden until the file actually
    loads, so a missing clip leaves no empty box in the band. */
@@ -1183,47 +1139,6 @@ input[aria-invalid="true"] { border-color: var(--error); border-width: 2px; }
 .modal-panel .form-note { color: var(--muted); }
 .modal-panel .signup-success { margin-top: 4px; }
 
-/* The "what you get" reasons. A black square rather than a disc, to keep the
-   page's zero-radius edge rule. Pete's call 2026-09-22: black markers, not
-   yellow ones, so the list reads as body text rather than decoration. */
-.modal-panel .what-you-get-title {
-  font-family: var(--display);
-  font-stretch: 125%;
-  font-weight: 800;
-  text-transform: uppercase;
-  font-size: 12px;
-  line-height: 14px;
-  color: var(--black);
-  margin: 0 0 10px;
-}
-
-.modal-panel .what-you-get {
-  list-style: none;
-  margin: 0 0 20px;
-  padding: 0;
-}
-
-.modal-panel .what-you-get li {
-  position: relative;
-  padding-left: 22px;
-  margin-bottom: 10px;
-  font-size: 15px;
-  line-height: 21px;
-  color: var(--muted);
-}
-
-.modal-panel .what-you-get li:last-child { margin-bottom: 0; }
-
-.modal-panel .what-you-get li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 7px;
-  width: 9px;
-  height: 9px;
-  background: var(--black);
-}
-
 .form-error {
   font-size: 13px;
   line-height: 19px;
@@ -1249,18 +1164,6 @@ body.modal-open { overflow: hidden; }
   padding: 8px var(--gutter);
   text-align: center;
 }
-
-/* --------------------------------------------------------------------------
-   FAQ: an accordion. The questions sit one line each until they are opened,
-   and every answer is still in the page in full for the search engines.
-   -------------------------------------------------------------------------- */
-
-.faqs { margin-top: 32px; border-top: 1px solid var(--black); }
-.faq-item { border-bottom: 1px solid var(--black); }
-.faq-item summary { padding: 20px 0; align-items: flex-start; }
-.faq-item summary h3 { margin: 0; }
-.faq-item summary::after { margin-top: 2px; }
-.faq-item p { margin: 0; padding: 0 0 20px; color: var(--muted); max-width: 60em; }
 
 /* --------------------------------------------------------------------------
    Final call to action

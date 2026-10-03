@@ -62,57 +62,58 @@ switch, the cookie names and the tag's placement.
 
 ## The page, top to bottom (rebuilt 2026-09-22, rewritten 2026-10-03)
 
-Eight sections, one idea each, and everything long folded behind a tap. The words
-stayed on the page, which is what the search engines and the AI assistants read;
-only the scroll was cut.
+Seven sections. **The page carries Pete's copy and nothing else now**, on his
+instruction of 2026-10-03: nothing long is folded away any more, because the copy
+that was folded away came off the page.
 
-Three sections came off the page later on 2026-09-22, on Pete's call: the app
+Three sections came off the page earlier, on 2026-09-22, on Pete's call: the app
 screens carousel (`screens`), the "Everything else" pair at the end of the job
-stops, and the four trust badges (`trust`). The words are kept, and the carousel
-and badge CSS and the five app pictures are still in the folder, so any of it can
-come back.
+stops, and the four trust badges (`trust`).
 
-**2026-10-03: Pete rewrote the copy, and this table describes the page as it now
-stands.** The three pain cards became his two-column table in `pains`; the six
-job stops became his five (Lead, Quote, Job, Invoice, Tax) with the old detail
-kept behind each tap, the Run it cards moved under Job and Tax; and the dark
-band's seven-row table became his four feature cards. The calculator, the
-thirteen questions, the early access band, the modal, the sticky bar and the
-footer are unchanged, and every button still says "Get early access". The whole
-of the old copy is kept in
-`Business/Website/content/yellowtradie-homepage-2026-10-03-1118.md` and `.html`.
+**2026-10-03, second pass: the old words came off.** The thirteen questions and
+the `FAQPage` schema behind them, the paragraphs hidden behind each of the five
+stops, the dark band's heading and its paragraph, the "if you run a team" line,
+the promise under the hero button, the band's three reasons, the footer's page
+links and email address, and the button in the top corner are all gone. The
+buttons are rounded pills and every one says "Start free trial" and opens the
+sign-up form. **Five things were kept on request:** the missed call calculator,
+the sign-up form, the logo, and the privacy and terms links. The whole of the
+page as it stood before this pass is kept in
+`Business/Website/content/yellowtradie-homepage-2026-10-03-1859.md` and `.html`,
+and the copy from the pass before that in `...-1118.md`.
 
 | Screen | Section id | What it is |
 |---|---|---|
-| 1 | `hero` | "Do the Job. We'll Do the Paperwork.", one line under it, one button, and the promise: free while we build, no card |
+| 1 | `hero` | "Do the Job. We'll Do the Paperwork.", one line under it, one button |
 | 2 | `pains` | The old way against the YellowTradie way, five rows of cross and tick, scrolling sideways on a phone |
-| 3 | `how` | The job as five numbered stops (Lead, Quote, Job, Invoice, Tax), one line each, every stop opening to its detail |
-| 4 | `why` | The dark band: four feature cards beside the photograph |
+| 3 | `how` | The job as five numbered rows (Lead, Quote, Job, Invoice, Tax), one line each and nothing behind them |
+| 4 | `why` | The dark band: four feature cards beside the photograph, with no heading |
 | 5 | `calculator` | Two sliders and the year a missed call adds up to. The numbers are the reader's own |
-| 6 | `early-access` | Three reasons and one button. The form is in the modal, with its three fields |
-| 7 | `faq` | Thirteen questions as an accordion, every answer still on the page in full |
-| 8 | `final` | The closing call: the 10pm laptop line, and one button |
+| 6 | `early-access` | One button on the yellow band. The form is in the modal, with its three fields |
+| 7 | `final` | The closing call: the 10pm laptop line, and one button |
 
 Two more things that are not screens: the **sticky bar**, which is phones only
-and appears once the hero is behind you, and the **modal**, which every "Get
-early access" control opens.
+and appears once the hero is behind you, and the **modal**, which every "Start
+free trial" control opens.
 
 ### The rules the page is checked against
 
 `scripts/verify-site-modal.mjs` drives the real page in headless Chrome over the
-devtools protocol and runs **136 assertions**: the eight sections in order, the
-accordions opening, the calculator's arithmetic, the sticky bar appearing and
-going away, the tick and cross marks, the three form fields, the intercepted
-Formspree post, no horizontal overflow at 1440 and 390, the palette, the logo
-mark, and the copy rules. Four
-of them guard the three sections that came off, so a paste cannot quietly put a
-dead section back. Four more hold the late-job copy to what is true, so it cannot
-grow into "the app reschedules it for you", which it never does. **Six were
-retargeted on 2026-10-03** when the page was rewritten (the hero line, the
-comparison table, the five stops, the feature cards, the late-job assertion and
-the phone scroll), each with the reason written beside it, and each was proved to
-bite by planting the fault into a throwaway copy and watching that check go red
-(`output/site-fault-proof.txt`). Run it against the preview or the live domain:
+devtools protocol and runs **117 assertions**: the seven sections in order, the
+calculator's arithmetic, the sticky bar appearing and going away, the tick and
+cross marks, the three form fields, the intercepted Formspree post, no horizontal
+overflow at 1440 and 390, the palette, the logo mark, and the copy rules. Four
+of them guard the three sections that came off in September, so a paste cannot
+quietly put a dead section back. **Nineteen were retired and six more retargeted
+on 2026-10-03**, because they described copy that had come off the page: the
+questions, the folded detail, the word count, the late-job paragraph, the price
+anchor and the accountant line among them. Each carries the reason it went or
+changed beside it. The one late-job rule that stayed is the negative one, that
+nothing may claim the app moves the diary by itself. **Every guard that was
+retargeted was proved to bite** by planting the fault into a throwaway copy on a
+second port and watching that check go red
+(`output/site-fault-proof-pass2.txt`). Run it against the preview or the live
+domain:
 
 ```bash
 node scripts/verify-site-modal.mjs                                  # local preview
