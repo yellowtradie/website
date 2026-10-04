@@ -451,19 +451,30 @@ p:last-child { margin-bottom: 0; }
 
 .hero h1 { color: #fff; margin: 0 0 20px; }
 .hero h1 em { font-style: normal; color: var(--y); }
-/* The hyphen inside "No-Bullshit" is a line-break opportunity, and from 1280 up
-   the h1 is too large to hold the phrase: 68px in a 760px column needs 820px,
-   so the browser broke it as "THE NO-" over "BULLSHIT APP". Pete saw that on
-   the live page and reported it, 2026-10-04. Held whole, the breaks fall as
-   THE / NO-BULLSHIT / APP FOR UK / TRADESMEN at 1440.
+/* The hero's headline runs one rung below the page's own h1 from 1280 up, and
+   this is the only place the display scale is departed from. At 68px the phrase
+   "The No-Bullshit" measures 809px in a 760px copy column, and that produced the
+   two things Pete reported on the live page, 2026-10-04: the browser split the
+   word at its own hyphen ("THE NO-" over "BULLSHIT APP"), and once the word was
+   held whole it stranded "THE" on a line of its own. His break, in his words:
+   "The no-bullshit" / "app for uk" / "tradesmen".
+   62/64 is the largest round pair that holds it. The phrase measures 737px of
+   the 760 available; 64px measures about 760, which is the whole column and no
+   margin at all for a face that renders a little wider in some browsers. Below
+   1280 nothing changes, and privacy, terms and the changelog keep the locked
+   scale because this is scoped to the hero rather than to `h1.display`.
 
-   The copy column is NOT the fix. Widening it to 880px does fit the phrase and
-   gives the three lines it reads best as, but the words then reach 44.9% into
-   the hero photograph while the mask only reaches full strength at 30% — the
-   check "the copy column ends before the photograph reaches full strength"
-   fails on exactly that, and it is there to keep the words on the dark half.
-   Dropping the display size to about 62px is the other route to those three
-   lines, and that is a change to the locked type scale rather than a fix. */
+   The copy column is NOT the fix, and that was built and measured rather than
+   assumed: widened to 880px it does fit the phrase at 68px, but the words then
+   reach 44.9% into the hero photograph while the mask only reaches full
+   strength at 30%, and the check that keeps the words on the dark half of the
+   picture fails on exactly that. */
+@media (min-width: 1280px) { .hero h1 { font-size: 62px; line-height: 64px; } }
+/* Belt and braces on the hyphen, which is a line-break opportunity in its own
+   right: at 62px the phrase fits with 23px to spare, and this is what stops a
+   slightly wider rendering from splitting the word rather than moving it whole.
+   `scripts/verify-site-modal.mjs` reads the painted lines back one character at
+   a time and fails if any word of the headline sits on two of them. */
 .hero-nobr { white-space: nowrap; }
 .hero p { color: var(--cream); max-width: 34em; }
 

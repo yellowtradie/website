@@ -99,7 +99,7 @@ free trial" control opens.
 ### The rules the page is checked against
 
 `scripts/verify-site-modal.mjs` drives the real page in headless Chrome over the
-devtools protocol and runs **118 assertions**: the seven sections in order, the
+devtools protocol and runs **119 assertions**: the seven sections in order, the
 calculator's arithmetic, the sticky bar appearing and going away, the tick and
 cross marks, the three form fields, the intercepted Formspree post, no horizontal
 overflow at 1440 and 390, the palette, the logo mark, and the copy rules. Four
@@ -108,17 +108,21 @@ quietly put a dead section back. **Nineteen were retired and six more retargeted
 on 2026-10-03**, because they described copy that had come off the page: the
 questions, the folded detail, the word count, the late-job paragraph, the price
 anchor and the accountant line among them. Each carries the reason it went or
-changed beside it. **One was added on 2026-10-04 and it is the one that would
-have caught the fault of that day:** the headline painted as "THE NO-" over
-"BULLSHIT APP" at 1440 because a hyphen is a break opportunity, so the check
-reads the painted lines back **one character at a time** and fails if any word
-of the hero headline sits on two of them. A word-level measurement returns a
-union box across both lines and reported that broken headline as intact, which
-is how it reached the live page. The one late-job rule that stayed is the
-negative one, that nothing may claim the app moves the diary by itself. **Every
-guard that was retargeted was proved to bite** by planting the fault into a throwaway copy on a
+changed beside it. **Two were added on 2026-10-04, and both are about the shape of
+the hero headline rather than its words.** The first fails if any word of it sits
+on two painted lines — the word "No-Bullshit" was split at its own hyphen on a
+laptop, because a hyphen is a break opportunity and 68px outgrew the copy column.
+The second pins the break Pete asked for: "The No-Bullshit" / "app for UK" /
+"Tradesmen" on a desktop, which is why the hero's headline runs at 62/64 from
+1280 up while every other page keeps the locked display scale. **Both read the
+painted lines back one character at a time**, and that detail is the point: a
+Range over a word that breaks across two lines returns a single union box, so a
+word-level measurement reported the broken headline as intact. It did, on the day
+it happened, which is how the fault reached the live page. The one late-job rule
+that stayed is the negative one, that nothing may claim the app moves the diary by
+itself. **Every guard that was retargeted was proved to bite** by planting the fault into a throwaway copy on a
 second port and watching that check go red
-(`output/site-fault-proof-pass2.txt`; the 2026-10-04 one is
+(`output/site-fault-proof-pass2.txt`; the 2026-10-04 ones are
 `output/site-fault-proof-2026-10-04.txt`). Run it against the preview or the live
 domain:
 
