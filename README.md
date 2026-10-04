@@ -84,7 +84,7 @@ and the copy from the pass before that in `...-1118.md`.
 
 | Screen | Section id | What it is |
 |---|---|---|
-| 1 | `hero` | "Do the Job. We'll Do the Paperwork.", one line under it, one button |
+| 1 | `hero` | "The No-Bullshit app for UK Tradesmen.", one line under it, one button |
 | 2 | `pains` | The old way against the YellowTradie way, five rows of cross and tick, scrolling sideways on a phone |
 | 3 | `how` | The job as five numbered rows (Lead, Quote, Job, Invoice, Tax), one line each and nothing behind them |
 | 4 | `why` | The dark band: four feature cards beside the photograph, with no heading |
