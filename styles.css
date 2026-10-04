@@ -451,6 +451,20 @@ p:last-child { margin-bottom: 0; }
 
 .hero h1 { color: #fff; margin: 0 0 20px; }
 .hero h1 em { font-style: normal; color: var(--y); }
+/* The hyphen inside "No-Bullshit" is a line-break opportunity, and from 1280 up
+   the h1 is too large to hold the phrase: 68px in a 760px column needs 820px,
+   so the browser broke it as "THE NO-" over "BULLSHIT APP". Pete saw that on
+   the live page and reported it, 2026-10-04. Held whole, the breaks fall as
+   THE / NO-BULLSHIT / APP FOR UK / TRADESMEN at 1440.
+
+   The copy column is NOT the fix. Widening it to 880px does fit the phrase and
+   gives the three lines it reads best as, but the words then reach 44.9% into
+   the hero photograph while the mask only reaches full strength at 30% — the
+   check "the copy column ends before the photograph reaches full strength"
+   fails on exactly that, and it is there to keep the words on the dark half.
+   Dropping the display size to about 62px is the other route to those three
+   lines, and that is a change to the locked type scale rather than a fix. */
+.hero-nobr { white-space: nowrap; }
 .hero p { color: var(--cream); max-width: 34em; }
 
 .hero-actions {
