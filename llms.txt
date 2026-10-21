@@ -2,7 +2,7 @@
 
 > YellowTradie is a phone app for UK sole traders and self employed tradespeople. It takes a message when a call is missed, turns speech into priced quote line items, sends PDF quotes and invoices, chases unpaid bills and keeps the figures for the quarterly tax return. Built for one person, one phone, no office.
 
-Last updated: 3 October 2026
+Last updated: 21 October 2026
 
 ## Main page
 
@@ -26,8 +26,8 @@ Last updated: 3 October 2026
 - Platforms: Android and iPhone.
 - Missed calls: the caller can leave a voice message, it is written out and sorted, and it reaches the trader by email or text. If they leave nothing, they get a short text back saying the trader will ring them shortly.
 - A job running over: tell the app how far behind you are and it works out which jobs today are affected, their new times, and the message for each customer who needs telling. Nothing moves and nothing is sent until the trader taps. Jobs further out are left alone.
-- Price: free during early access. Pricing is not fixed yet, but it will cost less than a single missed call-out, and early users get a founder's rate locked in.
-- Accounting: connect Xero, QuickBooks or FreeAgent in one tap, or export the quarter as a spreadsheet for an accountant.
+- Price: £19.99 a month, one plan, everything in the app, no per-seat fee and no setup fee. 14-day free trial. A card is needed to sign up, and nothing is charged until the 14 days are up. The trial is taken in the app through the app store, so card details never touch our servers. The app is not in the stores yet: join the list and we will tell you the day it opens.
+- Accounting: the quarter exports as a spreadsheet for your accountant today. Connections to Xero, QuickBooks and FreeAgent are being built and are not live yet.
 - Data: jobs, customers and prices are held in the app on the trader's own phone.
 - Missed call cost: the page carries a calculator where the reader sets their own numbers, how many calls a week they miss and what a job is worth, and it works out the year. The page holds no estimate of its own.
 - Not for: teams that need to allocate jobs across staff.
