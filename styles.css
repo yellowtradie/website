@@ -8,19 +8,20 @@
    ========================================================================== */
 
 :root {
-  /* Brand yellow. Pete's call 2026-09-27: #FFEF4D, read off the new logo mark
-     (Business/Brand/Assets/YellowTradie-WM.svg) so the page and the mark are one
-     colour. It was #E9D228 from 2026-09-25 to this change, and #FFF400 before
-     that. It is used for every yellow on the site: buttons, the signup band, the
-     numbered markers, the rules on the dark blocks. The hover is a lighter tint
-     of the same hue. #FFEF4D is lighter than the yellow it replaced, so black on
-     it gains contrast rather than losing it: #1A181A on #FFEF4D measures 13.63
-     to 1, where the same black on #E9D228 measured 11.53 to 1.
-     THE ONE THING THAT DID NOT MOVE: the black. The mark's own shapes are drawn
-     in #161616, the site's black is #1A181A (Pete's call 2026-09-25), and four
-     levels between them is not a difference anyone can see, so the mark is drawn
-     on the page in the site's black. Using the mark's own #161616 would put the
-     retired black back into the markup, which the check suite refuses. */
+  /* Brand yellow. The page's own yellow has been #FFEF4D since Pete's call on
+     2026-09-27, and it stays #FFEF4D: it is used for every yellow on the site,
+     buttons, the signup band, the numbered markers and the rules on the dark
+     blocks. It was #E9D228 from 2026-09-25 to that change, and #FFF400 before
+     that. The hover is a lighter tint of the same hue. #FFEF4D is lighter than
+     the yellow it replaced, so black on it gains contrast rather than losing it:
+     #1A181A on #FFEF4D measures 13.63 to 1, where the same black on #E9D228
+     measured 11.53 to 1.
+     THE MARK'S YELLOW IS ITS OWN NOW (2026-10-22). Pete replaced the logo mark,
+     and the new artwork is a near-black tile (#0B0B0D) with a golden-yellow glyph
+     (#F9C613) on it. It is one image, assets/logo-mark.svg, traced from the PNG
+     he supplied, so it keeps the artwork's colour and the page keeps its brighter
+     one. The mark is a 32px tile, so the two yellows never sit side by side as
+     two fields of the same size, and nothing else on the page moved. */
   --y: #ffef4d;
   --y-hover: #fff37a;
 
@@ -292,16 +293,16 @@ p:last-child { margin-bottom: 0; }
   flex: none;
 }
 
-.logo svg { display: block; }
+.logo svg,
+.logo img { display: block; }
 
-/* The logo mark, drawn inline in the header and the footer, in both the header
-   and the footer of all four pages. The colours come from the tokens rather than
-   from hexes in the markup, so the mark cannot drift from the page's own yellow
-   and black: it IS the page's yellow and black. The geometry is the new mark from
-   Business/Brand/Assets/YellowTradie-WM.svg (Pete, 2026-09-27), carried at its own
-   1000 by 1000 viewBox so the file and the page draw the same shape. */
-.logo-mark__tile { fill: var(--y); }
-.logo-mark__ink { fill: var(--black); }
+/* The logo mark, one file for the header, the footer of all four pages and the
+   favicon: assets/logo-mark.svg, traced from the mark Pete supplied on 2026-10-22
+   (Business/brand/assets/YT Logo Mark/YT-Matk.png). It carries its own two
+   colours (#0b0b0d tile, #f9c613 glyph) because the artwork does, so it is the
+   file that is the source of truth rather than the page's tokens. `scripts/
+   build-brand-mark.py` cuts it and proves it still matches the supplied PNG. */
+.logo .logo-mark { width: 32px; height: 32px; flex: none; }
 
 .logo-word {
   font-family: var(--display);

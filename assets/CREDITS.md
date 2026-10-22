@@ -129,18 +129,21 @@ data.
 
 ## Logo
 
-`logo-mark.svg` is Pete's new mark, drawn for this project and handed over as
-`Business/Brand/Assets/YellowTradie-WM.svg` on 2026-09-27. It is the brand
-yellow tile (#FFEF4D) with two black bars and a triangle of the tile colour
-notched into the top bar. It replaced the yellow square with the uppercase T
-that had been the mark since the site was built.
+`logo-mark.svg` is Pete's logo mark of 2026-10-22, handed over as a 1024 by 1024
+PNG at `Business/brand/assets/YT Logo Mark/YT-Matk.png`. It is a near-black tile
+(#0B0B0D) with a golden-yellow glyph (#F9C613): a rounded shield with the Y cut
+out of it, tapering to a point. It replaced the yellow tile with two black bars
+and a notched triangle that had been the mark since 2026-09-27, which had itself
+replaced the yellow square with the uppercase T.
 
-Its own black is #161616 and the page's black is #1a181a. The site draws the mark
-in the page's black: four levels of grey between them is not a difference anyone
-can see, and the retired #161616 is kept out of the markup on purpose. The
-favicon is this file; the header and the footer draw the same shape inline, filled
-from the page's own `--y` and `--black`, so the mark cannot drift from the page's
-colours. No third party rights.
+The site carries one file, not a copy of the shape in each page: the header, the
+footer of all four pages and the favicon all use `assets/logo-mark.svg`. That file
+is traced from the PNG by `scripts/build-brand-mark.py`, which also cuts the app's
+launcher icon, adaptive icon layers, splash and home header from the same source,
+and refuses to finish unless the traced outline still matches the supplied image.
+The mark keeps the artwork's own two colours rather than the page's `--y` and
+`--black`, because the artwork is the source of truth for its own drawing; the
+page's brighter #FFEF4D is unchanged everywhere else. No third party rights.
 
 ## The five app screens, re-shot 2026-09-22 17:30
 
