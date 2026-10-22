@@ -750,6 +750,80 @@ p:last-child { margin-bottom: 0; }
 }
 
 /* --------------------------------------------------------------------------
+   The four screens, 2026-10-22
+   --------------------------------------------------------------------------
+   One band, four real screenshots. Two across on a tablet and four across on a
+   laptop, where they read as one gallery rather than four stacks. Under 720px
+   the row swipes sideways with the next card peeking, so the page does not grow
+   by four full screens of scroll on the phone. No auto-play and no dots: this is
+   a gallery, not the carousel he took off the page in September.
+   The frame is the page's own: the screens are dark, so a black rounded panel
+   with the light border seats them on the paper without drawing a fake handset
+   over the real status bar they already carry. */
+.shots { display: grid; grid-template-columns: 1fr; gap: 40px 28px; margin-top: 40px; }
+.shot { margin: 0; min-width: 0; }
+.shot-frame {
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--black);
+  box-shadow: 0 16px 36px rgba(26, 24, 26, .10), 0 2px 6px rgba(26, 24, 26, .06);
+}
+.shot-frame img { display: block; width: 100%; height: auto; }
+.shot-label {
+  margin: 18px 0 8px;
+  font-family: var(--body);
+  font-size: 11px;
+  line-height: 14px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--tertiary);
+}
+/* The heading rung is the band's own: `h3.display` is 36px at 1280 and beats a
+   bare `.display--xs`, and at 36 a four-word heading in a 277px column wraps to
+   four lines of one word each, which reads as a shout rather than a heading.
+   The size follows the column instead of the page: 20px where four across is
+   narrowest (900px, a 188px column) and 24px where it is widest, so no heading
+   in this band goes past three lines. */
+.shot h3.display--xs {
+  font-size: clamp(20px, 1.6vw, 24px);
+  line-height: 1.18;
+  /* Three lines held open whatever the heading's own length, so the four
+     paragraphs under the four headings start on one line across the row. */
+  min-height: 3.54em;
+  margin: 0 0 10px;
+  letter-spacing: -0.2px;
+}
+.shot p { margin: 0; font-size: 15px; line-height: 24px; color: var(--muted); }
+
+/* ONE ROW, ALWAYS. Two rows of phone-shaped pictures is a 2,400px band (measured
+   at 900px before this rule), which is half a page of scroll for four pictures.
+   From 900 the four sit across in one row; under that the same row swipes. */
+@media (min-width: 900px) {
+  .shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px 28px; }
+}
+
+@media (max-width: 899px) {
+  .shots {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .shots::-webkit-scrollbar { display: none; }
+  .shot { flex: 0 0 78%; scroll-snap-align: start; scroll-snap-stop: always; }
+}
+/* On a tablet width the card can be narrower and still show two at once, which
+   tells the thumb the row moves without a giant single picture. */
+@media (min-width: 720px) and (max-width: 899px) {
+  .shot { flex: 0 0 46%; }
+}
+
+/* --------------------------------------------------------------------------
    Feature groups: one heading per stage of the job, three cards under each
    -------------------------------------------------------------------------- */
 

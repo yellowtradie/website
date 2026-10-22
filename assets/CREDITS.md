@@ -168,3 +168,19 @@ disclaimer refers to. One size also means the carousel cannot change height as
 you swipe, which is the bug Pete caught: "the numbers are jumping around all over
 the place". If they are ever replaced, **match 1080 by 2400** or the row will
 move again.
+
+## The four screens in the band, 2026-10-22
+
+`assets/screens/today.webp`, `jobs.webp`, `job.webp` and `reports.webp` are four
+screenshots of the demo app, **576 by 1280**, taken on Pete's own Pixel 8 from the
+demo install (`com.aistudio.tradelight.demo`) on 2026-10-22 and sent to the vault in
+`Business/Website/images/`. The five older `app-*.png` files above are from the
+September build and are no longer used on the page; they stay on disk as history.
+
+They are the app's own screens, not drawings and not a mock-up, and every name, job
+and figure on them is the app's fictional demo set (the line above the band says so
+on the page). They are stored at 576 wide because that is the size they were taken
+at: shown at about 277 wide on a laptop they are a little over 2x, so they stay
+sharp without being upscaled, and four of them weigh about 143KB together as WebP
+at 82. **If they are ever replaced, re-take them at 576 by 1280 or larger**, or the
+row will either soften or change height.
