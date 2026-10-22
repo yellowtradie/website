@@ -12,14 +12,14 @@ No build step, no framework, no dependencies. Drop the folder on any host.
 | `privacy.html` | Privacy and cookies. The only page with prose rather than cards. Carries the switch that turns the Google tag off. Footer link text is just "Privacy": the owner's call, 2026-09-23, the long version read as jargon |
 | `terms.html` | Terms of use. Reading the site, the calculator, joining the early access list, the limit of liability and which law applies. The suite checks the page and that every footer link on all four pages resolves |
 | `styles.css` | All styling. The exact colours, fonts, sizes and weights sit in the `:root` block at the top |
-| `assets/noise-page.png`, `assets/noise-yellow.png` | The grain on the page background and on the yellow band. Two 128px tiling PNGs, dyed to `#FBFAED` and `#FFEF4D`, each shifted to an exact zero mean so the surfaces keep their colour. The yellow one is **the app's own tile, byte for byte** (`trade-light-rn/assets/grain/noise-yellow.png`), copied across on 2026-09-27 so the site's band and the app's Home panel carry one texture rather than two random draws. Do not swap these for a CSS `feTurbulence` filter: that one is not mean-neutral and darkens the paper (see the token comment in `styles.css`) |
+| `assets/noise-page.png`, `assets/noise-yellow.png` | The grain on the page background and on the yellow band. Two 128px tiling PNGs, dyed to `#FBFAED` and `#F9C613`, each shifted to an exact zero mean so the surfaces keep their colour. The yellow one was the app's own tile, byte for byte, from 2026-09-27; the site owns it now and redyed it to the new brand yellow on 2026-10-22. Do not swap these for a CSS `feTurbulence` filter: that one is not mean-neutral and darkens the paper (see the token comment in `styles.css`) |
 | `app.js` | The signup modal, the missed call calculator and the sticky phone bar. One setting to change: `FORM_ENDPOINT` |
 | `robots.txt` | Allows the AI crawlers and points at the sitemap |
 | `sitemap.xml` | Both pages |
 | `llms.txt` | The fact sheet for answer engines, at the root where they read it. Keep it in step with `.well-known/llms.txt` |
 | `feed.xml` | RSS 2.0 for the changelog. Both pages point at it with `<link rel="alternate">` |
 | `.well-known/llms.txt` | The same fact sheet at the conventional path |
-| `assets/logo-mark.svg` | The logo mark, Pete's new one from 2026-09-27: a `#FFEF4D` tile, two `#1A181A` bars and a tile-coloured triangle notched into the top bar. Copied from `Business/Brand/Assets/YellowTradie-WM.svg` (whose own black is `#161616`) and drawn in the page's black, because four levels between the two is not a difference anyone can see and the retired `#161616` is not allowed back into the markup. The same shape is inline in the header and the footer of all four pages, filled from `--y` and `--black` |
+| `assets/logo-mark.svg` | The logo mark, Pete's one from 2026-10-22: a near-black `#0B0B0D` tile with a golden-yellow `#F9C613` shield-and-Y glyph on it, traced from the PNG he supplied (`Business/brand/assets/YT Logo Mark/YT-Matk.png`) by `scripts/build-brand-mark.py`. It is one file for the header, the footer of all four pages and the favicon, and it keeps the artwork's own two colours rather than the page's `--y` and `--black` |
 | `assets/tiktok.mp4` | The slot is built and waiting. Pete's short vertical clip goes here. Not there yet |
 | `assets/` | Hero and section images. `assets/CREDITS.md` lists every one |
 
@@ -138,14 +138,15 @@ as the whole calendar, no invented job values outside the calculator, nothing
 claiming HMRC approval or filing, the four form fields, and the schema's FAQ
 answers matching the visible ones word for word.
 
-**The palette, locked 2026-09-25 and moved once since:** brand yellow `#FFEF4D`
-(Pete's call 2026-09-27, read off the new logo mark; it was `#E9D228` from
-2026-09-25 and `#FFF400` before that), black `#1A181A`,
+**The palette, locked 2026-09-25 and moved twice since:** brand yellow `#F9C613`
+(Pete's call 2026-10-22: the page matches the yellow in the logo mark. It was
+`#FFEF4D` from 2026-09-27, `#E9D228` from 2026-09-25 and `#FFF400` before that),
+black `#1A181A`,
 page background `#FBFAED` carrying grain, and the banded sections on the same page
 colour. Seven checks read these back off the rendered page rather than out of the
 stylesheet, and one of them counts stray copies of the retired `#FFF400`,
-`#E9D228` and `#161616` in the markup, so none of them can creep back into a
-corner of a page. Four more read the logo mark: the header's fill colours, that
+`#E9D228`, `#FFEF4D` and `#161616` in the markup, so none of them can creep back
+into a corner of a page. Four more read the logo mark: the header's fill colours, that
 the footer draws the identical shape, that the favicon link is versioned, and the
 favicon file itself, fetched over the wire.
 

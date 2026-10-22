@@ -8,22 +8,21 @@
    ========================================================================== */
 
 :root {
-  /* Brand yellow. The page's own yellow has been #FFEF4D since Pete's call on
-     2026-09-27, and it stays #FFEF4D: it is used for every yellow on the site,
-     buttons, the signup band, the numbered markers and the rules on the dark
-     blocks. It was #E9D228 from 2026-09-25 to that change, and #FFF400 before
-     that. The hover is a lighter tint of the same hue. #FFEF4D is lighter than
-     the yellow it replaced, so black on it gains contrast rather than losing it:
-     #1A181A on #FFEF4D measures 13.63 to 1, where the same black on #E9D228
-     measured 11.53 to 1.
-     THE MARK'S YELLOW IS ITS OWN NOW (2026-10-22). Pete replaced the logo mark,
-     and the new artwork is a near-black tile (#0B0B0D) with a golden-yellow glyph
-     (#F9C613) on it. It is one image, assets/logo-mark.svg, traced from the PNG
-     he supplied, so it keeps the artwork's colour and the page keeps its brighter
-     one. The mark is a 32px tile, so the two yellows never sit side by side as
-     two fields of the same size, and nothing else on the page moved. */
-  --y: #ffef4d;
-  --y-hover: #fff37a;
+  /* Brand yellow. #F9C613 since 2026-10-22, when Pete asked for the page's
+     yellow to match the yellow in the logo mark. The mark (assets/logo-mark.svg)
+     is a near-black tile #0B0B0D with a golden-yellow glyph #F9C613 on it, and
+     the page now wears the glyph's yellow everywhere it uses yellow: buttons,
+     the signup band, the numbered markers and the rules on the dark blocks. The
+     mark stays the artwork's own colour and is not recoloured to the token.
+     It was #FFEF4D from Pete's call on 2026-09-27 until this change, #E9D228
+     from 2026-09-25 to 2026-09-27, and #FFF400 before that.
+     The hover is the same recipe as before, the yellow mixed a quarter of the
+     way to white: #FBD44E.
+     #F9C613 is darker than #FFEF4D, so black on it loses a little contrast and
+     keeps plenty: #1A181A on #F9C613 measures 11.03 to 1, where the same black
+     on #FFEF4D measured 14.89 to 1. */
+  --y: #f9c613;
+  --y-hover: #fbd44e;
 
   /* Neutrals, DeWalt's --color-neutral ramp */
   /* The black. #1A181A since Pete's call on 2026-09-25: a touch lighter than
@@ -48,22 +47,19 @@
      128px, sd 2.7 in the red channel, which is grain you can see in the screen
      and cannot see from across the room. */
   --noise-page: url("assets/noise-page.png");
-  /* ?v=2 on the yellow tile only: it was redyed on 2026-09-27 for the mark's
-     #FFEF4D, and the file's name did not change, so a browser holding the old
-     #E9D228 tile would never ask for the new one. The page tile is unchanged, so
-     it keeps its bare URL.
-     THE YELLOW TILE IS NOW THE APP'S OWN FILE, byte for byte. It is
-     `trade-light-rn/assets/grain/noise-yellow.png`, already dyed to #FFEF4D for
-     the yellow panel at the top of the app's Home screen, copied across on
-     2026-09-27. One tile in two places, so the site's yellow band and the app's
-     panel carry the same texture rather than two random draws of the same recipe.
-     Its measured mean is (253.42, 239.00, 77.00), and the red is 1.6 levels short
-     of 255 for a reason worth knowing: red is already at the top of its channel,
-     so the positive half of the spread clips. A symmetric spread cannot average
-     exactly 255 there, and clipping is the closest it gets. The size of the
-     shortfall is under two levels on a textured surface, which is not a colour
-     anyone can see, and it is written down here rather than left as a surprise. */
-  --noise-yellow: url("assets/noise-yellow.png?v=2");
+  /* ?v=3 on the yellow tile: it has been redyed twice without its file name
+     changing (for #FFEF4D on 2026-09-27, for #F9C613 on 2026-10-22), and a
+     browser holding an older tile would never ask for the new one. The page tile
+     is unchanged, so it keeps its bare URL.
+     The yellow tile is the site's own file. It was the app's tile, byte for
+     byte, from 2026-09-27, when the app still carried the same grain; it does
+     not any more, so the site owns this copy and redyes it when --y moves. The
+     redye is a per-channel shift of the existing tile by the difference between
+     the old mean and the new colour, so the grain's spread and its mean-neutral
+     property survive. Its measured mean is (249.43, 198.00, 19.00), within half
+     a level of #F9C613 in every channel, and the spread is unchanged: sd 2.32 in
+     red, 3.97 in green and blue. */
+  --noise-yellow: url("assets/noise-yellow.png?v=3");
   --grey-2: #f7f5f5;       /* neutral-2 light surface */
   --grey-3: #f0eeee;       /* neutral-3 light surface / outline hover */
   --border: #d7d5d5;       /* neutral-5 border primary on light */
@@ -1396,9 +1392,9 @@ body.modal-open { overflow: hidden; }
 }
 .mark--yes {
   /* The stroke is the brand yellow as a literal, because a data URI cannot read
-     a custom property. It moves with --y by hand: #E9D228 until 2026-09-27, the
-     mark's #FFEF4D after it. */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2 8.5l4 4 8-9' fill='none' stroke='%23ffef4d' stroke-width='3'/%3E%3C/svg%3E");
+     a custom property. It moves with --y by hand: #E9D228 until 2026-09-27,
+     #FFEF4D from then until 2026-10-22, #F9C613 since. */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2 8.5l4 4 8-9' fill='none' stroke='%23f9c613' stroke-width='3'/%3E%3C/svg%3E");
 }
 .mark--no {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 3l10 10M13 3L3 13' fill='none' stroke='%23b7b4b5' stroke-width='3'/%3E%3C/svg%3E");

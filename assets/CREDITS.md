@@ -146,7 +146,7 @@ launcher icon, adaptive icon layers, splash and home header from the same source
 and refuses to finish unless the traced outline still matches the supplied image.
 The mark keeps the artwork's own two colours rather than the page's `--y` and
 `--black`, because the artwork is the source of truth for its own drawing; the
-page's brighter #FFEF4D is unchanged everywhere else. No third party rights.
+page's yellow is the glyph's own #F9C613 since 2026-10-22. No third party rights.
 
 ## The five app screens, re-shot 2026-09-22 17:30
 
