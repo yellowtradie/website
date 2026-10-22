@@ -247,35 +247,9 @@ const FORM_ENDPOINT = "https://formspree.io/f/xrpbqypw";
   });
 })();
 
-/* The early access band carries a short vertical clip. The file is dropped in
- * later, so the slot only appears once the video really loads. A missing file
- * leaves the band exactly as it was, with no broken box and no empty space.
- * Drop the clip at assets/tiktok.mp4 and bump the ?v= if it is ever replaced.
+/* The early access band, its button and its short-clip slot came off the page on
+ * 2026-10-22, so the code that revealed and played the clip came off with them.
  */
-(function () {
-  const slot = document.querySelector("[data-video-slot]");
-  if (!slot) return;
-
-  const clip = slot.querySelector("video");
-  if (!clip) return;
-
-  function show() {
-    slot.hidden = false;
-    const started = clip.play();
-    if (started && started.catch) started.catch(function () {});
-  }
-
-  clip.addEventListener("loadeddata", show);
-  clip.addEventListener("error", function () { slot.hidden = true; }, true);
-
-  /* Tap to pause or resume, because the clip carries no controls. */
-  clip.addEventListener("click", function () {
-    if (clip.paused) show();
-    else clip.pause();
-  });
-
-  clip.load();
-})();
 
 /* The "See it in 30 seconds" carousel.
  *

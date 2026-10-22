@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=26">
+<link rel="stylesheet" href="styles.css?v=27">
 
 <!-- The visitor's choice about being counted, read before the tag can load.
      This has to be inline and above the tag, and it is not optional. gtag.js is
@@ -347,7 +347,12 @@
         <p class="lede muted section-lede">Two sliders. Your numbers, not ours. Whatever comes out, that is the year you are having right now.</p>
       </div>
 
-      <div class="calc" data-calc>
+      <!-- The early-access anchor lives here now, on the calculator card. The
+           yellow sign-up band that used to carry it came off on 2026-10-22, and
+           the links that still point at /#early-access (the what's-new page, and
+           this page's own no-JavaScript fallbacks) land on the last Start free
+           trial button above the footer instead of on nothing. -->
+      <div class="calc" id="early-access" data-calc>
         <div class="calc-field">
           <label for="calc-calls">Calls you miss in a week</label>
           <div class="calc-row">
@@ -374,37 +379,26 @@
     </div>
   </section>
 
-  <!-- The sign-up band. Its heading, its line and its three reasons were the
-       old build's words and came off on 2026-10-03; the button stays, because
-       the form behind it is how anyone signs up. -->
-  <section class="signup" id="early-access">
-    <div class="wrap signup-strip">
-      <!-- Pete's short vertical clip goes here. Drop the file at
-           assets/tiktok.mp4: 9:16, mp4, under 20 seconds, muted loop, captions
-           burned in. The slot stays hidden until the file actually loads, so a
-           missing clip leaves no broken box on the page. -->
-      <div class="signup-video" data-video-slot hidden>
-        <video src="assets/tiktok.mp4" muted loop playsinline preload="metadata"
-               aria-label="A short clip of YellowTradie being used on a job"></video>
-      </div>
-
-      <button class="btn btn--lg btn--invert" type="button" data-open-signup>Start free trial</button>
-
-      <noscript>
-        <p class="form-note">The form needs JavaScript. Email <a href="mailto:hello@yellowtradie.com">hello@yellowtradie.com</a> and we will add you to the list.</p>
-      </noscript>
-    </div>
-  </section>
+  <!-- The sign-up band was here until 2026-10-22. Its heading, its line and its
+       three reasons came off on 2026-10-03, and the whole band came off when
+       Pete asked for its button to go: with the words already gone, the band was
+       only that button, and an empty yellow stripe is not worth a stripe. The
+       clip slot for his short video went with it, unused. The yellow grain tile
+       went too, because nothing else used it. -->
 
   <!-- Closing words above the footer. His copy, 2026-10-03, and the thirteen
        questions that used to sit above this came off with the rest of the old
        words. The Start free trial button came off on 2026-10-22 at his asking,
-       because the sign-up band directly above already carries one. -->
+       because the button in the calculator above is the sign-up route now, and
+       the yellow band between the two came off the same day. -->
   <section class="final" id="final">
     <div class="wrap">
       <div class="final-inner">
         <h2 class="display">You didn't go self-employed to sit at a laptop at 10pm.</h2>
         <p class="lede">Get the paperwork off your plate and your evenings back. Spend them with your family, your mates, or your feet up.</p>
+        <noscript>
+          <p class="form-note">The form needs JavaScript. Email <a href="mailto:hello@yellowtradie.com">hello@yellowtradie.com</a> and we will add you to the list.</p>
+        </noscript>
       </div>
     </div>
   </section>

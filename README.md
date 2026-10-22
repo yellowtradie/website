@@ -12,7 +12,7 @@ No build step, no framework, no dependencies. Drop the folder on any host.
 | `privacy.html` | Privacy and cookies. The only page with prose rather than cards. Carries the switch that turns the Google tag off. Footer link text is just "Privacy": the owner's call, 2026-09-23, the long version read as jargon |
 | `terms.html` | Terms of use. Reading the site, the calculator, joining the early access list, the limit of liability and which law applies. The suite checks the page and that every footer link on all four pages resolves |
 | `styles.css` | All styling. The exact colours, fonts, sizes and weights sit in the `:root` block at the top |
-| `assets/noise-page.png`, `assets/noise-yellow.png` | The grain on the page background and on the yellow band. Two 128px tiling PNGs, dyed to `#FBFAED` and `#F9C613`, each shifted to an exact zero mean so the surfaces keep their colour. The yellow one was the app's own tile, byte for byte, from 2026-09-27; the site owns it now and redyed it to the new brand yellow on 2026-10-22. Do not swap these for a CSS `feTurbulence` filter: that one is not mean-neutral and darkens the paper (see the token comment in `styles.css`) |
+| `assets/noise-page.png` | The grain on the page background. A 128px tiling PNG, dyed to `#FBFAED`, shifted to an exact zero mean so the paper keeps its colour. There was a second tile for the yellow band until 2026-10-22; the band came off the page and the tile went with it. Do not swap this for a CSS `feTurbulence` filter: that one is not mean-neutral and darkens the paper (see the token comment in `styles.css`) |
 | `app.js` | The signup modal, the missed call calculator and the sticky phone bar. One setting to change: `FORM_ENDPOINT` |
 | `robots.txt` | Allows the AI crawlers and points at the sitemap |
 | `sitemap.xml` | Both pages |
@@ -20,7 +20,6 @@ No build step, no framework, no dependencies. Drop the folder on any host.
 | `feed.xml` | RSS 2.0 for the changelog. Both pages point at it with `<link rel="alternate">` |
 | `.well-known/llms.txt` | The same fact sheet at the conventional path |
 | `assets/logo-mark.svg` | The logo mark, Pete's one from 2026-10-22: a near-black `#0B0B0D` tile with a golden-yellow `#F9C613` shield-and-Y glyph on it, traced from the PNG he supplied (`Business/brand/assets/YT Logo Mark/YT-Matk.png`) by `scripts/build-brand-mark.py`. It is one file for the header, the footer of all four pages and the favicon, and it keeps the artwork's own two colours rather than the page's `--y` and `--black` |
-| `assets/tiktok.mp4` | The slot is built and waiting. Pete's short vertical clip goes here. Not there yet |
 | `assets/` | Hero and section images. `assets/CREDITS.md` lists every one |
 
 **Two things not to undo.** In-page links are root-relative (`/#how`, not `#how`)
@@ -88,9 +87,15 @@ and the copy from the pass before that in `...-1118.md`.
 | 2 | `pains` | The old way against the YellowTradie way, five rows of cross and tick, scrolling sideways on a phone |
 | 3 | `how` | The job as five numbered rows (Lead, Quote, Job, Invoice, Tax), one line each and nothing behind them |
 | 4 | `why` | The dark band: four feature cards beside the photograph, with no heading |
-| 5 | `calculator` | Two sliders and the year a missed call adds up to. The numbers are the reader's own |
-| 6 | `early-access` | One button on the yellow band. The form is in the modal, with its three fields |
-| 7 | `final` | The closing call: the 10pm laptop line, and one button |
+| 5 | `calculator` | Two sliders and the year a missed call adds up to. The numbers are the reader's own, and the Start free trial button at the end is the sign-up route now |
+| 6 | `final` | The closing words: the 10pm laptop line, and no button |
+
+The yellow `early-access` band was the seventh screen until 2026-10-22. Its words
+came off on 2026-10-03, its button came off at Pete's asking on 2026-10-22, and a
+band with nothing in it is not worth a stripe, so the whole band went the same
+day. The `#early-access` anchor moved to the calculator card, where the remaining
+button sits, so old links still land on a sign-up route. The clip slot went with
+the band.
 
 Two more things that are not screens: the **sticky bar**, which is phones only
 and appears once the hero is behind you, and the **modal**, which every "Start
@@ -251,21 +256,6 @@ than the one it replaced. The box is
 the crop at 1440 and 50% at 1024. `CREDITS.md` carries the reasoning and the one
 line to change if the framing is wrong, and `scripts/hero-image-profile.mjs`
 measures it.
-
-## The clip in the early access band
-
-The band carries a slot for a short vertical clip, above the button. The slot is
-hidden until the file actually loads, so the page is unchanged while the clip is
-missing. To put it live, drop the file at `assets/tiktok.mp4`:
-
-- 9:16 vertical, mp4, under 20 seconds
-- Muted and looping, so no sound and no music are needed
-- Burn the captions into the picture, because most people watch with the sound off
-- Your own footage only. Do not use a music track you do not own
-
-It is wired up in `app.js` by `[data-video-slot]`. If the file is replaced later,
-bump the `?v=` on its `src` in `index.html`, because the browser will otherwise
-keep serving the old copy.
 
 ## What this page is not
 

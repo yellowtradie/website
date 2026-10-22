@@ -12,7 +12,7 @@
      yellow to match the yellow in the logo mark. The mark (assets/logo-mark.svg)
      is a near-black tile #0B0B0D with a golden-yellow glyph #F9C613 on it, and
      the page now wears the glyph's yellow everywhere it uses yellow: buttons,
-     the signup band, the numbered markers and the rules on the dark blocks. The
+     the numbered markers and the rules on the dark blocks. The
      mark stays the artwork's own colour and is not recoloured to the token.
      It was #FFEF4D from Pete's call on 2026-09-27 until this change, #E9D228
      from 2026-09-25 to 2026-09-27, and #FFF400 before that.
@@ -38,28 +38,18 @@
      Pete's call 2026-09-25: #FBFAED, a warm off-white, with a fine noise laid
      over it (body + .section--grey below, using --noise-page). */
   --page: #fbfaed;
-  /* The grain. Two small tiling PNGs in assets/, one dyed to the page colour and
-     one to the brand yellow, both made with a random spread and then shifted so
-     their average is exactly the flat colour. That matters: a noise layer that
-     is not mean-neutral darkens the surface it sits on, and the first attempt at
-     this (a CSS feTurbulence filter) pulled the paper from #FBFAED down to about
-     #F0EFE5 and read as dirty rather than as paper. Sizes: the page tile is
-     128px, sd 2.7 in the red channel, which is grain you can see in the screen
-     and cannot see from across the room. */
+  /* The grain. One small tiling PNG in assets/, dyed to the page colour, made
+     with a random spread and then shifted so its average is exactly the flat
+     colour. That matters: a noise layer that is not mean-neutral darkens the
+     surface it sits on, and the first attempt at this (a CSS feTurbulence
+     filter) pulled the paper from #FBFAED down to about #F0EFE5 and read as
+     dirty rather than as paper. Its size is 128px, sd 2.7 in the red channel,
+     which is grain you can see in the screen and cannot see from across the
+     room.
+     THERE WAS A SECOND TILE until 2026-10-22. It dyed the yellow sign-up band,
+     and the band came off the page that day, so the tile went with it and the
+     page carries one grain instead of two. */
   --noise-page: url("assets/noise-page.png");
-  /* ?v=3 on the yellow tile: it has been redyed twice without its file name
-     changing (for #FFEF4D on 2026-09-27, for #F9C613 on 2026-10-22), and a
-     browser holding an older tile would never ask for the new one. The page tile
-     is unchanged, so it keeps its bare URL.
-     The yellow tile is the site's own file. It was the app's tile, byte for
-     byte, from 2026-09-27, when the app still carried the same grain; it does
-     not any more, so the site owns this copy and redyes it when --y moves. The
-     redye is a per-channel shift of the existing tile by the difference between
-     the old mean and the new colour, so the grain's spread and its mean-neutral
-     property survive. Its measured mean is (249.43, 198.00, 19.00), within half
-     a level of #F9C613 in every channel, and the spread is unchanged: sd 2.32 in
-     red, 3.97 in green and blue. */
-  --noise-yellow: url("assets/noise-yellow.png?v=3");
   --grey-2: #f7f5f5;       /* neutral-2 light surface */
   --grey-3: #f0eeee;       /* neutral-3 light surface / outline hover */
   --border: #d7d5d5;       /* neutral-5 border primary on light */
@@ -77,9 +67,9 @@
      pale once the rule is 4px thick, so this is neutral-8. It applies to the
      rules sitting on light backgrounds only. The hero lost its two yellow bars
      on 2026-09-22 and the closing block above the footer lost its two on
-     2026-10-22, both at Pete's asking, so the thick bars left on the page are
-     black (the signup band and the calculator card) and the only yellow rule is
-     the 2px underline under the old-way table's headings.
+     2026-10-22, both at Pete's asking, so the only thick bar left is the black
+     one on top of the calculator card and the only yellow rule is the 2px
+     underline under the old-way table's headings.
      Two users left after 2026-09-22 12:05: the rule above each zoomed app
      screen, and the bar across the top of the signup modal. The seven stage
      headings in "One phone does the lot" lost theirs at Pete's asking, so do
@@ -1079,50 +1069,13 @@ p:last-child { margin-bottom: 0; }
 /* --------------------------------------------------------------------------
    Signup band. DeWalt's footer newsletter treatment: a yellow panel
    sandwiched between two thick near-black bars.
+   CAME OFF THE PAGE ON 2026-10-22, at Pete's asking ("remove the button on the
+   yellow section"). Its words had already gone on 2026-10-03, so the band was
+   only that button, and an empty yellow stripe is not something to leave. The
+   rules and the yellow grain tile went with it; the .signup-success rules below
+   stay, because the pop-up form uses them for its thank-you panel.
    -------------------------------------------------------------------------- */
 
-.signup {
-  /* The yellow band carries the same treatment as the page: the flat brand yellow
-     with a grain tile dyed to that same yellow over it, so the band is one
-     surface with the rest of the page rather than a flat slab. */
-  background-color: var(--y);
-  background-image: var(--noise-yellow);
-  background-repeat: repeat;
-  background-size: 128px 128px;
-  color: var(--black);
-  border-top: var(--bar) solid var(--black);
-  border-bottom: var(--bar) solid var(--black);
-  padding: 40px 0;
-}
-@media (min-width: 1280px) { .signup { padding: 56px 0; } }
-
-/* The band is one centred button now: its heading, its line and its three
-   reasons came off the page on 2026-10-03. */
-.signup-strip { display: grid; gap: 24px; justify-items: center; }
-
-.signup p { color: var(--black); }
-
-/* Pete's short vertical clip. The slot stays hidden until the file actually
-   loads, so a missing clip leaves no empty box in the band. */
-.signup-video {
-  max-width: 300px;
-  margin: 0 0 20px;
-  background: var(--black);
-  border: var(--bar) solid var(--black);
-}
-
-/* The hidden attribute has to beat the block above, or a missing clip still
-   takes up space in the band. */
-.signup-video[hidden] { display: none; }
-
-.signup-video video {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 9 / 16;
-  object-fit: cover;
-  background: var(--black);
-}
 
 form { margin: 0; }
 
