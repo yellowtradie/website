@@ -129,12 +129,15 @@ data.
 
 ## Logo
 
-`logo-mark.svg` is Pete's logo mark of 2026-10-22, handed over as a 1024 by 1024
-PNG at `Business/brand/assets/YT Logo Mark/YT-Matk.png`. It is a near-black tile
+`logo-mark.svg` is Pete's logo mark of 2026-10-22, handed over as a PNG at
+`Business/brand/assets/YT Logo Mark/YT-Matk.png`. It is a near-black tile
 (#0B0B0D) with a golden-yellow glyph (#F9C613): a rounded shield with the Y cut
-out of it, tapering to a point. It replaced the yellow tile with two black bars
-and a notched triangle that had been the mark since 2026-09-27, which had itself
-replaced the yellow square with the uppercase T.
+out of it, tapering to a point. He replaced the file at 14:03 the same day with a
+tighter crop of the same drawing, so the glyph now fills the tile (84% of its
+width and 96% of its height) instead of sitting in a wide border: he had seen the
+first version and said it was too small. It replaced the yellow tile with two
+black bars and a notched triangle that had been the mark since 2026-09-27, which
+had itself replaced the yellow square with the uppercase T.
 
 The site carries one file, not a copy of the shape in each page: the header, the
 footer of all four pages and the favicon all use `assets/logo-mark.svg`. That file
