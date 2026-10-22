@@ -75,8 +75,11 @@
   /* Section rules. Pete's call 2026-09-22: grey, not brand yellow, because a
      yellow rule on white or light grey is invisible. --border (#d7d5d5) is too
      pale once the rule is 4px thick, so this is neutral-8. It applies to the
-     rules sitting on light backgrounds only: the hero and the final block keep
-     their yellow bars because those sit on black.
+     rules sitting on light backgrounds only. The hero lost its two yellow bars
+     on 2026-09-22 and the closing block above the footer lost its two on
+     2026-10-22, both at Pete's asking, so the thick bars left on the page are
+     black (the signup band and the calculator card) and the only yellow rule is
+     the 2px underline under the old-way table's headings.
      Two users left after 2026-09-22 12:05: the rule above each zoomed app
      screen, and the bar across the top of the signup modal. The seven stage
      headings in "One phone does the lot" lost theirs at Pete's asking, so do
@@ -1267,8 +1270,11 @@ body.modal-open { overflow: hidden; }
 
 .final { background: var(--black); color: var(--cream); padding: 56px 0; }
 .final-inner {
-  border-top: var(--bar) solid var(--y);
-  border-bottom: var(--bar) solid var(--y);
+  /* The two yellow bars above and below this copy came off on 2026-10-22, at
+     Pete's asking: "the two yellow horizontal lines in the footer of the page
+     above and below the text remove them". The padding stays, so the words keep
+     their air against the black. This is the same call he made about the hero's
+     two bars on 2026-09-22. */
   padding: 32px 0;
 }
 .final h2 { color: #fff; margin-bottom: 16px; }
