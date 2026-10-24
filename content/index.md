@@ -302,7 +302,7 @@ legacy: true
         <p class="calc-result" role="status" aria-live="polite" data-calc-result>
           That is about <strong>&pound;7,800</strong> a year in jobs that went to whoever picked up first.
         </p>
-        <p class="calc-note">Your two numbers, worked out over 52 weeks.</p>
+        <p class="calc-note">Your two numbers, worked out over 52 weeks. <a href="/tools/missed-call-cost-calculator.html">See the full calculator with tables</a>.</p>
 
         <a class="btn btn--lg btn--solid" href="/#early-access" data-open-signup>Start free trial</a>
       </div>

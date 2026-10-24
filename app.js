@@ -463,6 +463,157 @@ const FORM_ENDPOINT = "https://formspree.io/f/xrpbqypw";
     cGross.addEventListener("input", cisUpdate); cMat.addEventListener("input", cisUpdate); cVat.addEventListener("input", cisUpdate); cRate.addEventListener("change", cisUpdate); cisUpdate();
   }
 
+  var wtc = document.querySelector("[data-wtc-calc]");
+  if (wtc) {
+    var wDays = wtc.querySelector("[data-wtc-days]");
+    var wRate = wtc.querySelector("[data-wtc-dayrate]");
+    var wMat = wtc.querySelector("[data-wtc-materials]");
+    var wMk = wtc.querySelector("[data-wtc-markup]");
+    var wPap = wtc.querySelector("[data-wtc-paperwork]");
+    var wCon = wtc.querySelector("[data-wtc-contingency]");
+    var wRes = wtc.querySelector("[data-wtc-result]");
+    function wtcUpdate() {
+      var days = Math.max(0, Number(wDays.value) || 0);
+      var rate = Math.max(0, Number(wRate.value) || 0);
+      var mat = Math.max(0, Number(wMat.value) || 0);
+      var mk = Math.max(0, Number(wMk.value) || 0) / 100;
+      var pap = Math.max(0, Number(wPap.value) || 0);
+      var con = Math.max(0, Number(wCon.value) || 0) / 100;
+      var labour = days * rate;
+      var matMk = mat * (1 + mk);
+      var sub = labour + matMk + pap;
+      var tot = sub * (1 + con);
+      wRes.textContent = "Labour " + fmt.format(labour) + ". Materials with markup " + fmt.format(matMk) + ". Subtotal " + fmt.format(sub) + ". Price " + fmt.format(tot) + ".";
+    }
+    wDays.addEventListener("input", wtcUpdate); wRate.addEventListener("input", wtcUpdate); wMat.addEventListener("input", wtcUpdate); wMk.addEventListener("input", wtcUpdate); wPap.addEventListener("input", wtcUpdate); wCon.addEventListener("input", wtcUpdate); wtcUpdate();
+  }
+
+  var mileage = document.querySelector("[data-mileage-calc]");
+  if (mileage) {
+    var mMiles = mileage.querySelector("[data-mileage-miles]");
+    var mType = mileage.querySelector("[data-mileage-type]");
+    var mRes = mileage.querySelector("[data-mileage-result]");
+    function mileageUpdate() {
+      var miles = Math.max(0, Number(mMiles.value) || 0);
+      var t = mType.value;
+      var amt = 0;
+      if (t === "car") { var first = Math.min(miles, 10000); var rest = Math.max(0, miles - 10000); amt = first * 0.45 + rest * 0.25; }
+      else if (t === "motorcycle") amt = miles * 0.24;
+      else amt = miles * 0.20;
+      mRes.textContent = fmt.format(amt) + " for " + miles + " business miles at HMRC rates on 24 October 2026.";
+    }
+    mMiles.addEventListener("input", mileageUpdate); mType.addEventListener("change", mileageUpdate); mileageUpdate();
+  }
+
+  var lpi = document.querySelector("[data-lpi-calc]");
+  if (lpi) {
+    var lAmt = lpi.querySelector("[data-lpi-amount]");
+    var lDays = lpi.querySelector("[data-lpi-days]");
+    var lMode = lpi.querySelector("[data-lpi-rate-mode]");
+    var lBase = lpi.querySelector("[data-lpi-base]");
+    var lFix = lpi.querySelector("[data-lpi-fixed]");
+    var lBaseWrap = lpi.querySelector("[data-lpi-base-wrap]");
+    var lFixWrap = lpi.querySelector("[data-lpi-fixed-wrap]");
+    var lRes = lpi.querySelector("[data-lpi-result]");
+    function lpiModeUpdate() { var stat = lMode.value === "statutory"; lBaseWrap.hidden = !stat; lFixWrap.hidden = stat; }
+    function lpiUpdate() {
+      var amt = Math.max(0, Number(lAmt.value) || 0);
+      var days = Math.max(0, Number(lDays.value) || 0);
+      var aPct = lMode.value === "statutory" ? 8 + (Number(lBase.value) || 0) : (Number(lFix.value) || 0);
+      var annual = aPct / 100;
+      var interest = annual / 365 * amt * days;
+      lRes.textContent = "At " + pct.format(aPct) + "% a year, " + fmt.format(amt) + " for " + days + " days is " + fmt.format(interest) + " interest.";
+    }
+    lMode.addEventListener("change", function () { lpiModeUpdate(); lpiUpdate(); });
+    lAmt.addEventListener("input", lpiUpdate); lDays.addEventListener("input", lpiUpdate); lBase.addEventListener("input", lpiUpdate); lFix.addEventListener("input", lpiUpdate); lpiModeUpdate(); lpiUpdate();
+  }
+
+  var dr = document.querySelector("[data-dayrate-calc]");
+  if (dr) {
+    var drTarget = dr.querySelector("[data-dr-target]");
+    var drCosts = dr.querySelector("[data-dr-costs]");
+    var drDays = dr.querySelector("[data-dr-days]");
+    var drRes = dr.querySelector("[data-dayrate-result]");
+    function drUpdate() {
+      var target = Math.max(0, Number(drTarget.value) || 0);
+      var costs = Math.max(0, Number(drCosts.value) || 0);
+      var days = Math.max(0, Number(drDays.value) || 0);
+      var left = Math.max(0, target - costs);
+      var rate = days > 0 ? left / days : 0;
+      drRes.textContent = fmt.format(left) + " to earn over " + days + " billable days is " + fmt.format(rate) + " a day.";
+    }
+    drTarget.addEventListener("input", drUpdate); drCosts.addEventListener("input", drUpdate); drDays.addEventListener("input", drUpdate); drUpdate();
+  }
+
+  var mk = document.querySelector("[data-markup-calc]");
+  if (mk) {
+    var mkMode = mk.querySelector("[data-mk-mode]");
+    var mkCost = mk.querySelector("[data-mk-cost]");
+    var mkPrice = mk.querySelector("[data-mk-price]");
+    var mkCost2 = mk.querySelector("[data-mk-cost2]");
+    var mkMarkup = mk.querySelector("[data-mk-markup]");
+    var mkPrice2 = mk.querySelector("[data-mk-price2]");
+    var mkMargin = mk.querySelector("[data-mk-margin]");
+    var mkRes = mk.querySelector("[data-mk-result]");
+    function mkUpdate() {
+      var m = mkMode.value;
+      if (m === "both") {
+        var c = Math.max(0, Number(mkCost.value) || 0);
+        var p = Math.max(0, Number(mkPrice.value) || 0);
+        var profit = p - c;
+        var markupPct = c > 0 ? (profit / c) * 100 : 0;
+        var marginPct = p > 0 ? (profit / p) * 100 : 0;
+        mkRes.textContent = "Profit " + fmt.format(profit) + ". Markup " + pct.format(markupPct) + "%. Margin " + pct.format(marginPct) + "%.";
+      } else if (m === "markup") {
+        var c2 = Math.max(0, Number(mkCost2.value) || 0);
+        var mkp = Math.max(0, Number(mkMarkup.value) || 0) / 100;
+        var price = c2 * (1 + mkp);
+        var profit2 = price - c2;
+        var margin2 = price > 0 ? (profit2 / price) * 100 : 0;
+        mkRes.textContent = "Price " + fmt.format(price) + ". Profit " + fmt.format(profit2) + ". Margin " + pct.format(margin2) + "%.";
+      } else {
+        var p2 = Math.max(0, Number(mkPrice2.value) || 0);
+        var mar = Math.max(0, Number(mkMargin.value) || 0) / 100;
+        var cost = p2 * (1 - mar);
+        var profit3 = p2 - cost;
+        var markup3 = cost > 0 ? (profit3 / cost) * 100 : 0;
+        mkRes.textContent = "Cost " + fmt.format(cost) + ". Profit " + fmt.format(profit3) + ". Markup " + pct.format(markup3) + "%.";
+      }
+    }
+    // Wire mode toggle: show/hide the three blocks
+    function mkToggle() {
+      var m = mkMode.value;
+      var wBoth = mk.querySelector("[data-mk-both]");
+      var wMarkupInput = mk.querySelector("[data-mk-markup]");
+      var wMarginInput = mk.querySelector("[data-mk-margin]");
+      // Their wrapper divs are the ones with hidden attribute
+      var wMarkupWrap = wMarkupInput.closest("div").parentElement;
+      var wMarginWrap = wMarginInput.closest("div").parentElement;
+      if (wBoth) wBoth.hidden = m !== "both";
+      if (wMarkupWrap) wMarkupWrap.hidden = m !== "markup";
+      if (wMarginWrap) wMarginWrap.hidden = m !== "margin";
+    }
+    mkMode.addEventListener("change", function () { mkToggle(); mkUpdate(); });
+    [mkCost, mkPrice, mkCost2, mkMarkup, mkPrice2, mkMargin].forEach(function (el) { if (el) el.addEventListener("input", mkUpdate); });
+    mkToggle(); mkUpdate();
+  }
+
+  var mcc = document.querySelector("[data-mcc-calc]");
+  if (mcc) {
+    var mcCalls = mcc.querySelector("[data-mcc-calls]");
+    var mcWorth = mcc.querySelector("[data-mcc-worth]");
+    var mcRate = mcc.querySelector("[data-mcc-rate]");
+    var mcRes = mcc.querySelector("[data-mcc-result]");
+    function mccUpdate() {
+      var calls = Math.max(0, Number(mcCalls.value) || 0);
+      var worth = Math.max(0, Number(mcWorth.value) || 0);
+      var rate = Math.max(0, Math.min(100, Number(mcRate.value) || 0)) / 100;
+      var yearly = calls * worth * 52 * rate;
+      mcRes.textContent = "That is about " + fmt0.format(yearly) + " a year in jobs that went to whoever picked up first.";
+    }
+    mcCalls.addEventListener("input", mccUpdate); mcWorth.addEventListener("input", mccUpdate); mcRate.addEventListener("input", mccUpdate); mccUpdate();
+  }
+
   var jp = document.querySelector("[data-job-profit-calc]");
   if (jp) {
     var jInc = jp.querySelector("[data-jp-income]");
