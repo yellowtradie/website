@@ -1,8 +1,4 @@
 [
-  "features/customer-page",
-  "features/ai-assistant",
-  "features/expenses",
-  "features/scheduling",
   "features/timesheets",
   "features/tax",
   "features/making-tax-digital",
