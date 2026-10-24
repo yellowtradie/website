@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Late payment interest calculator | Statutory 8 percent</title>
+<meta name="description" content="Work out late payment interest at 8 percent above base rate or at your own fixed rate. Includes the position for customers who are not a business.">
+<link rel="canonical" href="https://yellowtradie.com/tools/late-payment-interest-calculator.html">
+<link rel="icon" href="assets/logo-mark.svg?v=6" type="image/svg+xml">
+<meta name="theme-color" content="#1a181a">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="YellowTradie">
+<meta property="og:title" content="Late payment interest calculator | Statutory 8 percent">
+<meta property="og:description" content="Work out late payment interest at 8 percent above base rate or at your own fixed rate. Includes the position for customers who are not a business.">
+<meta property="og:url" content="https://yellowtradie.com/tools/late-payment-interest-calculator.html">
+<meta property="og:image" content="https://yellowtradie.com/assets/hero.webp?v=5">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="alternate" type="application/rss+xml" title="YellowTradie what's new" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=28">
+
+<!-- The visitor's choice about being counted, read before the tag can load.
+     This has to be inline and above the tag, and it is not optional. gtag.js is
+     async, so it can run before app.js at the bottom of the body gets a chance
+     to read the stored choice: measured on 2026-09-23, doing it the other way
+     round still sent one page view for a visitor who had switched it off. -->
+<script>
+  (function () {
+    try {
+      if (window.localStorage.getItem("yt_ga_off") === "1") {
+        window["ga-disable-G-DZZT654SCD"] = true;
+      }
+    } catch (e) { /* no storage: nothing stored, so nothing to honour */ }
+  })();
+</script>
+
+<!-- Google tag (gtag.js). One property for the whole site: the Measurement ID
+     below is YellowTradie's own. It sits in the head so a visit is counted when
+     the page opens rather than after everything else has loaded. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DZZT654SCD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DZZT654SCD');
+</script>
+</head>
+<body>
+
+<!-- This file is generated from content/tools/late-payment-interest-calculator.md by build.mjs.
+     Edit the text file, not this page. Header, nav, breadcrumb, footer and the
+     page's search data live once, in content/_layouts/page.html. -->
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="/" aria-label="YellowTradie home">
+      <img class="logo-mark" src="assets/logo-mark.svg" width="32" height="32" alt="">
+      <span class="logo-word">YellowTradie</span>
+    </a>
+
+    <nav aria-label="Main">
+      <ul class="nav">
+
+        <li><a href="/#how">What it does</a></li>
+
+        <li><a href="/#why">Why it is different</a></li>
+
+        <li><a href="/#faq">Questions</a></li>
+
+        <li><a href="/changelog.html">What's new</a></li>
+
+      </ul>
+    </nav>
+
+    <a class="btn btn--sm btn--solid" href="/#early-access">Get early access</a>
+
+  </div>
+</header>
+
+<main>
+
+  <section class="section">
+    <div class="wrap">
+<p class="eyebrow tertiary"><a href="/">Home</a> / Tools / Late payment interest calculator</p>
+      <div class="legal">
+<h1 class="display" id="late-payment-interest-calculator">Late payment interest calculator</h1>
+<p>Work out what late payment interest is worth on an overdue invoice. Put in the amount that is overdue, how many days late it is, and either use the statutory rate or your own fixed rate.</p>
+<p>Every step is shown in words below, so the page works without the calculator.</p>
+<div class="calc" id="lpi-calc" data-lpi-calc>
+  <div class="calc-field">
+    <label for="lpi-amount">Amount overdue (£)</label>
+    <input type="number" id="lpi-amount" inputmode="decimal" min="0" step="0.01" value="1500" data-lpi-amount>
+  </div>
+  <div class="calc-field">
+    <label for="lpi-days">Days overdue</label>
+    <input type="number" id="lpi-days" inputmode="decimal" min="0" step="1" value="30" data-lpi-days>
+  </div>
+  <div class="calc-field">
+    <label for="lpi-rate-mode">Rate to use</label>
+    <select id="lpi-rate-mode" data-lpi-rate-mode>
+      <option value="statutory">Statutory - 8 percent plus Bank of England base rate</option>
+      <option value="fixed">My own contract rate</option>
+    </select>
+  </div>
+  <div class="calc-field" data-lpi-base-wrap>
+    <label for="lpi-base">Bank of England base rate (%)</label>
+    <input type="number" id="lpi-base" inputmode="decimal" min="0" step="0.01" value="4.00" data-lpi-base>
+    <p class="calc-note">Statutory rate is 8 percent plus this base rate. Read the Bank Rate on bankofengland.co.uk on the day you charge. The value above is read on 24 October 2026.</p>
+  </div>
+  <div class="calc-field" data-lpi-fixed-wrap hidden>
+    <label for="lpi-fixed">Your contract rate (annual %)</label>
+    <input type="number" id="lpi-fixed" inputmode="decimal" min="0" step="0.01" value="8.00" data-lpi-fixed>
+    <p class="calc-note">Use this where your written terms name a fixed annual rate that the customer agreed.</p>
+  </div>
+  <p class="calc-result" role="status" aria-live="polite" data-lpi-result></p>
+  <p class="calc-note">Interest starts after the agreed payment date. For a consumer customer, a contract rate must be in terms they agreed. Statutory interest is for business to business debts.</p>
+</div>
+<h2 class="display display--xs" id="how-statutory-interest-is-worked">How statutory interest is worked</h2>
+<p>The law for business to business debts is the Late Payment of Commercial Debts (Interest) Act 1998. The statutory rate is 8 percent above the Bank of England base rate, per year.</p>
+<p>Bank Rate was read on bankofengland.co.uk on 24 October 2026. It was 4.00 percent. Statutory interest on that date is therefore 12.00 percent a year.</p>
+<p>That rate is not fixed by history. When the Bank changes its rate, the statutory rate for new periods of lateness moves with it.</p>
+<p>Interest is simple, per day. Daily rate equals annual rate divided by 365. Interest due equals daily rate times the amount overdue times days overdue.</p>
+<p>Example. Amount overdue £1,500. Days overdue 30. Annual statutory rate on 24 October 2026 is 12.00 percent.</p>
+<p>Daily rate is 0.12 divided by 365. That is about 0.0329 percent a day.</p>
+<p>Interest is 0.12 divided by 365 times £1,500 times 30. That is about £14.79.</p>
+<p>If only part of the invoice is overdue, use the unpaid amount, not the invoice total.</p>
+<h2 class="display display--xs" id="your-own-fixed-rate">Your own fixed rate</h2>
+<p>You can set your own interest rate in your terms, rather than rely on the statutory rate. That contract rate applies where the customer agreed it. The sum is the same, with your figure in place of statutory.</p>
+<p>Annual fixed rate 8 percent on £1,500 for 30 days is 0.08 divided by 365 times £1,500 times 30. That is about £9.86.</p>
+<p>A contract rate must be fair where the customer is a business. It must not create a penalty in an English law contract, and it must not be an unfair term where the customer is a consumer. If you name a high fixed rate to deter late payment, the customer can still challenge it.</p>
+<h2 class="display display--xs" id="debt-recovery-costs">Debt recovery costs</h2>
+<p>The Act lets you claim a fixed sum for chasing a business debt, on top of interest. The fixed sum is set by gov.uk and turns on the debt. It was read on gov.uk on 24 October 2026:</p>
+<ul><li>Up to £999.99 debt, £40</li><li>£1,000 to £9,999.99 debt, £70</li><li>£10,000 and over debt, £100</li></ul>
+<p>You can claim only one fixed sum per debt. You claim it once the payment is late, and again for each further late payment on the same invoice only if you have reasonable costs. The calculator does not add this. Work it by the debt.</p>
+<p>You can also claim reasonable costs of recovery beyond these fixed sums, but you must show them.</p>
+<h2 class="display display--xs" id="what-is-different-when-the-customer-is-not-a-business">What is different when the customer is not a business</h2>
+<p>This page draws a line between two kinds of customer.</p>
+<p>A business customer is another business. A consumer is a person acting outside their trade, for personal use. A couple who hire you for their own home are consumers. A landlord or a shop hiring you is a business for this purpose.</p>
+<p>For a business customer, statutory interest and the fixed sums above are available where the Act applies. The right to statutory interest can be in addition to what your own terms say, and you can rely on whichever gives the better result, subject to any terms that lawfully contract out.</p>
+<p>For a consumer, the Act does not give you statutory interest and fixed sums in the same way. Interest on a late payment from a consumer depends on your contract terms and on what is fair under consumer law. A term that charges interest to a consumer must meet the fairness test in the Consumer Rights Act 2015. It must be prominent, it must be balanced, and it must not punish. A court will look at whether the rate was brought to the customer’s attention before the work, whether the customer had a real choice, and whether the rate out of proportion to your loss.</p>
+<p>That means, in practice:</p>
+<ul><li>With a consumer in their own home, name a clear due date, name the annual rate, and keep the rate modest if you want it to be enforceable.</li><li>Do not add the business fixed sums of £40, £70 or £100 to a consumer invoice and present them as law. They are not.</li><li>Do not start interest the day after you sent the invoice if your own terms give longer. Interest runs from when payment is due under the terms, and a consumer must have had those terms.</li></ul>
+<p>This page can give you figures for any rate you type. It cannot turn a business remedy into a consumer one. Take advice if the sums or the relationship are in dispute.</p>
+<h2 class="display display--xs" id="common-amounts-at-the-statutory-rate-on-24-october-2026">Common amounts at the statutory rate on 24 October 2026</h2>
+<p>Statutory 12.00 percent a year where the base rate was 4.00 percent.</p>
+<p>| Amount overdue | 14 days | 30 days | 60 days | | --- | --- | --- | --- | | £500.00 | £2.30 | £4.93 | £9.86 | | £1,000.00 | £4.60 | £9.86 | £19.73 | | £1,500.00 | £6.90 | £14.79 | £29.59 | | £2,500.00 | £11.51 | £24.66 | £49.32 | | £5,000.00 | £23.01 | £49.32 | £98.63 | | £10,000.00 | £46.03 | £98.63 | £197.26 |</p>
+<p>At your own fixed 8 percent, each figure above is two thirds of the statutory figure shown.</p>
+<h2 class="display display--xs" id="writing-it-on-the-invoice">Writing it on the invoice</h2>
+<p>Say when payment is due, in a date rather than a count of days. Name the annual rate you intend to use. For a business customer you can name the statutory formula. For a consumer, name a contract rate they agreed.</p>
+<p>Example wording for a business customer:</p>
+<p>Payment due by 14 November 2026. Late payment interest runs under the Late Payment of Commercial Debts (Interest) Act 1998 at 8 percent above the Bank of England base rate, per year, plus fixed sums where they apply.</p>
+<p>Example wording for a consumer in their own home:</p>
+<p>Payment due by 14 November 2026. Interest on amounts not paid by that date is charged at 8 percent a year on the amount owed, per day, shown as a separate entry where it is charged.</p>
+<p>Do not charge interest on top of interest, and do not include the interest figure inside a new invoice total until it is a charge the customer has been told about and has had time to meet.</p>
+<h2 class="display display--xs" id="questions">Questions</h2>
+<h3 class="display display--xs" id="can-i-charge-interest-back-to-the-day-i-finished-the-work">Can I charge interest back to the day I finished the work?</h3>
+<p>No, unless your terms say when payment is due and that date is the one interest runs from. Interest is from when payment became late, not from when the work was done, unless the work date and the due date are the same.</p>
+<h3 class="display display--xs" id="do-i-need-to-register-the-rate-on-the-invoice">Do I need to register the rate on the invoice?</h3>
+<p>No, but you must bring it to the customer’s attention before or at the time the invoice is issued. A term buried only on a website the customer did not see is harder to enforce than a term on the invoice itself.</p>
+<h3 class="display display--xs" id="what-if-the-customer-pays-part-of-the-debt">What if the customer pays part of the debt?</h3>
+<p>Interest runs on the amount still owed, not the original total. In the calculator, put the balance that is late, not the headline invoice figure.</p>
+<h3 class="display display--xs" id="what-if-the-base-rate-moves-mid-debt">What if the base rate moves mid debt?</h3>
+<p>Apply the base rate that was in force for each period. For the calculator, type the rate that applied to the period you are pricing. If the Bank changed the rate twice during one long debt, split the debt by the dates of each change and work each period on its own rate.</p>
+<h2 class="display display--xs" id="sources">Sources</h2>
+<p>Statutory rate and fixed sums read on gov.uk on 24 October 2026. Bank of England base rate read on bankofengland.co.uk on 24 October 2026.</p>
+<a class="btn btn--lg btn--solid" href="/#early-access">Join the list</a>
+<p>The app is not in the shops yet. Join the list and we will tell you the day it opens.</p>
+      <div class="sources">
+        <h2 class="display display--xs">Sources</h2>
+        <ul>
+        <li><a href="https://www.gov.uk/late-commercial-payments-interest-debt-recovery" rel="noopener">Late commercial payments on gov.uk</a></li>
+        <li><a href="https://www.bankofengland.co.uk/monetary-policy/the-interest-rate-bank-rate" rel="noopener">Bank of England base rate on bankofengland.co.uk</a></li>
+        <li><a href="https://www.legislation.gov.uk/ukpga/1998/20" rel="noopener">Late Payment of Commercial Debts (Interest) Act 1998 on legislation.gov.uk</a></li>
+        </ul>
+      </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a class="logo" href="/" aria-label="YellowTradie home" style="margin-bottom: 16px;">
+          <img class="logo-mark" src="assets/logo-mark.svg" width="32" height="32" alt="">
+          <span class="logo-word">YellowTradie</span>
+        </a>
+        <p class="tertiary" style="font-size: 14px; line-height: 17px; max-width: 28em;">A phone app that runs the whole job for a solo tradesperson, from the missed call to the quarter closed off.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>The site</h3>
+        <ul>
+
+          <li><a href="/#how">What it does</a></li>
+
+          <li><a href="/#why">Why it is different</a></li>
+
+          <li><a href="/#faq">Questions</a></li>
+
+          <li><a href="/changelog.html">What's new</a></li>
+
+          <li><a href="/#early-access">Get early access</a></li>
+
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Tools</h3>
+        <ul>
+
+          <li><a href="/tools.html">Free calculators</a></li>
+
+          <li><a href="/tools/vat-calculator.html">VAT calculator</a></li>
+
+          <li><a href="/tools/remove-vat-calculator.html">Remove VAT calculator</a></li>
+
+          <li><a href="/tools/cis-calculator.html">CIS calculator</a></li>
+
+          <li><a href="/tools/job-profit-calculator.html">Job profit calculator</a></li>
+
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Company</h3>
+        <ul>
+
+          <li><a href="/about.html">About</a></li>
+
+          <li><a href="/faq.html">FAQ</a></li>
+
+          <li><a href="/editorial-policy.html">Editorial policy</a></li>
+
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul>
+
+          <li><a href="mailto:hello@yellowtradie.com">hello@yellowtradie.com</a></li>
+
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-base">
+
+      <p><a href="/privacy.html">Privacy</a></p>
+
+      <p><a href="/terms.html">Terms of use</a></p>
+
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://yellowtradie.com/#organization",
+      "name": "YellowTradie",
+      "url": "https://yellowtradie.com/",
+      "logo": "https://yellowtradie.com/assets/logo-mark.svg",
+      "email": "hello@yellowtradie.com",
+      "description": "YellowTradie makes a phone app that runs the whole job for a solo tradesperson.",
+      "areaServed": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://yellowtradie.com/#website",
+      "url": "https://yellowtradie.com/",
+      "name": "YellowTradie",
+      "inLanguage": "en-GB",
+      "publisher": {
+        "@id": "https://yellowtradie.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://yellowtradie.com/tools/late-payment-interest-calculator.html#webpage",
+      "url": "https://yellowtradie.com/tools/late-payment-interest-calculator.html",
+      "name": "Late payment interest calculator | Statutory 8 percent",
+      "description": "Work out late payment interest at 8 percent above base rate or at your own fixed rate. Includes the position for customers who are not a business.",
+      "isPartOf": {
+        "@id": "https://yellowtradie.com/#website"
+      },
+      "datePublished": "2026-10-24",
+      "dateModified": "2026-10-24",
+      "inLanguage": "en-GB",
+      "publisher": {
+        "@id": "https://yellowtradie.com/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://yellowtradie.com/tools/late-payment-interest-calculator.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://yellowtradie.com/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Late payment interest calculator",
+          "item": "https://yellowtradie.com/tools/late-payment-interest-calculator.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<script src="app.js"></script>
+</body>
+</html>

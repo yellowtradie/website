@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Day rate calculator | What to charge per day</title>
+<meta name="description" content="Turn a target income into a day rate. Less costs, divided by the days you actually bill, with a table of ready-worked figures.">
+<link rel="canonical" href="https://yellowtradie.com/tools/day-rate-calculator.html">
+<link rel="icon" href="assets/logo-mark.svg?v=6" type="image/svg+xml">
+<meta name="theme-color" content="#1a181a">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="YellowTradie">
+<meta property="og:title" content="Day rate calculator | What to charge per day">
+<meta property="og:description" content="Turn a target income into a day rate. Less costs, divided by the days you actually bill, with a table of ready-worked figures.">
+<meta property="og:url" content="https://yellowtradie.com/tools/day-rate-calculator.html">
+<meta property="og:image" content="https://yellowtradie.com/assets/hero.webp?v=5">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="alternate" type="application/rss+xml" title="YellowTradie what's new" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=28">
+
+<!-- The visitor's choice about being counted, read before the tag can load.
+     This has to be inline and above the tag, and it is not optional. gtag.js is
+     async, so it can run before app.js at the bottom of the body gets a chance
+     to read the stored choice: measured on 2026-09-23, doing it the other way
+     round still sent one page view for a visitor who had switched it off. -->
+<script>
+  (function () {
+    try {
+      if (window.localStorage.getItem("yt_ga_off") === "1") {
+        window["ga-disable-G-DZZT654SCD"] = true;
+      }
+    } catch (e) { /* no storage: nothing stored, so nothing to honour */ }
+  })();
+</script>
+
+<!-- Google tag (gtag.js). One property for the whole site: the Measurement ID
+     below is YellowTradie's own. It sits in the head so a visit is counted when
+     the page opens rather than after everything else has loaded. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DZZT654SCD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DZZT654SCD');
+</script>
+</head>
+<body>
+
+<!-- This file is generated from content/tools/day-rate-calculator.md by build.mjs.
+     Edit the text file, not this page. Header, nav, breadcrumb, footer and the
+     page's search data live once, in content/_layouts/page.html. -->
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="/" aria-label="YellowTradie home">
+      <img class="logo-mark" src="assets/logo-mark.svg" width="32" height="32" alt="">
+      <span class="logo-word">YellowTradie</span>
+    </a>
+
+    <nav aria-label="Main">
+      <ul class="nav">
+
+        <li><a href="/#how">What it does</a></li>
+
+        <li><a href="/#why">Why it is different</a></li>
+
+        <li><a href="/#faq">Questions</a></li>
+
+        <li><a href="/changelog.html">What's new</a></li>
+
+      </ul>
+    </nav>
+
+    <a class="btn btn--sm btn--solid" href="/#early-access">Get early access</a>
+
+  </div>
+</header>
+
+<main>
+
+  <section class="section">
+    <div class="wrap">
+<p class="eyebrow tertiary"><a href="/">Home</a> / Tools / Day rate calculator</p>
+      <div class="legal">
+<h1 class="display" id="day-rate-calculator">Day rate calculator</h1>
+<p>Work out the day rate your year needs. Put in the income you need from the business, the costs you will meet, and the days you will actually bill. The calculator shows the rate, the annual total it produces, and how it breaks down.</p>
+<p>The page also shows the sum in words so it is useful without the calculator.</p>
+<div class="calc" id="dayrate-calc" data-dayrate-calc>
+  <div class="calc-field">
+    <label for="dr-target">Income you need for the year (£)</label>
+    <input type="number" id="dr-target" inputmode="decimal" min="0" step="100" value="50000" data-dr-target>
+  </div>
+  <div class="calc-field">
+    <label for="dr-costs">Costs the business will meet (£)</label>
+    <input type="number" id="dr-costs" inputmode="decimal" min="0" step="100" value="8000" data-dr-costs>
+  </div>
+  <div class="calc-field">
+    <label for="dr-days">Days you will actually bill this year</label>
+    <input type="number" id="dr-days" inputmode="decimal" min="0" step="1" value="200" data-dr-days>
+  </div>
+  <p class="calc-result" role="status" aria-live="polite" data-dayrate-result></p>
+  <p class="calc-note">Target income less costs, divided by billable days. Days lost to bank holidays, sickness and quotes gone quiet are outside this count.</p>
+</div>
+<h2 class="display display--xs" id="how-to-work-it-out">How to work it out</h2>
+<p>Start with what you need the business to leave you for the year. That is pay, tax and National Insurance, pension, and the profit you want to keep. Call that target income.</p>
+<p>Subtract the costs the business will meet even when you bill. Insurance, phone, van, tools, software, accountant, CITB, trade body, waste, workwear. Not materials for a job. Overheads.</p>
+<p>Divide what is left by the days you actually bill. That is the rate the year needs.</p>
+<p>In symbols: day rate equals target income minus costs, divided by billable days.</p>
+<p>Example. Target income £50,000. Costs £8,000. Billable days 200.</p>
+<p>Left to earn is £42,000. Divided by 200. Day rate is £210.</p>
+<h2 class="display display--xs" id="what-goes-in-each-box">What goes in each box</h2>
+<p>Target income is not turnover. It is what you want the year to leave you in a reasonable sense, before you decide how to take it. If you need £60,000 to live, save and pay tax, put £60,000.</p>
+<p>Costs is what the business pays in a year that are not for one job. The van lease, insurance, YellowTradie, fuel, phone, workwear, tools replaced. A realistic total from last year is better than a guess for next. If you lease a van, put the lease. If the van is owned and you want mileage allowance, leave that out here and claim mileage through your books rather than twice.</p>
+<p>Billable days is the one that catches people out. It is days a customer pays for. It is not days you wake up and work. A usual full time year is about 250 weekdays less bank holidays and holidays. From that, take out days lost to quoting, training, sickness, weather, waiting for materials, and gaps. Many solo trades bill for 180 to 220 days. Some bill for fewer.</p>
+<h2 class="display display--xs" id="common-amounts">Common amounts</h2>
+<p>| Target less costs | Billable days | Day rate | | --- | --- | --- | | £30,000 | 180 | £166.67 | | £35,000 | 180 | £194.44 | | £40,000 | 200 | £200.00 | | £42,000 | 200 | £210.00 | | £50,000 | 200 | £250.00 | | £50,000 | 180 | £277.78 | | £60,000 | 220 | £272.73 |</p>
+<p>If you have a junior or take a week off sick, the days figure moves. The rate moves with it. That is why the rate is per billed day, not per calendar day.</p>
+<h2 class="display display--xs" id="how-to-count-billable-days-honestly">How to count billable days honestly</h2>
+<p>Start with weekdays in the year. Subtract 8 bank holidays and the holidays you intend to take. Subtract days you will spend on quotes and admin where no customer pays. Subtract likely days lost to weather and sickness. The result is closer to the days a customer will actually be billed for than your first guess.</p>
+<p>If you quote fixed price jobs rather than daywork, count how many day equivalents each quote produced in reality, not the days you hoped it would. Fixed price hides the days. Days still matter for pricing.</p>
+<h2 class="display display--xs" id="using-the-rate-on-a-quote">Using the rate on a quote</h2>
+<p>A day rate of £210 for a two day job is £420. Add materials with a <a href="/tools/markup-calculator.html">markup</a> if you supply them. Add a line for paperwork and travel. For a full price, see <a href="/tools/what-to-charge.html">what to charge</a>.</p>
+<p>Do not drop the rate on site. If the job grows, the price for extra days should be at the rate you came with.</p>
+<h2 class="display display--xs" id="pitfalls">Pitfalls</h2>
+<p>Forgetting overheads is the first. Insurance, phone and van sit in costs whether you charge for them on the quote or not.</p>
+<p>Counting every weekday as billable is the second. You do not bill every weekday. Using the days above keeps the rate honest and saves undercharging.</p>
+<p>Cutting the rate to win is the third. A rate of £50 less a day across 200 billable days leaves £10,000 out of the year. That is not a small gift.</p>
+<h2 class="display display--xs" id="questions">Questions</h2>
+<h3 class="display display--xs" id="is-day-rate-the-same-as-pay-per-day">Is day rate the same as pay per day?</h3>
+<p>No. Day rate is what the business must charge to meet the income you targeted and the costs above it. What you take home after tax and after profit is a separate question. This page does not calculate tax. It calculates the rate that funds your plan. Your accountant can set what to draw.</p>
+<h3 class="display display--xs" id="what-if-i-charge-by-the-job-not-by-the-day">What if I charge by the job, not by the day?</h3>
+<p>Still work out the day rate. Then price the job in day equivalents plus materials. A three day kitchen refit at £280 a day is £840 of labour before materials. If the customer asks for a fixed price of £900 for the same scope, you still know what the days were worth.</p>
+<h3 class="display display--xs" id="do-materials-go-in-costs-here">Do materials go in costs here?</h3>
+<p>No. Materials are priced on the job, not in the annual overheads for this sum. Put materials on the quote that uses the rate, not in the pot you divide here. Otherwise you count them twice.</p>
+<h3 class="display display--xs" id="what-if-i-bill-four-days-a-week-and-keep-one-for-quotes">What if I bill four days a week and keep one for quotes?</h3>
+<p>Then billable days come down. If you work 48 weeks and bill four days, that is 192. Put 192. The calculator will raise the rate to meet the same target.</p>
+<h2 class="display display--xs" id="sources">Sources</h2>
+<p>This calculator uses your own figures. It has no HMRC rate in it. When you apply VAT to a quote built from this rate, use the rates shown on the <a href="/tools/vat-calculator.html">VAT calculator</a>.</p>
+<a class="btn btn--lg btn--solid" href="/#early-access">Join the list</a>
+<p>The app is not in the shops yet. Join the list and we will tell you the day it opens.</p>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a class="logo" href="/" aria-label="YellowTradie home" style="margin-bottom: 16px;">
+          <img class="logo-mark" src="assets/logo-mark.svg" width="32" height="32" alt="">
+          <span class="logo-word">YellowTradie</span>
+        </a>
+        <p class="tertiary" style="font-size: 14px; line-height: 17px; max-width: 28em;">A phone app that runs the whole job for a solo tradesperson, from the missed call to the quarter closed off.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>The site</h3>
+        <ul>
+
+          <li><a href="/#how">What it does</a></li>
+
+          <li><a href="/#why">Why it is different</a></li>
+
+          <li><a href="/#faq">Questions</a></li>
+
+          <li><a href="/changelog.html">What's new</a></li>
+
+          <li><a href="/#early-access">Get early access</a></li>
+
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Tools</h3>
+        <ul>
+
+          <li><a href="/tools.html">Free calculators</a></li>
+
+          <li><a href="/tools/vat-calculator.html">VAT calculator</a></li>
+
+          <li><a href="/tools/remove-vat-calculator.html">Remove VAT calculator</a></li>
+
+          <li><a href="/tools/cis-calculator.html">CIS calculator</a></li>
+
+          <li><a href="/tools/job-profit-calculator.html">Job profit calculator</a></li>
+
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Company</h3>
+        <ul>
+
+          <li><a href="/about.html">About</a></li>
+
+          <li><a href="/faq.html">FAQ</a></li>
+
+          <li><a href="/editorial-policy.html">Editorial policy</a></li>
+
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul>
+
+          <li><a href="mailto:hello@yellowtradie.com">hello@yellowtradie.com</a></li>
+
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-base">
+
+      <p><a href="/privacy.html">Privacy</a></p>
+
+      <p><a href="/terms.html">Terms of use</a></p>
+
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://yellowtradie.com/#organization",
+      "name": "YellowTradie",
+      "url": "https://yellowtradie.com/",
+      "logo": "https://yellowtradie.com/assets/logo-mark.svg",
+      "email": "hello@yellowtradie.com",
+      "description": "YellowTradie makes a phone app that runs the whole job for a solo tradesperson.",
+      "areaServed": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://yellowtradie.com/#website",
+      "url": "https://yellowtradie.com/",
+      "name": "YellowTradie",
+      "inLanguage": "en-GB",
+      "publisher": {
+        "@id": "https://yellowtradie.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://yellowtradie.com/tools/day-rate-calculator.html#webpage",
+      "url": "https://yellowtradie.com/tools/day-rate-calculator.html",
+      "name": "Day rate calculator | What to charge per day",
+      "description": "Turn a target income into a day rate. Less costs, divided by the days you actually bill, with a table of ready-worked figures.",
+      "isPartOf": {
+        "@id": "https://yellowtradie.com/#website"
+      },
+      "datePublished": "2026-10-24",
+      "dateModified": "2026-10-24",
+      "inLanguage": "en-GB",
+      "publisher": {
+        "@id": "https://yellowtradie.com/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://yellowtradie.com/tools/day-rate-calculator.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://yellowtradie.com/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Day rate calculator",
+          "item": "https://yellowtradie.com/tools/day-rate-calculator.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<script src="app.js"></script>
+</body>
+</html>

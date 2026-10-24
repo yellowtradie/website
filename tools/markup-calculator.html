@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Markup and margin calculator | The difference explained</title>
+<meta name="description" content="Work out markup on cost and margin on price. See what each one means, how to convert between them, and why they are not the same thing.">
+<link rel="canonical" href="https://yellowtradie.com/tools/markup-calculator.html">
+<link rel="icon" href="assets/logo-mark.svg?v=6" type="image/svg+xml">
+<meta name="theme-color" content="#1a181a">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="YellowTradie">
+<meta property="og:title" content="Markup and margin calculator | The difference explained">
+<meta property="og:description" content="Work out markup on cost and margin on price. See what each one means, how to convert between them, and why they are not the same thing.">
+<meta property="og:url" content="https://yellowtradie.com/tools/markup-calculator.html">
+<meta property="og:image" content="https://yellowtradie.com/assets/hero.webp?v=5">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="alternate" type="application/rss+xml" title="YellowTradie what's new" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=28">
+
+<!-- The visitor's choice about being counted, read before the tag can load.
+     This has to be inline and above the tag, and it is not optional. gtag.js is
+     async, so it can run before app.js at the bottom of the body gets a chance
+     to read the stored choice: measured on 2026-09-23, doing it the other way
+     round still sent one page view for a visitor who had switched it off. -->
+<script>
+  (function () {
+    try {
+      if (window.localStorage.getItem("yt_ga_off") === "1") {
+        window["ga-disable-G-DZZT654SCD"] = true;
+      }
+    } catch (e) { /* no storage: nothing stored, so nothing to honour */ }
+  })();
+</script>
+
+<!-- Google tag (gtag.js). One property for the whole site: the Measurement ID
+     below is YellowTradie's own. It sits in the head so a visit is counted when
+     the page opens rather than after everything else has loaded. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DZZT654SCD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DZZT654SCD');
+</script>
+</head>
+<body>
+
+<!-- This file is generated from content/tools/markup-calculator.md by build.mjs.
+     Edit the text file, not this page. Header, nav, breadcrumb, footer and the
+     page's search data live once, in content/_layouts/page.html. -->
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="/" aria-label="YellowTradie home">
+      <img class="logo-mark" src="assets/logo-mark.svg" width="32" height="32" alt="">
+      <span class="logo-word">YellowTradie</span>
+    </a>
+
+    <nav aria-label="Main">
+      <ul class="nav">
+
+        <li><a href="/#how">What it does</a></li>
+
+        <li><a href="/#why">Why it is different</a></li>
+
+        <li><a href="/#faq">Questions</a></li>
+
+        <li><a href="/changelog.html">What's new</a></li>
+
+      </ul>
+    </nav>
+
+    <a class="btn btn--sm btn--solid" href="/#early-access">Get early access</a>
+
+  </div>
+</header>
+
+<main>
+
+  <section class="section">
+    <div class="wrap">
+<p class="eyebrow tertiary"><a href="/">Home</a> / Tools / Markup and margin calculator</p>
+      <div class="legal">
+<h1 class="display" id="markup-and-margin-calculator">Markup and margin calculator</h1>
+<p>They are not the same figure. Markup is profit over cost. Margin is profit over price. Put in cost and price, or one and a percent, and the calculator shows both, the profit in pounds, and how to move between them.</p>
+<p>The page also explains the sums in words so it is useful without the calculator.</p>
+<div class="calc" id="markup-calc" data-markup-calc>
+  <div class="calc-field">
+    <label for="mk-mode">What you want to do</label>
+    <select id="mk-mode" data-mk-mode>
+      <option value="both">Cost and price - see both percents</option>
+      <option value="markup">Cost plus markup - get the price</option>
+      <option value="margin">Price and margin - get the cost</option>
+    </select>
+  </div>
+  <div data-mk-both>
+    <div class="calc-field">
+      <label for="mk-cost">Cost (£)</label>
+      <input type="number" id="mk-cost" inputmode="decimal" min="0" step="0.01" value="400" data-mk-cost>
+    </div>
+    <div class="calc-field">
+      <label for="mk-price">Price charged (£)</label>
+      <input type="number" id="mk-price" inputmode="decimal" min="0" step="0.01" value="500" data-mk-price>
+    </div>
+  </div>
+  <div data-mk-markup hidden>
+    <div class="calc-field">
+      <label for="mk-cost2">Cost (£)</label>
+      <input type="number" id="mk-cost2" inputmode="decimal" min="0" step="0.01" value="400" data-mk-cost2>
+    </div>
+    <div class="calc-field">
+      <label for="mk-markup">Markup (%)</label>
+      <input type="number" id="mk-markup" inputmode="decimal" min="0" step="0.1" value="25" data-mk-markup>
+    </div>
+  </div>
+  <div data-mk-margin hidden>
+    <div class="calc-field">
+      <label for="mk-price2">Price charged (£)</label>
+      <input type="number" id="mk-price2" inputmode="decimal" min="0" step="0.01" value="500" data-mk-price2>
+    </div>
+    <div class="calc-field">
+      <label for="mk-margin">Margin (%)</label>
+      <input type="number" id="mk-margin" inputmode="decimal" min="0" max="100" step="0.1" value="20" data-mk-margin>
+    </div>
+  </div>
+  <p class="calc-result" role="status" aria-live="polite" data-mk-result></p>
+  <p class="calc-note">Markup is on cost. Margin is on price. Same profit, different denominator.</p>
+</div>
+<h2 class="display display--xs" id="what-each-one-means">What each one means</h2>
+<p>Markup is profit divided by cost, times 100. It answers: for every pound I spent, how many pence did I earn above it.</p>
+<p>Margin is profit divided by price, times 100. It answers: for every pound the customer paid, how many pence stayed as profit.</p>
+<p>In symbols:</p>
+<p>Price equals cost plus profit.</p>
+<p>Markup percent equals profit divided by cost times 100.</p>
+<p>Margin percent equals profit divided by price times 100.</p>
+<p>Example. Cost £400. Price £500. Profit is £100.</p>
+<p>Markup is £100 divided by £400. That is 25 percent.</p>
+<p>Margin is £100 divided by £500. That is 20 percent. Higher denominator, lower percent. Same pounds.</p>
+<h2 class="display display--xs" id="the-common-mistake">The common mistake</h2>
+<p>To say 25 percent markup is 25 percent margin. It is not.</p>
+<p>A job that cost £400 and is sold for £500 has a 25 percent markup. Its margin is 20 percent.</p>
+<p>To get a 20 percent margin on £400 of cost, the price is about £500.</p>
+<p>To get a 25 percent margin on £400 of cost, the price is about £533.33, because margin 25 percent means price times 0.25 is profit, so cost is price times 0.75, so price equals cost divided by 0.75.</p>
+<h2 class="display display--xs" id="how-to-move-between-them">How to move between them</h2>
+<p>From markup to margin: margin equals markup divided by one plus markup.</p>
+<p>Example. Markup 25 percent. That is 0.25. One plus markup is 1.25. 0.25 divided by 1.25 is 0.20. That is 20 percent margin. Matches the example above.</p>
+<p>From margin to markup: markup equals margin divided by one minus margin.</p>
+<p>Example. Margin 20 percent. That is 0.20. One minus margin is 0.80. 0.20 divided by 0.80 is 0.25. That is 25 percent markup. Back at the start.</p>
+<p>From cost and one percent to price:</p>
+<p>Price from markup is cost times one plus markup. Cost £400 at 25 percent markup is £400 times 1.25. That is £500.</p>
+<p>Cost from price and margin is price times one minus margin. Price £500 at 20 percent margin is £500 times 0.80. That is £400. Price £500 at 25 percent margin is £500 times 0.75. That is £375.</p>
+<p>From price and profit target: if you want a margin, multiply price by one minus margin to get cost, or divide cost by one minus margin to get price.</p>
+<p>Check: cost divided by one minus margin is the price that leaves that margin. Price times margin is the profit in pounds.</p>
+<h2 class="display display--xs" id="a-ready-table">A ready table</h2>
+<p>Cost | 10% markup | 25% markup | 10% margin | 25% margin | --- | --- | --- | --- | --- | | £100.00 | £110.00 | £125.00 | £111.11 | £133.33 | | £200.00 | £220.00 | £250.00 | £222.22 | £266.67 | | £400.00 | £440.00 | £500.00 | £444.44 | £533.33 | | £500.00 | £550.00 | £625.00 | £555.56 | £666.67 | | £1,000.00 | £1,100.00 | £1,250.00 | £1,111.11 | £1,333.33 |</p>
+<p>Read across: a cost of £400 with 25 percent markup becomes £500, which is a 20 percent margin on the price.</p>
+<h2 class="display display--xs" id="which-one-should-you-use">Which one should you use</h2>
+<p>Use markup when you price from cost.</p>
+<p>I bought materials at £400, I add 25 percent, the price is £500 before VAT.</p>
+<p>Use margin when you check whether the price covers the business.</p>
+<p>The job was £500, of which £100 was profit, margin is 20 percent. If your target margin is higher, the price must move. If not, the cost must come down.</p>
+<p>Both matter. Markup sets the quote, margin judges it. See the <a href="/tools/job-profit-calculator.html">job profit calculator</a> for margin on a real job, and <a href="/tools/what-to-charge.html">what to charge</a> for building a price from days and materials.</p>
+<h2 class="display display--xs" id="costs-that-are-not-markup">Costs that are not markup</h2>
+<p>Markup is not VAT. VAT is collected and passed on. Run a <a href="/tools/vat-calculator.html">VAT sum</a> outside.</p>
+<p>Markup is not CIS. CIS is tax held by the contractor on labour, not a charge you set. See the <a href="/tools/cis-calculator.html">CIS calculator</a>.</p>
+<h2 class="display display--xs" id="questions">Questions</h2>
+<h3 class="display display--xs" id="i-bought-at-300-and-sold-at-450-what-is-the-markup-and-the-margin">I bought at £300 and sold at £450. What is the markup and the margin?</h3>
+<p>Profit is £150. Markup is £150 on £300, that is 50 percent. Margin is £150 on £450, that is 33.3 percent. If you wanted a 50 percent margin rather than 50 percent markup, the price would be £600 at the same cost.</p>
+<h3 class="display display--xs" id="how-much-must-i-add-to-80-to-get-a-20-percent-margin">How much must I add to £80 to get a 20 percent margin?</h3>
+<p>Cost £80. Margin 20 percent means price equals cost divided by 0.80. That is £100. Profit £20, margin £20 on £100. If you added 20 percent as markup, the price would be £96, margin 16.7 percent, and the profit £16.</p>
+<h3 class="display display--xs" id="can-margin-be-100-percent">Can margin be 100 percent?</h3>
+<p>No. Margin under 100 percent means price above zero and above cost. Margin 50 percent means profit is half the price, cost the other half. To reach 50 percent margin on cost £400, price is £800. A margin of 100 percent would mean zero cost, which is not what a margin on a real job is.</p>
+<h3 class="display display--xs" id="how-does-this-fit-on-a-quote">How does this fit on a quote?</h3>
+<p>Show the total price, not the percents. Keep markup on materials as one line where the customer supplied nothing, for example "Materials £400 plus sourcing £40". The customer sees a price for materials supplied and collected, not a percent.</p>
+<h2 class="display display--xs" id="sources">Sources</h2>
+<p>No HMRC rate is needed for these sums. Where VAT applies, the VAT rate is read on the <a href="/tools/vat-calculator.html">VAT calculator</a>.</p>
+<a class="btn btn--lg btn--solid" href="/#early-access">Join the list</a>
+<p>The app is not in the shops yet. Join the list and we will tell you the day it opens.</p>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a class="logo" href="/" aria-label="YellowTradie home" style="margin-bottom: 16px;">
+          <img class="logo-mark" src="assets/logo-mark.svg" width="32" height="32" alt="">
+          <span class="logo-word">YellowTradie</span>
+        </a>
+        <p class="tertiary" style="font-size: 14px; line-height: 17px; max-width: 28em;">A phone app that runs the whole job for a solo tradesperson, from the missed call to the quarter closed off.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>The site</h3>
+        <ul>
+
+          <li><a href="/#how">What it does</a></li>
+
+          <li><a href="/#why">Why it is different</a></li>
+
+          <li><a href="/#faq">Questions</a></li>
+
+          <li><a href="/changelog.html">What's new</a></li>
+
+          <li><a href="/#early-access">Get early access</a></li>
+
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Tools</h3>
+        <ul>
+
+          <li><a href="/tools.html">Free calculators</a></li>
+
+          <li><a href="/tools/vat-calculator.html">VAT calculator</a></li>
+
+          <li><a href="/tools/remove-vat-calculator.html">Remove VAT calculator</a></li>
+
+          <li><a href="/tools/cis-calculator.html">CIS calculator</a></li>
+
+          <li><a href="/tools/job-profit-calculator.html">Job profit calculator</a></li>
+
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Company</h3>
+        <ul>
+
+          <li><a href="/about.html">About</a></li>
+
+          <li><a href="/faq.html">FAQ</a></li>
+
+          <li><a href="/editorial-policy.html">Editorial policy</a></li>
+
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul>
+
+          <li><a href="mailto:hello@yellowtradie.com">hello@yellowtradie.com</a></li>
+
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-base">
+
+      <p><a href="/privacy.html">Privacy</a></p>
+
+      <p><a href="/terms.html">Terms of use</a></p>
+
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://yellowtradie.com/#organization",
+      "name": "YellowTradie",
+      "url": "https://yellowtradie.com/",
+      "logo": "https://yellowtradie.com/assets/logo-mark.svg",
+      "email": "hello@yellowtradie.com",
+      "description": "YellowTradie makes a phone app that runs the whole job for a solo tradesperson.",
+      "areaServed": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://yellowtradie.com/#website",
+      "url": "https://yellowtradie.com/",
+      "name": "YellowTradie",
+      "inLanguage": "en-GB",
+      "publisher": {
+        "@id": "https://yellowtradie.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://yellowtradie.com/tools/markup-calculator.html#webpage",
+      "url": "https://yellowtradie.com/tools/markup-calculator.html",
+      "name": "Markup and margin calculator | The difference explained",
+      "description": "Work out markup on cost and margin on price. See what each one means, how to convert between them, and why they are not the same thing.",
+      "isPartOf": {
+        "@id": "https://yellowtradie.com/#website"
+      },
+      "datePublished": "2026-10-24",
+      "dateModified": "2026-10-24",
+      "inLanguage": "en-GB",
+      "publisher": {
+        "@id": "https://yellowtradie.com/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://yellowtradie.com/tools/markup-calculator.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://yellowtradie.com/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Markup and margin calculator",
+          "item": "https://yellowtradie.com/tools/markup-calculator.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mileage allowance calculator | HMRC rates 2026/27</title>
+<meta name="description" content="Work out mileage allowance at HMRC approved rates. 45p a mile to 10,000 miles then 25p, and the rule about claiming actual costs for the same vehicle.">
+<link rel="canonical" href="https://yellowtradie.com/tools/mileage-allowance-calculator.html">
+<link rel="icon" href="assets/logo-mark.svg?v=6" type="image/svg+xml">
+<meta name="theme-color" content="#1a181a">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="YellowTradie">
+<meta property="og:title" content="Mileage allowance calculator | HMRC rates 2026/27">
+<meta property="og:description" content="Work out mileage allowance at HMRC approved rates. 45p a mile to 10,000 miles then 25p, and the rule about claiming actual costs for the same vehicle.">
+<meta property="og:url" content="https://yellowtradie.com/tools/mileage-allowance-calculator.html">
+<meta property="og:image" content="https://yellowtradie.com/assets/hero.webp?v=5">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="alternate" type="application/rss+xml" title="YellowTradie what's new" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=28">
+
+<!-- The visitor's choice about being counted, read before the tag can load.
+     This has to be inline and above the tag, and it is not optional. gtag.js is
+     async, so it can run before app.js at the bottom of the body gets a chance
+     to read the stored choice: measured on 2026-09-23, doing it the other way
+     round still sent one page view for a visitor who had switched it off. -->
+<script>
+  (function () {
+    try {
+      if (window.localStorage.getItem("yt_ga_off") === "1") {
+        window["ga-disable-G-DZZT654SCD"] = true;
+      }
+    } catch (e) { /* no storage: nothing stored, so nothing to honour */ }
+  })();
+</script>
+
+<!-- Google tag (gtag.js). One property for the whole site: the Measurement ID
+     below is YellowTradie's own. It sits in the head so a visit is counted when
+     the page opens rather than after everything else has loaded. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DZZT654SCD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DZZT654SCD');
+</script>
+</head>
+<body>
+
+<!-- This file is generated from content/tools/mileage-allowance-calculator.md by build.mjs.
+     Edit the text file, not this page. Header, nav, breadcrumb, footer and the
+     page's search data live once, in content/_layouts/page.html. -->
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="/" aria-label="YellowTradie home">
+      <img class="logo-mark" src="assets/logo-mark.svg" width="32" height="32" alt="">
+      <span class="logo-word">YellowTradie</span>
+    </a>
+
+    <nav aria-label="Main">
+      <ul class="nav">
+
+        <li><a href="/#how">What it does</a></li>
+
+        <li><a href="/#why">Why it is different</a></li>
+
+        <li><a href="/#faq">Questions</a></li>
+
+        <li><a href="/changelog.html">What's new</a></li>
+
+      </ul>
+    </nav>
+
+    <a class="btn btn--sm btn--solid" href="/#early-access">Get early access</a>
+
+  </div>
+</header>
+
+<main>
+
+  <section class="section">
+    <div class="wrap">
+<p class="eyebrow tertiary"><a href="/">Home</a> / Tools / Mileage allowance calculator</p>
+      <div class="legal">
+<h1 class="display" id="mileage-allowance-calculator">Mileage allowance calculator</h1>
+<p>Put in business miles for the tax year and the calculator gives the HMRC approved amount. The page also explains the rules in words so it is useful without the calculator.</p>
+<p>Rates were read on gov.uk on 24 October 2026. If HMRC changes a rate, the table below will be updated and the date on this page will move.</p>
+<div class="calc" id="mileage-calc" data-mileage-calc>
+  <div class="calc-field">
+    <label for="mileage-miles">Business miles in the tax year</label>
+    <input type="number" id="mileage-miles" inputmode="decimal" min="0" step="1" value="8500" data-mileage-miles>
+  </div>
+  <div class="calc-field">
+    <label for="mileage-type">Vehicle</label>
+    <select id="mileage-type" data-mileage-type>
+      <option value="car">Car or van - 45p to 10,000 miles, then 25p</option>
+      <option value="motorcycle">Motorcycle - 24p a mile</option>
+      <option value="bicycle">Bicycle - 20p a mile</option>
+    </select>
+  </div>
+  <p class="calc-result" role="status" aria-live="polite" data-mileage-result></p>
+  <p class="calc-note">HMRC approved rates read on gov.uk on 24 October 2026. Business miles only. Ordinary commuting does not count.</p>
+</div>
+<h2 class="display display--xs" id="hmrc-rates">HMRC rates</h2>
+<p>Cars and vans: 45p a mile for the first 10,000 business miles in a tax year, then 25p a mile after that.</p>
+<p>Motorcycles: 24p a mile.</p>
+<p>Bicycles: 20p a mile.</p>
+<p>These are read on gov.uk on 24 October 2026. The brief for this page at the time it was planned named 55p for the first 10,000 miles from 6 April 2026. That uplift was not in force on gov.uk on the day this page was written, so the page keeps the rate gov.uk shows and will move to the new figure when it appears there. No figure is used until gov.uk shows it.</p>
+<h2 class="display display--xs" id="how-to-work-it-out">How to work it out</h2>
+<p>Take the business miles for the tax year. Ordinary commuting from home to a single regular workplace does not count. Miles between sites, to customers, and to buy materials do count. Ask an accountant if you have a mixed journey.</p>
+<p>For a car or van, multiply the first 10,000 miles by 45p, and any miles above 10,000 by 25p. Add the two. That is the allowance for the year.</p>
+<p>For a motorcycle, multiply all miles by 24p. For a bicycle, multiply all miles by 20p. The 10,000 mile threshold applies to cars and vans, not to cycles.</p>
+<p>Example. Car or van. 12,000 business miles in the tax year.</p>
+<p>First 10,000 at 45p is £4,500. Next 2,000 at 25p is £500. Total is £5,000.</p>
+<p>Example. Car or van. 8,500 business miles. All in the first band. 8,500 at 45p is £3,825.</p>
+<h2 class="display display--xs" id="common-amounts-for-a-car-or-van">Common amounts for a car or van</h2>
+<p>| Business miles in tax year | At HMRC rates | Allowance | | --- | --- | --- | | 2,000 | 2,000 at 45p | £900.00 | | 5,000 | 5,000 at 45p | £2,250.00 | | 8,500 | 8,500 at 45p | £3,825.00 | | 10,000 | 10,000 at 45p | £4,500.00 | | 12,000 | 10,000 at 45p plus 2,000 at 25p | £5,000.00 | | 15,000 | 10,000 at 45p plus 5,000 at 25p | £5,750.00 | | 20,000 | 10,000 at 45p plus 10,000 at 25p | £7,000.00 |</p>
+<p>Check the current rate on gov.uk if you are reading this after April 2026. If a new rate is in force, the table here will show it.</p>
+<h2 class="display display--xs" id="which-miles-count-as-business-travel">Which miles count as business travel</h2>
+<p>Business travel is travel you must do for work, outside ordinary commuting. Driving that qualifies includes:</p>
+<ul><li>From your depot or base to a site, when the base is a place you regularly work from</li><li>Between sites during the day</li><li>To visit a customer or to buy from a merchant for work</li><li>To a training course needed for work</li></ul>
+<p>Driving that does not qualify as business travel for mileage allowance includes a regular commute from home to one workplace. If you work from home and travel to a customer, that route can be business travel. If you travel to a depot and then to sites, the depot leg may still be ordinary commuting. Where a journey has both personal and business parts, claim the business part only.</p>
+<p>Keep a full log. Date, from and to, miles, and the reason.</p>
+<h2 class="display display--xs" id="the-warning-you-need-to-read">The warning you need to read</h2>
+<p>You cannot claim mileage allowance and actual vehicle costs for the same vehicle.</p>
+<p>That is the point of simplified expenses. HMRC lets you claim either:</p>
+<ul><li>The flat mileage rate per business mile, or</li><li>Actual costs such as fuel, insurance, repairs, servicing and capital allowances where you qualify</li></ul>
+<p>You must pick one method for each vehicle for as long as you own it. If you start with actual costs for that car or van, you stay on actual costs. You cannot switch to mileage for that same vehicle. If you start with mileage, you can later move to actual costs when you replace the vehicle.</p>
+<p>Motorcycles and bicycles are included separately. For a business that uses one car regularly and a motorcycle occasionally, the car and the motorcycle have their own treatments. Read the gov.uk page on simplified expenses in Sources.</p>
+<h2 class="display display--xs" id="fuel">Fuel</h2>
+<p>If you claim mileage allowance for a vehicle, the allowance is meant to cover fuel, wear, insurance and the rest in one figure. Do not add fuel on top. If you buy fuel and want to claim actual costs, you are on the actual cost method for that vehicle, not the mileage method.</p>
+<p>If you claim actual vehicle costs, then fuel for business travel is part of that claim. Follow your accountant on the split where a journey is mixed.</p>
+<h2 class="display display--xs" id="keeping-it-right-for-self-assessment">Keeping it right for Self Assessment</h2>
+<p>Add the mileage allowance to your expenses for the year, in the travel section, alongside the miles that produced it. Keep the year’s business miles total. Keep one line per vehicle where you used more than one.</p>
+<p>HMRC does not want the allowance hidden in materials or plant hire. It sits in travel. If you hire a vehicle short term or use a personal vehicle partly for business, the mileage method still runs off business miles for that vehicle. Say on the log which vehicle was used.</p>
+<p>A van is treated the same as a car for this allowance. The gov.uk rates above say car or van. A company car has its own tax treatment and is outside what this page is for.</p>
+<h2 class="display display--xs" id="questions">Questions</h2>
+<h3 class="display display--xs" id="do-i-put-mileage-on-the-quote-or-only-in-the-books">Do I put mileage on the quote or only in the books?</h3>
+<p>You can price travel into a quote so the customer sees it. That is pricing. Mileage allowance is how you set that travel against tax. The two can be linked or not. You might charge the customer a call out fee and claim 45p a mile in your books. Both are right.</p>
+<h3 class="display display--xs" id="what-about-passenger-payments">What about passenger payments?</h3>
+<p>HMRC allows a passenger payment of 5p a mile where you take a passenger who is also travelling on business. This page does not include it. If that is part of your work, add it per qualifying mile and show it as a separate line, sourced on the same gov.uk page.</p>
+<h3 class="display display--xs" id="does-mileage-allowance-cover-parking-and-tolls">Does mileage allowance cover parking and tolls?</h3>
+<p>No. Those are separate expenses where they were for business. Claim them as actual costs for that trip, alongside the mileage rate for the miles themselves. Keep the receipt.</p>
+<h3 class="display display--xs" id="can-i-claim-mileage-if-i-use-simplified-expenses-for-the-rest-of-the-business">Can I claim mileage if I use simplified expenses for the rest of the business?</h3>
+<p>Yes, for vehicles, as the mileage method. HMRC lets you use flat rates for vehicles, for business premises used as a home, and for working from home, within their caps. You can mix those flat rates for different categories. You cannot mix mileage and actual costs for the same vehicle.</p>
+<h2 class="display display--xs" id="sources">Sources</h2>
+<p>HMRC rates and the rule about not claiming both mileage and actual costs for the same vehicle were read on gov.uk on 24 October 2026.</p>
+<a class="btn btn--lg btn--solid" href="/#early-access">Join the list</a>
+<p>The app is not in the shops yet. Join the list and we will tell you the day it opens.</p>
+      <div class="sources">
+        <h2 class="display display--xs">Sources</h2>
+        <ul>
+        <li><a href="https://www.gov.uk/expenses-and-benefits-business-travel-mileage/rules-for-tax" rel="noopener">Business mileage rates on gov.uk</a></li>
+        <li><a href="https://www.gov.uk/simpler-income-tax-simplified-expenses/using-simplified-expenses" rel="noopener">Simplified expenses on gov.uk</a></li>
+        </ul>
+      </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a class="logo" href="/" aria-label="YellowTradie home" style="margin-bottom: 16px;">
+          <img class="logo-mark" src="assets/logo-mark.svg" width="32" height="32" alt="">
+          <span class="logo-word">YellowTradie</span>
+        </a>
+        <p class="tertiary" style="font-size: 14px; line-height: 17px; max-width: 28em;">A phone app that runs the whole job for a solo tradesperson, from the missed call to the quarter closed off.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>The site</h3>
+        <ul>
+
+          <li><a href="/#how">What it does</a></li>
+
+          <li><a href="/#why">Why it is different</a></li>
+
+          <li><a href="/#faq">Questions</a></li>
+
+          <li><a href="/changelog.html">What's new</a></li>
+
+          <li><a href="/#early-access">Get early access</a></li>
+
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Tools</h3>
+        <ul>
+
+          <li><a href="/tools.html">Free calculators</a></li>
+
+          <li><a href="/tools/vat-calculator.html">VAT calculator</a></li>
+
+          <li><a href="/tools/remove-vat-calculator.html">Remove VAT calculator</a></li>
+
+          <li><a href="/tools/cis-calculator.html">CIS calculator</a></li>
+
+          <li><a href="/tools/job-profit-calculator.html">Job profit calculator</a></li>
+
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Company</h3>
+        <ul>
+
+          <li><a href="/about.html">About</a></li>
+
+          <li><a href="/faq.html">FAQ</a></li>
+
+          <li><a href="/editorial-policy.html">Editorial policy</a></li>
+
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul>
+
+          <li><a href="mailto:hello@yellowtradie.com">hello@yellowtradie.com</a></li>
+
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-base">
+
+      <p><a href="/privacy.html">Privacy</a></p>
+
+      <p><a href="/terms.html">Terms of use</a></p>
+
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://yellowtradie.com/#organization",
+      "name": "YellowTradie",
+      "url": "https://yellowtradie.com/",
+      "logo": "https://yellowtradie.com/assets/logo-mark.svg",
+      "email": "hello@yellowtradie.com",
+      "description": "YellowTradie makes a phone app that runs the whole job for a solo tradesperson.",
+      "areaServed": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://yellowtradie.com/#website",
+      "url": "https://yellowtradie.com/",
+      "name": "YellowTradie",
+      "inLanguage": "en-GB",
+      "publisher": {
+        "@id": "https://yellowtradie.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://yellowtradie.com/tools/mileage-allowance-calculator.html#webpage",
+      "url": "https://yellowtradie.com/tools/mileage-allowance-calculator.html",
+      "name": "Mileage allowance calculator | HMRC rates 2026/27",
+      "description": "Work out mileage allowance at HMRC approved rates. 45p a mile to 10,000 miles then 25p, and the rule about claiming actual costs for the same vehicle.",
+      "isPartOf": {
+        "@id": "https://yellowtradie.com/#website"
+      },
+      "datePublished": "2026-10-24",
+      "dateModified": "2026-10-24",
+      "inLanguage": "en-GB",
+      "publisher": {
+        "@id": "https://yellowtradie.com/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://yellowtradie.com/tools/mileage-allowance-calculator.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://yellowtradie.com/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Mileage allowance calculator",
+          "item": "https://yellowtradie.com/tools/mileage-allowance-calculator.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<script src="app.js"></script>
+</body>
+</html>

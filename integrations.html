@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Integrations | Xero QuickBooks FreeAgent and Sage</title>
+<meta name="description" content="Xero, QuickBooks, FreeAgent and Sage. What works today, what is on the way, and why the app never implies a sync that does not exist.">
+<link rel="canonical" href="https://yellowtradie.com/integrations.html">
+<link rel="icon" href="assets/logo-mark.svg?v=6" type="image/svg+xml">
+<meta name="theme-color" content="#1a181a">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="YellowTradie">
+<meta property="og:title" content="Integrations | Xero QuickBooks FreeAgent and Sage">
+<meta property="og:description" content="Xero, QuickBooks, FreeAgent and Sage. What works today, what is on the way, and why the app never implies a sync that does not exist.">
+<meta property="og:url" content="https://yellowtradie.com/integrations.html">
+<meta property="og:image" content="https://yellowtradie.com/assets/hero.webp?v=5">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="alternate" type="application/rss+xml" title="YellowTradie what's new" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=28">
+
+<!-- The visitor's choice about being counted, read before the tag can load.
+     This has to be inline and above the tag, and it is not optional. gtag.js is
+     async, so it can run before app.js at the bottom of the body gets a chance
+     to read the stored choice: measured on 2026-09-23, doing it the other way
+     round still sent one page view for a visitor who had switched it off. -->
+<script>
+  (function () {
+    try {
+      if (window.localStorage.getItem("yt_ga_off") === "1") {
+        window["ga-disable-G-DZZT654SCD"] = true;
+      }
+    } catch (e) { /* no storage: nothing stored, so nothing to honour */ }
+  })();
+</script>
+
+<!-- Google tag (gtag.js). One property for the whole site: the Measurement ID
+     below is YellowTradie's own. It sits in the head so a visit is counted when
+     the page opens rather than after everything else has loaded. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DZZT654SCD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DZZT654SCD');
+</script>
+</head>
+<body>
+
+<!-- This file is generated from content/integrations.md by build.mjs.
+     Edit the text file, not this page. Header, nav, breadcrumb, footer and the
+     page's search data live once, in content/_layouts/page.html. -->
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="/" aria-label="YellowTradie home">
+      <img class="logo-mark" src="assets/logo-mark.svg" width="32" height="32" alt="">
+      <span class="logo-word">YellowTradie</span>
+    </a>
+
+    <nav aria-label="Main">
+      <ul class="nav">
+
+        <li><a href="/#how">What it does</a></li>
+
+        <li><a href="/#why">Why it is different</a></li>
+
+        <li><a href="/#faq">Questions</a></li>
+
+        <li><a href="/changelog.html">What's new</a></li>
+
+      </ul>
+    </nav>
+
+    <a class="btn btn--sm btn--solid" href="/#early-access">Get early access</a>
+
+  </div>
+</header>
+
+<main>
+
+  <section class="section">
+    <div class="wrap">
+<p class="eyebrow tertiary"><a href="/">Home</a> / Integrations</p>
+      <div class="legal">
+<h1 class="display" id="xero-quickbooks-freeagent-and-sage">Xero, QuickBooks, FreeAgent and Sage</h1>
+<p>YellowTradie will send your bills, payments and costs to the books you already use. The four on the roadmap are Xero, QuickBooks Online, FreeAgent and Sage Business Cloud Accounting.</p>
+<p>None of those syncs is live today. This page says which works today, which is on the way, and what the app does instead.</p>
+<h2 class="display display--xs" id="what-works-today">What works today</h2>
+<p>Files. The app already builds a quarterly spreadsheet that your accountant can open.</p>
+<p>It is one file per period. It holds payments received and costs paid in that period, on cash basis, with VAT shown where you are VAT registered, and costs broken into HMRC's own thirteen categories. Your accountant can lift the totals straight into their own software.</p>
+<p>All four packages import invoices and bills from a spreadsheet, so the file is a real import path for Xero, QuickBooks, FreeAgent and Sage Accounting. It is also the only path for Sage 50, which is desktop software with no public API. The app says that plainly rather than pretending Sage 50 syncs.</p>
+<p>Access the pack from Reports. Pick the period and tap share. There is no login and nothing to connect.</p>
+<p>What is on the way, and what it is not, is under the headings below. The app never implies a connection that does not exist.</p>
+<h2 class="display display--xs" id="what-is-on-the-way">What is on the way</h2>
+<p>Four live connections, built as adapters behind one flow:</p>
+<ul><li><strong>Xero</strong> : REST API with OAuth 2.0. Sending data in is free. The first five connected traders are within Xero's free tier. Approval is needed for production keys.</li><li><strong>QuickBooks Online</strong> : REST API with OAuth 2.0. Writes are free and reads are free to half a million a month. Approval is needed with an assessment questionnaire and a security review before production keys, so the wait is the long pole.</li><li><strong>FreeAgent</strong> : REST API with OAuth 2.0. Free and open, registered in their developer dashboard. It has native CIS fields on an invoice, so the app's CIS snapshot fits without glue.</li><li><strong>Sage Business Cloud Accounting</strong> : REST API v3.1 with OAuth 2.0. Free to use. Only the cloud product syncs.</li></ul>
+<p>All four were read against their own developer pages on 2026-10-21. Those pages are the source for the rows above.</p>
+<p>What costs money at small size is none of them. Xero's fees begin after five connections. Intuit's begin at high read volumes. The cost in all four is time and two review queues. It is not the calls.</p>
+<h2 class="display display--xs" id="the-honest-order">The honest order</h2>
+<p>Files first. They ship in days and need no keys. Then one live connection, Xero, behind a switch, because it has the widest UK small business reach and can push a bill as draft so your accountant still authorises it. Then QuickBooks whose app registration and assessment can run while Xero is built. Then FreeAgent and Sage when a trader asks for them. Two to three days each on the same shape.</p>
+<p>You will know when one is live because this page will say it is live, with the organisation name the app got back from the provider, not a placeholder.</p>
+<h2 class="display display--xs" id="what-a-connection-will-do-and-what-it-will-not">What a connection will do, and what it will not</h2>
+<p>A connection will send documents, not totals. A bill is a contact, lines, VAT, number, issue date and due date. A payment is money received applied to that bill. A cost is a spend, not a sales invoice. They are the records the books need to stay checkable.</p>
+<p>One VAT code per line. The app has one rate in Settings and a VAT number switch. Each package has its own tax type ids. That is a one time mapping per package, not a guess per push.</p>
+<p>A duplicate guard. Every pushed document records where it landed. A second send is an update, never a second bill. A push that fails halfway can be retried without duplicating.</p>
+<p>A connection will not:</p>
+<ul><li>File anything with HMRC. It writes to your books. HMRC filing is done through HMRC, not from this app.</li><li>Let the assistant read or write your books. Figures in chat stay from the phone's own records. That rule does not bend for a connection.</li><li>Put a provider key or token on the phone or on the customer's page. The sign in keys live on our server behind your device key, never on the phone and never on link.yellowtradie.com, which is public by design.</li><li>Say connected until a real organisation name comes back from the provider.</li><li>Push a document as authorised when you have not seen what it will look like as a draft in your books.</li><li>Delete or void something in your books without telling you, and not silently leave a deleted app bill live in your books either.</li></ul>
+<h2 class="display display--xs" id="sage-pay-is-not-sage-the-accountant">Sage Pay is not Sage the accountant</h2>
+<p>A trader asked about Sage Pay. Sage Pay was sold to Elavon in 2020 and is now Opayo, a card gateway. It has nothing to do with sending bills to a set of books. Cards are taken on your phone through Mollie, when that part is live. The books package is Sage Business Cloud Accounting, or Sage 50 desktop with the file route only.</p>
+<h2 class="display display--xs" id="what-it-does-not-do">What it does not do</h2>
+<ul><li>It does not say connected for any of the four today. None is live today. The spreadsheet pack is what is live, and the page says so.</li><li>It does not create a second bill for one document, ever. That is the duplicate guard's job, written on success only.</li><li>It does not read your books back in the first version. A first version pushes only. Reading payments and status back doubles the work and makes two claims about the same money, which the app's money rules forbid. You mark money received in the app, as you do today.</li><li>It does not keep working cleanly after a reinstall without a reconnect. There are no accounts in the app yet. A connection is keyed to a device key on the phone and a reinstall loses it, so you would connect again. When accounts land that line will change. The app will say that plainly on the connection screen.</li><li>It does not imply Sage 50 syncs. Sage 50 has no public API. The file is the only route, and this page says so.</li></ul>
+<h2 class="display display--xs" id="questions">Questions</h2>
+<h3 class="display display--xs" id="is-xero-connected-today">Is Xero connected today?</h3>
+<p>No. None of the four is. The spreadsheet pack is what works today. Xero is first on the live list because it is free for small use and its drafts let your accountant authorise the bill. When it is live this page will name your organisation back from Xero, not a placeholder.</p>
+<h3 class="display display--xs" id="what-about-quickbooks">What about QuickBooks?</h3>
+<p>Read and planned, not live. Its writes are free. The build waits on Intuit's approval queue, which can take weeks. The app registration and assessment run while the first connection is built. The wait and the work overlap.</p>
+<h3 class="display display--xs" id="does-freeagent-handle-cis">Does FreeAgent handle CIS?</h3>
+<p>Yes, natively. FreeAgent's invoice has CIS fields, so the deduction the app already snaps can travel without glue. It is still on the way. When it is live it will behave like the other three: contacts first, one VAT code per line, payment as its own document, duplicate guard.</p>
+<h3 class="display display--xs" id="what-about-sage">What about Sage?</h3>
+<p>Sage Business Cloud Accounting is on the way as a free open REST API. Sage 50 desktop has no public API. A trader on Sage 50 uses the file, not a live connection, and the page says so rather than pretending.</p>
+<h3 class="display display--xs" id="why-not-just-send-a-lump-sum-per-quarter">Why not just send a lump sum per quarter?</h3>
+<p>Because an accountant will refuse it. A quarter's one line loses the detail and the VAT cannot be checked. The file and the live push both keep bills and costs as documents with lines and VAT and dates.</p>
+<h3 class="display display--xs" id="does-the-assistant-use-my-books-once-connected">Does the assistant use my books once connected?</h3>
+<p>No. Chat answers stay from the phone's own records. The bills and costs are yours before they are pushed and ours never argues with them. That is the book of record rule: the app records the work and the money, the package is the books once the push lands.</p>
+<h3 class="display display--xs" id="what-does-connected-mean-when-it-is-real">What does connected mean when it is real?</h3>
+<p>That a real organisation name came back from the provider, that a draft bill appeared in your books with the right contact and lines, that sending it again made one bill not two, and that no key or token sits in the app on the phone.</p>
+<h2 class="display display--xs" id="related">Related</h2>
+<ul><li><a href="/features/invoices.html">Invoices</a>: the bills that will be pushed to your books.</li><li><a href="/features/expenses.html">Costs and receipts</a>: the spend that will be pushed as a purchase.</li><li><a href="/features/reports.html">Reports</a>: the period your pack and your future push cover.</li><li><a href="/features.html">Every part of the app</a>: the other pages.</li></ul>
+<a class="btn btn--lg btn--solid" href="/#early-access">Join the list</a>
+<p>The app is not in the shops yet. Join the list and we will tell you the day it opens.</p>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a class="logo" href="/" aria-label="YellowTradie home" style="margin-bottom: 16px;">
+          <img class="logo-mark" src="assets/logo-mark.svg" width="32" height="32" alt="">
+          <span class="logo-word">YellowTradie</span>
+        </a>
+        <p class="tertiary" style="font-size: 14px; line-height: 17px; max-width: 28em;">A phone app that runs the whole job for a solo tradesperson, from the missed call to the quarter closed off.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>The site</h3>
+        <ul>
+
+          <li><a href="/#how">What it does</a></li>
+
+          <li><a href="/#why">Why it is different</a></li>
+
+          <li><a href="/#faq">Questions</a></li>
+
+          <li><a href="/changelog.html">What's new</a></li>
+
+          <li><a href="/#early-access">Get early access</a></li>
+
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Tools</h3>
+        <ul>
+
+          <li><a href="/tools.html">Free calculators</a></li>
+
+          <li><a href="/tools/vat-calculator.html">VAT calculator</a></li>
+
+          <li><a href="/tools/remove-vat-calculator.html">Remove VAT calculator</a></li>
+
+          <li><a href="/tools/cis-calculator.html">CIS calculator</a></li>
+
+          <li><a href="/tools/job-profit-calculator.html">Job profit calculator</a></li>
+
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Company</h3>
+        <ul>
+
+          <li><a href="/about.html">About</a></li>
+
+          <li><a href="/faq.html">FAQ</a></li>
+
+          <li><a href="/editorial-policy.html">Editorial policy</a></li>
+
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul>
+
+          <li><a href="mailto:hello@yellowtradie.com">hello@yellowtradie.com</a></li>
+
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-base">
+
+      <p><a href="/privacy.html">Privacy</a></p>
+
+      <p><a href="/terms.html">Terms of use</a></p>
+
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://yellowtradie.com/#organization",
+      "name": "YellowTradie",
+      "url": "https://yellowtradie.com/",
+      "logo": "https://yellowtradie.com/assets/logo-mark.svg",
+      "email": "hello@yellowtradie.com",
+      "description": "YellowTradie makes a phone app that runs the whole job for a solo tradesperson.",
+      "areaServed": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://yellowtradie.com/#website",
+      "url": "https://yellowtradie.com/",
+      "name": "YellowTradie",
+      "inLanguage": "en-GB",
+      "publisher": {
+        "@id": "https://yellowtradie.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://yellowtradie.com/integrations.html#webpage",
+      "url": "https://yellowtradie.com/integrations.html",
+      "name": "Integrations | Xero QuickBooks FreeAgent and Sage",
+      "description": "Xero, QuickBooks, FreeAgent and Sage. What works today, what is on the way, and why the app never implies a sync that does not exist.",
+      "isPartOf": {
+        "@id": "https://yellowtradie.com/#website"
+      },
+      "datePublished": "2026-10-24",
+      "dateModified": "2026-10-24",
+      "inLanguage": "en-GB",
+      "publisher": {
+        "@id": "https://yellowtradie.com/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://yellowtradie.com/integrations.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://yellowtradie.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Integrations",
+          "item": "https://yellowtradie.com/integrations.html"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://yellowtradie.com/#app",
+      "name": "YellowTradie",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Android, iPhone",
+      "inLanguage": "en-GB",
+      "areaServed": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "description": "A phone app for UK solo electricians, plumbers and builders. It takes a message when a call is missed, turns speech into priced quote line items, sends PDF quotes and invoices, chases unpaid bills and keeps the figures for the quarterly tax return.",
+      "url": "https://yellowtradie.com/",
+      "publisher": {
+        "@id": "https://yellowtradie.com/#organization"
+      },
+      "featureList": [
+        "A message taken when you miss a call, written out and sent to you, with an automatic text back when the caller leaves nothing",
+        "One inbox for missed calls, messages and new leads",
+        "Voice to quote line items with your own rates",
+        "PDF quotes sent by text, WhatsApp or email",
+        "See when a quote was opened, approved or changed",
+        "Job diary with busy days and multi-day jobs",
+        "When a job overruns, the rest of the day worked out for you, with every customer's message ready to send",
+        "Photos, dictated notes and job costs",
+        "Timesheet for hourly work",
+        "Invoices with deposits and part payments",
+        "Payments log and outstanding balance",
+        "Unpaid invoice chasing with a ready written message",
+        "Quarterly tax report with money in, money out and tax to set aside",
+        "VAT on quotes, invoices and receipts",
+        "A quarter spreadsheet for your accountant. Connections to Xero, QuickBooks and FreeAgent are being built"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "19.99",
+        "priceCurrency": "GBP",
+        "availability": "https://schema.org/PreOrder",
+        "description": "£19.99 a month for everything in the app, one plan, no per-seat fee. 14-day free trial with a card needed to sign up. The app is not in the stores yet: join the list and we will tell you the day it opens."
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://yellowtradie.com/integrations.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Xero connected today?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. None of the four is. The spreadsheet pack is what works today. Xero is first on the live list because it is free for small use and its drafts let your accountant authorise the bill. When it is live this page will name your organisation back from Xero, not a placeholder."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What about QuickBooks?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Read and planned, not live. Its writes are free. The build waits on Intuit's approval queue, which can take weeks. The app registration and assessment run while the first connection is built. The wait and the work overlap."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does FreeAgent handle CIS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, natively. FreeAgent's invoice has CIS fields, so the deduction the app already snaps can travel without glue. It is still on the way. When it is live it will behave like the other three: contacts first, one VAT code per line, payment as its own document, duplicate guard."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What about Sage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sage Business Cloud Accounting is on the way as a free open REST API. Sage 50 desktop has no public API. A trader on Sage 50 uses the file, not a live connection, and the page says so rather than pretending."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why not just send a lump sum per quarter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because an accountant will refuse it. A quarter's one line loses the detail and the VAT cannot be checked. The file and the live push both keep bills and costs as documents with lines and VAT and dates."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the assistant use my books once connected?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Chat answers stay from the phone's own records. The bills and costs are yours before they are pushed and ours never argues with them. That is the book of record rule: the app records the work and the money, the package is the books once the push lands."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does connected mean when it is real?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "That a real organisation name came back from the provider, that a draft bill appeared in your books with the right contact and lines, that sending it again made one bill not two, and that no key or token sits in the app on the phone."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<script src="app.js"></script>
+</body>
+</html>

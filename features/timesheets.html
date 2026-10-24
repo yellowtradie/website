@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Timesheets | Hours on a job that become the bill</title>
+<meta name="description" content="Hours on a job become a labour line on the invoice. A direct job with no quote still keeps its hours.">
+<link rel="canonical" href="https://yellowtradie.com/features/timesheets.html">
+<link rel="icon" href="assets/logo-mark.svg?v=6" type="image/svg+xml">
+<meta name="theme-color" content="#1a181a">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="YellowTradie">
+<meta property="og:title" content="Timesheets | Hours on a job that become the bill">
+<meta property="og:description" content="Hours on a job become a labour line on the invoice. A direct job with no quote still keeps its hours.">
+<meta property="og:url" content="https://yellowtradie.com/features/timesheets.html">
+<meta property="og:image" content="https://yellowtradie.com/assets/hero.webp?v=5">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="alternate" type="application/rss+xml" title="YellowTradie what's new" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=28">
+
+<!-- The visitor's choice about being counted, read before the tag can load.
+     This has to be inline and above the tag, and it is not optional. gtag.js is
+     async, so it can run before app.js at the bottom of the body gets a chance
+     to read the stored choice: measured on 2026-09-23, doing it the other way
+     round still sent one page view for a visitor who had switched it off. -->
+<script>
+  (function () {
+    try {
+      if (window.localStorage.getItem("yt_ga_off") === "1") {
+        window["ga-disable-G-DZZT654SCD"] = true;
+      }
+    } catch (e) { /* no storage: nothing stored, so nothing to honour */ }
+  })();
+</script>
+
+<!-- Google tag (gtag.js). One property for the whole site: the Measurement ID
+     below is YellowTradie's own. It sits in the head so a visit is counted when
+     the page opens rather than after everything else has loaded. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DZZT654SCD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DZZT654SCD');
+</script>
+</head>
+<body>
+
+<!-- This file is generated from content/features/timesheets.md by build.mjs.
+     Edit the text file, not this page. Header, nav, breadcrumb, footer and the
+     page's search data live once, in content/_layouts/page.html. -->
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="/" aria-label="YellowTradie home">
+      <img class="logo-mark" src="assets/logo-mark.svg" width="32" height="32" alt="">
+      <span class="logo-word">YellowTradie</span>
+    </a>
+
+    <nav aria-label="Main">
+      <ul class="nav">
+
+        <li><a href="/#how">What it does</a></li>
+
+        <li><a href="/#why">Why it is different</a></li>
+
+        <li><a href="/#faq">Questions</a></li>
+
+        <li><a href="/changelog.html">What's new</a></li>
+
+      </ul>
+    </nav>
+
+    <a class="btn btn--sm btn--solid" href="/#early-access">Get early access</a>
+
+  </div>
+</header>
+
+<main>
+
+  <section class="section">
+    <div class="wrap">
+<p class="eyebrow tertiary"><a href="/">Home</a> / Features / Timesheets</p>
+      <div class="legal">
+<h1 class="display" id="hours-on-the-job-and-the-labour-line-they-become">Hours on the job, and the labour line they become</h1>
+<p>Hours are for the job that never had a quote. You did the work by the hour and the bill has to show that time. In YellowTradie a direct job keeps its own timesheet and that timesheet becomes a labour line on the invoice.</p>
+<p>A job with a priced quote never needs a timesheet. The price is already on the quote.</p>
+<h2 class="display display--xs" id="what-it-does">What it does</h2>
+<p>A timesheet holds the hours worked on one direct job. Each entry is a date with a start time and an end time and the hourly rate that applied that day. The app works out the hours and the line amount and freezes it, so a later change to the rate does not rewrite yesterday.</p>
+<p>The timesheet is the price where there is no quote. The job list, the job card and the bill all read the same rule: the job's invoices where there are any, else its live quote where its total is above zero, else the labour written on its timesheet. A job with no quote and no hours shows No price yet rather than £0.00.</p>
+<p>When you invoice a direct job with hours logged, the labour fills the bill as one labour line. You check it and send it. The bill and the timesheet then show the same amount.</p>
+<h2 class="display display--xs" id="who-it-is-for">Who it is for</h2>
+<p>It is for the trader who prices some jobs by the hour and some by the job. One person and one phone, on site, with no office to type it up later.</p>
+<p>It suits the call out with no price agreed, the hourly repair, and the extra half day tacked onto a day rate. It is not for a job that already has a priced quote. That price is the price.</p>
+<h2 class="display display--xs" id="how-it-works">How it works</h2>
+<ol><li>Add a direct job or open a finished job that has no priced quote. The job card knows there is no quote to read.</li><li>Open the timesheet for that job. The rate box shows the last rate used or empty on first use.</li><li>Add an entry. Pick the date on the app's calendar, set the start and the end, check the hours and the amount, and save. The entry appears in the list and in Activity.</li><li>Add more entries as you work. Each entry keeps its own rate and amount. The running total is shown on the timesheet.</li><li>When the work is done finish the job and press Invoice the balance. The app builds the bill with the timesheet hours as one labour line. You check the bill and send it.</li></ol>
+<p>The timesheet is tied to the job. Its hours are shown on the job's History, and the bill built from it is linked back to the same job.</p>
+<h2 class="display display--xs" id="the-direct-job">The direct job</h2>
+<p>A direct job is a job with no quote. It is added from the plus button with a customer, a title, a day and an address. It is born In Progress when started today, or Not Started when booked for later.</p>
+<p>A direct job with no price still books its day in the diary, because it is real work with no paperwork to wait for. A quote that has not been approved books nothing, so pending paperwork never looks like a booked day.</p>
+<p>A direct job keeps its hours until there is a bill. If you add a priced quote to that job later the quote becomes the price and the timesheet steps back. The hours are not deleted and you can still see them.</p>
+<h2 class="display display--xs" id="how-the-hours-become-the-bill">How the hours become the bill</h2>
+<p>The app uses one rule for the price of a job, in that order:</p>
+<ol><li>The job's invoices where there are any.</li><li>Its live quote where its total is above zero.</li><li>The labour on its timesheet where neither of the first two exists.</li></ol>
+<p>The labour line on the invoice is the sum of the timesheet entries for that job. The line shows hours and rate and total in the same way a quote line shows quantity and unit price.</p>
+<p>If a job already has a quote with lines and a total, that total is the bill and the timesheet is not used for it.</p>
+<h2 class="display display--xs" id="what-it-does-not-do">What it does not do</h2>
+<ul><li>It does not add hours to a job that already has a priced quote. A quoted job has no timesheet row and no entry form.</li><li>It does not rewrite a saved entry when you change the rate. The rate on an entry is the rate you left it with when you saved.</li><li>It does not turn hours into a bill on its own. You finish the job and raise the bill. The timesheet then fills the labour line for you to check.</li><li>It does not keep the hours in the cloud. The timesheet is in the phone's database with the job. It stays there until you delete the customer and its jobs.</li><li>It does not invent a rate for you. You type the rate on the timesheet. A job with hours and no rate cannot be invoiced.</li><li>It does not double count. A job with a bill already shows the bill's total, not the bill plus the hours that made it.</li></ul>
+<h2 class="display display--xs" id="questions">Questions</h2>
+<h3 class="display display--xs" id="can-i-log-hours-on-a-job-that-already-has-a-quote">Can I log hours on a job that already has a quote?</h3>
+<p>No. A timesheet is for a direct job with no priced quote. Where a quote already prices the work, the quote is what the bill is built from. Log hours on the jobs that were taken on by word of mouth.</p>
+<h3 class="display display--xs" id="what-is-on-one-timesheet-entry">What is on one timesheet entry?</h3>
+<p>A date, a start time, an end time, the hours worked, the rate that day, and the amount for those hours. The amount is hours times rate, rounded to pennies, and kept with the entry.</p>
+<h3 class="display display--xs" id="does-changing-the-rate-change-old-entries">Does changing the rate change old entries?</h3>
+<p>No. Each entry keeps the rate it was saved with. A new entry uses the rate now in the rate box. The total is the sum of the kept amounts.</p>
+<h3 class="display display--xs" id="how-does-a-direct-job-with-no-quote-become-a-bill">How does a direct job with no quote become a bill?</h3>
+<p>Finish the job. The job card then offers Invoice the balance. That bill opens with the timesheet total as one labour line. You check it and send it. The bill's total is the same figure the job card and the Jobs list showed.</p>
+<h3 class="display display--xs" id="what-does-the-jobs-list-show-for-a-job-with-hours-but-no-quote">What does the Jobs list show for a job with hours but no quote?</h3>
+<p>The timesheet total. The list uses the same rule as the job card: invoices, else quoted total above zero, else timesheet labour. A job with nothing priced shows No price yet, not £0.00.</p>
+<h3 class="display display--xs" id="where-do-the-hours-appear-on-the-job">Where do the hours appear on the job?</h3>
+<p>On the timesheet, as a list of entries with date and hours and amount, and on the job's History as the entries are added. The bill built from them is linked back to the same job.</p>
+<h3 class="display display--xs" id="can-i-delete-an-entry">Can I delete an entry?</h3>
+<p>Yes. Each entry has a delete. The timesheet total updates and Activity records it. Deleting the last entry leaves the job with no hours, so it reads No price yet again until new hours are added.</p>
+<h2 class="display display--xs" id="related">Related</h2>
+<ul><li><a href="/features/jobs.html">Jobs</a>: the work that holds the timesheet and the bill it becomes.</li><li><a href="/features/invoices.html">Invoices</a>: the bill built from the job, with the labour line the customer sees.</li><li><a href="/features/scheduling.html">Your diary</a>: the diary that books the day for a direct job with no quote.</li><li><a href="/features.html">Every part of the app</a>: the other pages.</li></ul>
+<a class="btn btn--lg btn--solid" href="/#early-access">Join the list</a>
+<p>The app is not in the shops yet. Join the list and we will tell you the day it opens.</p>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a class="logo" href="/" aria-label="YellowTradie home" style="margin-bottom: 16px;">
+          <img class="logo-mark" src="assets/logo-mark.svg" width="32" height="32" alt="">
+          <span class="logo-word">YellowTradie</span>
+        </a>
+        <p class="tertiary" style="font-size: 14px; line-height: 17px; max-width: 28em;">A phone app that runs the whole job for a solo tradesperson, from the missed call to the quarter closed off.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>The site</h3>
+        <ul>
+
+          <li><a href="/#how">What it does</a></li>
+
+          <li><a href="/#why">Why it is different</a></li>
+
+          <li><a href="/#faq">Questions</a></li>
+
+          <li><a href="/changelog.html">What's new</a></li>
+
+          <li><a href="/#early-access">Get early access</a></li>
+
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Tools</h3>
+        <ul>
+
+          <li><a href="/tools.html">Free calculators</a></li>
+
+          <li><a href="/tools/vat-calculator.html">VAT calculator</a></li>
+
+          <li><a href="/tools/remove-vat-calculator.html">Remove VAT calculator</a></li>
+
+          <li><a href="/tools/cis-calculator.html">CIS calculator</a></li>
+
+          <li><a href="/tools/job-profit-calculator.html">Job profit calculator</a></li>
+
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Company</h3>
+        <ul>
+
+          <li><a href="/about.html">About</a></li>
+
+          <li><a href="/faq.html">FAQ</a></li>
+
+          <li><a href="/editorial-policy.html">Editorial policy</a></li>
+
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul>
+
+          <li><a href="mailto:hello@yellowtradie.com">hello@yellowtradie.com</a></li>
+
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-base">
+
+      <p><a href="/privacy.html">Privacy</a></p>
+
+      <p><a href="/terms.html">Terms of use</a></p>
+
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://yellowtradie.com/#organization",
+      "name": "YellowTradie",
+      "url": "https://yellowtradie.com/",
+      "logo": "https://yellowtradie.com/assets/logo-mark.svg",
+      "email": "hello@yellowtradie.com",
+      "description": "YellowTradie makes a phone app that runs the whole job for a solo tradesperson.",
+      "areaServed": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://yellowtradie.com/#website",
+      "url": "https://yellowtradie.com/",
+      "name": "YellowTradie",
+      "inLanguage": "en-GB",
+      "publisher": {
+        "@id": "https://yellowtradie.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://yellowtradie.com/features/timesheets.html#webpage",
+      "url": "https://yellowtradie.com/features/timesheets.html",
+      "name": "Timesheets | Hours on a job that become the bill",
+      "description": "Hours on a job become a labour line on the invoice. A direct job with no quote still keeps its hours.",
+      "isPartOf": {
+        "@id": "https://yellowtradie.com/#website"
+      },
+      "datePublished": "2026-10-24",
+      "dateModified": "2026-10-24",
+      "inLanguage": "en-GB",
+      "publisher": {
+        "@id": "https://yellowtradie.com/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://yellowtradie.com/features/timesheets.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://yellowtradie.com/features/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Features"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Timesheets",
+          "item": "https://yellowtradie.com/features/timesheets.html"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://yellowtradie.com/#app",
+      "name": "YellowTradie",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Android, iPhone",
+      "inLanguage": "en-GB",
+      "areaServed": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "description": "A phone app for UK solo electricians, plumbers and builders. It takes a message when a call is missed, turns speech into priced quote line items, sends PDF quotes and invoices, chases unpaid bills and keeps the figures for the quarterly tax return.",
+      "url": "https://yellowtradie.com/",
+      "publisher": {
+        "@id": "https://yellowtradie.com/#organization"
+      },
+      "featureList": [
+        "A message taken when you miss a call, written out and sent to you, with an automatic text back when the caller leaves nothing",
+        "One inbox for missed calls, messages and new leads",
+        "Voice to quote line items with your own rates",
+        "PDF quotes sent by text, WhatsApp or email",
+        "See when a quote was opened, approved or changed",
+        "Job diary with busy days and multi-day jobs",
+        "When a job overruns, the rest of the day worked out for you, with every customer's message ready to send",
+        "Photos, dictated notes and job costs",
+        "Timesheet for hourly work",
+        "Invoices with deposits and part payments",
+        "Payments log and outstanding balance",
+        "Unpaid invoice chasing with a ready written message",
+        "Quarterly tax report with money in, money out and tax to set aside",
+        "VAT on quotes, invoices and receipts",
+        "A quarter spreadsheet for your accountant. Connections to Xero, QuickBooks and FreeAgent are being built"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "19.99",
+        "priceCurrency": "GBP",
+        "availability": "https://schema.org/PreOrder",
+        "description": "£19.99 a month for everything in the app, one plan, no per-seat fee. 14-day free trial with a card needed to sign up. The app is not in the stores yet: join the list and we will tell you the day it opens."
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://yellowtradie.com/features/timesheets.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I log hours on a job that already has a quote?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. A timesheet is for a direct job with no priced quote. Where a quote already prices the work, the quote is what the bill is built from. Log hours on the jobs that were taken on by word of mouth."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is on one timesheet entry?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A date, a start time, an end time, the hours worked, the rate that day, and the amount for those hours. The amount is hours times rate, rounded to pennies, and kept with the entry."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does changing the rate change old entries?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Each entry keeps the rate it was saved with. A new entry uses the rate now in the rate box. The total is the sum of the kept amounts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does a direct job with no quote become a bill?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Finish the job. The job card then offers Invoice the balance. That bill opens with the timesheet total as one labour line. You check it and send it. The bill's total is the same figure the job card and the Jobs list showed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does the Jobs list show for a job with hours but no quote?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The timesheet total. The list uses the same rule as the job card: invoices, else quoted total above zero, else timesheet labour. A job with nothing priced shows No price yet, not £0.00."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where do the hours appear on the job?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "On the timesheet, as a list of entries with date and hours and amount, and on the job's History as the entries are added. The bill built from them is linked back to the same job."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I delete an entry?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Each entry has a delete. The timesheet total updates and Activity records it. Deleting the last entry leaves the job with no hours, so it reads No price yet again until new hours are added."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<script src="app.js"></script>
+</body>
+</html>

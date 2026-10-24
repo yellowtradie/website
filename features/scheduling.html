@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your diary | Busy days and jobs that start themselves</title>
+<meta name="description" content="The diary with busy days, jobs that run over more than one day, and the job that moves itself to In Progress on its start date.">
+<link rel="canonical" href="https://yellowtradie.com/features/scheduling.html">
+<link rel="icon" href="assets/logo-mark.svg?v=6" type="image/svg+xml">
+<meta name="theme-color" content="#1a181a">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="YellowTradie">
+<meta property="og:title" content="Your diary | Busy days and jobs that start themselves">
+<meta property="og:description" content="The diary with busy days, jobs that run over more than one day, and the job that moves itself to In Progress on its start date.">
+<meta property="og:url" content="https://yellowtradie.com/features/scheduling.html">
+<meta property="og:image" content="https://yellowtradie.com/assets/hero.webp?v=5">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="alternate" type="application/rss+xml" title="YellowTradie what's new" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=28">
+
+<!-- The visitor's choice about being counted, read before the tag can load.
+     This has to be inline and above the tag, and it is not optional. gtag.js is
+     async, so it can run before app.js at the bottom of the body gets a chance
+     to read the stored choice: measured on 2026-09-23, doing it the other way
+     round still sent one page view for a visitor who had switched it off. -->
+<script>
+  (function () {
+    try {
+      if (window.localStorage.getItem("yt_ga_off") === "1") {
+        window["ga-disable-G-DZZT654SCD"] = true;
+      }
+    } catch (e) { /* no storage: nothing stored, so nothing to honour */ }
+  })();
+</script>
+
+<!-- Google tag (gtag.js). One property for the whole site: the Measurement ID
+     below is YellowTradie's own. It sits in the head so a visit is counted when
+     the page opens rather than after everything else has loaded. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DZZT654SCD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DZZT654SCD');
+</script>
+</head>
+<body>
+
+<!-- This file is generated from content/features/scheduling.md by build.mjs.
+     Edit the text file, not this page. Header, nav, breadcrumb, footer and the
+     page's search data live once, in content/_layouts/page.html. -->
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="/" aria-label="YellowTradie home">
+      <img class="logo-mark" src="assets/logo-mark.svg" width="32" height="32" alt="">
+      <span class="logo-word">YellowTradie</span>
+    </a>
+
+    <nav aria-label="Main">
+      <ul class="nav">
+
+        <li><a href="/#how">What it does</a></li>
+
+        <li><a href="/#why">Why it is different</a></li>
+
+        <li><a href="/#faq">Questions</a></li>
+
+        <li><a href="/changelog.html">What's new</a></li>
+
+      </ul>
+    </nav>
+
+    <a class="btn btn--sm btn--solid" href="/#early-access">Get early access</a>
+
+  </div>
+</header>
+
+<main>
+
+  <section class="section">
+    <div class="wrap">
+<p class="eyebrow tertiary"><a href="/">Home</a> / Features / Your diary</p>
+      <div class="legal">
+<h1 class="display" id="your-diary-knows-which-days-are-busy-and-which-job-starts-today">Your diary knows which days are busy and which job starts today</h1>
+<p>The diary is the calendar and the list that sits under it. It shows which days are full and which job runs on each. A job can be one day or several. A job with a start date moves itself to In Progress when that day comes. Only you mark it Completed.</p>
+<h2 class="display display--xs" id="what-it-does">What it does</h2>
+<p>The diary shows your work booked by day. The month view marks busy days with a dot, and the week view shows the jobs in that window. A multi day booking colours the span it covers in the same pass.</p>
+<p>A job's status follows the diary in one direction only. A job booked for today or earlier reads In Progress. That is the date saying work has started. A job never completes on its own. You press Finish job on the job page, or you tap Did you finish on Today the morning after its last booked day.</p>
+<p>Busy days are drawn from the same rule as the Jobs list. A job that is real work and has a start date books its day. A quote that has not been approved is not real work, so it books nothing.</p>
+<h2 class="display display--xs" id="who-it-is-for">Who it is for</h2>
+<p>It is for the solo trader who books work day by day and needs to know which days are taken before saying yes to the next call. One person and one phone, with no crew to send.</p>
+<h2 class="display display--xs" id="the-diary">The diary</h2>
+<p>The calendar has a month and a week view. Each is a window with a start and an end, taken from midnight to midnight. A job with no start date is in no window, because the app never invents a day for a job.</p>
+<p>A job with a single booked day occupies that day. A job with a first and a last day occupies the whole run, from the midnight of the first to the midnight of the last. The list under the calendar and the coloured span on the calendar show the same run.</p>
+<p>The figure beside the list is the value of the jobs in that window, using the same rule as the job card: the job's invoices where there are any, else its live quote, else its logged hours. The calendar and the figure cannot light up a different number of cards.</p>
+<h2 class="display display--xs" id="busy-days">Busy days</h2>
+<p>A day is busy when real work is booked on it. Real work means the job is not archived and where it has a quote the customer's answer was yes. The quote answers that count are Approved and Invoiced and Paid. A draft or a Sent or a Declined quote is not work. It does not draw a busy mark.</p>
+<p>A job with no quote at all is direct work with no paperwork, booked by the trader, so it counts as busy from the moment it exists.</p>
+<p>The same rule draws the picker inside the job form. Days taken show a bar under them before you pick, so you do not have to open a second screen to know.</p>
+<h2 class="display display--xs" id="jobs-that-run-over-more-than-one-day">Jobs that run over more than one day</h2>
+<p>A job can be a run of days. The first booked day and the last booked day are set on the calendar in the job form: Morning, Afternoon or Full day is chosen before you tap, and the time fills that block. A run whose days were set on the calendar keeps its last day, and a run drawn only as a time still has a span.</p>
+<p>A run is asked about only after its last day has passed. Today puts up Did you finish the morning after the last booked day, never its first. A one day job is asked about the next morning too.</p>
+<p>A run that slips stays with you until you close it. A job whose last booked day has gone stays In Progress rather than looking done, until you press Finish job. That is the app not guessing that the work is finished because the week is over.</p>
+<h2 class="display display--xs" id="a-job-that-moves-itself-on-its-start-date">A job that moves itself on its start date</h2>
+<p>A booked job moves itself from Not Started to In Progress on its own start date.</p>
+<p>That move happens on the first load on that day. There is no alarm that has to be kept alive. The app checks which jobs are now due to start and writes In Progress for them. A job with no start date is left alone, because no day says it should have begun.</p>
+<p>A direct job with no date is different. It is made with the button that reads Start job, so it is born In Progress. A job booked for a future day is born Not Started and waits.</p>
+<p>This rule never writes Completed. Only your tap does that. Use the job page. You can also use the card on Today. A job rained off therefore stays open rather than looking done.</p>
+<h2 class="display display--xs" id="what-it-does-not-do">What it does not do</h2>
+<ul><li>It does not mark a job complete from the diary. The date can say work has begun. Only your press on Finish job says it is done. The same is true for Did you finish on Today.</li><li>It does not book a day for a quote that has not been approved. A pending or declined quote is paperwork, not work, so it does not draw a busy dot.</li><li>It does not invent a day for a job with no date. That job is in no window, has no dot and is not moved by the start rule.</li><li>It does not colour a job as done because its invoice is paid. Paid is a billing fact. Completed is your word about the work.</li><li>It does not send a customer a reminder from the diary. The diary shows when the work is. The share sheet sends the message you write.</li></ul>
+<h2 class="display display--xs" id="questions">Questions</h2>
+<h3 class="display display--xs" id="how-do-i-set-a-day-for-a-job">How do I set a day for a job?</h3>
+<p>Open the job and edit it. Pick the date on the calendar. The time of day is set first. You choose Morning or Afternoon or Full day. For a job over several days pick the first and the last. The address is the customer's by default. A job override is there if the work is elsewhere.</p>
+<h3 class="display display--xs" id="what-does-the-yellow-dot-mean">What does the yellow dot mean?</h3>
+<p>It means real work is booked on that day. A future approved job, an invoiced job or a direct job with no quote all count. A draft or sent quote alone does not.</p>
+<h3 class="display display--xs" id="my-job-runs-monday-to-wednesday-when-will-it-look-done">My job runs Monday to Wednesday. When will it look done?</h3>
+<p>When you say so. It reads In Progress from Monday. It stays there after Wednesday until you press Finish job on its page, or tap Did you finish on Today the next morning. The diary does ask that question only after Wednesday.</p>
+<h3 class="display display--xs" id="why-does-a-job-i-just-booked-already-read-in-progress">Why does a job I just booked already read In Progress?</h3>
+<p>Because its start date is today or earlier. A job booked for today or for a day that has already gone is already under way, so it reads as such. A job for next week reads Not Started until that week.</p>
+<h3 class="display display--xs" id="what-if-a-job-has-no-date-yet">What if a job has no date yet?</h3>
+<p>It is still a job, but it books no day. It has no dot, it is in no week or month total, and it will not be asked about by the finish card. Put a date on it when you have one.</p>
+<h3 class="display display--xs" id="can-i-see-which-jobs-are-in-this-week">Can I see which jobs are in this week?</h3>
+<p>Yes. The Jobs page has a calendar card that shows the week or month it is on, the busy marks, and the list of jobs whose span falls in that window. The spend, paid and profit strip above it uses the same window.</p>
+<h2 class="display display--xs" id="related">Related</h2>
+<ul><li><a href="/features/jobs.html">Jobs</a>: the work that the diary shows.</li><li><a href="/features/timesheets.html">Timesheets</a>: hours worked on a job where the work is by the hour.</li><li><a href="/features/customer-page.html">The customer's own page</a>: the link the customer opens with their approval and sign-off.</li><li><a href="/features.html">Every part of the app</a>: the other pages.</li></ul>
+<a class="btn btn--lg btn--solid" href="/#early-access">Join the list</a>
+<p>The app is not in the shops yet. Join the list and we will tell you the day it opens.</p>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a class="logo" href="/" aria-label="YellowTradie home" style="margin-bottom: 16px;">
+          <img class="logo-mark" src="assets/logo-mark.svg" width="32" height="32" alt="">
+          <span class="logo-word">YellowTradie</span>
+        </a>
+        <p class="tertiary" style="font-size: 14px; line-height: 17px; max-width: 28em;">A phone app that runs the whole job for a solo tradesperson, from the missed call to the quarter closed off.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>The site</h3>
+        <ul>
+
+          <li><a href="/#how">What it does</a></li>
+
+          <li><a href="/#why">Why it is different</a></li>
+
+          <li><a href="/#faq">Questions</a></li>
+
+          <li><a href="/changelog.html">What's new</a></li>
+
+          <li><a href="/#early-access">Get early access</a></li>
+
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Tools</h3>
+        <ul>
+
+          <li><a href="/tools.html">Free calculators</a></li>
+
+          <li><a href="/tools/vat-calculator.html">VAT calculator</a></li>
+
+          <li><a href="/tools/remove-vat-calculator.html">Remove VAT calculator</a></li>
+
+          <li><a href="/tools/cis-calculator.html">CIS calculator</a></li>
+
+          <li><a href="/tools/job-profit-calculator.html">Job profit calculator</a></li>
+
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Company</h3>
+        <ul>
+
+          <li><a href="/about.html">About</a></li>
+
+          <li><a href="/faq.html">FAQ</a></li>
+
+          <li><a href="/editorial-policy.html">Editorial policy</a></li>
+
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul>
+
+          <li><a href="mailto:hello@yellowtradie.com">hello@yellowtradie.com</a></li>
+
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-base">
+
+      <p><a href="/privacy.html">Privacy</a></p>
+
+      <p><a href="/terms.html">Terms of use</a></p>
+
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://yellowtradie.com/#organization",
+      "name": "YellowTradie",
+      "url": "https://yellowtradie.com/",
+      "logo": "https://yellowtradie.com/assets/logo-mark.svg",
+      "email": "hello@yellowtradie.com",
+      "description": "YellowTradie makes a phone app that runs the whole job for a solo tradesperson.",
+      "areaServed": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://yellowtradie.com/#website",
+      "url": "https://yellowtradie.com/",
+      "name": "YellowTradie",
+      "inLanguage": "en-GB",
+      "publisher": {
+        "@id": "https://yellowtradie.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://yellowtradie.com/features/scheduling.html#webpage",
+      "url": "https://yellowtradie.com/features/scheduling.html",
+      "name": "Your diary | Busy days and jobs that start themselves",
+      "description": "The diary with busy days, jobs that run over more than one day, and the job that moves itself to In Progress on its start date.",
+      "isPartOf": {
+        "@id": "https://yellowtradie.com/#website"
+      },
+      "datePublished": "2026-10-24",
+      "dateModified": "2026-10-24",
+      "inLanguage": "en-GB",
+      "publisher": {
+        "@id": "https://yellowtradie.com/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://yellowtradie.com/features/scheduling.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://yellowtradie.com/features/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Features"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Your diary",
+          "item": "https://yellowtradie.com/features/scheduling.html"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://yellowtradie.com/#app",
+      "name": "YellowTradie",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Android, iPhone",
+      "inLanguage": "en-GB",
+      "areaServed": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "description": "A phone app for UK solo electricians, plumbers and builders. It takes a message when a call is missed, turns speech into priced quote line items, sends PDF quotes and invoices, chases unpaid bills and keeps the figures for the quarterly tax return.",
+      "url": "https://yellowtradie.com/",
+      "publisher": {
+        "@id": "https://yellowtradie.com/#organization"
+      },
+      "featureList": [
+        "A message taken when you miss a call, written out and sent to you, with an automatic text back when the caller leaves nothing",
+        "One inbox for missed calls, messages and new leads",
+        "Voice to quote line items with your own rates",
+        "PDF quotes sent by text, WhatsApp or email",
+        "See when a quote was opened, approved or changed",
+        "Job diary with busy days and multi-day jobs",
+        "When a job overruns, the rest of the day worked out for you, with every customer's message ready to send",
+        "Photos, dictated notes and job costs",
+        "Timesheet for hourly work",
+        "Invoices with deposits and part payments",
+        "Payments log and outstanding balance",
+        "Unpaid invoice chasing with a ready written message",
+        "Quarterly tax report with money in, money out and tax to set aside",
+        "VAT on quotes, invoices and receipts",
+        "A quarter spreadsheet for your accountant. Connections to Xero, QuickBooks and FreeAgent are being built"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "19.99",
+        "priceCurrency": "GBP",
+        "availability": "https://schema.org/PreOrder",
+        "description": "£19.99 a month for everything in the app, one plan, no per-seat fee. 14-day free trial with a card needed to sign up. The app is not in the stores yet: join the list and we will tell you the day it opens."
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://yellowtradie.com/features/scheduling.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I set a day for a job?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Open the job and edit it. Pick the date on the calendar. The time of day is set first. You choose Morning or Afternoon or Full day. For a job over several days pick the first and the last. The address is the customer's by default. A job override is there if the work is elsewhere."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does the yellow dot mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It means real work is booked on that day. A future approved job, an invoiced job or a direct job with no quote all count. A draft or sent quote alone does not."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "My job runs Monday to Wednesday. When will it look done?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When you say so. It reads In Progress from Monday. It stays there after Wednesday until you press Finish job on its page, or tap Did you finish on Today the next morning. The diary does ask that question only after Wednesday."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does a job I just booked already read In Progress?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because its start date is today or earlier. A job booked for today or for a day that has already gone is already under way, so it reads as such. A job for next week reads Not Started until that week."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if a job has no date yet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is still a job, but it books no day. It has no dot, it is in no week or month total, and it will not be asked about by the finish card. Put a date on it when you have one."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I see which jobs are in this week?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The Jobs page has a calendar card that shows the week or month it is on, the busy marks, and the list of jobs whose span falls in that window. The spend, paid and profit strip above it uses the same window."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<script src="app.js"></script>
+</body>
+</html>

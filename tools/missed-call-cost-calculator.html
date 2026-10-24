@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Missed call cost calculator | What missed calls cost a year</title>
+<meta name="description" content="Work out what missed calls cost in a year. Two numbers, your own, with the sum in words and a table of yearly totals.">
+<link rel="canonical" href="https://yellowtradie.com/tools/missed-call-cost-calculator.html">
+<link rel="icon" href="assets/logo-mark.svg?v=6" type="image/svg+xml">
+<meta name="theme-color" content="#1a181a">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="YellowTradie">
+<meta property="og:title" content="Missed call cost calculator | What missed calls cost a year">
+<meta property="og:description" content="Work out what missed calls cost in a year. Two numbers, your own, with the sum in words and a table of yearly totals.">
+<meta property="og:url" content="https://yellowtradie.com/tools/missed-call-cost-calculator.html">
+<meta property="og:image" content="https://yellowtradie.com/assets/hero.webp?v=5">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="alternate" type="application/rss+xml" title="YellowTradie what's new" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=28">
+
+<!-- The visitor's choice about being counted, read before the tag can load.
+     This has to be inline and above the tag, and it is not optional. gtag.js is
+     async, so it can run before app.js at the bottom of the body gets a chance
+     to read the stored choice: measured on 2026-09-23, doing it the other way
+     round still sent one page view for a visitor who had switched it off. -->
+<script>
+  (function () {
+    try {
+      if (window.localStorage.getItem("yt_ga_off") === "1") {
+        window["ga-disable-G-DZZT654SCD"] = true;
+      }
+    } catch (e) { /* no storage: nothing stored, so nothing to honour */ }
+  })();
+</script>
+
+<!-- Google tag (gtag.js). One property for the whole site: the Measurement ID
+     below is YellowTradie's own. It sits in the head so a visit is counted when
+     the page opens rather than after everything else has loaded. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DZZT654SCD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DZZT654SCD');
+</script>
+</head>
+<body>
+
+<!-- This file is generated from content/tools/missed-call-cost-calculator.md by build.mjs.
+     Edit the text file, not this page. Header, nav, breadcrumb, footer and the
+     page's search data live once, in content/_layouts/page.html. -->
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="/" aria-label="YellowTradie home">
+      <img class="logo-mark" src="assets/logo-mark.svg" width="32" height="32" alt="">
+      <span class="logo-word">YellowTradie</span>
+    </a>
+
+    <nav aria-label="Main">
+      <ul class="nav">
+
+        <li><a href="/#how">What it does</a></li>
+
+        <li><a href="/#why">Why it is different</a></li>
+
+        <li><a href="/#faq">Questions</a></li>
+
+        <li><a href="/changelog.html">What's new</a></li>
+
+      </ul>
+    </nav>
+
+    <a class="btn btn--sm btn--solid" href="/#early-access">Get early access</a>
+
+  </div>
+</header>
+
+<main>
+
+  <section class="section">
+    <div class="wrap">
+<p class="eyebrow tertiary"><a href="/">Home</a> / Tools / Missed call cost calculator</p>
+      <div class="legal">
+<h1 class="display" id="missed-call-cost-calculator">Missed call cost calculator</h1>
+<p>Put in how many calls you miss in a week, and what a job they could have become is worth to you. The calculator shows what that is worth in a year.</p>
+<p>It is on the <a href="/">homepage</a> already, as a quick sum with two sliders. This page is the same calculator with its own address, the sum in words, and a table to read the figure quickly. The page links back to the homepage, and the homepage links here.</p>
+<div class="calc" id="mcc-calc" data-mcc-calc>
+  <div class="calc-field">
+    <label for="mcc-calls">Calls you miss in a week</label>
+    <input type="number" id="mcc-calls" inputmode="decimal" min="0" step="1" value="3" data-mcc-calls>
+  </div>
+  <div class="calc-field">
+    <label for="mcc-worth">What a job is worth to you (£)</label>
+    <input type="number" id="mcc-worth" inputmode="decimal" min="0" step="10" value="250" data-mcc-worth>
+  </div>
+  <div class="calc-field">
+    <label for="mcc-rate">Jobs from calls (%)</label>
+    <input type="number" id="mcc-rate" inputmode="decimal" min="0" max="100" step="10" value="100" data-mcc-rate>
+  </div>
+  <p class="calc-result" role="status" aria-live="polite" data-mcc-result></p>
+  <p class="calc-note">Your own two numbers, worked out over 52 weeks. Nothing here is our estimate. The percent is the share of missed calls that would have become a job.</p>
+</div>
+<h2 class="display display--xs" id="how-to-work-it-out">How to work it out</h2>
+<p>Take the calls you miss in a week. Multiply by what one of those jobs is worth. Multiply by 52 weeks. If not every missed call would have become a job, multiply by that share as well.</p>
+<p>In symbols: yearly cost equals missed per week times value of a job times 52. At a conversion rate less than 100 percent, yearly cost equals missed per week times value times 52 times conversion rate.</p>
+<p>Example. 3 missed calls in a week. Each worth £250. Every one would have been a job.</p>
+<p>Yearly is 3 times £250 times 52. That is £39,000.</p>
+<p>Same two numbers at a 50 percent conversion rate, where half of those missed calls would have become a job and half would not. Yearly is 3 times £250 times 52 times 0.5. That is £19,500.</p>
+<p>If you set missed calls to 0, the yearly figure is nil. That does not mean you never miss one. It means your chosen week had none.</p>
+<h2 class="display display--xs" id="common-yearly-totals-at-100-percent">Common yearly totals at 100 percent</h2>
+<p>| Missed per week | Job worth £150 | Job worth £250 | Job worth £500 | | --- | --- | --- | --- | | 1 | £7,800.00 | £13,000.00 | £26,000.00 | | 2 | £15,600.00 | £26,000.00 | £52,000.00 | | 3 | £23,400.00 | £39,000.00 | £78,000.00 | | 5 | £39,000.00 | £65,000.00 | £130,000.00 |</p>
+<h2 class="display display--xs" id="common-yearly-totals-at-50-percent">Common yearly totals at 50 percent</h2>
+<p>| Missed per week | Job worth £150 | Job worth £250 | Job worth £500 | | --- | --- | --- | --- | | 1 | £3,900.00 | £6,500.00 | £13,000.00 | | 2 | £7,800.00 | £13,000.00 | £26,000.00 | | 3 | £11,700.00 | £19,500.00 | £39,000.00 | | 5 | £19,500.00 | £32,500.00 | £65,000.00 |</p>
+<p>At any conversion rate other than 100 percent, multiply the top table by that rate. At 25 percent, a quarter of the top row.</p>
+<h2 class="display display--xs" id="what-this-is-and-what-it-is-not">What this is and what it is not</h2>
+<p>This calculator shows what missed calls would be worth in a year if your week happened every week and each missed call became a job at the value you typed. Those are your two numbers. Nothing else is assumed.</p>
+<p>It is not a claim from us about your business. It is not a promise that missed calls exist at a set rate. It is a tool to put a price on what you already see happening.</p>
+<p>If you know how many of those callers call back, reduce the missed count. If you know what share of enquiries become jobs, use that as the conversion rate. If you win half of what you quote for, a conversion of 50 percent is closer to reality than 100 percent.</p>
+<h2 class="display display--xs" id="the-version-on-the-homepage">The version on the homepage</h2>
+<p>The homepage version is the same sum with two sliders. It sends you here for the tables, and this page links to <a href="/">the homepage</a> for the quick go. That link in both directions is there on purpose, so the reader can find the other view.</p>
+<p>No email wall, no sign up. The result is in the line above.</p>
+<h2 class="display display--xs" id="what-helps-besides-counting">What helps besides counting</h2>
+<p>Picking up faster, an answer taken when you cannot answer, and a quote sent the same day all move the yearly figure more than any change to its price. If you want that last part handled for you, YellowTradie sends the message, captures the lead, and turns the talk into a quote. That is a product point for later. The figure above is yours either way.</p>
+<h2 class="display display--xs" id="questions">Questions</h2>
+<h3 class="display display--xs" id="how-do-i-pick-what-a-job-is-worth">How do I pick what a job is worth?</h3>
+<p>Use a typical value from those calls. If the calls are small repairs and occasional refits, use an average for that mix, or work two totals: one for small jobs and one for large.</p>
+<h3 class="display display--xs" id="why-52-weeks">Why 52 weeks?</h3>
+<p>It annualises the week you typed. The site works in a full year so the cost is comparable. If you close for four weeks, use 48 for a tighter estimate, or keep 52 and view this as the cost of a typical week repeated.</p>
+<h3 class="display display--xs" id="what-is-the-percent-for">What is the percent for?</h3>
+<p>Not every caller becomes a customer. The percent is the share that would have become a job. Start at 100 percent to see the value of the calls before any discount. Then turn it down to what you believe, for example 50 percent where half of enquiries book. The maths is in the line above the table.</p>
+<h3 class="display display--xs" id="does-this-file-anything-with-hmrc">Does this file anything with HMRC?</h3>
+<p>No. It puts a price on lost chances so you can decide what to do. It is not an expense or a tax relief.</p>
+<h2 class="display display--xs" id="sources">Sources</h2>
+<p>This calculator uses your own numbers only. It has no HMRC rate in it.</p>
+<a class="btn btn--lg btn--solid" href="/#early-access">Join the list</a>
+<p>The app is not in the shops yet. Join the list and we will tell you the day it opens.</p>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a class="logo" href="/" aria-label="YellowTradie home" style="margin-bottom: 16px;">
+          <img class="logo-mark" src="assets/logo-mark.svg" width="32" height="32" alt="">
+          <span class="logo-word">YellowTradie</span>
+        </a>
+        <p class="tertiary" style="font-size: 14px; line-height: 17px; max-width: 28em;">A phone app that runs the whole job for a solo tradesperson, from the missed call to the quarter closed off.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>The site</h3>
+        <ul>
+
+          <li><a href="/#how">What it does</a></li>
+
+          <li><a href="/#why">Why it is different</a></li>
+
+          <li><a href="/#faq">Questions</a></li>
+
+          <li><a href="/changelog.html">What's new</a></li>
+
+          <li><a href="/#early-access">Get early access</a></li>
+
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Tools</h3>
+        <ul>
+
+          <li><a href="/tools.html">Free calculators</a></li>
+
+          <li><a href="/tools/vat-calculator.html">VAT calculator</a></li>
+
+          <li><a href="/tools/remove-vat-calculator.html">Remove VAT calculator</a></li>
+
+          <li><a href="/tools/cis-calculator.html">CIS calculator</a></li>
+
+          <li><a href="/tools/job-profit-calculator.html">Job profit calculator</a></li>
+
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Company</h3>
+        <ul>
+
+          <li><a href="/about.html">About</a></li>
+
+          <li><a href="/faq.html">FAQ</a></li>
+
+          <li><a href="/editorial-policy.html">Editorial policy</a></li>
+
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul>
+
+          <li><a href="mailto:hello@yellowtradie.com">hello@yellowtradie.com</a></li>
+
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-base">
+
+      <p><a href="/privacy.html">Privacy</a></p>
+
+      <p><a href="/terms.html">Terms of use</a></p>
+
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://yellowtradie.com/#organization",
+      "name": "YellowTradie",
+      "url": "https://yellowtradie.com/",
+      "logo": "https://yellowtradie.com/assets/logo-mark.svg",
+      "email": "hello@yellowtradie.com",
+      "description": "YellowTradie makes a phone app that runs the whole job for a solo tradesperson.",
+      "areaServed": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://yellowtradie.com/#website",
+      "url": "https://yellowtradie.com/",
+      "name": "YellowTradie",
+      "inLanguage": "en-GB",
+      "publisher": {
+        "@id": "https://yellowtradie.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://yellowtradie.com/tools/missed-call-cost-calculator.html#webpage",
+      "url": "https://yellowtradie.com/tools/missed-call-cost-calculator.html",
+      "name": "Missed call cost calculator | What missed calls cost a year",
+      "description": "Work out what missed calls cost in a year. Two numbers, your own, with the sum in words and a table of yearly totals.",
+      "isPartOf": {
+        "@id": "https://yellowtradie.com/#website"
+      },
+      "datePublished": "2026-10-24",
+      "dateModified": "2026-10-24",
+      "inLanguage": "en-GB",
+      "publisher": {
+        "@id": "https://yellowtradie.com/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://yellowtradie.com/tools/missed-call-cost-calculator.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://yellowtradie.com/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Missed call cost calculator",
+          "item": "https://yellowtradie.com/tools/missed-call-cost-calculator.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<script src="app.js"></script>
+</body>
+</html>
