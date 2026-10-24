@@ -5,7 +5,7 @@ title: Quotes guides | Build the price and send the quote
 description: Quoting for UK trades: how to build the price, what to put on the quote, and how to get the answer in writing sooner.
 h1: Quotes guides
 eyebrow: Guides
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Guides, Quotes]
 breadcrumb_visible: true

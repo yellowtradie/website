@@ -5,7 +5,7 @@ title: Pricing | £19.99 a month, everything in the app
 description: One plan at £19.99 a month, 14 days free and a card needed to start. What happens on day 15, how to cancel and what happens to your records.
 h1: One price, everything in the app
 eyebrow: Pricing
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, Pricing]
 breadcrumb_visible: true

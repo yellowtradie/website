@@ -5,7 +5,7 @@ title: Markup and margin calculator | The difference explained
 description: Work out markup on cost and margin on price. See what each one means, how to convert between them, and why they are not the same thing.
 h1: Markup and margin calculator
 eyebrow: Tools
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Tools, Markup and margin calculator]
 breadcrumb_visible: true

@@ -5,7 +5,7 @@ title: Invoicing guides | UK invoice fields and chasing
 description: Invoicing for UK trades: the legal fields, VAT and CIS on the bill, payment reference, and the four steps for chasing late payment.
 h1: Invoicing guides
 eyebrow: Guides
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Guides, Invoicing]
 breadcrumb_visible: true

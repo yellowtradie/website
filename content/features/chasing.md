@@ -5,7 +5,7 @@ title: Chasing | Follow up on quotes and invoices
 description: A chase based on what is still owed, with your bank details, the reference and sign-off already added. The wording firms up each time.
 h1: A chase for what is still owed
 eyebrow: Chasing
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, Features, Chasing]
 breadcrumb_visible: true

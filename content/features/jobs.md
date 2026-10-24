@@ -5,7 +5,7 @@ title: Jobs | The work, its photos and its costs
 description: The job record for one tradesperson: what the work is, where it is, the photos, notes and costs, and the bill at the end.
 h1: One job, one place for the work
 eyebrow: Jobs
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, Features, Jobs]
 breadcrumb_visible: true

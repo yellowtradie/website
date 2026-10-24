@@ -5,7 +5,7 @@ title: The customer's own page | Their link to approve and pay
 description: link.yellowtradie.com gives the customer their own page to approve a quote or sign off a bill and see what they owe.
 h1: The customer's own page for your quote and your bill
 eyebrow: Customer page
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, Features, Customer page]
 breadcrumb_visible: true

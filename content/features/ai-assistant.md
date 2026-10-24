@@ -5,7 +5,7 @@ title: The assistant | It answers from your own records
 description: The assistant answers from the trader's own records on the phone and never invents a figure. Every answer comes as a card, a table or a chart.
 h1: The assistant that answers from your own records
 eyebrow: Ask AI
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, Features, Ask AI]
 breadcrumb_visible: true

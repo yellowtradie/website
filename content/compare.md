@@ -4,7 +4,7 @@ type: hub
 title: Compare YellowTradie with what you use now
 description: See how YellowTradie compares with spreadsheets, Tradify and other job tools. One list, one rule for checking prices and a link to each comparison.
 h1: Compare YellowTradie with what you use now
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Compare]
 breadcrumb_visible: true

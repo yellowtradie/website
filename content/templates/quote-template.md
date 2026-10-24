@@ -5,7 +5,7 @@ title: Free quote template UK | A full worked quote
 description: A full worked quote with customer, lines, VAT, totals, terms and acceptance. See the document the app really produces.
 h1: Free quote template UK
 eyebrow: Templates
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, Templates, Quote template]
 breadcrumb_visible: true

@@ -5,7 +5,7 @@ title: Missed calls | The caller leaves a message
 description: A caller leaves a message, it is written out and sorted, and it reaches you. The app never answers the phone.
 h1: The caller leaves a message and it reaches you
 eyebrow: Missed calls
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, Features, Missed calls]
 breadcrumb_visible: true

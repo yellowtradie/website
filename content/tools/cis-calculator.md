@@ -5,7 +5,7 @@ title: CIS calculator | 20 30 and 0 percent on labour
 description: Work out CIS deductions at 20 percent, 30 percent and 0 percent. Labour only, materials outside, with the small job note and a worked table.
 h1: CIS calculator
 eyebrow: Tools
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Tools, CIS calculator]
 breadcrumb_visible: true

@@ -5,7 +5,7 @@ title: Integrations | Xero QuickBooks FreeAgent and Sage
 description: Xero, QuickBooks, FreeAgent and Sage. What works today, what is on the way, and why the app never implies a sync that does not exist.
 h1: Xero, QuickBooks, FreeAgent and Sage
 eyebrow: Integrations
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, Integrations]
 breadcrumb_visible: true

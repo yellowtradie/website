@@ -5,7 +5,7 @@ title: Getting paid guides | Deposits and bank transfer
 description: Getting paid in UK trades: bank transfer with the invoice number as reference, deposits, part payments, and chasing what is still owed.
 h1: Getting paid guides
 eyebrow: Guides
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Guides, Getting paid]
 breadcrumb_visible: true

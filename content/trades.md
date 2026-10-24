@@ -5,7 +5,7 @@ title: Software for your trade | YellowTradie
 description: One app for electricians, plumbers, builders, roofers, decorators and landscapers. Pick your trade and see the day as you live it.
 h1: Built for your trade, not for an office
 eyebrow: Trades
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Trades]
 breadcrumb_visible: true

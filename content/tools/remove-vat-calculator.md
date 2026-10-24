@@ -5,7 +5,7 @@ title: Remove VAT calculator | Take VAT off a price
 description: Remove VAT from a VAT inclusive price at 20 percent, 5 percent and 0 percent. See the correct sum, the common mistake, and a table of checked amounts.
 h1: Remove VAT calculator
 eyebrow: Tools
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Tools, Remove VAT calculator]
 breadcrumb_visible: true

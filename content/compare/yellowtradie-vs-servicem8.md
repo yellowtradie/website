@@ -4,7 +4,7 @@ type: compare
 title: YellowTradie against ServiceM8 | Price for a solo trader
 description: A fair comparison with ServiceM8 on price and fit. ServiceM8 UK prices checked on servicem8.com/uk/pricing on 24 Oct 2026.
 h1: YellowTradie against ServiceM8
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Compare, YellowTradie against ServiceM8]
 breadcrumb_visible: true

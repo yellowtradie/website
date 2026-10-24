@@ -5,7 +5,7 @@ title: Day rate calculator | What to charge per day
 description: Turn a target income into a day rate. Less costs, divided by the days you actually bill, with a table of ready-worked figures.
 h1: Day rate calculator
 eyebrow: Tools
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Tools, Day rate calculator]
 breadcrumb_visible: true

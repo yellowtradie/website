@@ -5,7 +5,7 @@ title: Invoices | Bill the job from your phone
 description: A bill built from the job, with your bank details and a link the customer opens. How an invoice works and what it does not do.
 h1: The bill comes from the job
 eyebrow: Invoices
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, Features, Invoices]
 breadcrumb_visible: true

@@ -5,7 +5,7 @@ title: Payments | Bank transfer and card on your phone
 description: Bank transfer with the invoice number as the reference, a deposit and a balance on one job, and card payments when they are live.
 h1: Paid by bank transfer, and by card when it is live
 eyebrow: Payments
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, Features, Payments]
 breadcrumb_visible: true

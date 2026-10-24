@@ -5,7 +5,7 @@ title: Reports | The year and what you are owed
 description: The year with the ring, what you are owed with how late it is, and the tax and VAT section. Charts first and a number only where the number is the point.
 h1: The year, what you are owed, and what the tax is
 eyebrow: Reports
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, Features, Reports]
 breadcrumb_visible: true

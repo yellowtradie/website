@@ -5,7 +5,7 @@ title: Editorial policy | How we write and check pages
 description: How YellowTradie writes and checks its pages, where the figures come from, when a page was last reviewed and how to report an error.
 h1: How we write and check these pages
 eyebrow: Editorial policy
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Editorial policy]
 breadcrumb_visible: true

@@ -5,7 +5,7 @@ title: Your diary | Busy days and jobs that start themselves
 description: The diary with busy days, jobs that run over more than one day, and the job that moves itself to In Progress on its start date.
 h1: Your diary knows which days are busy and which job starts today
 eyebrow: Your diary
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, Features, Your diary]
 breadcrumb_visible: true

@@ -5,7 +5,7 @@ title: Customer messages | Four messages in your words
 description: Four boxes, one for each time you send to a customer. A blank box sends the app's own words rather than nothing.
 h1: Four messages in your own words
 eyebrow: Customer messages
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, Features, Customer messages]
 breadcrumb_visible: true

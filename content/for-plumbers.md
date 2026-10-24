@@ -5,7 +5,7 @@ title: For plumbers | Quotes and invoices on your phone
 description: For solo plumbers: quote the job on site, take a deposit, and bill from your phone with the invoice number as the payment reference.
 h1: Plumbing work quoted from your phone
 eyebrow: For plumbers
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, Trades, For plumbers]
 breadcrumb_visible: true

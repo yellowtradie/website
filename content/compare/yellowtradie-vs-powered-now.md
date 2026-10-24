@@ -4,7 +4,7 @@ type: compare
 title: YellowTradie against Powered Now | Price for a solo trader
 description: A fair comparison with Powered Now on price and fit. Powered Now UK prices checked on powerednow.com/pricing on 24 Oct 2026. Where each is the better tool.
 h1: YellowTradie against Powered Now
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Compare, YellowTradie against Powered Now]
 breadcrumb_visible: true

@@ -5,7 +5,7 @@ title: Contact YellowTradie | hello@yellowtradie.com
 description: One email address, who reads it, when a reply comes and what to include. No form, no phone line and no chat window.
 h1: How to reach us
 eyebrow: Contact
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Contact]
 breadcrumb_visible: true

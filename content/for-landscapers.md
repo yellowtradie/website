@@ -5,7 +5,7 @@ title: Landscapers | Quotes and invoices on your phone
 description: For solo landscapers: quote by area, price materials by volume, work the weather window and bill from your phone.
 h1: Landscaping work quoted from your phone
 eyebrow: For landscapers
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, Trades, For landscapers]
 breadcrumb_visible: true

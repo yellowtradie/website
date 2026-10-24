@@ -5,7 +5,7 @@ title: Quote by talking | YellowTradie
 description: Speak the job and the quote fills itself, line by line, in your words. What the spoken quote does, how it works and what it leaves to you.
 h1: The quote writes itself while you talk
 eyebrow: Voice to quote
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, Features, Quote by talking]
 breadcrumb_visible: true

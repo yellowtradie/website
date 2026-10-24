@@ -5,7 +5,7 @@ title: Free templates for UK tradespeople | YellowTradie
 description: Seven templates for quotes, invoices, job sheets and more. See the finished document, copy what you need, and send it from your phone.
 h1: Free templates for UK tradespeople
 eyebrow: Templates
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Templates]
 breadcrumb_visible: true

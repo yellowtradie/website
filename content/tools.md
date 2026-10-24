@@ -5,7 +5,7 @@ title: Free calculators for UK tradespeople | YellowTradie
 description: Ten calculators for VAT, CIS, job profit, mileage, day rate and more. Free, no email, no sign-up. Each page works out the figure and shows the method.
 h1: Free calculators for UK tradespeople
 eyebrow: Tools
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Tools]
 breadcrumb_visible: true

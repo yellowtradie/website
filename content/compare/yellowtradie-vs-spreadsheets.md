@@ -4,7 +4,7 @@ type: compare
 title: YellowTradie against a spreadsheet | For solo trades
 description: A fair comparison for a solo tradesperson on a spreadsheet. Price checked on 24 Oct 2026. Where a sheet wins and where an app on your phone does.
 h1: YellowTradie against a spreadsheet
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Compare, YellowTradie against a spreadsheet]
 breadcrumb_visible: true

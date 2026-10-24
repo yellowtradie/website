@@ -5,7 +5,7 @@ title: Questions about YellowTradie | FAQ
 description: What YellowTradie is, what it costs, what it does not do, where your records live and how to get help. Plain answers.
 h1: Questions about YellowTradie
 eyebrow: FAQ
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, FAQ]
 breadcrumb_visible: true

@@ -5,7 +5,7 @@ title: For electricians | Quotes and invoices on your phone
 description: For solo electricians: speak the quote on site, send it from your phone, and bill the job with your bank details on the invoice.
 h1: Electrical work quoted from your phone
 eyebrow: For electricians
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, Trades, For electricians]
 breadcrumb_visible: true

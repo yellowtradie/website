@@ -4,7 +4,7 @@ type: compare
 title: YellowTradie against Jobber | Price for a solo trader
 description: A fair comparison with Jobber on price and fit. Jobber prices checked on getjobber.com/pricing on 24 Oct 2026. Where each is the better tool.
 h1: YellowTradie against Jobber
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Compare, YellowTradie against Jobber]
 breadcrumb_visible: true

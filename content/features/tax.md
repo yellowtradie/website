@@ -5,7 +5,7 @@ title: Tax | An estimate from your records in bands
 description: An estimate from your records, in bands, with Class 4 National Insurance and CIS already deducted. An estimate from your records, not advice.
 h1: The tax estimate, in bands, from your own records
 eyebrow: Tax
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, Features, Tax]
 breadcrumb_visible: true

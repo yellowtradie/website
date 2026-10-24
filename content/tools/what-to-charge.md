@@ -5,7 +5,7 @@ title: What to charge calculator | Build a price for the job
 description: Build a job price from labour days, materials, paperwork and contingency. A calculator and a guide on one page, with the sums in words and a worked example.
 h1: What to charge
 eyebrow: Tools
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Tools, What to charge]
 breadcrumb_visible: true

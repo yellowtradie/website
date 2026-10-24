@@ -5,7 +5,7 @@ title: Where your records live | YellowTradie security
 description: Your quotes, jobs and invoices stay on your phone. What our servers hold, what they never hold, who can see what and how to report a security problem.
 h1: Where your records live
 eyebrow: Security
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Security]
 breadcrumb_visible: true

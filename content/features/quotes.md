@@ -5,7 +5,7 @@ title: Quotes | Priced work your customer can answer
 description: A priced quote you send from your phone, and a link the customer opens to say yes or no. What a quote does, who it is for and what it leaves to you.
 h1: A quote your customer can answer
 eyebrow: Quotes
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, Features, Quotes]
 breadcrumb_visible: true

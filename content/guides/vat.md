@@ -5,7 +5,7 @@ title: VAT guides for tradespeople | Rates, threshold and invoices
 description: VAT for UK trades: the three rates, when to register at £90,000, how to add and remove VAT, and what a VAT invoice must show.
 h1: VAT guides
 eyebrow: Guides
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Guides, VAT]
 breadcrumb_visible: true

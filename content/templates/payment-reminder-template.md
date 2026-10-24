@@ -5,7 +5,7 @@ title: Free payment reminder template UK
 description: Four short messages for unpaid invoices, from nudge to letter before action in text and WhatsApp form.
 h1: Free payment reminder template UK
 eyebrow: Templates
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, Templates, Payment reminder template]
 breadcrumb_visible: true

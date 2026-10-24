@@ -5,7 +5,7 @@ title: Free invoice template UK | A full worked invoice
 description: A full worked invoice with VAT breakdown, CIS deduction, payment reference and bank block. See the document the app really produces.
 h1: Free invoice template UK
 eyebrow: Templates
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, Templates, Invoice template]
 breadcrumb_visible: true

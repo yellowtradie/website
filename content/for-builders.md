@@ -5,7 +5,7 @@ title: For builders | Quotes and invoices on your phone
 description: For solo builders: quote the whole job, handle variations, take stage payments, and bill each stage from your phone.
 h1: Building work quoted from your phone
 eyebrow: For builders
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, Trades, For builders]
 breadcrumb_visible: true

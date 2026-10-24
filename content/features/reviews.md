@@ -5,7 +5,7 @@ title: Reviews | A review ask on the sign-off page
 description: A review ask on the customer's sign-off page, the same for every customer. Designed and not built, the page says so plainly.
 h1: The same review ask for every customer
 eyebrow: Reviews
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, Features, Reviews]
 breadcrumb_visible: true

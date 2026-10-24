@@ -5,7 +5,7 @@ title: Late payment letter pack UK | Four steps to use
 description: Four letters to copy for unpaid invoices, from reminder to letter before action, with the law and small claims note.
 h1: Late payment letter pack UK
 eyebrow: Templates
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, Templates, Late payment letter template]
 breadcrumb_visible: true

@@ -5,7 +5,7 @@ title: Features | Every part of the app, one page each
 description: Seventeen pages, one for each part of the app, from quoting by voice to the tax estimate. Each line says what is on its page.
 h1: Every part of the app
 eyebrow: Features
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Features]
 breadcrumb_visible: true

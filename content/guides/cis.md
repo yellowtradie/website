@@ -5,7 +5,7 @@ title: CIS guides for tradespeople | Deductions on labour only
 description: CIS for UK construction: the 20, 30 and 0 percent rates, what is inside and outside the deduction, and the payment statement you must give.
 h1: CIS guides
 eyebrow: Guides
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Guides, CIS]
 breadcrumb_visible: true

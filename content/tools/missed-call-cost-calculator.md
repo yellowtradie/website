@@ -5,7 +5,7 @@ title: Missed call cost calculator | What missed calls cost a year
 description: Work out what missed calls cost in a year. Two numbers, your own, with the sum in words and a table of yearly totals.
 h1: Missed call cost calculator
 eyebrow: Tools
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Tools, Missed call cost calculator]
 breadcrumb_visible: true

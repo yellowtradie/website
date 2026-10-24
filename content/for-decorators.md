@@ -5,7 +5,7 @@ title: Decorators | Quotes and invoices on your phone
 description: For solo decorators: quote by room, count the prep, price the finish, and bill from your phone.
 h1: Decorating work quoted from your phone
 eyebrow: For decorators
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, Trades, For decorators]
 breadcrumb_visible: true

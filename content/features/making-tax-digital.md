@@ -5,7 +5,7 @@ title: Making Tax Digital | HMRC quarters and the staged lines
 description: HMRC's own quarters, the staged lines at £50,000 until April 2027, £30,000 until April 2028 and £20,000 after, and whether you need to do anything yet.
 h1: Making Tax Digital, in HMRC's own quarters
 eyebrow: Making Tax Digital
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, Features, Making Tax Digital]
 breadcrumb_visible: true

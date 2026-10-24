@@ -5,7 +5,7 @@ title: Making Tax Digital for Income Tax 2026/27
 description: Who MTD for Income Tax applies to and the four dates and what trades get wrong.
 h1: Making Tax Digital for Income Tax
 eyebrow: Guides
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Guides, Making Tax Digital for Income Tax]
 breadcrumb_visible: true

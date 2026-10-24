@@ -5,7 +5,7 @@ title: Free timesheet template UK | Hours by job
 description: A full worked timesheet with date, start, end, hours, job and rate. See the sheet with totals that add up.
 h1: Free timesheet template UK
 eyebrow: Templates
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, Templates, Timesheet template]
 breadcrumb_visible: true

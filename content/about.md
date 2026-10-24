@@ -5,7 +5,7 @@ title: About YellowTradie | The app for one tradesperson
 description: YellowTradie is a phone app for UK tradespeople who work alone. Why it exists, how it works, what it costs and where it is up to.
 h1: The app for one tradesperson
 eyebrow: About
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, About]
 breadcrumb_visible: true

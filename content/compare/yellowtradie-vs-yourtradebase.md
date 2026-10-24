@@ -4,7 +4,7 @@ type: compare
 title: YellowTradie against YourTradebase | Price for solo traders
 description: A fair comparison with YourTradebase on price and fit. YourTradebase UK prices checked on yourtradebase.com/pricing on 24 Oct 2026.
 h1: YellowTradie against YourTradebase
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Compare, YellowTradie against YourTradebase]
 breadcrumb_visible: true

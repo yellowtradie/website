@@ -5,7 +5,7 @@ title: Blog | Plain guides for UK tradespeople
 description: Short posts on quotes, invoices and getting paid. Each post has key facts at the top and gov.uk sources at the foot.
 h1: The YellowTradie blog
 eyebrow: Blog
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Blog]
 breadcrumb_visible: true

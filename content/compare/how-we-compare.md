@@ -4,7 +4,7 @@ type: compare
 title: How we compare YellowTradie with other tools
 description: Our rules for every comparison page: what we check, how we price check, what we leave out, and that we sell one of the two.
 h1: How we compare
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Compare, How we compare]
 breadcrumb_visible: true

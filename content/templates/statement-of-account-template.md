@@ -5,7 +5,7 @@ title: Statement of account template UK | For one customer
 description: A full worked statement of account showing what one customer owes across all invoices, with totals, ageing and a dated signature.
 h1: Statement of account template UK
 eyebrow: Templates
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, Templates, Statement of account template]
 breadcrumb_visible: true

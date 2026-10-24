@@ -5,7 +5,7 @@ title: Timesheets | Hours on a job that become the bill
 description: Hours on a job become a labour line on the invoice. A direct job with no quote still keeps its hours.
 h1: Hours on the job, and the labour line they become
 eyebrow: Timesheets
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, Features, Timesheets]
 breadcrumb_visible: true

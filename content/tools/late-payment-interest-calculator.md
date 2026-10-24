@@ -5,7 +5,7 @@ title: Late payment interest calculator | Statutory 8 percent
 description: Work out late payment interest at 8 percent above base rate or at your own fixed rate. Includes the position for customers who are not a business.
 h1: Late payment interest calculator
 eyebrow: Tools
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Tools, Late payment interest calculator]
 breadcrumb_visible: true

@@ -4,7 +4,7 @@ type: compare
 title: YellowTradie against Tradify | Price for a solo trader
 description: A fair comparison with Tradify on price and fit. Tradify UK prices checked on tradifyhq.com/uk/pricing on 24 Oct 2026. Where each is the better tool.
 h1: YellowTradie against Tradify
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Compare, YellowTradie against Tradify]
 breadcrumb_visible: true

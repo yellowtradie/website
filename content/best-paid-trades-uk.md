@@ -5,7 +5,7 @@ title: Best paid trades UK | Ten trades by day rate
 description: Ten UK trades by day rate with the range and the four things that move a rate more than trade.
 h1: Best paid trades in the UK
 eyebrow: Guides
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Guides, Best paid trades]
 breadcrumb_visible: true

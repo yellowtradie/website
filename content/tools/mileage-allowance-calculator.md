@@ -5,7 +5,7 @@ title: Mileage allowance calculator | HMRC rates 2026/27
 description: Work out mileage allowance at HMRC approved rates. 45p a mile to 10,000 miles then 25p, and the rule about claiming actual costs for the same vehicle.
 h1: Mileage allowance calculator
 eyebrow: Tools
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Tools, Mileage allowance calculator]
 breadcrumb_visible: true

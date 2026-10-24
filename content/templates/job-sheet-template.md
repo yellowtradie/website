@@ -5,7 +5,7 @@ title: Free job sheet template UK | What was done and signed
 description: A full worked job sheet with what was done, found, used, photographed and signed. Written by hand and checked against the app's own data.
 h1: Free job sheet template UK
 eyebrow: Templates
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, Templates, Job sheet template]
 breadcrumb_visible: true

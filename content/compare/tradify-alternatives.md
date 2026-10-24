@@ -4,7 +4,7 @@ type: compare
 title: Tradify alternatives for a solo trader in the UK
 description: A fair look at Tradify alternatives for a solo trader. Prices for Tradify, Powered Now, YourTradebase, Jobber and ServiceM8 checked on 24 Oct 2026.
 h1: Tradify alternatives for a solo trader
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Compare, Tradify alternatives]
 breadcrumb_visible: true

@@ -5,7 +5,7 @@ title: Costs and receipts | Thirteen categories and a photo
 description: Thirteen categories, a receipt read from a photo, and the rule that a receipt belongs to the day it was paid.
 h1: Every cost in one ledger, with the receipt where you paid it
 eyebrow: Costs and receipts
-publish: false
+publish: true
 faq: true
 breadcrumb: [Home, Features, Costs and receipts]
 breadcrumb_visible: true

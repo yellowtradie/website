@@ -5,7 +5,7 @@ title: Trade tax calendar 2026/27 | Sole trader deadlines
 description: Every deadline a UK sole trader needs for 2026/27 in order. Self Assessment and CIS and VAT and MTD.
 h1: Trade tax calendar 2026/27
 eyebrow: Guides
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Guides, Trade tax calendar]
 breadcrumb_visible: true

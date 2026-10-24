@@ -5,7 +5,7 @@ title: Become a tradesperson UK | Cost and time
 description: Three ways into a UK trade with cost and time and whether it pays back and what is left out.
 h1: Become a tradesperson
 eyebrow: Guides
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Guides, Become a tradesperson]
 breadcrumb_visible: true

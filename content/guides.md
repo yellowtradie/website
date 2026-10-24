@@ -5,7 +5,7 @@ title: Practical guides for UK tradespeople | YellowTradie
 description: Short guides grouped by topic for VAT, CIS, invoicing, quotes and getting paid. Each links to the free tools and templates on that subject.
 h1: Practical guides for UK tradespeople
 eyebrow: Guides
-publish: false
+publish: true
 faq: false
 breadcrumb: [Home, Guides]
 breadcrumb_visible: true
