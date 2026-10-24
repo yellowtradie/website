@@ -84,7 +84,7 @@ That is the part no public calculator can copy. A public calculator works with w
 
 ## Questions
 
-### What is the difference between markup and margin?
+### How is markup different from margin?
 
 Markup is profit over costs. Margin is profit over income. A £500 job that costs £400 has £100 profit. Markup is 25 percent. Margin is 20 percent. This calculator shows margin.
 

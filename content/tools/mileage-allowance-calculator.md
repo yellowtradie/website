@@ -86,7 +86,7 @@ Example. Car or van. 8,500 business miles. All in the first band. 8,500 at 45p i
 
 Check the current rate on gov.uk if you are reading this after April 2026. If a new rate is in force, the table here will show it.
 
-## What counts as a business mile
+## Which miles count as business travel
 
 Business travel is travel you must do for work, outside ordinary commuting. Driving that qualifies includes:
 
