@@ -5,7 +5,7 @@ title: Job profit calculator | What a job really made
 description: Work out what a job made from income less labour, materials and other costs. Free on the page, and built into the app for your own jobs.
 h1: Job profit calculator
 eyebrow: Tools
-publish: true
+publish: false
 faq: false
 breadcrumb: [Home, Tools, Job profit calculator]
 breadcrumb_visible: true

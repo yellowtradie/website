@@ -5,7 +5,7 @@ title: VAT calculator | Add or remove VAT at 20 5 and 0 percent
 description: Add or remove VAT at 20 percent, 5 percent and 0 percent. See the reverse sum, try the calculator, and check common amounts in the table.
 h1: VAT calculator
 eyebrow: Tools
-publish: true
+publish: false
 faq: false
 breadcrumb: [Home, Tools, VAT calculator]
 breadcrumb_visible: true
