@@ -385,19 +385,22 @@ for (const slug of PLANNED) {
 }
 
 /* The features hub says every one of its seventeen pages is linked. The links
-   are hidden until each page lands, so the proof is in the source. */
+   are hidden until each page lands, so the proof is in the source. Written
+   pages join the planned ones here, because the hub names the whole library
+   from the first session and the list must not shrink as pages arrive. */
 const featuresSrc = join(HERE, "content", "features.md");
 if (existsSync(featuresSrc)) {
   const markdown = readFileSync(featuresSrc, "utf8");
-  const featurePlanned = [...PLANNED].filter((slug) => slug.startsWith("features/"));
-  for (const slug of featurePlanned) {
+  const featureSlugs = new Set([...PLANNED].filter((slug) => slug.startsWith("features/")));
+  for (const slug of pages.keys()) if (slug.startsWith("features/")) featureSlugs.add(slug);
+  for (const slug of featureSlugs) {
     if (!markdown.includes(`(/${slug}.html)`)) {
       fail("features", `does not link "${slug}"`);
     }
   }
-  const linked = (markdown.match(/\]\(\/features\/[a-z0-9-]+\.html\)/g) || []).length;
-  if (linked !== featurePlanned.length) {
-    fail("features", `links ${linked} feature pages, planned.json holds ${featurePlanned.length}`);
+  const linked = new Set((markdown.match(/\]\(\/features\/[a-z0-9-]+\.html\)/g) || []));
+  if (linked.size !== featureSlugs.size) {
+    fail("features", `links ${linked.size} feature pages, the library holds ${featureSlugs.size}`);
   }
 }
 

@@ -458,18 +458,32 @@ function loadPages() {
 
     if (data.faq) {
       page.faqItems = [];
-      const sections = body.split(/\n## /).slice(1);
-      for (const section of sections) {
+      const answerFrom = (lines) => lines
+        .join(" ")
+        .replace(/^###.*$/gm, " ")
+        .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+        .replace(/[*`>#-]/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+
+      /* A page whose H2s are the questions (the FAQ and the pricing page) keeps
+         that shape. A page with sections of prose marks its FAQ as H3s under a
+         "Questions" H2, and only those H3s become schema questions. */
+      for (const section of body.split(/\n## /).slice(1)) {
         const [headingLine, ...rest] = section.split("\n");
         const question = headingLine.trim();
-        const answer = rest
-          .join(" ")
-          .replace(/^###.*$/gm, " ")
-          .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
-          .replace(/[*`>#-]/g, " ")
-          .replace(/\s+/g, " ")
-          .trim();
-        if (question && answer) page.faqItems.push({ question, answer });
+        if (!question.endsWith("?")) continue;
+        const answer = answerFrom(rest);
+        if (answer) page.faqItems.push({ question, answer });
+      }
+      const faqSection = body.match(/\n## (?:Questions|Frequently asked questions)\n([\s\S]*?)(?=\n## |$)/i);
+      if (faqSection) {
+        for (const sub of faqSection[1].split(/\n### /).slice(1)) {
+          const [headingLine, ...rest] = sub.split("\n");
+          const question = headingLine.trim();
+          const answer = answerFrom(rest);
+          if (question && answer) page.faqItems.push({ question, answer });
+        }
       }
     }
 

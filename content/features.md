@@ -31,7 +31,7 @@ One page for each part of the app. Each line below says what is on that page, an
 
 ## Quoting and the job
 
-- [Quote by talking](/features/voice-quotes.html): speak the job and the quote is written with your own rates for you to check.
+- [Quote by talking](/features/voice-quotes.html): speak the job and the quote is written line by line with the prices you say, for you to check.
 - [Quotes](/features/quotes.html): a priced quote you send, and the customer's answer written down.
 - [Jobs](/features/jobs.html): the job, its photos, notes and costs in one place.
 - [The diary](/features/scheduling.html): busy days, multi-day jobs, and a job that moves itself to In Progress on its start date.

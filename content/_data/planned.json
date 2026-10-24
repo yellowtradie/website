@@ -1,8 +1,4 @@
 [
-  "features/voice-quotes",
-  "features/quotes",
-  "features/invoices",
-  "features/jobs",
   "features/missed-calls",
   "features/chasing",
   "features/customer-messages",
