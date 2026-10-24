@@ -12,6 +12,16 @@
       ]
     },
     {
+      "heading": "Tools",
+      "links": [
+        { "label": "Free calculators", "page": "tools" },
+        { "label": "VAT calculator", "page": "tools/vat-calculator" },
+        { "label": "Remove VAT calculator", "page": "tools/remove-vat-calculator" },
+        { "label": "CIS calculator", "page": "tools/cis-calculator" },
+        { "label": "Job profit calculator", "page": "tools/job-profit-calculator" }
+      ]
+    },
+    {
       "heading": "Company",
       "links": [
         { "label": "About", "page": "about" },

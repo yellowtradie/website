@@ -401,6 +401,89 @@ const FORM_ENDPOINT = "https://formspree.io/f/xrpbqypw";
   update();
 })();
 
+/* Calculators for the tools pages. Each block checks its own marker and
+ * returns if it is not on the page, so one page never breaks another.
+ */
+(function () {
+  var fmt = new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP", minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  var fmt0 = new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP", minimumFractionDigits: 0, maximumFractionDigits: 0 });
+  var pct = new Intl.NumberFormat("en-GB", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+
+  var vat = document.querySelector("[data-vat-calc]");
+  if (vat) {
+    var vAmt = vat.querySelector("[data-vat-amount]");
+    var vRate = vat.querySelector("[data-vat-rate]");
+    var vMode = vat.querySelector("[data-vat-mode]");
+    var vRes = vat.querySelector("[data-vat-result]");
+    function vatUpdate() {
+      var a = Math.max(0, Number(vAmt.value) || 0);
+      var r = Number(vRate.value) || 0;
+      var m = vMode.value;
+      var rate = r / 100;
+      var net, vatAmt, total;
+      if (m === "add") { net = a; vatAmt = net * rate; total = net + vatAmt; vRes.textContent = fmt.format(net) + " plus " + fmt.format(vatAmt) + " VAT is " + fmt.format(total) + " at " + r + "%. Net " + fmt.format(net) + ". VAT " + fmt.format(vatAmt) + ". Total " + fmt.format(total) + "."; }
+      else { total = a; net = r === 0 ? total : total / (1 + rate); vatAmt = total - net; vRes.textContent = fmt.format(total) + " holds " + fmt.format(vatAmt) + " VAT at " + r + "%. Net " + fmt.format(net) + ". VAT " + fmt.format(vatAmt) + "."; }
+    }
+    vAmt.addEventListener("input", vatUpdate); vRate.addEventListener("change", vatUpdate); vMode.addEventListener("change", vatUpdate); vatUpdate();
+  }
+
+  var rvc = document.querySelector("[data-remove-vat-calc]");
+  if (rvc) {
+    var rAmt = rvc.querySelector("[data-rvc-amount]");
+    var rRate = rvc.querySelector("[data-rvc-rate]");
+    var rRes = rvc.querySelector("[data-rvc-result]");
+    function rvcUpdate() {
+      var total = Math.max(0, Number(rAmt.value) || 0);
+      var r = Number(rRate.value) || 0;
+      var rate = r / 100;
+      var net = r === 0 ? total : total / (1 + rate);
+      var vatAmt = total - net;
+      rRes.textContent = fmt.format(total) + " at " + r + "% holds " + fmt.format(vatAmt) + " VAT. Net " + fmt.format(net) + ".";
+    }
+    rAmt.addEventListener("input", rvcUpdate); rRate.addEventListener("change", rvcUpdate); rvcUpdate();
+  }
+
+  var cis = document.querySelector("[data-cis-calc]");
+  if (cis) {
+    var cGross = cis.querySelector("[data-cis-gross]");
+    var cMat = cis.querySelector("[data-cis-materials]");
+    var cVat = cis.querySelector("[data-cis-vat]");
+    var cRate = cis.querySelector("[data-cis-rate]");
+    var cRes = cis.querySelector("[data-cis-result]");
+    function cisUpdate() {
+      var gross = Math.max(0, Number(cGross.value) || 0);
+      var mat = Math.max(0, Number(cMat.value) || 0);
+      var vatAmt = Math.max(0, Number(cVat.value) || 0);
+      var r = Number(cRate.value) || 0;
+      var liable = Math.max(0, gross - mat - vatAmt);
+      var ded = liable * (r / 100);
+      var paid = gross - ded;
+      cRes.textContent = "Labour for CIS " + fmt.format(liable) + ". CIS at " + r + "% is " + fmt.format(ded) + ". You pay " + fmt.format(paid) + " and send " + fmt.format(ded) + " to HMRC.";
+    }
+    cGross.addEventListener("input", cisUpdate); cMat.addEventListener("input", cisUpdate); cVat.addEventListener("input", cisUpdate); cRate.addEventListener("change", cisUpdate); cisUpdate();
+  }
+
+  var jp = document.querySelector("[data-job-profit-calc]");
+  if (jp) {
+    var jInc = jp.querySelector("[data-jp-income]");
+    var jMat = jp.querySelector("[data-jp-materials]");
+    var jLab = jp.querySelector("[data-jp-labour]");
+    var jOth = jp.querySelector("[data-jp-other]");
+    var jRes = jp.querySelector("[data-jp-result]");
+    function jpUpdate() {
+      var inc = Math.max(0, Number(jInc.value) || 0);
+      var mat = Math.max(0, Number(jMat.value) || 0);
+      var lab = Math.max(0, Number(jLab.value) || 0);
+      var oth = Math.max(0, Number(jOth.value) || 0);
+      var costs = mat + lab + oth;
+      var profit = inc - costs;
+      var margin = inc > 0 ? (profit / inc) * 100 : 0;
+      jRes.textContent = "Costs " + fmt.format(costs) + ". Profit " + fmt.format(profit) + ". Margin " + pct.format(margin) + "%.";
+    }
+    jInc.addEventListener("input", jpUpdate); jMat.addEventListener("input", jpUpdate); jLab.addEventListener("input", jpUpdate); jOth.addEventListener("input", jpUpdate); jpUpdate();
+  }
+})();
+
 /* The button under his thumb.
  *
  * Phones only (the stylesheet owns that rule). It appears once the hero is

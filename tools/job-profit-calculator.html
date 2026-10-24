@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Job profit calculator | What a job really made</title>
+<meta name="description" content="Work out what a job made from income less labour, materials and other costs. Free on the page, and built into the app for your own jobs.">
+<link rel="canonical" href="https://yellowtradie.com/tools/job-profit-calculator.html">
+<link rel="icon" href="assets/logo-mark.svg?v=6" type="image/svg+xml">
+<meta name="theme-color" content="#1a181a">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="YellowTradie">
+<meta property="og:title" content="Job profit calculator | What a job really made">
+<meta property="og:description" content="Work out what a job made from income less labour, materials and other costs. Free on the page, and built into the app for your own jobs.">
+<meta property="og:url" content="https://yellowtradie.com/tools/job-profit-calculator.html">
+<meta property="og:image" content="https://yellowtradie.com/assets/hero.webp?v=5">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="alternate" type="application/rss+xml" title="YellowTradie what's new" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=28">
+
+<!-- The visitor's choice about being counted, read before the tag can load.
+     This has to be inline and above the tag, and it is not optional. gtag.js is
+     async, so it can run before app.js at the bottom of the body gets a chance
+     to read the stored choice: measured on 2026-09-23, doing it the other way
+     round still sent one page view for a visitor who had switched it off. -->
+<script>
+  (function () {
+    try {
+      if (window.localStorage.getItem("yt_ga_off") === "1") {
+        window["ga-disable-G-DZZT654SCD"] = true;
+      }
+    } catch (e) { /* no storage: nothing stored, so nothing to honour */ }
+  })();
+</script>
+
+<!-- Google tag (gtag.js). One property for the whole site: the Measurement ID
+     below is YellowTradie's own. It sits in the head so a visit is counted when
+     the page opens rather than after everything else has loaded. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DZZT654SCD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DZZT654SCD');
+</script>
+</head>
+<body>
+
+<!-- This file is generated from content/tools/job-profit-calculator.md by build.mjs.
+     Edit the text file, not this page. Header, nav, breadcrumb, footer and the
+     page's search data live once, in content/_layouts/page.html. -->
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="/" aria-label="YellowTradie home">
+      <img class="logo-mark" src="assets/logo-mark.svg" width="32" height="32" alt="">
+      <span class="logo-word">YellowTradie</span>
+    </a>
+
+    <nav aria-label="Main">
+      <ul class="nav">
+
+        <li><a href="/#how">What it does</a></li>
+
+        <li><a href="/#why">Why it is different</a></li>
+
+        <li><a href="/#faq">Questions</a></li>
+
+        <li><a href="/changelog.html">What's new</a></li>
+
+      </ul>
+    </nav>
+
+    <a class="btn btn--sm btn--solid" href="/#early-access">Get early access</a>
+
+  </div>
+</header>
+
+<main>
+
+  <section class="section">
+    <div class="wrap">
+<p class="eyebrow tertiary"><a href="/">Home</a> / Tools / Job profit calculator</p>
+      <div class="legal">
+<h1 class="display" id="job-profit-calculator">Job profit calculator</h1>
+<p>What a job made is income less what it cost you. Put in the figures and the calculator shows profit in pounds and margin in percent. The page shows the sum in words so it is useful without the calculator.</p>
+<p>This public version takes figures you type. The version inside the app reads your own jobs and costs, so you type nothing twice.</p>
+<div class="calc" id="job-profit-calc" data-job-profit-calc>
+  <div class="calc-field">
+    <label for="jp-income">Income for the job (£)</label>
+    <input type="number" id="jp-income" inputmode="decimal" min="0" step="0.01" value="1200" data-jp-income>
+  </div>
+  <div class="calc-field">
+    <label for="jp-materials">Materials (£)</label>
+    <input type="number" id="jp-materials" inputmode="decimal" min="0" step="0.01" value="350" data-jp-materials>
+  </div>
+  <div class="calc-field">
+    <label for="jp-labour">Labour you paid out (£)</label>
+    <input type="number" id="jp-labour" inputmode="decimal" min="0" step="0.01" value="300" data-jp-labour>
+  </div>
+  <div class="calc-field">
+    <label for="jp-other">Other costs (£)</label>
+    <input type="number" id="jp-other" inputmode="decimal" min="0" step="0.01" value="45" data-jp-other>
+  </div>
+  <p class="calc-result" role="status" aria-live="polite" data-jp-result></p>
+  <p class="calc-note">Profit is income minus costs. Margin is profit divided by income. In the app, costs are read from the job’s own records.</p>
+</div>
+<h2 class="display display--xs" id="how-to-work-it-out">How to work it out</h2>
+<p>Add up what the job cost you. That is materials plus labour you paid to a subbie or day worker plus other costs such as skip hire, parking, fuel and plant hire. Take that total from the income the customer paid.</p>
+<p>Profit equals income minus costs. Margin equals profit divided by income, times 100.</p>
+<p>Example. Income £1,200. Materials £350. Labour £300. Other £45. Costs are £695. Profit is £505. Margin is 42.1 percent.</p>
+<p>If you do the work yourself with no subbie, labour paid out is nil. The cost is your time valued as you price it, or nil if you only want cash profit.</p>
+<h2 class="display display--xs" id="what-counts-as-a-cost">What counts as a cost</h2>
+<p>Count what you paid because of that job. Materials on the van for that job, the subbie’s day, the skip, the parking. Do not count your monthly phone bill in full for one job. If a cost covers many jobs, split it fairly or keep it out of job profit and count it as overhead.</p>
+<p>If CIS was deducted from your income as a subcontractor, the deduction is an advance towards tax, not a job cost. It does not reduce profit on the job. Your profit is before that deduction is held by the contractor. The same is true for VAT where you are VAT registered. Work on net figures if VAT is in both income and materials.</p>
+<h2 class="display display--xs" id="common-pitfalls">Common pitfalls</h2>
+<p>Forgetting travel and parking can make a job look paid when it was not. Quoting to win and leaving labour out does the same. Put every cost on the job when you pay it, so the profit you read at the end is real.</p>
+<p>Pricing on margin without counting profit in pounds is another pitfall. A high margin on a small price can still be a small bank balance. Read both figures. Profit in pounds pays bills. Margin tells you if the price was right.</p>
+<h2 class="display display--xs" id="the-version-in-the-app">The version in the app</h2>
+<p>This page takes figures you type. In the app you do not type them again.</p>
+<p>YellowTradie holds the job, the quote, the invoice, the timesheet hours that become a labour line, and the costs you add with a receipt. The job page shows income for that job from its own invoice and costs from its own cost records. Profit and margin are worked from those records, not from figures you retype.</p>
+<p>That is the part no public calculator can copy. A public calculator works with what you type. The app works with what you kept.</p>
+<h2 class="display display--xs" id="questions">Questions</h2>
+<h3 class="display display--xs" id="what-is-the-difference-between-markup-and-margin">What is the difference between markup and margin?</h3>
+<p>Markup is profit over costs. Margin is profit over income. A £500 job that costs £400 has £100 profit. Markup is 25 percent. Margin is 20 percent. This calculator shows margin.</p>
+<h3 class="display display--xs" id="should-i-include-my-own-labour">Should I include my own labour?</h3>
+<p>If you want the true cost of the job, yes. Value your own days at the day rate you need. If you only want cash left after buying materials and paying a subbie, leave your own labour out and read the result as cash profit.</p>
+<h3 class="display display--xs" id="does-this-handle-vat">Does this handle VAT?</h3>
+<p>Work on net figures where you are VAT registered. Income net of VAT and materials net of VAT. The profit figure is then net of VAT. Where you are not VAT registered, the gross figures are fine because no VAT sits outside.</p>
+<h3 class="display display--xs" id="does-cis-affect-job-profit">Does CIS affect job profit?</h3>
+<p>CIS deductions held by a contractor are not a job cost. They are tax paid in advance. Count income before the deduction when you work out profit, and count the deduction as tax held, not as cost.</p>
+<a class="btn btn--lg btn--solid" href="/#early-access">Join the list</a>
+<p>The app is not in the shops yet. Join the list and we will tell you the day it opens.</p>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a class="logo" href="/" aria-label="YellowTradie home" style="margin-bottom: 16px;">
+          <img class="logo-mark" src="assets/logo-mark.svg" width="32" height="32" alt="">
+          <span class="logo-word">YellowTradie</span>
+        </a>
+        <p class="tertiary" style="font-size: 14px; line-height: 17px; max-width: 28em;">A phone app that runs the whole job for a solo tradesperson, from the missed call to the quarter closed off.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>The site</h3>
+        <ul>
+
+          <li><a href="/#how">What it does</a></li>
+
+          <li><a href="/#why">Why it is different</a></li>
+
+          <li><a href="/#faq">Questions</a></li>
+
+          <li><a href="/changelog.html">What's new</a></li>
+
+          <li><a href="/#early-access">Get early access</a></li>
+
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Tools</h3>
+        <ul>
+
+          <li><a href="/tools.html">Free calculators</a></li>
+
+          <li><a href="/tools/vat-calculator.html">VAT calculator</a></li>
+
+          <li><a href="/tools/remove-vat-calculator.html">Remove VAT calculator</a></li>
+
+          <li><a href="/tools/cis-calculator.html">CIS calculator</a></li>
+
+          <li><a href="/tools/job-profit-calculator.html">Job profit calculator</a></li>
+
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul>
+
+          <li><a href="mailto:hello@yellowtradie.com">hello@yellowtradie.com</a></li>
+
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-base">
+
+      <p><a href="/privacy.html">Privacy</a></p>
+
+      <p><a href="/terms.html">Terms of use</a></p>
+
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://yellowtradie.com/#organization",
+      "name": "YellowTradie",
+      "url": "https://yellowtradie.com/",
+      "logo": "https://yellowtradie.com/assets/logo-mark.svg",
+      "email": "hello@yellowtradie.com",
+      "description": "YellowTradie makes a phone app that runs the whole job for a solo tradesperson.",
+      "areaServed": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://yellowtradie.com/#website",
+      "url": "https://yellowtradie.com/",
+      "name": "YellowTradie",
+      "inLanguage": "en-GB",
+      "publisher": {
+        "@id": "https://yellowtradie.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://yellowtradie.com/tools/job-profit-calculator.html#webpage",
+      "url": "https://yellowtradie.com/tools/job-profit-calculator.html",
+      "name": "Job profit calculator | What a job really made",
+      "description": "Work out what a job made from income less labour, materials and other costs. Free on the page, and built into the app for your own jobs.",
+      "isPartOf": {
+        "@id": "https://yellowtradie.com/#website"
+      },
+      "datePublished": "2026-10-24",
+      "dateModified": "2026-10-24",
+      "inLanguage": "en-GB",
+      "publisher": {
+        "@id": "https://yellowtradie.com/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://yellowtradie.com/tools/job-profit-calculator.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://yellowtradie.com/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Job profit calculator",
+          "item": "https://yellowtradie.com/tools/job-profit-calculator.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<script src="app.js"></script>
+</body>
+</html>
