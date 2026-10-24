@@ -17,6 +17,11 @@
  *     names pages; a page that is not live cannot reach the footer.
  *  3. The sitemap is generated from the published set: an index plus one file
  *     per page type.
+ *  4. A link to a page named in `content/_data/planned.json` is hidden the same
+ *     way. Those are pages the library will hold but no session has written
+ *     yet, so a hub can name its whole set from the first session and the
+ *     links appear as each page lands. The register may not name a page that
+ *     exists: that entry is stale and the build refuses it.
  *
  *  Usage: node build.mjs
  * ========================================================================== */
@@ -309,10 +314,12 @@ function attrValue(attrs, name) {
 }
 
 /** Rule 1, applied to words written inside a page. */
-function filterBodyLinks(html, page, pages, published) {
+function filterBodyLinks(html, page, pages, published, planned) {
   const isHidden = (href) => {
     const slug = targetSlug(href, page.data.slug);
-    return slug && pages.has(slug) && !published.has(slug);
+    if (!slug) return false;
+    if (planned.has(slug)) return true;
+    return pages.has(slug) && !published.has(slug);
   };
 
   // A list item that exists only to carry an unpublished link is not drawn.
@@ -567,7 +574,17 @@ function main() {
   const navConfig = readJson(join(LAYOUTS, "nav.json"));
   const footerConfig = readJson(join(LAYOUTS, "footer.json"));
   const layout = readFileSync(join(LAYOUTS, "page.html"), "utf8");
+  const planned = new Set(readJson(join(DATA, "planned.json"), []));
   const pages = loadPages();
+
+  for (const slug of planned) {
+    if (pages.has(slug)) {
+      throw new Error(
+        `planned.json names "${slug}" but content/${slug}.md exists. ` +
+        "The page has been written, so its link no longer needs hiding. Remove it from planned.json.",
+      );
+    }
+  }
 
   if (!pages.has("index")) throw new Error("content/index.md is missing: the home page is not optional");
   if (!pages.get("index").data.publish) throw new Error("content/index.md must stay published: it is the home page");
@@ -583,7 +600,13 @@ function main() {
     }
   }
 
-  const manifest = { generated_at: new Date().toISOString(), pages: [], published: [...published], unpublished: [...unpublished] };
+  const manifest = {
+    generated_at: new Date().toISOString(),
+    pages: [],
+    published: [...published],
+    unpublished: [...unpublished],
+    planned: [...planned],
+  };
 
   for (const page of pages.values()) {
     page.data.site_base = site.base_url;
@@ -591,7 +614,7 @@ function main() {
       ? page.body
       : renderMarkdown(page.body, page.data.slug);
 
-    const content = filterBodyLinks(bodyHtml, page, pages, published);
+    const content = filterBodyLinks(bodyHtml, page, pages, published, planned);
     const schema = schemaFor(page, site, pages, published);
     const nav = navFor(page, pages, published, navConfig);
     const footer = footerFor(page, pages, published, footerConfig);
@@ -604,7 +627,7 @@ function main() {
         schema,
         nav,
         footer,
-        body_end: filterBodyLinks(page.end, page, pages, published),
+        body_end: filterBodyLinks(page.end, page, pages, published, planned),
         sources_html: sourcesFor(page),
         breadcrumb_line: breadcrumbLine(page),
         header_button: page.data.chrome !== "home" ? "1" : "",
@@ -623,7 +646,7 @@ function main() {
     // Rule 1's safety net: no anchor to an unpublished page may survive.
     for (const m of html.matchAll(/<a\b[^>]*href="([^"]+)"/gi)) {
       const slug = targetSlug(m[1], page.data.slug);
-      if (slug && unpublished.has(slug)) {
+      if (slug && (unpublished.has(slug) || planned.has(slug))) {
         throw new Error(`${page.data.slug}: rendered an anchor to unpublished page "${slug}" (${m[1]})`);
       }
     }

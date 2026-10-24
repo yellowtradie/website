@@ -10,7 +10,8 @@
  *      under this system. The four pages that were live before the gate
  *      existed are named and exempt: their words are frozen because their
  *      look is frozen. The exemption is a list, not a shrug.
- *    - every internal link resolves to a PUBLISHED page
+ *    - every internal link resolves to a PUBLISHED page, and a link to a page
+ *      that is planned but not yet written is hidden (content/_data/planned.json)
  *    - every external link answers (cached for a week)
  *    - the schema the page type needs is present
  *    - the banned words are absent
@@ -34,6 +35,11 @@ const BUILD = join(HERE, "_build");
 const CACHE = join(HERE, ".cache", "links.json");
 const CONFIG = JSON.parse(readFileSync(join(HERE, "content", "_data", "gate.json"), "utf8"));
 const MANIFEST = JSON.parse(readFileSync(join(BUILD, "manifest.json"), "utf8"));
+const PLANNED = new Set(
+  existsSync(join(HERE, "content", "_data", "planned.json"))
+    ? JSON.parse(readFileSync(join(HERE, "content", "_data", "planned.json"), "utf8"))
+    : [],
+);
 
 const failures = [];
 const passes = [];
@@ -286,6 +292,10 @@ for (const page of MANIFEST.pages) {
       fail(label, `links to unpublished page "${slug}" (${href})`);
       continue;
     }
+    if (PLANNED.has(slug)) {
+      fail(label, `draws a link to a page that has not been written yet: "${slug}" (${href})`);
+      continue;
+    }
     if (pages.has(slug)) {
       if (!published.has(slug)) fail(label, `links to unpublished page "${slug}"`);
     } else {
@@ -312,6 +322,32 @@ for (const page of MANIFEST.pages) {
   }
 }
 
+/* One price, stated in the pricing page and in the machine files the site and
+   the answer engines read. A price that drifts between them is the one piece of
+   copy a trader can hold us to. */
+const siteData = JSON.parse(readFileSync(join(HERE, "content", "_data", "site.json"), "utf8"));
+const offerPrice = siteData.software && siteData.software.offers && siteData.software.offers.price;
+const llmsPath = join(HERE, "llms.txt");
+const llmsText = existsSync(llmsPath) ? readFileSync(llmsPath, "utf8") : "";
+if (!offerPrice) {
+  fail("site.json", "has no price for the app");
+} else {
+  if (!llmsText.includes(`£${offerPrice}`)) {
+    fail("llms.txt", `does not carry the price £${offerPrice} that site.json states`);
+  }
+  if (pages.has("pricing")) {
+    const pricingHtml = readFileSync(join(HERE, pages.get("pricing").preview), "utf8");
+    if (!visibleText(pricingHtml).includes(`£${offerPrice}`)) {
+      fail("pricing", `does not carry £${offerPrice}, the price in site.json`);
+    }
+    const software = graphOf(pricingHtml).find((n) => n["@type"] === "SoftwareApplication");
+    const schemaPrice = software && software.offers && software.offers.price;
+    if (schemaPrice !== offerPrice) {
+      fail("pricing", `schema price is ${schemaPrice}, site.json says ${offerPrice}`);
+    }
+  }
+}
+
 /* external links answer */
 for (const url of [...external].sort()) {
   const answer = await externalAnswers(url, linkCache);
@@ -319,22 +355,49 @@ for (const url of [...external].sort()) {
 }
 
 /* Rule 1, proved rather than assumed: a link written in a page's source to a
-   draft is not drawn in the rendered page. Three such links exist today (about
-   to the FAQ, the FAQ to about, the policy to the FAQ), so this counter has to
-   be above zero. */
+   draft, or to a page planned but not yet written, is not drawn in the rendered
+   page. Three links to drafts exist today (about to the FAQ, the FAQ to about,
+   the policy to the FAQ) and the features hub names all seventeen of its pages,
+   so this counter has to be above zero. */
 let hiddenLinks = 0;
 for (const page of MANIFEST.pages) {
   const src = join(HERE, "content", `${page.slug}.md`);
   if (!existsSync(src)) continue;
   const markdown = readFileSync(src, "utf8");
   const html = readFileSync(join(HERE, page.preview), "utf8");
-  for (const m of markdown.matchAll(/\]\(\/([a-z0-9-]+)\.html\)/gi)) {
+  for (const m of markdown.matchAll(/\]\(\/([a-z0-9/-]+?)\.html\)/gi)) {
     const slug = m[1];
-    if (!unpublished.has(slug)) continue;
+    if (!unpublished.has(slug) && !PLANNED.has(slug)) continue;
     hiddenLinks += 1;
     if (new RegExp(`<a\\b[^>]*href="/${slug}\\.html"`, "i").test(html)) {
       fail(page.slug, `drew a link to unpublished page "${slug}"`);
     }
+  }
+}
+
+/* The planned register is the list of pages not written yet. An entry that has
+   a file is stale, and a planned page must never be in the manifest. */
+for (const slug of PLANNED) {
+  if (existsSync(join(HERE, "content", `${slug}.md`))) {
+    fail("planned.json", `names "${slug}" but content/${slug}.md exists: remove the stale entry`);
+  }
+  if (pages.has(slug)) fail("planned.json", `names "${slug}" but the page is in the manifest`);
+}
+
+/* The features hub says every one of its seventeen pages is linked. The links
+   are hidden until each page lands, so the proof is in the source. */
+const featuresSrc = join(HERE, "content", "features.md");
+if (existsSync(featuresSrc)) {
+  const markdown = readFileSync(featuresSrc, "utf8");
+  const featurePlanned = [...PLANNED].filter((slug) => slug.startsWith("features/"));
+  for (const slug of featurePlanned) {
+    if (!markdown.includes(`(/${slug}.html)`)) {
+      fail("features", `does not link "${slug}"`);
+    }
+  }
+  const linked = (markdown.match(/\]\(\/features\/[a-z0-9-]+\.html\)/g) || []).length;
+  if (linked !== featurePlanned.length) {
+    fail("features", `links ${linked} feature pages, planned.json holds ${featurePlanned.length}`);
   }
 }
 

@@ -1514,6 +1514,9 @@ body.modal-open .sticky-cta { display: none; }
   text-decoration: none;
 }
 .legal a:hover { border-bottom-color: var(--black); }
+/* A button inside a text page keeps the button's own dress. The prose link's
+   underline is for links in sentences, not for the one door at the foot. */
+.legal .btn { border-bottom: 0; font-weight: 800; }
 .legal code {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 14px;

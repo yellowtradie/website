@@ -90,6 +90,12 @@ node copy-guard.mjs   # the plagiarism guard
 - **A link to an unpublished page is hidden, not drawn.** An inline link keeps its
   words and loses its `<a>`. A nav or footer entry is not rendered at all. The
   build scans its own output and fails if an anchor to a draft survives.
+- **A link to a page that is planned but not written yet is hidden the same way.**
+  `content/_data/planned.json` lists those pages, so a hub can name its whole set
+  from the first session and each name becomes a link the day its page lands. An
+  entry that has a file is stale: the build and the gate both refuse it.
+- **One price, checked against the machine files.** The gate fails if the pricing
+  page, `site.json` and `llms.txt` do not state the same figure.
 - **The footer and the sitemap are generated from the published set**, so neither
   can point at a page that is not there.
 - **`_build/` is the preview and the input to both checks.** It is not deployed.
