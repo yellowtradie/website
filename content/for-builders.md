@@ -93,7 +93,7 @@ When a sent invoice is past its due date, the chase card appears on Home. The me
 
 Every payment is a row in the log with the date, the amount, the method and the bill it settled. A refund is a negative row so the cash in figure is the sum of the log. VAT sits on the quote and the bill and in the quarterly report. Tax and Making Tax Digital are on the [tax pages](/features/tax.html).
 
-## The small things that save you a second trip
+## Details that save a return visit
 
 ### A note you speak on site
 

@@ -47,7 +47,7 @@ The customer asks for the paperwork that goes with the work. That is your own re
 
 The leak is fixed, the pipe is clipped, the floor is back down. You open the finished job and the next step is Invoice it. The bill carries the lines from the quote, the VAT you set, your bank details and the invoice number as the payment reference. You send the PDF and the link before you move off.
 
-### The boiler the customer bought themselves
+### The boiler they supplied themselves
 
 Some jobs are labour only. You still quote the work, still keep the day and the address, still photograph the finished run. The materials line shows what you fitted, and the receipt is your own if you bought the fittings. The bill is priced the same way.
 
@@ -89,7 +89,7 @@ When a sent invoice is past its due date, the chase card appears on Home. The me
 
 Every payment is a row in the log with the date, the amount, the method and the bill it settled. A refund is a negative row so the cash in figure is the sum of the log. VAT sits on the quote and the bill and in the quarterly report. Tax and Making Tax Digital are on the [tax pages](/features/tax.html).
 
-## The small things that save you a second trip
+## Details that save a return visit
 
 ### A note you speak on the job
 
