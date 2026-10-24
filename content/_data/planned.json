@@ -1,8 +1,4 @@
 [
-  "features/missed-calls",
-  "features/chasing",
-  "features/customer-messages",
-  "features/payments",
   "features/customer-page",
   "features/ai-assistant",
   "features/expenses",
