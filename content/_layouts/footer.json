@@ -1,0 +1,29 @@
+{
+  "inner": [
+    {
+      "heading": "The site",
+      "first": true,
+      "links": [
+        { "label": "What it does", "page": "index", "hash": "how" },
+        { "label": "Why it is different", "page": "index", "hash": "why" },
+        { "label": "Questions", "page": "index", "hash": "faq" },
+        { "label": "What's new", "page": "changelog" },
+        { "label": "Get early access", "page": "index", "hash": "early-access" }
+      ]
+    },
+    {
+      "heading": "Company",
+      "links": [
+        { "label": "About", "page": "about" },
+        { "label": "FAQ", "page": "faq" },
+        { "label": "Editorial policy", "page": "editorial-policy" }
+      ]
+    },
+    {
+      "heading": "Contact",
+      "links": [
+        { "label": "hello@yellowtradie.com", "href": "mailto:hello@yellowtradie.com" }
+      ]
+    }
+  ]
+}

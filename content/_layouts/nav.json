@@ -1,0 +1,14 @@
+{
+  "home": [
+    { "label": "What it does", "page": "index", "hash": "how" },
+    { "label": "What it looks like", "page": "index", "hash": "look" },
+    { "label": "Why it is different", "page": "index", "hash": "why" },
+    { "label": "What's new", "page": "changelog" }
+  ],
+  "inner": [
+    { "label": "What it does", "page": "index", "hash": "how" },
+    { "label": "Why it is different", "page": "index", "hash": "why" },
+    { "label": "Questions", "page": "index", "hash": "faq" },
+    { "label": "What's new", "page": "changelog", "mark_current": true }
+  ]
+}

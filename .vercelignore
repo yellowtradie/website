@@ -1,0 +1,6 @@
+_build/
+.cache/
+content/
+build.mjs
+check.mjs
+copy-guard.mjs

@@ -1,13 +1,25 @@
 # yellowtradie-site
 
-The YellowTradie early access landing page. Plain HTML, CSS and JavaScript.
-No build step, no framework, no dependencies. Drop the folder on any host.
+The YellowTradie site. Every page is one Markdown file in `content/`, rendered
+by `build.mjs` into the HTML at the root. Plain CSS and JavaScript, no framework,
+no dependencies. The generated HTML is committed, so any static host serves the
+folder as it is.
 
 ## Files
 
 | File | What it is |
 |---|---|
-| `index.html` | The page. All the copy lives here in plain text, on eight screens, with the detail folded into `<details>` elements |
+| `content/` | The library: one Markdown file per page, with the frontmatter in `content-build-plan-2026-10-21.md` §5.2. The words live here, not in the HTML |
+| `content/_layouts/page.html` | The one frame: header, nav, breadcrumb, footer and the page's schema block |
+| `content/_layouts/nav.json` | The top menu, by page slug. An entry whose page is not published is not drawn |
+| `content/_layouts/footer.json` | The footer link map, by page slug. It grows as pages publish and cannot point at a missing page |
+| `build.mjs` | Renders every page into `_build/`, copies the published ones to the root and writes the sitemap |
+| `check.mjs` | The quality gate: one H1, metadata, links, schema, banned words, claims, word counts, no name, sitemap and footer from the published set |
+| `copy-guard.mjs` | Fetches the competitor's public pages once a week, stores a hash of every sentence and fails any page of ours that shares one |
+| `index.html` | Generated from `content/index.md`. The page, on eight screens |
+| `changelog.html` | Generated from `content/changelog.md`. What's new: dated entries on the site and early access |
+| `privacy.html` | Generated from `content/privacy.md`. Privacy and cookies. Carries the switch that turns the Google tag off. Footer link text is just "Privacy": the owner's call, 2026-09-23, the long version read as jargon |
+| `terms.html` | Generated from `content/terms.md`. Terms of use. Reading the site, the calculator, joining the early access list, the limit of liability and which law applies |
 | `changelog.html` | What's new: dated entries on the site and early access. The second page the AEO audit needs for internal links |
 | `privacy.html` | Privacy and cookies. The only page with prose rather than cards. Carries the switch that turns the Google tag off. Footer link text is just "Privacy": the owner's call, 2026-09-23, the long version read as jargon |
 | `terms.html` | Terms of use. Reading the site, the calculator, joining the early access list, the limit of liability and which law applies. The suite checks the page and that every footer link on all four pages resolves |
@@ -15,7 +27,8 @@ No build step, no framework, no dependencies. Drop the folder on any host.
 | `assets/noise-page.png` | The grain on the page background. A 128px tiling PNG, dyed to `#FBFAED`, shifted to an exact zero mean so the paper keeps its colour. There was a second tile for the yellow band until 2026-10-22; the band came off the page and the tile went with it. Do not swap this for a CSS `feTurbulence` filter: that one is not mean-neutral and darkens the paper (see the token comment in `styles.css`) |
 | `app.js` | The signup modal, the missed call calculator and the sticky phone bar. One setting to change: `FORM_ENDPOINT` |
 | `robots.txt` | Allows the AI crawlers and points at the sitemap |
-| `sitemap.xml` | Both pages |
+| `sitemap.xml` | Generated. An index that points at one file per page type, published pages only |
+| `sitemap-*.xml` | Generated layers: `sitemap-hub.xml`, `sitemap-post.xml`, `sitemap-legal.xml` and so on |
 | `llms.txt` | The fact sheet for answer engines, at the root where they read it. Keep it in step with `.well-known/llms.txt` |
 | `feed.xml` | RSS 2.0 for the changelog. Both pages point at it with `<link rel="alternate">` |
 | `.well-known/llms.txt` | The same fact sheet at the conventional path |
@@ -58,6 +71,42 @@ share data onward, or profile visitors, the exception stops applying and a
 consent banner becomes necessary. `scripts/verify-site-modal.mjs` holds the
 switch, the cookie names and the tag's placement.
 
+
+## The content system
+
+Every page is one Markdown file in `content/`. Its frontmatter carries the fields
+the content plan names: `slug`, `type`, `title`, `description`, `h1`, `eyebrow`,
+`publish`, `faq`, `breadcrumb`, `related` and `sources`. The shared frame lives
+once, in `content/_layouts/page.html`.
+
+```
+node build.mjs        # render every page, copy the live ones to the root, write the sitemap
+node check.mjs        # the quality gate
+node copy-guard.mjs   # the plagiarism guard
+```
+
+- **`publish: false` is the resting state.** A page with that flag is rendered to
+  `_build/` for the checks, and never to the site root.
+- **A link to an unpublished page is hidden, not drawn.** An inline link keeps its
+  words and loses its `<a>`. A nav or footer entry is not rendered at all. The
+  build scans its own output and fails if an anchor to a draft survives.
+- **The footer and the sitemap are generated from the published set**, so neither
+  can point at a page that is not there.
+- **`_build/` is the preview and the input to both checks.** It is not deployed.
+- **The sitemap is an index plus one file per page type** (`sitemap.xml` and
+  `sitemap-<type>.xml`).
+- **The copy guard reads the competitor's public pages once and stores a hash of
+  every sentence for a week.** A normal build makes no request. `--refresh` is
+  the only way to read early, and it is polite: robots.txt obeyed, one request
+  at a time, 600ms apart.
+- **`content/` is excluded from the deploy** by `.vercelignore`. The drafts are in
+  the repo, not on the web.
+
+The four pages that were hand-written before this system (`index`, `changelog`,
+`privacy`, `terms`) are converted. Their body markup was moved across byte for
+byte, so their words and their look did not change. Their metadata is named in
+`content/_data/gate.json` as exempt from the new length rule, because their
+words are frozen this session.
 
 ## The page, top to bottom (rebuilt 2026-09-22, rewritten 2026-10-03)
 
@@ -193,8 +242,8 @@ your inbox and in their dashboard, and you can export a CSV.
 
 **Netlify Forms.** If you host on Netlify, add `netlify` and a form name to the
 form tag and Netlify stores the submissions for you with no third party. Free
-tier is 100 submissions a month. This needs a small edit to `index.html` rather
-than `app.js`, so ask before switching.
+tier is 100 submissions a month. This needs a small edit to the form in `content/index.md`
+rather than `app.js`, so ask before switching.
 
 **The cheapest honest option.** A Google Form behind a button. It looks worse
 and leaks Google's styling, but it costs nothing and needs no code.
@@ -220,8 +269,8 @@ repo, so it answers "Permission denied to tishkaai". The helper pushes as the
 check the public page rather than the local preview, because `127.0.0.1:4173`
 always shows your edits whether they are deployed or not.
 
-If the folder ever moves to another host, any static host works because there is
-no build step.
+Run `node build.mjs` before you push. The generated HTML is committed, so the
+host needs no build step of its own, but it does not run the build for you.
 
 - **Netlify:** drag the folder onto app.netlify.com/drop.
 - **Cloudflare Pages:** connect the repo, leave the build command empty, set the

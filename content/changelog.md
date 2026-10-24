@@ -1,0 +1,224 @@
+---
+slug: changelog
+type: post
+title: What's new in YellowTradie | Site and early access changes
+description: What has changed on the YellowTradie site and in the early access programme, newest first. Written in plain words, with the date on every entry.
+h1: Changes to the site and to early access
+eyebrow: What's new
+publish: true
+faq: false
+breadcrumb: [Home, What's new]
+related: []
+sources: []
+chrome: inner
+footer_heading: The page
+footer_legal: false
+body_format: html
+container: false
+canonical: https://yellowtradie.com/changelog.html
+og_type: article
+og_title: What's new in YellowTradie
+og_description: What has changed on the site and in the early access programme, newest first.
+article_modified: 2026-10-03T19:00:00+01:00
+published: 2026-09-21
+updated: 2026-09-25
+priority: 0.6
+changefreq: weekly
+software: false
+legacy: true
+---
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow tertiary">What's new</p>
+      <h1 class="display">Changes to the site and to early access</h1>
+      <p class="lede muted" style="margin-top: 16px; max-width: 46em;">Newest first. Every entry carries its date. This page records what has actually changed, so you can see how the thing has moved rather than take our word for it.</p>
+
+      <h2 class="display display--xs group-title" style="margin-top: 40px;"><time datetime="2026-10-03">3 October 2026</time></h2>
+
+      <div class="grid" style="gap: 16px;">
+
+        <article class="card" id="old-copy-off">
+          <h3 class="display display--xs">The old words are off the page, and every button says Start free trial</h3>
+          <p>The front page carries the new copy and nothing else now. Everything the old page used to say has come off it: the thirteen questions and answers, the long paragraphs that were hidden behind each of the five steps, the heading about being built for one person with the paragraph under it, the line about handing jobs out to your lads, the promise under the first button, the three reasons on the yellow band, the page links across the footer and the email address in it, and the button that sat in the top corner. <strong>Five things were kept, on request:</strong> the missed call calculator with its two sliders, the sign-up form behind every button, the logo, and the privacy and terms links in the footer. <strong>Every button says Start free trial now and they are rounded pills,</strong> where they used to be square and say Get early access, and every one of them still opens the sign-up form. One thing worth saying plainly: the questions and the calculator were the two things the search engines and the AI assistants read most, so a page that reads better to a person has less in it for them.</p>
+        </article>
+
+        <article class="card" id="new-copy">
+          <h3 class="display display--xs">The words on the front page are new</h3>
+          <p>The front page has been rewritten from top to bottom. The headline is now "Do the Job. We'll Do the Paperwork." and the line under it says what the app does with your calls, your quotes, your invoices and your tax. The three cards about the problems of the job have gone, replaced by a table that sets the old way beside the YellowTradie way, one line a row. The six stops that explained the job are five now, called Lead, Quote, Job, Invoice and Tax, and every one still opens to the full detail behind it. The dark band carries four short pieces about the things you would actually use it for, in place of the longer table that was there. The page closes on the line about not going self employed to sit at a laptop at 10pm. <strong>One correction inside all of it, and it matters:</strong> an earlier draft of this copy said YellowTradie answers your calls. It does not, and it never will. There is no voice talking to your customer. The real thing is that the caller can leave a message when you miss the call, it is written out and filtered so the ones worth your time come first, and it reaches you as a transcript. The page says that now, and the check that runs over this site fails if the other version ever comes back. Nothing else moved: the price, the early access list, the questions, the calculator and the buttons that say "Get early access" are all as they were.</p>
+        </article>
+
+      </div>
+
+      <h2 class="display display--xs group-title" style="margin-top: 40px;"><time datetime="2026-09-27">27 September 2026</time></h2>
+
+      <div class="grid" style="gap: 16px;">
+
+        <article class="card" id="new-logo-mark">
+          <h3 class="display display--xs">A new logo mark, and the yellow comes off it</h3>
+          <p>The mark in the top corner of every page is a new drawing: a yellow tile with two black bars and a triangle cut into the top one. It replaces the yellow square with the letter T in it. The small picture in the browser tab is the same new mark, so the tab and the page agree. The yellow the whole site uses is taken straight off that mark, so there is one yellow rather than two that nearly match, and it is a little lighter and brighter than the yellow it replaces. Nothing else moved. The black is the same, the paper is the same warm off white with its grain over it, the layout is the same, and no words changed.</p>
+        </article>
+
+        <article class="card" id="why-photo-height">
+          <h3 class="display display--xs">The photograph in the dark section fills the band, and shows the room</h3>
+          <p>On a desktop the picture in the "Built for one person, not an office" band stood at a fixed height in its own column, and it read a little small beside the words. It now fills that band from the top edge to the bottom one, the way the picture in the top block fills its block. On a wide screen it also runs out to the right-hand edge of the window and shows most of the photograph rather than a strip of the middle of it. Its edges still fade into the black, so it reads as part of the section rather than as a picture dropped on top of it. The band itself is the same height it was, because the words and the table still decide that, and on a phone it is the same wide banner as before.</p>
+        </article>
+
+        <article class="card" id="why-photo">
+          <h3 class="display display--xs">A tradesperson now stands in the dark section</h3>
+          <p>The band that says "Built for one person, not an office" used to be words and a table on their own. There is a photograph of a sparky at an open consumer unit in it now, reading his phone with a tool belt on. It is not sitting in a box: its edges fade into the black, the same way the photograph in the top block does, so it reads as part of the section rather than as a picture dropped on top of it. On a desktop it stands in its own column to the right of the words. On a phone it is a wide banner under the words and above the table, cropped on his face and the phone in his hands. No words changed.</p>
+        </article>
+
+      </div>
+
+      <h2 class="display display--xs group-title" style="margin-top: 40px;"><time datetime="2026-09-25">25 September 2026</time></h2>
+
+      <div class="grid" style="gap: 16px;">
+
+        <article class="card" id="new-colours">
+          <h3 class="display display--xs">The colours have changed, and the paper has a grain</h3>
+          <p>The yellow is a deeper one now, the black is a shade lighter, and the page sits on a warm off white instead of a plain grey. The sections that were pale grey are the same off white, so the page reads as one sheet rather than as bands. That off white carries a fine grain, like paper rather than a screen, and the same grain sits over the yellow band. Nothing about the words, the layout or the sizes has changed.</p>
+        </article>
+
+        <article class="card" id="late-job">
+          <h3 class="display display--xs">The page now covers a job running over</h3>
+          <p>One job runs long and every job behind it is suddenly wrong. That is the third stop, <a href="/#how">Book it</a>, and it is the one stage of the job the page did not cover until now. In plain words: tell the app how far behind you are, and it works out the rest. Which jobs today are affected, their new times, and the message for each customer who needs telling, ready to send. Nothing moves and nothing is sent until you tap. Jobs further out are left alone, because you make the time back long before then. It is also a row in the comparison table, and a question with its own answer further down the page.</p>
+        </article>
+
+      </div>
+
+      <h2 class="display display--xs group-title" style="margin-top: 40px;"><time datetime="2026-09-23">23 September 2026</time></h2>
+
+      <div class="grid" style="gap: 16px;">
+
+        <article class="card" id="footer-trimmed">
+          <h3 class="display display--xs">The footer small print is gone, and the pages name nobody</h3>
+          <p>The two grey lines at the bottom of every page have come off. What is left there is the privacy link and the terms link, which is what the bottom of a page is for. The privacy page still says the screens show sample data, and so do the questions, so that is not lost. The privacy page and the terms page also stopped naming the person behind the business and now name the trading name only.</p>
+        </article>
+
+        <article class="card" id="terms-page">
+          <h3 class="display display--xs">Terms of use</h3>
+          <p>There is a new page, <a href="/terms.html">Terms of use</a>, linked at the bottom of every page next to the privacy one. It covers reading the site, using the missed call calculator with your own numbers, and what joining the early access list does and does not commit either side to. It says plainly that joining is not a booking, that no price is promised, and that early access is unfinished software given to you to try at no cost.</p>
+        </article>
+
+        <article class="card" id="privacy-page">
+          <h3 class="display display--xs">A privacy page, and a switch to turn the counting off</h3>
+          <p>There is a new page, <a href="/privacy.html">Privacy and cookies</a>, linked at the bottom of every page. It says in plain words what the early access form collects and why, who else sees it, how long it is kept, and how to have it removed. It names the two cookies the visit counting sets and how long they last, and it carries a switch that turns the counting off in that browser for good. The switch works in the browser rather than by asking you to fill anything in.</p>
+        </article>
+
+        <article class="card" id="visit-counting">
+          <h3 class="display display--xs">The site counts its own visits now</h3>
+          <p>Google's visit counting has been added to both pages, so we can see how many people look at the site and which parts they read. It records the visit and the page, and nothing is typed into any form by it. It does not change anything you see.</p>
+        </article>
+
+        <article class="card" id="signup-no-phone">
+          <h3 class="display display--xs">The early access form no longer asks for a phone number</h3>
+          <p>The pop-up asked for four things: your name, your business name, your email and a phone number. The phone number has been taken off, so it now asks for three. Your name, your business name and your email. Nothing else on the form has changed, and the number already given by anyone who signed up earlier has been left alone. <a href="/#early-access">Get early access</a>.</p>
+        </article>
+
+        <article class="card" id="plumber-photo-and-hero-line">
+          <h3 class="display display--xs">A new picture at the top of the page, and new words under the headline</h3>
+          <p>The photograph in the hero is the plumber now, in the same frame and the same crop, and it is served as a smaller webp file so the page loads faster. The line under the headline now reads: stop doing quotes from memory at the kitchen table, catch missed calls, dictate prices on site, and chase unpaid invoices, all before you drive home.</p>
+        </article>
+
+      <div class="grid" style="gap: 16px;">
+
+        <article class="card" id="hero-photo-again">
+          <h3 class="display display--xs">The photograph at the top of the page has changed again</h3>
+          <p>A different picture is in the hero. It is the same size in the same frame, its edges still fade into the black, and on a phone it is still left out so the words get the whole width. The crop and the layout are unchanged. Only the picture is different.</p>
+        </article>
+
+        <article class="card" id="three-sections-off">
+          <h3 class="display display--xs">Three sections have come off the page</h3>
+          <p>The app screens carousel, the two extra cards that sat at the end of the job stops, and the four badges under Straight with you have all been taken off. The nav link called The screens went with them, because there is nothing left for it to point at. Nothing else on the page has changed.</p>
+        </article>
+
+        <article class="card" id="hero-lines-off">
+          <h3 class="display display--xs">The two yellow lines around the headline are gone</h3>
+          <p>The headline at the top of the page had a thick yellow line above it and another below it. Both have been taken off. The words, the size and the spacing are exactly as they were, so the only difference is the two lines. The closing section at the bottom of the page keeps its yellow lines, and the plain grey rules on the light sections are unchanged.</p>
+        </article>
+
+        <article class="card" id="new-hero-photo">
+          <h3 class="display display--xs">A new photograph at the top of the page</h3>
+          <p>The picture on the front page has been replaced. It sits to the right of the headline and fades into the black at its own edges, so there is no hard rectangle, and on a phone it is left out so the words get the whole width. The frame is wide and the space it fills is tall, so a little under half the picture falls outside the box. Where the crop falls was set by measurement rather than by eye: it moved until the headline sat on the dark part of the frame instead of on the bright part.</p>
+        </article>
+
+        <article class="card" id="full-screens">
+          <h3 class="display display--xs">Full screens, not close-ups</h3>
+          <p>The five app pictures were tight crops of parts of the screen, which told you what a section looked like but never what the app looks like. They are now full phone screens, straight off the handset, all the same size. The same five: a quote, the invoices list, an overdue invoice, the reports screen, and the page your customer opens to say yes. One size also fixed a fault you found: the row used to change height as you swiped, which shoved the rest of the page about.</p>
+        </article>
+
+        <article class="card" id="nine-screens">
+          <h3 class="display display--xs">Nine screens, and the detail behind a tap</h3>
+          <p>The page was too long to read on a phone in daylight, so the weight moved rather than the words went. Six stops now run from the first ring to the tax done, one line each, and every stop opens to the full detail behind it. The questions are an accordion, so you see twelve lines instead of twelve paragraphs. The five app screens play through on their own until you touch them. There is a missed call calculator: two sliders, your own numbers, and the year they add up to. On a phone the button follows you down the page, and the pain cards swipe. Nothing was cut. Every word is still here, one tap away. <a href="/#calculator">Try the calculator</a>.</p>
+        </article>
+
+        <article class="card" id="clearer-copy">
+          <h3 class="display display--xs">Clearer words on the calls, the tax and the price</h3>
+          <p>A tradesman with 40 years on the tools read the page and said where it lost him. The missed call wording was wrong, so it now describes what actually happens. The caller leaves a message, it is written out and sent to you, and if they leave nothing they get a short text back to say you will ring them. Xero, QuickBooks and FreeAgent now read as a one tap connect. The price carries an anchor: less than a single missed call-out, with a founder's rate locked in. The headline dropped "after tea" because it is regional, and the page now names sparky, chippy, plumber and joiner. There is a slot in the early access band for a short clip. <a href="/#early-access">Get early access</a>.</p>
+        </article>
+
+        <article class="card" id="whole-job">
+          <h3 class="display display--xs">The page shows the whole job now</h3>
+          <p>This page used to explain quoting and leave it there. It now walks a whole week of work, from the call you miss while you are up a ladder through to the figures for your quarterly tax. There are 21 things on it, grouped into seven stages: win the work, quote it, plan the week, run the job, get paid, tax and the accountant, and everything else. <a href="/#how">See what it does</a>.</p>
+        </article>
+
+        <article class="card" id="real-screens">
+          <h3 class="display display--xs">Real screens, not drawings</h3>
+          <p>Five screens from the app replace the phone mockups that were here before. They are tight crops of the parts you would use every day: the chase list, a spoken job turned into priced line items, the quarterly tax card, an overdue invoice, and the page your customer opens to say yes. The app is running on sample data. These screens have since come off the page, so this entry stands as history.</p>
+        </article>
+
+        <article class="card" id="comparison-table">
+          <h3 class="display display--xs">A comparison you can read in one go</h3>
+          <p>A table puts the same week side by side, paper and WhatsApp on one side and the app on the other. It covers the call you miss, writing the quote, knowing whether it was read, chasing the money and the quarterly tax. <a href="/#why">Why it is different</a>.</p>
+        </article>
+
+        <article class="card" id="signup-four-things">
+          <h3 class="display display--xs">The early access form asks for four things</h3>
+          <p>Your name, your business name, your email and a phone number. The phone number is there so we can ring you about your trade rather than send a generic email to a list. Nothing to pay, and no card asked for. The phone number has since come off the form, so this entry stands as history. <a href="/#early-access">Get early access</a>.</p>
+        </article>
+
+        <article class="card" id="new-yellow">
+          <h3 class="display display--xs">A brighter yellow</h3>
+          <p>The brand yellow on the site changed to a brighter, greener tone. The black stayed exactly the same, because it is the same black the app uses.</p>
+        </article>
+
+      </div>
+
+      <h2 class="display display--xs group-title" style="margin-top: 40px;"><time datetime="2026-09-21">21 September 2026</time></h2>
+
+      <div class="grid" style="gap: 16px;">
+
+        <article class="card" id="site-live">
+          <h3 class="display display--xs">yellowtradie.com is live</h3>
+          <p>The site went up and the early access list opened. If you are on it, you will get an email when a place opens. We are letting people in a few at a time so we can answer every message rather than send you a login and disappear.</p>
+        </article>
+
+        <article class="card" id="joining-early">
+          <h3 class="display display--xs">What you get for joining early</h3>
+          <p>Nothing to pay until it launches. A say in what gets built, because you tell us what gets in the way on a working day. And a low rate locked in when it goes paid, since pricing is not set yet and the people who help shape it get the lowest rate we offer.</p>
+        </article>
+
+        <article class="card" id="where-data-sits">
+          <h3 class="display display--xs">Where your data sits</h3>
+          <p>Your jobs, your customers and your prices live in the app on your own phone. The screens on this site use sample data only, and there is nothing of a real customer on this page. <a href="/#faq">More questions</a>.</p>
+        </article>
+
+      </div>
+
+      <div class="card card--dark" style="margin-top: 40px;">
+        <h2 class="display display--xs" style="color: #fff;">Follow this page</h2>
+        <p class="muted" style="margin-top: 8px;">The same entries are published as a feed, so a reader app or an answer engine can pick them up without checking by hand. The address is <strong>yellowtradie.com/feed.xml</strong>, and any feed reader will find it on its own from this page.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <div class="final-inner">
+        <h2 class="display">Get in early</h2>
+        <p class="lede">Leave your details on the main page and we will email you when your invite is ready.</p>
+        <a class="btn btn--lg btn--solid" href="/#early-access">Get early access</a>
+      </div>
+    </div>
+  </section>

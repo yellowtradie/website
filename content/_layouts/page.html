@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+{{#if verification}}<meta name="google-site-verification" content="{{verification}}">
+{{/if}}<link rel="canonical" href="{{url}}">
+<link rel="icon" href="{{logo}}?v={{favicon_version}}" type="image/svg+xml">
+<meta name="theme-color" content="#1a181a">
+{{#if robots}}<meta name="robots" content="{{robots}}">
+{{/if}}
+<meta property="og:type" content="{{og_type}}">
+<meta property="og:site_name" content="{{site.name}}">
+<meta property="og:title" content="{{og_title}}">
+<meta property="og:description" content="{{og_description}}">
+<meta property="og:url" content="{{url}}">
+<meta property="og:image" content="https://yellowtradie.com/assets/hero.webp?v=5">
+<meta name="twitter:card" content="summary_large_image">
+{{#if article_modified}}<meta property="article:modified_time" content="{{article_modified}}">
+{{/if}}
+<link rel="alternate" type="application/rss+xml" title="YellowTradie what's new" href="/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v={{styles_version}}">
+
+<!-- The visitor's choice about being counted, read before the tag can load.
+     This has to be inline and above the tag, and it is not optional. gtag.js is
+     async, so it can run before app.js at the bottom of the body gets a chance
+     to read the stored choice: measured on 2026-09-23, doing it the other way
+     round still sent one page view for a visitor who had switched it off. -->
+<script>
+  (function () {
+    try {
+      if (window.localStorage.getItem("yt_ga_off") === "1") {
+        window["ga-disable-{{ga_id}}"] = true;
+      }
+    } catch (e) { /* no storage: nothing stored, so nothing to honour */ }
+  })();
+</script>
+
+<!-- Google tag (gtag.js). One property for the whole site: the Measurement ID
+     below is YellowTradie's own. It sits in the head so a visit is counted when
+     the page opens rather than after everything else has loaded. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ga_id}}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{{ga_id}}');
+</script>
+</head>
+<body>
+
+<!-- This file is generated from content/{{slug}}.md by build.mjs.
+     Edit the text file, not this page. Header, nav, breadcrumb, footer and the
+     page's search data live once, in content/_layouts/page.html. -->
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="/" aria-label="YellowTradie home">
+      <img class="logo-mark" src="assets/logo-mark.svg" width="32" height="32" alt="">
+      <span class="logo-word">YellowTradie</span>
+    </a>
+
+    <nav aria-label="Main">
+      <ul class="nav">
+{{#each nav}}
+        <li><a href="{{href}}"{{#if current}} aria-current="page"{{/if}}>{{label}}</a></li>
+{{/each}}
+      </ul>
+    </nav>
+{{#if header_button}}
+    <a class="btn btn--sm btn--solid" href="/#early-access">Get early access</a>
+{{/if}}
+  </div>
+</header>
+
+<main>
+{{#if container}}
+  <section class="section">
+    <div class="wrap">
+{{breadcrumb_line}}
+      <div class="legal">
+{{content}}
+{{sources_html}}
+      </div>
+    </div>
+  </section>
+{{else}}
+{{content}}
+{{/if}}
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+{{#if footer.full}}
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a class="logo" href="/" aria-label="YellowTradie home" style="margin-bottom: 16px;">
+          <img class="logo-mark" src="assets/logo-mark.svg" width="32" height="32" alt="">
+          <span class="logo-word">YellowTradie</span>
+        </a>
+        <p class="tertiary" style="font-size: 14px; line-height: 17px; max-width: 28em;">A phone app that runs the whole job for a solo tradesperson, from the missed call to the quarter closed off.</p>
+      </div>
+{{#each footer.columns}}
+      <div class="footer-col">
+        <h3>{{heading}}</h3>
+        <ul>
+{{#each links}}
+          <li><a href="{{href}}">{{label}}</a></li>
+{{/each}}
+        </ul>
+      </div>
+{{/each}}
+    </div>
+{{else}}
+    <a class="logo" href="/" aria-label="YellowTradie home" style="margin-bottom: 16px;">
+      <img class="logo-mark" src="assets/logo-mark.svg" width="32" height="32" alt="">
+      <span class="logo-word">YellowTradie</span>
+    </a>
+{{/if}}
+    <div class="footer-base">
+{{#each footer.legal}}
+      <p><a href="{{href}}">{{label}}</a></p>
+{{/each}}
+    </div>
+  </div>
+</footer>
+{{body_end}}
+<script type="application/ld+json">
+{{schema}}
+</script>
+
+<script src="app.js"></script>
+</body>
+</html>

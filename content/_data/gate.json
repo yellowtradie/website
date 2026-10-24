@@ -1,0 +1,19 @@
+{
+  "word_counts": {
+    "hub": [300, 4000],
+    "post": [300, 6000],
+    "legal": [300, 5000],
+    "policy": [300, 2000],
+    "company": [200, 1500],
+    "faq": [400, 2000],
+    "feature": [400, 2000],
+    "guide": [600, 3000],
+    "compare": [500, 2500],
+    "trade": [500, 2500],
+    "tool": [300, 1800],
+    "template": [200, 1500]
+  },
+  "legacy_meta_exempt": ["index", "changelog", "privacy", "terms"],
+  "legacy_voice_exempt": ["index", "changelog", "privacy", "terms"],
+  "names": ["Pete", "Peter"]
+}
