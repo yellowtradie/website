@@ -1,7 +1,8 @@
 /* YellowTradie early access.
  *
  * Every "Get early access" control on the page opens the signup modal. The
- * modal posts the details to Formspree as JSON, delivered by form xrpbqypw.
+ * modal posts the details to yellowtradie-signup, our own Worker, which stores
+ * the signup in the YellowTradie database and emails support@yellowtradie.com.
  * That endpoint is a public URL by design, so it is safe to keep in the repo.
  *
  * If FORM_ENDPOINT is ever set back to "REPLACE_ME" the form drops into

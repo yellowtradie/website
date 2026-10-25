@@ -23,7 +23,7 @@ og_title: Privacy and cookies | YellowTradie
 og_description: What we collect, why, who else sees it, how long we keep it, and how to have it removed.
 robots: index, follow
 published: 2026-09-23
-updated: 2026-10-24
+updated: 2026-10-25
 priority: 0.3
 changefreq: yearly
 software: false
@@ -34,7 +34,7 @@ legacy: true
       <p class="eyebrow tertiary">Privacy and cookies</p>
       <h1 class="display">What we do with your information</h1>
       <p class="lede muted" style="margin-top: 16px; max-width: 46em;">Plain words, no legal padding. This page covers what yellowtradie.com collects, why it collects it, who else sees any of it, how long it is kept, and how to get it removed or changed.</p>
-      <p class="tertiary" style="font-size: 14px; line-height: 20px; margin-top: 20px;">Last updated 24 October 2026. Written to the UK GDPR, the Data Protection Act 2018, and the Privacy and Electronic Communications Regulations as they stand after the Data (Use and Access) Act 2025.</p>
+      <p class="tertiary" style="font-size: 14px; line-height: 20px; margin-top: 20px;">Last updated 25 October 2026. Written to the UK GDPR, the Data Protection Act 2018, and the Privacy and Electronic Communications Regulations as they stand after the Data (Use and Access) Act 2025.</p>
 
       <div class="legal" style="margin-top: 40px;">
 
@@ -43,7 +43,7 @@ legacy: true
         <p>Email <a href="mailto:support@yellowtradie.com">support@yellowtradie.com</a> about anything on this page: a question, a request, or a complaint.</p>
 
         <h2 class="display display--xs">The waiting list</h2>
-        <p>One form on this site: the Join the list pop-up. It asks for three things.</p>
+        <p>One form on this site: the Get early access pop-up. It asks for three things.</p>
         <ul>
           <li><strong>Your name</strong>, so emails are not addressed to nobody.</li>
           <li><strong>Your business name</strong>, so we know which trade you are in and what to ask you about.</li>
@@ -55,7 +55,7 @@ legacy: true
         <p>The trial is £19.99 a month, 14 days free, card needed. The first £19.99 is taken on day 15. That is in the <a href="/terms.html">terms</a> and on the <a href="/pricing.html">pricing page</a>.</p>
 
         <h2 class="display display--xs">Where it goes</h2>
-        <p>The form is delivered by <strong>Formspree</strong>, a form service. Their servers are in the United States, so your details are transferred there and back to reach us, under the standard contractual clauses that cover that kind of transfer. Formspree is not allowed to use your details for their own marketing and does not sell them. The email lands in a normal email mailbox, which is the second place your details sit, also in the United States.</p>
+        <p>The form goes straight to our own signup service, which runs on <strong>Cloudflare</strong>, the company that also hosts this site. Your details sit in a database there and in the email that tells us you joined. Cloudflare holds them for us and is not allowed to use them for its own marketing or sell them. It runs a global network, so the details may be held outside the UK, under the standard contractual clauses that cover that kind of transfer.</p>
         <p><strong>Nobody else.</strong> No mailing list platform, no advertising network, no data broker, no partner. Your details are not sold, rented or shared with anyone else for any purpose, and they are not used to profile you or to build an advertising audience.</p>
         <p>The screens on this website show the app running with sample data. There is no real customer on this site, and none of your details appear anywhere on it.</p>
 
