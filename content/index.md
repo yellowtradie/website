@@ -42,7 +42,7 @@ legacy: true
         <h1 class="display">The <span class="hero-nobr">No-Bullshit</span> app for UK Tradesmen.</h1>
         <p class="lede hero-lede">YellowTradie takes the message when you miss the call, sends your quotes, chases your invoices and sorts your tax, so your evenings are your own.</p>
         <div class="hero-actions">
-          <a class="btn btn--lg btn--solid" href="/#early-access" data-open-signup>Start free trial</a>
+          <a class="btn btn--lg btn--solid" href="/#early-access" data-open-signup>Get early access</a>
         </div>
       </div>
     </div>
@@ -304,7 +304,7 @@ legacy: true
         </p>
         <p class="calc-note">Your two numbers, worked out over 52 weeks. <a href="/tools/missed-call-cost-calculator.html">See the full calculator with tables</a>.</p>
 
-        <a class="btn btn--lg btn--solid" href="/#early-access" data-open-signup>Start free trial</a>
+        <a class="btn btn--lg btn--solid" href="/#early-access" data-open-signup>Get early access</a>
       </div>
     </div>
   </section>
@@ -318,7 +318,7 @@ legacy: true
 
   <!-- Closing words above the footer. His copy, 2026-10-03, and the thirteen
        questions that used to sit above this came off with the rest of the old
-       words. The Start free trial button came off on 2026-10-22 at his asking,
+       words. The Get early access button came off on 2026-10-22 at his asking,
        because the button in the calculator above is the sign-up route now, and
        the yellow band between the two came off the same day. -->
   <section class="final" id="final">
@@ -337,10 +337,10 @@ legacy: true
 <!-- The button under his thumb. Phones only, and only once the hero is behind
      you. One button, centred, and nothing else beside it. -->
 <div class="sticky-cta" data-sticky-cta hidden>
-  <a class="btn btn--lg btn--solid" href="/#early-access" data-open-signup>Start free trial</a>
+  <a class="btn btn--lg btn--solid" href="/#early-access" data-open-signup>Get early access</a>
 </div>
 
-<!-- Sign-up modal. Every "Start free trial" control on the page opens this.
+<!-- Sign-up modal. Every "Get early access" control on the page opens this.
      The heading, the line and the "What you get" list that used to be above
      the form were the old build's words and came off on 2026-10-03; the form
      is his to keep and is unchanged. -->
@@ -352,7 +352,7 @@ legacy: true
       <span aria-hidden="true">&times;</span>
     </button>
 
-    <h2 class="display display--xs" id="signup-title">Start free trial</h2>
+    <h2 class="display display--xs" id="signup-title">Get early access</h2>
 
     <form data-signup-form novalidate>
       <div class="field">
@@ -381,7 +381,7 @@ legacy: true
 
       <p class="form-error" data-signup-form-error hidden role="alert"></p>
 
-      <button class="btn btn--lg btn--invert" type="submit">Start free trial</button>
+      <button class="btn btn--lg btn--invert" type="submit">Get early access</button>
 
       <p class="form-note">We use these details to contact you about YellowTradie and nothing else. You can ask us to delete them at any time.</p>
     </form>

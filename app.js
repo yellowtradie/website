@@ -10,7 +10,7 @@
  * on screen so a preview can never be mistaken for a working signup.
  */
 
-const FORM_ENDPOINT = "https://formspree.io/f/xrpbqypw";
+const FORM_ENDPOINT = "https://yellowtradie-signup.yellowtradie.workers.dev";
 
 /* The visit-counting switch on the privacy page.
  *
