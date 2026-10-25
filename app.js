@@ -241,7 +241,7 @@ const FORM_ENDPOINT = "https://formspree.io/f/xrpbqypw";
       submitButton.disabled = false;
       submitButton.textContent = label;
       formError.textContent =
-        "Something went wrong at our end. Try again, or email hello@yellowtradie.com.";
+        "Something went wrong at our end. Try again, or email support@yellowtradie.com.";
       formError.hidden = false;
     }
   });

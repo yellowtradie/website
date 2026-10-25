@@ -64,7 +64,7 @@ Every page carries the date it was last checked. We check a page again when the 
 
 ## If we get something wrong
 
-If your question is about the app rather than a page, the [FAQ](/faq.html) may answer it. Email hello@yellowtradie.com with the page address and the sentence. Tell us what is wrong and, if you can, where the right answer is. We will check it and correct the page. Its date changes when we do. If a claim cannot be supported, we take it off the page.
+If your question is about the app rather than a page, the [FAQ](/faq.html) may answer it. Email support@yellowtradie.com with the page address and the sentence. Tell us what is wrong and, if you can, where the right answer is. We will check it and correct the page. Its date changes when we do. If a claim cannot be supported, we take it off the page.
 
 ## What we will not do
 

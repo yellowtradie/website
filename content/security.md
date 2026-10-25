@@ -78,7 +78,7 @@ We do not keep a backup of your records. Your phone may include the app's data i
 
 ## How to report a security problem
 
-Email hello@yellowtradie.com with "security" at the start of the subject line. Tell us what you found, which part of the app or which address, and the steps that show it. Do not send anyone's records or a card number.
+Email support@yellowtradie.com with "security" at the start of the subject line. Tell us what you found, which part of the app or which address, and the steps that show it. Do not send anyone's records or a card number.
 
 We will reply within one working day where we can. We will tell you what we have found and when a fix is due. There is no reward scheme.
 

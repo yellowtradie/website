@@ -327,7 +327,7 @@ legacy: true
         <h2 class="display">You didn't go self-employed to sit at a laptop at 10pm.</h2>
         <p class="lede">Get the paperwork off your plate and your evenings back. Spend them with your family, your mates, or your feet up.</p>
         <noscript>
-          <p class="form-note">The form needs JavaScript. Email <a href="mailto:hello@yellowtradie.com">hello@yellowtradie.com</a> and we will add you to the list.</p>
+          <p class="form-note">The form needs JavaScript. Email <a href="mailto:support@yellowtradie.com">support@yellowtradie.com</a> and we will add you to the list.</p>
         </noscript>
       </div>
     </div>

@@ -1,7 +1,7 @@
 ---
 slug: contact
 type: company
-title: Contact YellowTradie | hello@yellowtradie.com
+title: Contact YellowTradie | support@yellowtradie.com
 description: One email address, who reads it, when a reply comes and what to include. No form, no phone line and no chat window.
 h1: How to reach us
 eyebrow: Contact
@@ -29,7 +29,7 @@ legacy: false
 
 ## One address
 
-[hello@yellowtradie.com](mailto:hello@yellowtradie.com)
+[support@yellowtradie.com](mailto:support@yellowtradie.com)
 
 There is no contact form. There is no phone line and no chat window. Email is the one door. It reaches the person who builds the app, not a support desk.
 

@@ -60,7 +60,7 @@ The first £19.99 is taken on day 15. After that it is £19.99 a month, taken on
 
 Open the subscription in the app and cancel it there. On an iPhone that is the App Store's subscription settings. On Android it is Google Play's. You do not have to tell us why.
 
-If you cannot find it, email hello@yellowtradie.com and we will point you to the right screen. We cannot cancel it for you, because the store holds the subscription.
+If you cannot find it, email support@yellowtradie.com and we will point you to the right screen. We cannot cancel it for you, because the store holds the subscription.
 
 ## What happens to my records if I cancel?
 

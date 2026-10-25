@@ -85,7 +85,7 @@ Invoicing is the paper the customer keeps. Quotes is the paper that wins the wor
 
 Read the two or three things at the top of a topic page first. They are the rules you need to keep. Then follow the one line under each link to the tool or template you want. Every external source is named on the topic page and the link is tested when the page is built. If a source does not answer, the page does not pass.
 
-If you spot a figure that has changed, tell us at hello@yellowtradie.com with the page address and the sentence. We will check it against gov.uk and fix the page.
+If you spot a figure that has changed, tell us at support@yellowtradie.com with the page address and the sentence. We will check it against gov.uk and fix the page.
 
 ## Latest from the blog
 

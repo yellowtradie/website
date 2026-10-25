@@ -27,7 +27,7 @@ legacy: false
 
 # Questions about YellowTradie
 
-Short answers to the questions a trader asks before trying the app. If yours is not here, email hello@yellowtradie.com.
+Short answers to the questions a trader asks before trying the app. If yours is not here, email support@yellowtradie.com.
 
 ## What is YellowTradie?
 
@@ -83,4 +83,4 @@ No. It is not in the App Store or Google Play. There is no date yet. Join the ea
 
 ## How do I get help?
 
-Email hello@yellowtradie.com. It is one person reading it, so a reply can take a working day. Tell us what you were doing and what the app did. A screenshot helps.
+Email support@yellowtradie.com. It is one person reading it, so a reply can take a working day. Tell us what you were doing and what the app did. A screenshot helps.

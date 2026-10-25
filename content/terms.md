@@ -39,7 +39,7 @@ legacy: true
       <div class="legal" style="margin-top: 40px;">
 
         <h2 class="display display--xs">Who you are dealing with</h2>
-        <p>This site is run by YellowTradie, the trading name of a sole trader based in Wales, United Kingdom. Written as "we" and "us" below. You can reach us at <a href="mailto:hello@yellowtradie.com">hello@yellowtradie.com</a>.</p>
+        <p>This site is run by YellowTradie, the trading name of a sole trader based in Wales, United Kingdom. Written as "we" and "us" below. You can reach us at <a href="mailto:support@yellowtradie.com">support@yellowtradie.com</a>.</p>
 
         <h2 class="display display--xs">Using the site</h2>
         <p>Read it, share the link, use the calculator with your own numbers. That is what it is for, and it costs nothing.</p>
@@ -67,7 +67,7 @@ legacy: true
         <p>Beyond that, we are not responsible for loss of profit, loss of business or loss of earnings, and we are not responsible for decisions you take on the strength of what is on this site. The calculator figures are yours, the tradesperson reading them is you, and the judgement that comes out is yours too.</p>
 
         <h2 class="display display--xs">Which law applies</h2>
-        <p>These terms are governed by the law of England and Wales. If something goes wrong, talk to us first at <a href="mailto:hello@yellowtradie.com">hello@yellowtradie.com</a>. If that does not settle it, the courts of England and Wales are the place for it. If you are a consumer, nothing here takes away the rights the law gives you. Your 14 day cancellation right is under the Consumer Contracts Regulations 2013.</p>
+        <p>These terms are governed by the law of England and Wales. If something goes wrong, talk to us first at <a href="mailto:support@yellowtradie.com">support@yellowtradie.com</a>. If that does not settle it, the courts of England and Wales are the place for it. If you are a consumer, nothing here takes away the rights the law gives you. Your 14 day cancellation right is under the Consumer Contracts Regulations 2013.</p>
 
         <h2 class="display display--xs">Changes to these terms</h2>
         <p>If these terms change, the date at the top changes with it and the change is written up on <a href="/changelog.html">What's new</a>. Carrying on using the site after a change means the new version applies.</p>

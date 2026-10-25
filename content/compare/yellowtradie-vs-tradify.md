@@ -59,7 +59,7 @@ Choose YellowTradie if you want:
 | Money paid and still owed | Payment log on the phone with date and method per payment, part payments kept, balance and ageing used by chasing and Home | Payment tracking and bulk invoicing in the app |
 | Accounting link live today | Sheet export for the accountant. Connections to Xero and QuickBooks and FreeAgent are being built | Xero sync, QuickBooks sync, MYOB sync, plus other links, with bills and payments and contacts |
 | Diary and assigning work | Diary with busy days and multi day jobs. It moves to In Progress on its start date. No way to give the job to someone else | Scheduler with drag and job tracking, plus subcontractor scheduling and staff activity on higher plans |
-| Support and free training | Email at hello@yellowtradie.com. We answer from Wales | Free setup and training and helpline on every plan, as stated on tradifyhq.com/uk/pricing |
+| Support and free training | Email at support@yellowtradie.com. We answer from Wales | Free setup and training and helpline on every plan, as stated on tradifyhq.com/uk/pricing |
 | Phone and desktop | Phone first. One app for one person | Phone app plus web app for the office |
 
 ## What Tradify does better
@@ -70,7 +70,7 @@ Tradify is further along on team work. It can hold extra logins, show who did wh
 
 It also has parts we do not try to match. Certificates and forms that trades must file, a purchase order page, and live links to Xero and QuickBooks and MYOB. Our links are still being built and the site says so. A bookkeeper who wants a direct feed today will be better served there.
 
-Those are real gaps on our side and they are not small. Tradify has been building them for years and it has more staff answering support calls while we are one address in Wales at hello@yellowtradie.com.
+Those are real gaps on our side and they are not small. Tradify has been building them for years and it has more staff answering support calls while we are one address in Wales at support@yellowtradie.com.
 
 ## Questions
 

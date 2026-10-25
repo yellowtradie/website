@@ -65,7 +65,7 @@ Jobber brings marketing and a client hub and online booking and add ons that run
 
 ServiceM8 gives a free plan for 30 jobs and then a job count scale up to 1500 plus, with unlimited users on every paid plan. It also has forms and asset management and a service phone system from £15 a month. If you have a crew or you need a live form on site, ServiceM8 will be used each day.
 
-Those are real gaps on our side. We are one address in Wales at hello@yellowtradie.com, with one flat price and no team view, because we are built for one person on one phone.
+Those are real gaps on our side. We are one address in Wales at support@yellowtradie.com, with one flat price and no team view, because we are built for one person on one phone.
 
 ## Questions
 

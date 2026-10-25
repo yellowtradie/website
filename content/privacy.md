@@ -40,7 +40,7 @@ legacy: true
 
         <h2 class="display display--xs">Who is responsible</h2>
         <p>YellowTradie is the trading name of a sole trader based in Wales, United Kingdom, and is the data controller for this website. That means YellowTradie is the one responsible for your information and the one to contact about it.</p>
-        <p>Email <a href="mailto:hello@yellowtradie.com">hello@yellowtradie.com</a> about anything on this page: a question, a request, or a complaint.</p>
+        <p>Email <a href="mailto:support@yellowtradie.com">support@yellowtradie.com</a> about anything on this page: a question, a request, or a complaint.</p>
 
         <h2 class="display display--xs">The waiting list</h2>
         <p>One form on this site: the Join the list pop-up. It asks for three things.</p>
@@ -80,7 +80,7 @@ legacy: true
         <p>The visit counting shows totals and patterns: how many people came, which page they read, roughly which town. It does not show who you are, and it is not joined up to the early access list. Joining the list does not tell us anything about your visit, and reading the site does not tell us you have joined.</p>
 
         <h2 class="display display--xs">Your rights</h2>
-        <p>You can ask to see what we hold about you, have it corrected, have it deleted, or have it sent to you in a file. You can object to us holding it at all, and you can take back your consent. Email <a href="mailto:hello@yellowtradie.com">hello@yellowtradie.com</a> and we will answer within one month, normally much sooner, and it costs nothing.</p>
+        <p>You can ask to see what we hold about you, have it corrected, have it deleted, or have it sent to you in a file. You can object to us holding it at all, and you can take back your consent. Email <a href="mailto:support@yellowtradie.com">support@yellowtradie.com</a> and we will answer within one month, normally much sooner, and it costs nothing.</p>
         <p>If you are not happy with how we have handled it, you can complain to the Information Commissioner's Office at <a href="https://ico.org.uk/make-a-complaint/" rel="noopener">ico.org.uk</a> or on 0303 123 1113. We would rather hear from you first, but it is your call.</p>
 
         <h2 class="display display--xs">Keeping it safe</h2>
